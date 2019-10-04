@@ -1,0 +1,52 @@
+{
+    "name": "EmailConfiguration",
+    "fields": [
+        {
+            "fieldName": "processFinished",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "firstActStarted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "consumableResourceAmount",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "activityInstantied",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "taskDelegated",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "decisionBranchCond",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "process",
+            "otherEntityRelationshipName": "theEmailConfiguration",
+            "relationshipName": "theProcesses"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theEmailConfiguration",
+            "relationshipName": "theManagers"
+        }
+    ],
+    "changelogDate": "20191004205005",
+    "entityTableName": "email_configuration",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

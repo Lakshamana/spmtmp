@@ -1,0 +1,53 @@
+{
+    "name": "ArtifactType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "artifact",
+            "otherEntityRelationshipName": "theArtifactType",
+            "relationshipName": "theArtifact"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "artifactCon",
+            "otherEntityRelationshipName": "theArtifactType",
+            "relationshipName": "theArtifactCon"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "involvedArtifact",
+            "otherEntityRelationshipName": "theArtifactType",
+            "relationshipName": "theInvolvedArtifacts"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "subroutine",
+            "otherEntityRelationshipName": "theArtifactType",
+            "relationshipName": "theSubroutine"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "toolParameter",
+            "otherEntityRelationshipName": "theArtifactType",
+            "relationshipName": "theToolParameters"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "toolDefinition",
+            "otherEntityRelationshipName": "theArtifactTypes",
+            "relationshipName": "theToolDefinition",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205207",
+    "entityTableName": "artifact_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

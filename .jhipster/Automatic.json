@@ -1,0 +1,36 @@
+{
+    "name": "Automatic",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "subroutine",
+            "otherEntityRelationshipName": "theAutomatic",
+            "relationshipName": "theSubroutine",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "parameter",
+            "otherEntityRelationshipName": "theAutomatic",
+            "relationshipName": "theParameters"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "artifact",
+            "otherEntityRelationshipName": "theAutomatic",
+            "relationshipName": "theArtifact",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205101",
+    "entityTableName": "automatic",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

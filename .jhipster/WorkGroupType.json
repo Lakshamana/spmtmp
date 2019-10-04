@@ -1,0 +1,33 @@
+{
+    "name": "WorkGroupType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "workGroup",
+            "otherEntityRelationshipName": "theGroupType",
+            "relationshipName": "theWorkGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reqWorkGroup",
+            "otherEntityRelationshipName": "theWorkGroupType",
+            "relationshipName": "theReqGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "workGroupInstSug",
+            "otherEntityRelationshipName": "groupTypeRequired",
+            "relationshipName": "theWorkGroupInstSug"
+        }
+    ],
+    "changelogDate": "20191004205210",
+    "entityTableName": "work_group_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

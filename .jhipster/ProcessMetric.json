@@ -1,0 +1,22 @@
+{
+    "name": "ProcessMetric",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "process",
+            "otherEntityRelationshipName": "theProcessMetric",
+            "relationshipName": "process",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205137",
+    "entityTableName": "process_metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

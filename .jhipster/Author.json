@@ -1,0 +1,130 @@
+{
+    "name": "Author",
+    "fields": [
+        {
+            "fieldName": "uid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "interests",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "theAuthor",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "authorStat",
+            "otherEntityRelationshipName": "author",
+            "relationshipName": "stats"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "author",
+            "otherEntityRelationshipName": "followers",
+            "relationshipName": "authorsFollowed",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "owner",
+            "relationshipName": "assets"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "lessonLearned",
+            "otherEntityRelationshipName": "author",
+            "relationshipName": "theLessonLearned"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "message",
+            "otherEntityRelationshipName": "sender",
+            "relationshipName": "sentMessages"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "message",
+            "otherEntityRelationshipName": "recipient",
+            "relationshipName": "receivedMessages"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "favoritedBy",
+            "relationshipName": "favorites",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "followers",
+            "relationshipName": "assetsFollowed",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "collaborators",
+            "relationshipName": "collaborateOnAssets",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "author",
+            "otherEntityRelationshipName": "authorsFollowed",
+            "relationshipName": "followers",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205058",
+    "entityTableName": "author",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

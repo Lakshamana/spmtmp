@@ -1,0 +1,21 @@
+{
+    "name": "InstantiationPolicyLog",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activityInstantiated",
+            "otherEntityRelationshipName": "theInstantiationPolicyLog",
+            "relationshipName": "theActivityInstantiated"
+        }
+    ],
+    "changelogDate": "20191004205117",
+    "entityTableName": "instantiation_policy_log",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

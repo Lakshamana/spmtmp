@@ -1,0 +1,56 @@
+{
+    "name": "Driver",
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appSecret",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appKeyGoogle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appSecretGoogle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "requestUrl",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "plugin",
+            "otherEntityRelationshipName": "theDriver",
+            "relationshipName": "thePlugin",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "company",
+            "otherEntityRelationshipName": "theDriver",
+            "relationshipName": "company",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191004205038",
+    "entityTableName": "driver",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

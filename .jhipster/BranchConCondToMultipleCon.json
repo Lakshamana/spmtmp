@@ -1,0 +1,29 @@
+{
+    "name": "BranchConCondToMultipleCon",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "multipleCon",
+            "otherEntityRelationshipName": "theBranchConCondToMultipleCon",
+            "relationshipName": "theMultipleCon",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "branchConCond",
+            "otherEntityRelationshipName": "theBranchConCondToMultipleCon",
+            "relationshipName": "theBranchConCond",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205037",
+    "entityTableName": "branch_con_cond_to_multiple_con",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

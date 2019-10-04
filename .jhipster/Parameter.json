@@ -1,0 +1,28 @@
+{
+    "name": "Parameter",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "automatic",
+            "otherEntityRelationshipName": "theParameters",
+            "relationshipName": "theAutomatic",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205105",
+    "entityTableName": "parameter",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

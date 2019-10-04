@@ -1,0 +1,141 @@
+{
+    "name": "Activity",
+    "fields": [
+        {
+            "fieldName": "ident",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isVersion",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "modelingActivityEvent",
+            "otherEntityRelationshipName": "theActivity",
+            "relationshipName": "theModelingActivityEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "isVersionOf",
+            "relationshipName": "hasVersions"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "simpleCon",
+            "otherEntityRelationshipName": "toActivity",
+            "relationshipName": "fromSimpleCon"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "simpleCon",
+            "otherEntityRelationshipName": "fromActivity",
+            "relationshipName": "toSimpleCon"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "joinCon",
+            "otherEntityRelationshipName": "toActivity",
+            "relationshipName": "fromJoinCon"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "branchCon",
+            "otherEntityRelationshipName": "fromActivity",
+            "relationshipName": "toBranchCon"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activityEstimation",
+            "otherEntityRelationshipName": "activity",
+            "relationshipName": "activityEstimation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activityType",
+            "otherEntityRelationshipName": "theActivity",
+            "relationshipName": "theActivityType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "joinCon",
+            "otherEntityRelationshipName": "fromActivity",
+            "relationshipName": "toJoinCon",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "branchANDCon",
+            "otherEntityRelationshipName": "toActivity",
+            "relationshipName": "fromBranchANDCon",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "artifactCon",
+            "otherEntityRelationshipName": "toActivity",
+            "relationshipName": "fromArtifactCon",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "artifactCon",
+            "otherEntityRelationshipName": "fromActivity",
+            "relationshipName": "toArtifactCon",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "hasVersions",
+            "relationshipName": "isVersionOf",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "processModel",
+            "otherEntityRelationshipName": "theActivity",
+            "relationshipName": "theProcessModel",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "branchConCondToActivity",
+            "otherEntityRelationshipName": "theActivity",
+            "relationshipName": "theBranchConCondToActivity"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activityInstantiated",
+            "otherEntityRelationshipName": "theActivity",
+            "relationshipName": "theActivityInstantiated"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "activityMetric",
+            "otherEntityRelationshipName": "activity",
+            "relationshipName": "activityMetric"
+        }
+    ],
+    "changelogDate": "20191004204957",
+    "entityTableName": "activity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

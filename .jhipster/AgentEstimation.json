@@ -1,0 +1,22 @@
+{
+    "name": "AgentEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theAgentEstimation",
+            "relationshipName": "agent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205125",
+    "entityTableName": "agent_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

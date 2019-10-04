@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ResourceEvent.
+    -->
+    <changeSet id="20191004205049-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="the_normal_id"
+                                 baseTableName="resource_event"
+                                 constraintName="fk_resource_event_the_normal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="normal"/>
+
+        <addForeignKeyConstraint baseColumnNames="the_catalog_event_id"
+                                 baseTableName="resource_event"
+                                 constraintName="fk_resource_event_the_catalog_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="catalog_event"/>
+
+        <addForeignKeyConstraint baseColumnNames="the_resource_id"
+                                 baseTableName="resource_event"
+                                 constraintName="fk_resource_event_the_resource_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resource"/>
+
+    </changeSet>
+</databaseChangeLog>

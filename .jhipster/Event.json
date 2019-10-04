@@ -1,0 +1,43 @@
+{
+    "name": "Event",
+    "fields": [
+        {
+            "fieldName": "why",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "when",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "isCreatedByApsee",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "spmLog",
+            "otherEntityRelationshipName": "theEvent",
+            "relationshipName": "theLog",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "eventType",
+            "otherEntityRelationshipName": "theEvent",
+            "relationshipName": "theEventType",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205042",
+    "entityTableName": "event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

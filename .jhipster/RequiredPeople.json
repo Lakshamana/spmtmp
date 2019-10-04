@@ -1,0 +1,22 @@
+{
+    "name": "RequiredPeople",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "normal",
+            "otherEntityRelationshipName": "theRequiredPeople",
+            "relationshipName": "theNormal",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205109",
+    "entityTableName": "required_people",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

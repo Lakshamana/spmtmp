@@ -1,0 +1,21 @@
+{
+    "name": "MetricType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "metricDefinition",
+            "otherEntityRelationshipName": "metricType",
+            "relationshipName": "theMetricDefinition"
+        }
+    ],
+    "changelogDate": "20191004205211",
+    "entityTableName": "metric_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

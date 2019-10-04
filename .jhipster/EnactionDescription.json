@@ -1,0 +1,35 @@
+{
+    "name": "EnactionDescription",
+    "fields": [
+        {
+            "fieldName": "actualBegin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "actualEnd",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "plain",
+            "otherEntityRelationshipName": "theEnactionDescription",
+            "relationshipName": "thePlain",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205102",
+    "entityTableName": "enaction_description",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

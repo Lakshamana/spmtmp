@@ -1,0 +1,35 @@
+{
+    "name": "AgentInstSug",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "theAgentInstSug",
+            "relationshipName": "theRole",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theAgentInstSug",
+            "relationshipName": "chosenAgent",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agentInstSuggestionToAgent",
+            "otherEntityRelationshipName": "theInstAgSugg",
+            "relationshipName": "agentSuggested"
+        }
+    ],
+    "changelogDate": "20191004205120",
+    "entityTableName": "agent_inst_sug",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

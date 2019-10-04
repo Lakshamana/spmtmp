@@ -1,0 +1,39 @@
+{
+    "name": "Metric",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "periodBegin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "periodEnd",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "metricDefinition",
+            "otherEntityRelationshipName": "metric",
+            "relationshipName": "metricDefinition",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205131",
+    "entityTableName": "metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

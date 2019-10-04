@@ -1,0 +1,51 @@
+{
+    "name": "SpmConfiguration",
+    "fields": [
+        {
+            "fieldName": "filtro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idioma",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "graficoDeEsforco",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "graficoDeCustos",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "graficoDeDesempenho",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "graficoDeTarefas",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "senhaEmRecuperacao",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "configuration",
+            "relationshipName": "agent",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205024",
+    "entityTableName": "spm_configuration",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

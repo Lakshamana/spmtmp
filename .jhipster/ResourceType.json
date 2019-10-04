@@ -1,0 +1,33 @@
+{
+    "name": "ResourceType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requiredResource",
+            "otherEntityRelationshipName": "theResourceType",
+            "relationshipName": "theRequiredResource"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceInstSug",
+            "otherEntityRelationshipName": "resourceTypeRequired",
+            "relationshipName": "theResourceInstSug"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "theResourceType",
+            "relationshipName": "theResource"
+        }
+    ],
+    "changelogDate": "20191004205212",
+    "entityTableName": "resource_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

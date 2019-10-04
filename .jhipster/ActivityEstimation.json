@@ -1,0 +1,22 @@
+{
+    "name": "ActivityEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "activityEstimation",
+            "relationshipName": "activity",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205124",
+    "entityTableName": "activity_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

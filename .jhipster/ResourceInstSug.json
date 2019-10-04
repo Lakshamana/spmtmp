@@ -1,0 +1,37 @@
+{
+    "name": "ResourceInstSug",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "theResourceChosenSuggestions",
+            "relationshipName": "resourceChosen",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resourceType",
+            "otherEntityRelationshipName": "theResourceInstSug",
+            "relationshipName": "resourceTypeRequired",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "theResourceSuggestions",
+            "relationshipName": "resourceSuggested",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191004205118",
+    "entityTableName": "resource_inst_sug",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

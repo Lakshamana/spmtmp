@@ -1,0 +1,22 @@
+{
+    "name": "ArtifactMetric",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "artifact",
+            "otherEntityRelationshipName": "theArtifactMetric",
+            "relationshipName": "artifact",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205134",
+    "entityTableName": "artifact_metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "ConnectionType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "connection",
+            "otherEntityRelationshipName": "theConnectionType",
+            "relationshipName": "theConnection"
+        }
+    ],
+    "changelogDate": "20191004205208",
+    "entityTableName": "connection_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

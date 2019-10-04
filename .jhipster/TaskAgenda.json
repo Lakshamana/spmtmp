@@ -1,0 +1,28 @@
+{
+    "name": "TaskAgenda",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theTaskAgenda",
+            "relationshipName": "theAgent",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "processAgenda",
+            "otherEntityRelationshipName": "theTaskAgenda",
+            "relationshipName": "theProcessAgenda"
+        }
+    ],
+    "changelogDate": "20191004205157",
+    "entityTableName": "task_agenda",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

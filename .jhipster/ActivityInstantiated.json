@@ -1,0 +1,35 @@
+{
+    "name": "ActivityInstantiated",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "instantiationPolicyLog",
+            "otherEntityRelationshipName": "theActivityInstantiated",
+            "relationshipName": "theInstantiationPolicyLog",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "theActivityInstantiated",
+            "relationshipName": "theActivity",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "instantiationSuggestion",
+            "otherEntityRelationshipName": "theActivityInstantiated",
+            "relationshipName": "theInstantiationSuggestion"
+        }
+    ],
+    "changelogDate": "20191004205113",
+    "entityTableName": "activity_instantiated",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

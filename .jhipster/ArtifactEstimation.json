@@ -1,0 +1,22 @@
+{
+    "name": "ArtifactEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "artifact",
+            "otherEntityRelationshipName": "theArtifactEstimation",
+            "relationshipName": "artifact",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205126",
+    "entityTableName": "artifact_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

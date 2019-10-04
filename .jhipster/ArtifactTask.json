@@ -1,0 +1,38 @@
+{
+    "name": "ArtifactTask",
+    "fields": [
+        {
+            "fieldName": "inWorkspaceVersion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "outWorkspaceVersion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "artifact",
+            "otherEntityRelationshipName": "theArtifactTasks",
+            "relationshipName": "theArtifact",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "task",
+            "otherEntityRelationshipName": "theArtifactTask",
+            "relationshipName": "theTask",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205011",
+    "entityTableName": "artifact_task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

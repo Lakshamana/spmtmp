@@ -1,0 +1,31 @@
+{
+    "name": "Consumable",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalQuantity",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "amountUsed",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191004205147",
+    "entityTableName": "consumable",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

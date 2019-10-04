@@ -1,0 +1,22 @@
+{
+    "name": "WorkGroupEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "workGroup",
+            "otherEntityRelationshipName": "theWorkGroupEstimation",
+            "relationshipName": "workGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205127",
+    "entityTableName": "work_group_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

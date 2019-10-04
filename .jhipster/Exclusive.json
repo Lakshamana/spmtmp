@@ -1,0 +1,30 @@
+{
+    "name": "Exclusive",
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitOfCost",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "theExclusive",
+            "relationshipName": "theReservation"
+        }
+    ],
+    "changelogDate": "20191004205148",
+    "entityTableName": "exclusive",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

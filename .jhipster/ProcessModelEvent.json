@@ -1,0 +1,29 @@
+{
+    "name": "ProcessModelEvent",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "catalogEvent",
+            "otherEntityRelationshipName": "theProcessModelEvent",
+            "relationshipName": "theCatalogEvent",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "processModel",
+            "otherEntityRelationshipName": "theProcessModelEvent",
+            "relationshipName": "theProcessModel",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205048",
+    "entityTableName": "process_model_event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

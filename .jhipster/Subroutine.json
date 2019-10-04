@@ -1,0 +1,35 @@
+{
+    "name": "Subroutine",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "artifactType",
+            "otherEntityRelationshipName": "theSubroutine",
+            "relationshipName": "theArtifactType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "automatic",
+            "otherEntityRelationshipName": "theSubroutine",
+            "relationshipName": "theAutomatic",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "toolParameter",
+            "otherEntityRelationshipName": "theSubroutine",
+            "relationshipName": "theToolParameters"
+        }
+    ],
+    "changelogDate": "20191004205201",
+    "entityTableName": "subroutine",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

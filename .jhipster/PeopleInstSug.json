@@ -1,0 +1,14 @@
+{
+    "name": "PeopleInstSug",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20191004205119",
+    "entityTableName": "people_inst_sug",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Node",
+    "fields": [
+        {
+            "fieldName": "ident",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "serviceFileId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "node",
+            "otherEntityRelationshipName": "parentNode",
+            "relationshipName": "children"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "structure",
+            "otherEntityRelationshipName": "rootElement",
+            "relationshipName": "theStructure",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "node",
+            "otherEntityRelationshipName": "children",
+            "relationshipName": "parentNode",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205053",
+    "entityTableName": "node",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

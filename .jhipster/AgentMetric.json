@@ -1,0 +1,22 @@
+{
+    "name": "AgentMetric",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theAgentMetric",
+            "relationshipName": "agent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205133",
+    "entityTableName": "agent_metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

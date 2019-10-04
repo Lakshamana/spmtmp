@@ -1,0 +1,45 @@
+{
+    "name": "Template",
+    "fields": [
+        {
+            "fieldName": "templateState",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "processModel",
+            "otherEntityRelationshipName": "theOrigin",
+            "relationshipName": "theInstances"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "description",
+            "otherEntityRelationshipName": "descTemplateOriginalVersion",
+            "relationshipName": "theOriginalVersionDescription",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "description",
+            "otherEntityRelationshipName": "theOldVersion",
+            "relationshipName": "theDerivedVersionDescriptions"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "description",
+            "otherEntityRelationshipName": "theNewVersion",
+            "relationshipName": "theTemplateNewDescriptions"
+        }
+    ],
+    "changelogDate": "20191004205146",
+    "entityTableName": "template",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

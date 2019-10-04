@@ -1,0 +1,34 @@
+{
+    "name": "AgentInstSuggestionToAgent",
+    "fields": [
+        {
+            "fieldName": "orderCriteriaResult",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agentInstSug",
+            "otherEntityRelationshipName": "agentSuggested",
+            "relationshipName": "theInstAgSugg",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "agent",
+            "otherEntityRelationshipName": "theAgentInstSugToAgent",
+            "relationshipName": "theAgent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205114",
+    "entityTableName": "agent_inst_suggestion_to_agent",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

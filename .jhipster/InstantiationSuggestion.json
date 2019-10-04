@@ -1,0 +1,22 @@
+{
+    "name": "InstantiationSuggestion",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activityInstantiated",
+            "otherEntityRelationshipName": "theInstantiationSuggestion",
+            "relationshipName": "theActivityInstantiated",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205116",
+    "entityTableName": "instantiation_suggestion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

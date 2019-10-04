@@ -1,0 +1,23 @@
+{
+    "name": "Decomposed",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "processModel",
+            "otherEntityRelationshipName": "theDecomposed",
+            "relationshipName": "theReferedProcessModel",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191004204958",
+    "entityTableName": "decomposed",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

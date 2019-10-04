@@ -1,0 +1,29 @@
+{
+    "name": "Sequence",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dependency",
+            "otherEntityRelationshipName": "theMultipleSequences",
+            "relationshipName": "theDependencyToMultipleSequences",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "dependency",
+            "otherEntityRelationshipName": "theSequence",
+            "relationshipName": "theDependency",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205029",
+    "entityTableName": "sequence",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

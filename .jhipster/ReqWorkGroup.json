@@ -1,0 +1,29 @@
+{
+    "name": "ReqWorkGroup",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "workGroupType",
+            "otherEntityRelationshipName": "theReqGroup",
+            "relationshipName": "theWorkGroupType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "workGroup",
+            "otherEntityRelationshipName": "theReqGroup",
+            "relationshipName": "theWorkGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205111",
+    "entityTableName": "req_work_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

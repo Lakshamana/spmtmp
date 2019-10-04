@@ -1,0 +1,21 @@
+{
+    "name": "RoleType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "theRoleType",
+            "relationshipName": "theRole"
+        }
+    ],
+    "changelogDate": "20191004205213",
+    "entityTableName": "role_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

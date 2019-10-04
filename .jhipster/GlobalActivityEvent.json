@@ -1,0 +1,29 @@
+{
+    "name": "GlobalActivityEvent",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "catalogEvent",
+            "otherEntityRelationshipName": "theGlobalActivityEvent",
+            "relationshipName": "theCatalogEvent",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "plain",
+            "otherEntityRelationshipName": "theGlobalActivityEvent",
+            "relationshipName": "thePlain",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205045",
+    "entityTableName": "global_activity_event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

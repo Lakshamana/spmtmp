@@ -1,0 +1,129 @@
+{
+    "name": "Resource",
+    "fields": [
+        {
+            "fieldName": "ident",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "mtbfTime",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "mtbfUnitTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cost",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "isActive",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "possess",
+            "relationshipName": "belongsTo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resourceType",
+            "otherEntityRelationshipName": "theResource",
+            "relationshipName": "theResourceType",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "isRequired",
+            "relationshipName": "requires",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceEvent",
+            "otherEntityRelationshipName": "theResource",
+            "relationshipName": "theResourceEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "requiredResource",
+            "otherEntityRelationshipName": "theResource",
+            "relationshipName": "theRequiredResource"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceInstSug",
+            "otherEntityRelationshipName": "resourceChosen",
+            "relationshipName": "theResourceChosenSuggestions"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourcePossibleUse",
+            "otherEntityRelationshipName": "theResource",
+            "relationshipName": "theResourcePossibleUse"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceMetric",
+            "otherEntityRelationshipName": "resource",
+            "relationshipName": "theResourceMetric"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceEstimation",
+            "otherEntityRelationshipName": "resource",
+            "relationshipName": "theResourceEstimation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "belongsTo",
+            "relationshipName": "possess"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "resourceInstSug",
+            "otherEntityRelationshipName": "resourceSuggested",
+            "relationshipName": "theResourceSuggestions",
+            "otherEntityField": "id",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "requires",
+            "relationshipName": "isRequired",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205151",
+    "entityTableName": "resource",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

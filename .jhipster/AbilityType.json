@@ -1,0 +1,21 @@
+{
+    "name": "AbilityType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "ability",
+            "otherEntityRelationshipName": "theAbilityType",
+            "relationshipName": "theAbility"
+        }
+    ],
+    "changelogDate": "20191004205205",
+    "entityTableName": "ability_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

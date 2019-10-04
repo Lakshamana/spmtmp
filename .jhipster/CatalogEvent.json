@@ -1,0 +1,70 @@
+{
+    "name": "CatalogEvent",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "plain",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "thePlain",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theResourceEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "processModelEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theProcessModelEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "agendaEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theAgendaEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "connectionEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theConnectionEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "globalActivityEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theGlobalActivityEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "modelingActivityEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theModelingActivityEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "processEvent",
+            "otherEntityRelationshipName": "theCatalogEvent",
+            "relationshipName": "theProcessEvent"
+        }
+    ],
+    "changelogDate": "20191004205040",
+    "entityTableName": "catalog_event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

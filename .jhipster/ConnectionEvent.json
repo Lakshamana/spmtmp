@@ -1,0 +1,22 @@
+{
+    "name": "ConnectionEvent",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "catalogEvent",
+            "otherEntityRelationshipName": "theConnectionEvent",
+            "relationshipName": "theCatalogEvent",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205044",
+    "entityTableName": "connection_event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

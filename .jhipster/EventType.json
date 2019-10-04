@@ -1,0 +1,21 @@
+{
+    "name": "EventType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "event",
+            "otherEntityRelationshipName": "theEventType",
+            "relationshipName": "theEvent"
+        }
+    ],
+    "changelogDate": "20191004205209",
+    "entityTableName": "event_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

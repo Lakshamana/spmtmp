@@ -1,0 +1,22 @@
+{
+    "name": "AssetStat",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "asset",
+            "otherEntityRelationshipName": "stats",
+            "relationshipName": "theAsset",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20191004205014",
+    "entityTableName": "asset_stat",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

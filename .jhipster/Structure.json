@@ -1,0 +1,29 @@
+{
+    "name": "Structure",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "node",
+            "otherEntityRelationshipName": "theStructure",
+            "relationshipName": "rootElement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "vCSRepository",
+            "otherEntityRelationshipName": "theStructure",
+            "relationshipName": "theRepository"
+        }
+    ],
+    "changelogDate": "20191004205056",
+    "entityTableName": "structure",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

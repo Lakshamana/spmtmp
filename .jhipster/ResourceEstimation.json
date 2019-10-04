@@ -1,0 +1,22 @@
+{
+    "name": "ResourceEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "theResourceEstimation",
+            "relationshipName": "resource",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205130",
+    "entityTableName": "resource_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

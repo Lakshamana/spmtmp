@@ -1,0 +1,14 @@
+{
+    "name": "PrimitiveParam",
+    "fields": [],
+    "relationships": [],
+    "changelogDate": "20191004205107",
+    "entityTableName": "primitive_param",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

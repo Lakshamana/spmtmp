@@ -1,0 +1,22 @@
+{
+    "name": "ActivityMetric",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "activity",
+            "otherEntityRelationshipName": "activityMetric",
+            "relationshipName": "activity",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205132",
+    "entityTableName": "activity_metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

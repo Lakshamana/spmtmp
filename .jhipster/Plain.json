@@ -1,0 +1,41 @@
+{
+    "name": "Plain",
+    "fields": [
+        {
+            "fieldName": "requirements",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "enactionDescription",
+            "otherEntityRelationshipName": "thePlain",
+            "relationshipName": "theEnactionDescription",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "globalActivityEvent",
+            "otherEntityRelationshipName": "thePlain",
+            "relationshipName": "theGlobalActivityEvent"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "catalogEvent",
+            "otherEntityRelationshipName": "thePlain",
+            "relationshipName": "theCatalogEvent"
+        }
+    ],
+    "changelogDate": "20191004204959",
+    "entityTableName": "plain",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

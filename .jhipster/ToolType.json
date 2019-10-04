@@ -1,0 +1,21 @@
+{
+    "name": "ToolType",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "toolDefinition",
+            "otherEntityRelationshipName": "theToolType",
+            "relationshipName": "theToolDefinition"
+        }
+    ],
+    "changelogDate": "20191004205214",
+    "entityTableName": "tool_type",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

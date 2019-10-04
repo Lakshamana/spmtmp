@@ -1,0 +1,37 @@
+{
+    "name": "WorkGroupInstSug",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "workGroup",
+            "otherEntityRelationshipName": "theWorkGroupInstSug",
+            "relationshipName": "groupChosen",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "workGroupType",
+            "otherEntityRelationshipName": "theWorkGroupInstSug",
+            "relationshipName": "groupTypeRequired",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "workGroup",
+            "otherEntityRelationshipName": "theSuggestedGroups",
+            "relationshipName": "groupSuggested",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191004205121",
+    "entityTableName": "work_group_inst_sug",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

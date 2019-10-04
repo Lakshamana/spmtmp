@@ -1,0 +1,22 @@
+{
+    "name": "ResourceMetric",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "resource",
+            "otherEntityRelationshipName": "theResourceMetric",
+            "relationshipName": "resource",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205138",
+    "entityTableName": "resource_metric",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

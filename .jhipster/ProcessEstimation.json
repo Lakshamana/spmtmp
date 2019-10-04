@@ -1,0 +1,22 @@
+{
+    "name": "ProcessEstimation",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "process",
+            "otherEntityRelationshipName": "theProcessEstimation",
+            "relationshipName": "theProcess",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191004205129",
+    "entityTableName": "process_estimation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
