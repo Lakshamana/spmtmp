@@ -21,11 +21,11 @@ import java.util.Set;
 @Inheritance(strategy=InheritanceType.JOINED)
 public class Plain extends Activity implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     public static final transient String WAITING = "Waiting", READY = "Ready",
-			FAILED = "Failed", CANCELED = "Canceled", ACTIVE = "Active",
-			PAUSED = "Paused", FINISHED = "Finished";
+    FAILED = "Failed", CANCELED = "Canceled", ACTIVE = "Active",
+    PAUSED = "Paused", FINISHED = "Finished";
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

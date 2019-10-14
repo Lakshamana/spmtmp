@@ -2185,7 +2185,7 @@ public class ProjectServicesImpl implements ProjectServices {
 			Element artifactElm = invArtElm.getChild("TheArtifact");
 			if(artifactElm != null){
 				String artifactKey = artifactElm.getAttributeValue("REF");
-				invArt.insertIntoTheArtifacts((Artifact) this.organizational.get(artifactKey));
+				invArt.setTheArtifact((Artifact) this.organizational.get(artifactKey));
 			}
 
 			this.persistObject(invArt, null);
