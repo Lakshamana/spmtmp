@@ -14,7 +14,7 @@ public interface ProcessServices {
 
 	public List<ProcessDTO> getProcess(String agentIdent);
 
-	public ActivitysDTO getActitivitiesFromProcess(String processIdent);
+	public ActivitysDTO getActivitiesFromProcess(String processIdent);
 
 	public ProcessesDTO getProjectsManagedBy(String agentIdent);
 
