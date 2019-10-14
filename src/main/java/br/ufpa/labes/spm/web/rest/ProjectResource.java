@@ -108,9 +108,9 @@ public class ProjectResource {
         return ResponseUtil.wrapOrNotFound(project);
     }
 
-    @GetMapping("/projects/xml/{projectName}")
-    public ResponseEntity<String> getProcessModelXML(@PathVariable String projectName) {
-      return ResponseEntity.ok().body(projectServices.getProcessModelXML(projectName));
+    @GetMapping("/projects/xml/{projectIdent}")
+    public ResponseEntity<String> getProcessModelXML(@PathVariable String projectIdent) {
+      return ResponseEntity.ok().body(projectServices.getProcessModelXML(projectIdent));
   }
 
     /**
