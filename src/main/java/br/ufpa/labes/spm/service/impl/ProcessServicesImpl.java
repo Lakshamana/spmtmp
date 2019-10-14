@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -29,7 +32,8 @@ import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.service.interfaces.ProcessServices;
 
-
+@Service
+@Transactional
 public class ProcessServicesImpl implements ProcessServices {
 
 	private static final String PROCESSAGENDA_CLASSNAME = ProcessAgenda.class.getName();

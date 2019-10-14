@@ -2,12 +2,15 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.repository.ActivityRepository;
+import br.ufpa.labes.spm.service.dto.ActivitysDTO;
+import br.ufpa.labes.spm.service.interfaces.ProcessServices;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +34,9 @@ public class ActivityResource {
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
+
+    @Autowired
+    private ProcessServices processServices;
 
     private final ActivityRepository activityRepository;
 

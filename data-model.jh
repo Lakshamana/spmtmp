@@ -1,7 +1,7 @@
 // 22.09.2019 - OK
 //package activities ------------------------------------------- OK
 entity Activity {
-    ident String
+    ident String unique
     name String
     isVersion Boolean
 }
@@ -50,13 +50,13 @@ relationship OneToOne {
 //package agent ------------------------------------------- OK
 
 entity Ability {
-    ident String
+    ident String unique
     name String
     description TextBlob
 }
 
 entity Agent {
-    ident String
+    ident String unique
     name String
     email String
     costHour Float
@@ -119,7 +119,7 @@ entity EmailConfiguration {
 }
 
 entity WorkGroup {
-    ident String
+    ident String unique
     name String
     description TextBlob
     isActive Boolean
@@ -132,7 +132,7 @@ entity OutOfWorkPeriod {
 }
 
 entity Role {
-    ident String
+    ident String unique
     name String
     description TextBlob
 }
@@ -202,7 +202,7 @@ relationship OneToOne {
 //package artifacts ------------------------------------------- OK
 
 entity Artifact {
-    ident String
+    ident String unique
     name String
     description TextBlob
     pathName String
@@ -287,12 +287,12 @@ entity Message {
 }
 
 entity RelationshipKind {
-    typeIdent String,
+    typeident String, unique
     description String
 }
 
 entity Tag {
-    ident String
+    ident String unique
 }
 
 entity TagStats {
@@ -351,7 +351,7 @@ relationship OneToMany {
 //package chat ------------------------------------------- OK
 
 entity ChatMessage {
-    ident String,
+    ident String, unique
     text TextBlob,
     timestamp Instant required
 }
@@ -375,7 +375,7 @@ entity SpmConfiguration {
 //package connections ------------------------------------------- OK
 
 entity Connection {
-    ident String
+    ident String unique
 }
 
 entity ArtifactCon {} //extends Connection
@@ -547,7 +547,7 @@ relationship OneToOne {
 //package organizationPolicies ------------------------------------------- OK
 
 entity Company {
-    ident String
+    ident String unique
     cnpj String
     fantasyName String
     socialReason String
@@ -561,19 +561,19 @@ entity Company {
 }
 
 entity CompanyUnit {
-    ident String
+    ident String unique
     name String
     description TextBlob
 }
 
 entity Node {
-    ident String
+    ident String unique
     data String
     serviceFileId String unique
 }
 
 entity Project {
-    ident String
+    ident String unique
     name String
     description TextBlob
     beginDate LocalDate
@@ -582,7 +582,7 @@ entity Project {
 }
 
 entity VCSRepository {
-    ident String
+    ident String unique
     controlVersionSystem String
     server String
     port String
@@ -596,7 +596,7 @@ entity VCSRepository {
 entity Structure {}
 
 entity DevelopingSystem {
-    ident String
+    ident String unique
     name String
     description TextBlob
 }
@@ -913,7 +913,7 @@ entity Description {
 // }
 
 entity Process {
-    ident String
+    ident String unique
     pState String
 }
 
@@ -1012,7 +1012,7 @@ entity Shareable {
 }
 
 entity Resource {
-    ident String
+    ident String unique
     name String
     description TextBlob
     mtbfTime Float
@@ -1102,18 +1102,18 @@ relationship OneToMany {
 //package tools ------------------------------------------- OK
 
 entity ClassMethodCall {
-    ident String
+    ident String unique
     className String
     methodName String
     description TextBlob
 }
 
 entity PrimitiveType {
-    ident String
+    ident String unique
 }
 
 entity Script {
-    ident String
+    ident String unique
     fileName String
     description TextBlob
 }
@@ -1121,7 +1121,7 @@ entity Script {
 entity Subroutine {}
 
 entity ToolDefinition {
-    ident String
+    ident String unique
     name String
     description TextBlob
 }
@@ -1148,7 +1148,7 @@ relationship ManyToMany {
 //package types -------------------------------------------
 
 entity Type {
-    ident String
+    ident String unique
     description TextBlob
     userDefined Boolean
 }

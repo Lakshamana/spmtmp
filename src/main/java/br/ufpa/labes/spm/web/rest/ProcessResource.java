@@ -2,12 +2,18 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.service.dto.ActivitysDTO;
+import br.ufpa.labes.spm.service.dto.ProcessDTO;
+import br.ufpa.labes.spm.service.dto.ProcessesDTO;
+import br.ufpa.labes.spm.service.dto.ProjectsDTO;
+import br.ufpa.labes.spm.service.interfaces.ProcessServices;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +41,9 @@ public class ProcessResource {
     private String applicationName;
 
     private final ProcessRepository processRepository;
+
+    @Autowired
+    private ProcessServices processServices;
 
     public ProcessResource(ProcessRepository processRepository) {
         this.processRepository = processRepository;
@@ -111,6 +120,26 @@ public class ProcessResource {
         log.debug("REST request to get Process : {}", id);
         Optional<Process> process = processRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(process);
+    }
+
+    @GetMapping("/processes/projectsForAgent/{agentIdent}")
+    public ResponseEntity<ProjectsDTO> getProjectsForAgent(@PathVariable String agentIdent) {
+      return ResponseEntity.ok().body(processServices.getProjectsForAgent(agentIdent));
+    }
+
+    @GetMapping("/processes/agent/{agentIdent}")
+    public ResponseEntity<List<ProcessDTO>> getProcessesByAgentId(@PathVariable String agentIdent) {
+      return ResponseEntity.ok().body(processServices.getProcess(agentIdent));
+    }
+
+    @GetMapping("/processes/activitiesFromProcess/{processIdent}")
+    public ResponseEntity<ActivitysDTO> getActivitiesFromProcess(@PathVariable String processIdent) {
+      return ResponseEntity.ok().body(processServices.getActivitiesFromProcess(processIdent));
+    }
+
+    @GetMapping("/processes/managedBy/{agentIdent}")
+    public ResponseEntity<ProcessesDTO> getProjectsManagedBy(@PathVariable String agentIdent) {
+      return ResponseEntity.ok().body(processServices.getProjectsManagedBy(agentIdent));
     }
 
     /**

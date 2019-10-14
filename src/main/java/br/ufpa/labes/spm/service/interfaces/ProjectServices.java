@@ -20,7 +20,7 @@ public interface ProjectServices {
 
 	public Boolean removeProject(String projectName);
 
-	public ProjectsDTO getProjects();
+  public ProjectsDTO getProjects();
 
 	public ProjectsDTO getProjects(String termoBusca, Boolean isFinalizado);
 

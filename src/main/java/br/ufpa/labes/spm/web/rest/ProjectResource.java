@@ -2,12 +2,14 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Project;
 import br.ufpa.labes.spm.repository.ProjectRepository;
+import br.ufpa.labes.spm.service.interfaces.ProjectServices;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +33,9 @@ public class ProjectResource {
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
+
+    @Autowired
+    private ProjectServices projectServices;
 
     private final ProjectRepository projectRepository;
 
@@ -102,6 +107,11 @@ public class ProjectResource {
         Optional<Project> project = projectRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(project);
     }
+
+    @GetMapping("/projects/xml/{projectName}")
+    public ResponseEntity<String> getProcessModelXML(@PathVariable String projectName) {
+      return ResponseEntity.ok().body(projectServices.getProcessModelXML(projectName));
+  }
 
     /**
      * {@code DELETE  /projects/:id} : delete the "id" project.
