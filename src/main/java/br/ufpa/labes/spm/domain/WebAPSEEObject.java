@@ -33,6 +33,25 @@ public class WebAPSEEObject implements Serializable {
     @JoinColumn(unique = true)
     private GraphicCoordinate theGraphicCoordinate;
 
+    public static final String ACTIVITY = "Activity";
+    public static final String REQ_AGENT = "ReqAgent";
+    public static final String REQ_RESOURCE = "RequiredResource";
+    public static final String REQ_GROUP = "ReqGroup";
+    public static final String CONNECTION = "Connection";
+
+
+    public WebAPSEEObject(){
+      this.theReferredOid = 0L;
+      this.className = "";
+      this.theGraphicCoordinate = null;
+    }
+
+    public WebAPSEEObject(Long theReferredOid, String className, GraphicCoordinate graphicCoord) {
+      this.theReferredOid = theReferredOid;
+      this.className = className;
+      this.setTheGraphicCoordinate(graphicCoord);
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
