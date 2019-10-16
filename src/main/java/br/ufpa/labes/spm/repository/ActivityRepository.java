@@ -1,7 +1,9 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.repository.interfaces.activities.IActivityDAO;
+
+
+import br.ufpa.labes.spm.domain.Activity;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
