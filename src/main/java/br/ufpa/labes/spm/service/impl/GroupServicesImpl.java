@@ -28,13 +28,17 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 	private static final String GROUP_CLASS_NAME = WorkGroup.class.getSimpleName();
 
-	IWorkGroupDAO groupDAO;
+@Autowired
+	WorkGroupRepository groupRepository;
 
-	IWorkGroupTypeDAO groupTypeDAO;
+@Autowired
+	WorkGroupTypeRepository groupTypeRepository;
 
-	ITypeDAO typeDAO;
+@Autowired
+	TypeRepository typeRepository;
 
-	IAgentDAO agenteDAO;
+@Autowired
+	AgentRepository agenteRepository;
 
 	Converter converter = new ConverterImpl();
 

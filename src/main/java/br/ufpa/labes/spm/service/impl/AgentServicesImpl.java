@@ -76,33 +76,47 @@ public class AgentServicesImpl implements AgentServices {
 
 	private static final String AGENT_CLASSNAME = Agent.class.getSimpleName();
 
-	IAgentDAO agentDAO;
+@Autowired
+	AgentRepository agentRepository;
 
-	IAbilityDAO abilityDAO;
+@Autowired
+	IAbiltyRepository abilityRepository;
 
-	IRoleDAO roleDAO;
+@Autowired
+	RoleRepository roleRepository;
 
-	IRoleTypeDAO roleTypeDAO;
+@Autowired
+	RoleTypeRepository roleTypeRepository;
 
-	IRoleNeedsAbilityDAO roleNeedsDAO;
+@Autowired
+	IRoleNeedsAbiltyRepository roleNeedsRepository;
 
-	IAgentPlaysRoleDAO agentPlaysRoleDAO;
+@Autowired
+	AgentPlaysRoleRepository agentPlaysRoleRepository;
 
-	IAgentHasAbilityDAO agentHasAbilityDAO;
+@Autowired
+	IAgentHasAbiltyRepository agentHasAbilityRepository;
 
-	IAgentAffinityAgentDAO agentAffinityAgentDAO;
+@Autowired
+	IAgentAffintyAgentRepository agentAffinityAgentRepository;
 
-	IWorkGroupDAO WorkGroupDAO;
+@Autowired
+	WorkGroupRepository WorkGroupRepository;
 
-	IConfiDAO confiDAO;
+@Autowired
+	IConfRepository confiRepository;
 
-	IProcessAgendaDAO processAgendaDAO;
+@Autowired
+	ProcessAgendaRepository processAgendaRepository;
 
-	ITaskDAO taskDAO;
+@Autowired
+	TaskRepository taskRepository;
 
-	ITaskAgendaDAO taskAgendaDAO;
+@Autowired
+	TaskAgendaRepository taskAgendaRepository;
 
-	IActivityEstimationDAO activityEstimationDAO;
+@Autowired
+	IActivityEstimatonRepository activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
 

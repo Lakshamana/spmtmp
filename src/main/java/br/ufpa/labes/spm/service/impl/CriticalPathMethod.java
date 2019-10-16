@@ -32,7 +32,8 @@ import br.ufpa.labes.spm.domain.Connection;
 
 public class CriticalPathMethod {
 
-	IProcessDAO processDAO;
+@Autowired
+	ProcessRepository processRepository;
 
 	private String processIdent;
 

@@ -63,9 +63,11 @@ public class ReportDAO implements IReportDAO {
   @PersistenceContext(unitName = "SPMPU")
   private EntityManager em;
 
-  IProjectDAO dao;
+  @Autowired
+  ProjectRepository Repository;
 
-  IProcessDAO processDAO;
+  @Autowired
+  ProcessRepository processRepository;
 
   @Override
   public List<Object[]> getAgentsReportData(LocalDate atDate) {

@@ -10,10 +10,12 @@ import br.ufpa.labes.spm.repository.interfaces.activities.IDecomposedDAO;
 
 public class IDAOFactory {
 
-  private IActivityDAO iActivityDAO;
+  @Autowired
+  private IActivtyRepository iActivityRepository;
 
   @SuppressWarnings("unused")
-  private IDecomposedDAO iDecomposedDAO;
+  @Autowired
+  private DecomposedRepository iDecomposedRepository;
 
   public IDAOFactory() {
     try {

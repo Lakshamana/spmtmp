@@ -27,9 +27,11 @@ public class ResourceServicesImpl implements ResourceServices{
 
 	private static final String RESOURCE_CLASS_NAME = Resource.class.getSimpleName();
 
-	IResourceDAO resourceDAO;
+@Autowired
+	ResourceRepository resourceRepository;
 
-	IResourceTypeDAO resourceTypeDAO;
+@Autowired
+	ResourceTypeRepository resourceTypeRepository;
 
 	Converter converter = new ConverterImpl();
 

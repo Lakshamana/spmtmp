@@ -23,6 +23,7 @@ import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
 import br.ufpa.labes.spm.beans.editor.WebAPSEENodePosition;
+import br.ufpa.labes.spm.repository.ActivityRepository;
 import br.ufpa.labes.spm.repository.impl.activities.DecomposedDAO;
 import br.ufpa.labes.spm.repository.impl.plainActivities.NormalDAO;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessDAO;
@@ -121,42 +122,76 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	EnactmentEngineLocal enactmentLocal;
 	ICalendarDAO calendarioDTO;
 	DynamicModeling dynamicModeling;
-	IProcessDAO procDAO;
+@Autowired
+	ProcessRepository procRepository;
 	NotificationServices remote;
-	IDecomposedDAO decDAO;
-	IActivityDAO actDAO;
-	INormalDAO normDAO;
-	IAutomaticDAO autoDAO;
-	IArtifactDAO artDAO;
-	IInvolvedArtifactsDAO involvedDAO;
-	IGraphicCoordinateDAO coordDAO;
-	IProcessModelDAO pmodelDAO;
-	ISubroutineDAO subDAO;
-	IParameterDAO paramDAO;
-	IArtifactConDAO artConDAO;
-	IArtifactTypeDAO artTypeDAO;
-	IInvolvedArtifactsDAO invArtDAO;
-	IMultipleConDAO multiDAO;
-	IConnectionDAO conDAO;
-	IBranchConCondToMultipleConDAO bctmcDAO;
-	IJoinConDAO joinConDAO;
-	IBranchConDAO branchConDAO;
-	IWorkGroupTypeDAO WorkGroupTypeDAO;
-	IRoleDAO roleDAO;
-	IReqAgentDAO reqAgentDAO;
-	IAgentDAO agentDAO;
-	ITaskDAO taskDAO;
-	IWorkGroupDAO WorkGroupDAO;
-	IReqWorkGroupDAO reqWorkGroupDAO;
-	IResourceTypeDAO resTypeDAO;
-	IRequiredResourceDAO reqResDAO;
-	IResourceDAO resDAO;
-	IConsumableDAO consumableDAO;
-	IBranchConCondToActivityDAO branchConCondToActivityDAO;
-	ISimpleConDAO simpleDAO;
-	IProcessAgendaDAO pAgendaDAO;
-	IWebAPSEEObjectDAO webAPSEEObjDAO;
-	IGraphicCoordinateDAO grapDAO;
+@Autowired
+	DecomposedRepository decRepository;
+	ActivityRepository activityRepository;
+@Autowired
+	NormalRepository normRepository;
+@Autowired
+	IAutomatcRepository autoRepository;
+@Autowired
+	IArtfactRepository artRepository;
+@Autowired
+	IInvolvedArtfactsRepository involvedRepository;
+@Autowired
+	IGraphicCoordnateRepository coordRepository;
+@Autowired
+	ProcessModelRepository pmodelRepository;
+@Autowired
+	ISubroutneRepository subRepository;
+@Autowired
+	ParameterRepository paramRepository;
+@Autowired
+	IArtfactConRepository artConRepository;
+@Autowired
+	IArtfactTypeRepository artTypeRepository;
+@Autowired
+	IInvolvedArtfactsRepository invArtRepository;
+@Autowired
+	IMultpleConRepository multiRepository;
+@Autowired
+	IConnectonRepository conRepository;
+@Autowired
+	IBranchConCondToMultpleConRepository bctmcRepository;
+@Autowired
+	IJonConRepository joinConRepository;
+@Autowired
+	BranchConRepository branchConRepository;
+@Autowired
+	WorkGroupTypeRepository WorkGroupTypeRepository;
+@Autowired
+	RoleRepository roleRepository;
+@Autowired
+	ReqAgentRepository reqAgentRepository;
+@Autowired
+	AgentRepository agentRepository;
+@Autowired
+	TaskRepository taskRepository;
+@Autowired
+	WorkGroupRepository WorkGroupRepository;
+@Autowired
+	ReqWorkGroupRepository reqWorkGroupRepository;
+@Autowired
+	ResourceTypeRepository resTypeRepository;
+@Autowired
+	IRequredResourceRepository reqResRepository;
+@Autowired
+	ResourceRepository resRepository;
+@Autowired
+	ConsumableRepository consumableRepository;
+@Autowired
+	IBranchConCondToActivtyRepository branchConCondToActivityRepository;
+@Autowired
+	ISmpleConRepository simpleRepository;
+@Autowired
+	ProcessAgendaRepository pAgendaRepository;
+@Autowired
+	WebAPSEEObjectRepository webAPSEEObjRepository;
+@Autowired
+	IGraphicCoordnateRepository grapRepository;
 
 
 	private Date newBeginDate;
@@ -232,7 +267,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 				ok = false;
 
 				if(webAPSEENodePosition.getNodeType()==WebAPSEENodePosition.ACTIVITYNODE){
-					Activity act = (Activity) actDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
+          Activity act = (Activity) actDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
 					if(act!=null){
 						theReferredOid = act.getId();
 						className = act.getClass().getSimpleName();

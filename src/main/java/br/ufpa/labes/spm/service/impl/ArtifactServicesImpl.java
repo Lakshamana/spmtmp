@@ -9,9 +9,14 @@ import java.util.stream.Collectors;
 
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
+import br.ufpa.labes.spm.repository.ArtifactRepository;
+import br.ufpa.labes.spm.repository.ProjectRepository;
+import br.ufpa.labes.spm.repository.TypeRepository;
 import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectDAO;
 import br.ufpa.labes.spm.repository.interfaces.types.IArtifactTypeDAO;
@@ -37,13 +42,14 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	private static final String ARTIFACT_CLASS_NAME = Artifact.class.getSimpleName();
 
-	IArtifactDAO artifactDAO;
+@Autowired
+	ArtifactRepository artifactRepository;
 
-	IArtifactTypeDAO artifactTypeDAO;
+@Autowired
+	ProjectRepository projectRepository;
 
-	IProjectDAO projectDAO;
-
-	ITypeDAO typeDAO;
+@Autowired
+	TypeRepository typeRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -57,7 +63,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		List<Type> typesLists = new ArrayList<Type>();
 
 		hql = "from " + ArtifactType.class.getSimpleName();
-		query = typeDAO.getPersistenceContext().createQuery(hql);
+		query = typeRepository.getPersistenceContext().createQuery(hql);
 		typesLists = query.getResultList();
 
 		TypesDTO typesDTO = new TypesDTO(typesLists.size());
@@ -75,7 +81,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	@Override
 	public ArtifactDTO getArtifact(String artifactIdent) {
 			try {
-				Artifact artifact = artifactDAO.retrieveBySecondaryKey(artifactIdent);
+				Artifact artifact = artifactRepository.retrieveBySecondaryKey(artifactIdent);
 				if(artifact != null) {
 					ArtifactDTO artifactDTO = (ArtifactDTO) converter.getDTO(artifact, ArtifactDTO.class);
 					ArtifactType theArtifactType = artifact.getTheArtifactType();
@@ -94,7 +100,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	@Override
 	public ArtifactDTO alreadyExist(String artifactIdent) throws DAOException {
-		Artifact artifact = artifactDAO.retrieveBySecondaryKey(artifactIdent);
+		Artifact artifact = artifactRepository.retrieveBySecondaryKey(artifactIdent);
 		ArtifactDTO artifactDTO;
 		if(artifact == null || artifact.getId().equals(null)) {
 			throw new DAOException("Não Existe");
@@ -110,7 +116,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 				for (String derivedTo : artifactDTO.getDerivedTo()) {
 					System.out.println(derivedTo);
 				}
-				ArtifactType artifactType = artifactTypeDAO.retrieveBySecondaryKey(artifactDTO.getTheArtifactType());
+				ArtifactType artifactType = artifactTypeRepository.retrieveBySecondaryKey(artifactDTO.getTheArtifactType());
 
 				List<Artifact> possess = this.getArtifactsFromNames(artifactDTO.getPossess());
 				List<Artifact> derivedTo = this.getArtifactsFromNames(artifactDTO.getDerivedTo());
@@ -118,14 +124,14 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 				this.getArtifacts(artifactDTO.getName(), null, null, null);
 
-				artifact = artifactDAO.retrieveBySecondaryKey(artifactDTO.getIdent());
+				artifact = artifactRepository.retrieveBySecondaryKey(artifactDTO.getIdent());
 
 				if(artifact == null) {
 					artifact = (Artifact) converter.getEntity(artifactDTO, Artifact.class);
 					artifact.setTheArtifactType(artifactType);
 					artifactDAO.daoSave(artifact);
 
-					String newIdent = artifactDAO.generateIdent(artifact.getName(), artifact);
+					String newIdent = artifactRepository.generateIdent(artifact.getName(), artifact);
 					System.out.println("new ident: " + newIdent);
 					artifact.setIdent(newIdent);
 					artifactDTO.setIdent(newIdent);
@@ -173,7 +179,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	@SuppressWarnings("unchecked")
 	public ArtifactsDTO getArtifacts() {
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 		List<Artifact> artifacts = query.getResultList();
 
 		return this.convertArtifactsToArtifactsDTO(artifacts);
@@ -188,7 +194,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		} else {
 			hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.derivedFrom is null";
 		}
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 		List<Artifact> artifacts = query.getResultList();
 		return this.convertArtifactsToArtifactsDTO(artifacts);
 	}
@@ -203,12 +209,12 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		String hql;
 		if(domainFilter != null) {
 			hql = "select art from " + ARTIFACT_CLASS_NAME + " as art where art.name like :termo and art.ident = :domain" + activeFilter;
-			query = artifactDAO.getPersistenceContext().createQuery(hql);
+			query = artifactRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("termo", "%"+ termoBusca + "%");
 			query.setParameter("domain", domainFilter);
 		} else {
 			hql = "select art from " + ARTIFACT_CLASS_NAME + " as art where art.name like :termo" + activeFilter;
-			query = artifactDAO.getPersistenceContext().createQuery(hql);
+			query = artifactRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("termo", "%"+ termoBusca + "%");
 		}
 		if(!activeFilter.isEmpty()) {
@@ -239,7 +245,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		List<Artifact> artifactsFromProject = new ArrayList<Artifact>();
 
 		String hql = "SELECT project FROM " + Project.class.getSimpleName() + " AS project WHERE project.name = :name";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", projectFilter);
 
 		if(!query.getResultList().isEmpty()) {
@@ -254,7 +260,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	@SuppressWarnings("unchecked")
 	public ArtifactsDTO getArtifactsThatBelongsTo(String artifactName) {
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.belongsTo.name = '" + artifactName + "'";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 
 		List<Artifact> resultado = query.getResultList();
 		ArtifactsDTO artifactsDTO = new ArtifactsDTO(new ArrayList<ArtifactDTO>());
@@ -269,7 +275,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	@SuppressWarnings("unchecked")
 	public ArtifactsDTO getArtifactsDerivedFrom(String artifactName) {
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.derivedFrom.name = '" + artifactName + "'";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 
 		List<Artifact> resultado = query.getResultList();
 		ArtifactsDTO artifactsDTO = new ArtifactsDTO(new ArrayList<ArtifactDTO>());
@@ -285,7 +291,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		ArtifactDTO artifactDTO = new ArtifactDTO();
 
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.name = '" + artifactName + "'";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 		if(!query.getResultList().isEmpty()) {
 			Artifact artifact = (Artifact) query.getResultList().get(0);
 			artifact.setBelongsTo(null);
@@ -299,7 +305,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	public ArtifactDTO updateDerivedFrom(String artifactName) {
 		ArtifactDTO artifactDTO = new ArtifactDTO();
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.name = '" + artifactName + "'";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 		if(!query.getResultList().isEmpty()) {
 			Artifact artifact = (Artifact) query.getResultList().get(0);
 			artifact.setDerivedFrom(null);
@@ -312,7 +318,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	@Override
 	public Boolean removeArtifact(ArtifactDTO artifactDTO) {
 		String hql = "select artifact from " + ARTIFACT_CLASS_NAME + " as artifact where artifact.name = '" + artifactDTO.getName() + "'";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = artifactRepository.getPersistenceContext().createQuery(hql);
 //		Artifact artifact = (Artifact) query.getSingleResult();
 		Artifact artifact = (Artifact) query.getResultList().get(0);
 
@@ -389,10 +395,10 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	private Artifact getArtifactFromName(String ident) {
 //		String hql = "select o from " + ARTIFACT_CLASS_NAME + " o where o.name = :name";
-//		query = artifactDAO.getPersistenceContext().createQuery(hql);
+//		query = artifactRepository.getPersistenceContext().createQuery(hql);
 //		query.setParameter("name", name);
 		System.out.println("Ident: " + ident);
-		Artifact artifact = artifactDAO.retrieveBySecondaryKey(ident);
+		Artifact artifact = artifactRepository.retrieveBySecondaryKey(ident);
 		System.out.println(artifact);
 
 		return artifact;
@@ -400,8 +406,8 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	@Override
 	public Map<String, SimpleArtifactDescriptorDTO[]> getArtifactsForSelectedActivity(String identActivity) {
-		SimpleArtifactDescriptorDTO[] input = artifactDAO.getInputArtifactsForNormal(identActivity);
-		SimpleArtifactDescriptorDTO[] output = artifactDAO.getOutputArtifactsForNormal(identActivity);
+		SimpleArtifactDescriptorDTO[] input = artifactRepository.getInputArtifactsForNormal(identActivity);
+		SimpleArtifactDescriptorDTO[] output = artifactRepository.getOutputArtifactsForNormal(identActivity);
 
 		Map<String, SimpleArtifactDescriptorDTO[]> result = new HashMap<String, SimpleArtifactDescriptorDTO[]>();
 		result.put("input", input);

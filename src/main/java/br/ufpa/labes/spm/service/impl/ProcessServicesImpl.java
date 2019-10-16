@@ -39,8 +39,10 @@ public class ProcessServicesImpl implements ProcessServices {
 	private static final String PROCESSAGENDA_CLASSNAME = ProcessAgenda.class.getName();
 	private static final String PROJECT_CLASSNAME = Project.class.getName();
 	private static final String PROCESS_CLASSNAME = Process.class.getSimpleName();
-	IProcessDAO processDAO;
-	IAgentDAO agentDAO;
+@Autowired
+	ProcessRepository processRepository;
+@Autowired
+	AgentRepository agentRepository;
 	private Query query;
 	private Converter converter = new ConverterImpl();
 

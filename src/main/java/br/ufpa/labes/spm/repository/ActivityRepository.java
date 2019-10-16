@@ -1,6 +1,8 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.domain.Activity;
+import br.ufpa.labes.spm.repository.interfaces.activities.IActivityDAO;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
@@ -14,7 +16,7 @@ import java.util.Optional;
  * Spring Data  repository for the Activity entity.
  */
 @Repository
-public interface ActivityRepository extends JpaRepository<Activity, Long> {
+public interface ActivityRepository extends IActivityDAO, JpaRepository<Activity, Long> {
 
     @Query(value = "select distinct activity from Activity activity left join fetch activity.toJoinCons left join fetch activity.fromBranchANDCons left join fetch activity.fromArtifactCons left join fetch activity.toArtifactCons",
         countQuery = "select count(distinct activity) from Activity activity")

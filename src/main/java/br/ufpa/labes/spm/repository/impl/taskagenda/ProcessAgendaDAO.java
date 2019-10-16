@@ -12,7 +12,8 @@ import br.ufpa.labes.spm.domain.Task;
 
 public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Integer> implements IProcessAgendaDAO {
 
-  ITaskDAO taskDAO;
+  @Autowired
+  TaskRepository taskRepository;
 
   protected ProcessAgendaDAO(Class<ProcessAgenda> businessClass) {
     super(businessClass);

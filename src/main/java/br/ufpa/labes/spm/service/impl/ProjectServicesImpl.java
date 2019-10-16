@@ -180,29 +180,41 @@ public class ProjectServicesImpl implements ProjectServices {
 
 	private static final String TASK_CLASSNAME = Task.class.getName();
 
-	IProjectDAO projectDAO;
+@Autowired
+	ProjectRepository projectRepository;
 
-	IArtifactDAO artifactDAO;
+@Autowired
+	IArtfactRepository artifactRepository;
 
-	IAgentDAO agentDAO;
+@Autowired
+	AgentRepository agentRepository;
 
-	IProcessDAO processDAO;
+@Autowired
+	ProcessRepository processRepository;
 
-	ISpmLogDAO logDAO;
+@Autowired
+	SpmLogRepository logRepository;
 
-	IProcessModelDAO processModelDAO;
+@Autowired
+	ProcessModelRepository processModelRepository;
 
-	IWebAPSEEObjectDAO webAPSEEObjDAO;
+@Autowired
+	WebAPSEEObjectRepository webAPSEEObjRepository;
 
-	IGraphicCoordinateDAO graphicCoordDAO;
+@Autowired
+	IGraphicCoordnateRepository graphicCoordRepository;
 
-	IDecomposedDAO decomposedDAO;
+@Autowired
+	DecomposedRepository decomposedRepository;
 
-	IProcessEstimationDAO processEstimationDAO;
+@Autowired
+	IProcessEstimatonRepository processEstimationRepository;
 
-	ITaskDAO taskDAO;
+@Autowired
+	TaskRepository taskRepository;
 
-	IReportDAO reportDAO;
+@Autowired
+	ReportRepository reportRepository;
 
 	// ReportServices reportServices;
 
