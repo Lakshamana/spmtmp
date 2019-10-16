@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IArtifactMetricDAO;
 import br.ufpa.labes.spm.domain.ArtifactMetric;
 
-public class ArtifactMetricDAO extends BaseDAO<ArtifactMetric, Integer>
+public class ArtifactMetricDAO extends BaseDAO<ArtifactMetric, Long>
     implements IArtifactMetricDAO {
 
   protected ArtifactMetricDAO(Class<ArtifactMetric> businessClass) {

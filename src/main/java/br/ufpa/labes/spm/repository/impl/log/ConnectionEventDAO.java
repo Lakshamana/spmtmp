@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IConnectionEventDAO;
 import br.ufpa.labes.spm.domain.ConnectionEvent;
 
-public class ConnectionEventDAO extends BaseDAO<ConnectionEvent, Integer>
+public class ConnectionEventDAO extends BaseDAO<ConnectionEvent, Long>
     implements IConnectionEventDAO {
 
   protected ConnectionEventDAO(Class<ConnectionEvent> businessClass) {

@@ -160,7 +160,8 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   DynamicModeling dynamicModeling;
 
   @Autowired
-	private ProcessRepository procRepository;
+  private ProcessRepository procRepository;
+  
 	NotificationServices remote;
 
   @Autowired

@@ -8,7 +8,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredResourceDAO;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class RequiredResourceDAO extends BaseDAO<RequiredResource, Integer>
+public class RequiredResourceDAO extends BaseDAO<RequiredResource, Long>
     implements IRequiredResourceDAO {
 
   protected RequiredResourceDAO(Class<RequiredResource> businessClass) {

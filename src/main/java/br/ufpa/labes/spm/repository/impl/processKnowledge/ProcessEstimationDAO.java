@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IProcessEstimati
 import br.ufpa.labes.spm.domain.ActivityEstimation;
 import br.ufpa.labes.spm.domain.ProcessEstimation;
 
-public class ProcessEstimationDAO extends BaseDAO<ProcessEstimation, Integer>
+public class ProcessEstimationDAO extends BaseDAO<ProcessEstimation, Long>
     implements IProcessEstimationDAO {
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";

@@ -12,7 +12,7 @@ import br.ufpa.labes.spm.domain.ReqAgent;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 
-public class RequiredPeopleDAO extends BaseDAO<RequiredPeople, Integer>
+public class RequiredPeopleDAO extends BaseDAO<RequiredPeople, Long>
     implements IRequiredPeopleDAO {
 
   protected RequiredPeopleDAO(Class<RequiredPeople> businessClass) {

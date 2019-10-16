@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IPeopleInstantiationSuggestionDAO;
 import br.ufpa.labes.spm.domain.PeopleInstSug;
 
-public class PeopleInstantiationSuggestionDAO extends BaseDAO<PeopleInstSug, Integer>
+public class PeopleInstantiationSuggestionDAO extends BaseDAO<PeopleInstSug, Long>
     implements IPeopleInstantiationSuggestionDAO {
 
   protected PeopleInstantiationSuggestionDAO(Class<PeopleInstSug> businessClass) {

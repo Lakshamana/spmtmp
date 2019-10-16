@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IActivityMetricDAO;
 import br.ufpa.labes.spm.domain.ActivityMetric;
 
-public class ActivityMetricDAO extends BaseDAO<ActivityMetric, Integer>
+public class ActivityMetricDAO extends BaseDAO<ActivityMetric, Long>
     implements IActivityMetricDAO {
 
   protected ActivityMetricDAO(Class<ActivityMetric> businessClass) {

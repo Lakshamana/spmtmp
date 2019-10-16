@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.connections.IBranchConCondToActivityDAO;
 import br.ufpa.labes.spm.domain.BranchConCondToActivity;
 
-public class BranchConCondToActivityDAO extends BaseDAO<BranchConCondToActivity, Integer>
+public class BranchConCondToActivityDAO extends BaseDAO<BranchConCondToActivity, Long>
     implements IBranchConCondToActivityDAO {
 
   protected BranchConCondToActivityDAO(Class<BranchConCondToActivity> businessClass) {

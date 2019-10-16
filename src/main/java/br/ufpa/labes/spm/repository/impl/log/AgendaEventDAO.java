@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IAgendaEventDAO;
 import br.ufpa.labes.spm.domain.AgendaEvent;
 
-public class AgendaEventDAO extends BaseDAO<AgendaEvent, Integer> implements IAgendaEventDAO {
+public class AgendaEventDAO extends BaseDAO<AgendaEvent, Long> implements IAgendaEventDAO {
 
   protected AgendaEventDAO(Class<AgendaEvent> businessClass) {
     super(businessClass);

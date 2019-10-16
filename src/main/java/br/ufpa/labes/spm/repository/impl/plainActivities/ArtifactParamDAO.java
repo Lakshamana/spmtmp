@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IArtifactParamDAO;
 import br.ufpa.labes.spm.domain.ArtifactParam;
 
-public class ArtifactParamDAO extends BaseDAO<ArtifactParam, Integer> implements IArtifactParamDAO {
+public class ArtifactParamDAO extends BaseDAO<ArtifactParam, Long> implements IArtifactParamDAO {
 
   protected ArtifactParamDAO(Class<ArtifactParam> businessClass) {
     super(businessClass);

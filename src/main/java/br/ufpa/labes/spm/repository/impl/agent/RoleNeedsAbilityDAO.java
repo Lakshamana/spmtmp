@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.agent.IRoleNeedsAbilityDAO;
 import br.ufpa.labes.spm.domain.RoleNeedsAbility;
 
-public class RoleNeedsAbilityDAO extends BaseDAO<RoleNeedsAbility, Integer>
+public class RoleNeedsAbilityDAO extends BaseDAO<RoleNeedsAbility, Long>
     implements IRoleNeedsAbilityDAO {
 
   protected RoleNeedsAbilityDAO(Class<RoleNeedsAbility> businessClass) {

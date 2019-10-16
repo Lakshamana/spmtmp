@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IAgentMetricDAO;
 import br.ufpa.labes.spm.domain.AgentMetric;
 
-public class AgentMetricDAO extends BaseDAO<AgentMetric, Integer> implements IAgentMetricDAO {
+public class AgentMetricDAO extends BaseDAO<AgentMetric, Long> implements IAgentMetricDAO {
 
   protected AgentMetricDAO(Class<AgentMetric> businessClass) {
     super(businessClass);

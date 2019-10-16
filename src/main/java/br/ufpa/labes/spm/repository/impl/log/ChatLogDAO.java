@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IChatLogDAO;
 import br.ufpa.labes.spm.domain.ChatLog;
 
-public class ChatLogDAO extends BaseDAO<ChatLog, Integer> implements IChatLogDAO {
+public class ChatLogDAO extends BaseDAO<ChatLog, Long> implements IChatLogDAO {
 
   protected ChatLogDAO(Class<ChatLog> businessClass) {
     super(businessClass);

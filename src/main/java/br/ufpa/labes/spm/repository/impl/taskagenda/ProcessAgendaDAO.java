@@ -13,7 +13,7 @@ import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Integer> implements IProcessAgendaDAO {
+public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Long> implements IProcessAgendaDAO {
 
   @Autowired
   private TaskRepository taskRepository;

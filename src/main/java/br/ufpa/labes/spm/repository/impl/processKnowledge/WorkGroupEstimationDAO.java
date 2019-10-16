@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IWorkGroupEstimationDAO;
 import br.ufpa.labes.spm.domain.WorkGroupEstimation;
 
-public class WorkGroupEstimationDAO extends BaseDAO<WorkGroupEstimation, Integer>
+public class WorkGroupEstimationDAO extends BaseDAO<WorkGroupEstimation, Long>
     implements IWorkGroupEstimationDAO {
 
   protected WorkGroupEstimationDAO(Class<WorkGroupEstimation> businessClass) {

@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IProcessModelEventDAO;
 import br.ufpa.labes.spm.domain.ProcessModelEvent;
 
-public class ProcessModelEventDAO extends BaseDAO<ProcessModelEvent, Integer>
+public class ProcessModelEventDAO extends BaseDAO<ProcessModelEvent, Long>
     implements IProcessModelEventDAO {
 
   protected ProcessModelEventDAO(Class<ProcessModelEvent> businessClass) {

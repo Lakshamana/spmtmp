@@ -18,7 +18,7 @@ import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class NormalDAO extends BaseDAO<Normal, Integer> implements INormalDAO {
+public class NormalDAO extends BaseDAO<Normal, Long> implements INormalDAO {
 
   protected NormalDAO(Class<Normal> businessClass) {
     super(businessClass);

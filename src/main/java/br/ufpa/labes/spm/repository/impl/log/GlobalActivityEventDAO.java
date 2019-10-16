@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IGlobalActivityEventDAO;
 import br.ufpa.labes.spm.domain.GlobalActivityEvent;
 
-public class GlobalActivityEventDAO extends BaseDAO<GlobalActivityEvent, Integer>
+public class GlobalActivityEventDAO extends BaseDAO<GlobalActivityEvent, Long>
     implements IGlobalActivityEventDAO {
 
   protected GlobalActivityEventDAO(Class<GlobalActivityEvent> businessClass) {

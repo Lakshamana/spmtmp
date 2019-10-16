@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IResourceInstantiationSuggestionDAO;
 import br.ufpa.labes.spm.domain.ResourceInstSug;
 
-public class ResourceInstantiationSuggestionDAO extends BaseDAO<ResourceInstSug, Integer>
+public class ResourceInstantiationSuggestionDAO extends BaseDAO<ResourceInstSug, Long>
     implements IResourceInstantiationSuggestionDAO {
 
   protected ResourceInstantiationSuggestionDAO(Class<ResourceInstSug> businessClass) {

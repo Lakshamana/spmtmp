@@ -154,7 +154,7 @@ public class BaseDAO<T, PK> implements IBaseDAO<T, PK> {
   }
 
   @Override
-  public T retrieve(PK key) {
+  public T retrieve(String key) {
     return this.getPersistenceContext().find(this.getBusinessClass(), key);
   }
 

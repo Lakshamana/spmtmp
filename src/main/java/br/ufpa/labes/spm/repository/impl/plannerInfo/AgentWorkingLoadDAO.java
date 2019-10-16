@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IAgentWorkingLoadDAO;
 import br.ufpa.labes.spm.domain.AgentWorkingLoad;
 
-public class AgentWorkingLoadDAO extends BaseDAO<AgentWorkingLoad, Integer>
+public class AgentWorkingLoadDAO extends BaseDAO<AgentWorkingLoad, Long>
     implements IAgentWorkingLoadDAO {
 
   protected AgentWorkingLoadDAO(Class<AgentWorkingLoad> businessClass) {

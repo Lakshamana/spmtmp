@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IResourceMetricDAO;
 import br.ufpa.labes.spm.domain.ResourceMetric;
 
-public class ResourceMetricDAO extends BaseDAO<ResourceMetric, Integer>
+public class ResourceMetricDAO extends BaseDAO<ResourceMetric, Long>
     implements IResourceMetricDAO {
 
   protected ResourceMetricDAO(Class<ResourceMetric> businessClass) {

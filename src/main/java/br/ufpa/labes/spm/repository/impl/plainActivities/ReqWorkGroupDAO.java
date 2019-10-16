@@ -8,7 +8,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqWorkGroupDAO;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 
-public class ReqWorkGroupDAO extends BaseDAO<ReqWorkGroup, Integer> implements IReqWorkGroupDAO {
+public class ReqWorkGroupDAO extends BaseDAO<ReqWorkGroup, Long> implements IReqWorkGroupDAO {
 
   protected ReqWorkGroupDAO(Class<ReqWorkGroup> businessClass) {
     super(businessClass);

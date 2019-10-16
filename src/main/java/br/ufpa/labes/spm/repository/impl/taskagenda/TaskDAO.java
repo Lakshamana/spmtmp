@@ -13,7 +13,7 @@ import br.ufpa.labes.spm.domain.AgendaEvent;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.util.ServicesUtil;
 
-public class TaskDAO extends BaseDAO<Task, Integer> implements ITaskDAO {
+public class TaskDAO extends BaseDAO<Task, Long> implements ITaskDAO {
 
   protected TaskDAO(Class<Task> businessClass) {
     super(businessClass);

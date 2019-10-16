@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processModels.IDescriptionDAO;
 import br.ufpa.labes.spm.domain.Description;
 
-public class DescriptionDAO extends BaseDAO<Description, Integer> implements IDescriptionDAO {
+public class DescriptionDAO extends BaseDAO<Description, Long> implements IDescriptionDAO {
 
   protected DescriptionDAO(Class<Description> businessClass) {
     super(businessClass);

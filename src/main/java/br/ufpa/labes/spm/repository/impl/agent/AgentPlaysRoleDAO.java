@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.agent.IAgentPlaysRoleDAO;
 import br.ufpa.labes.spm.domain.AgentPlaysRole;
 
-public class AgentPlaysRoleDAO extends BaseDAO<AgentPlaysRole, Integer>
+public class AgentPlaysRoleDAO extends BaseDAO<AgentPlaysRole, Long>
     implements IAgentPlaysRoleDAO {
 
   protected AgentPlaysRoleDAO(Class<AgentPlaysRole> businessClass) {

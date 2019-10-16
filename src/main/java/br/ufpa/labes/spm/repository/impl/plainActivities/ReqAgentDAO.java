@@ -8,7 +8,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentDAO;
 import br.ufpa.labes.spm.domain.ReqAgent;
 
-public class ReqAgentDAO extends BaseDAO<ReqAgent, Integer> implements IReqAgentDAO {
+public class ReqAgentDAO extends BaseDAO<ReqAgent, Long> implements IReqAgentDAO {
 
   protected ReqAgentDAO(Class<ReqAgent> businessClass) {
     super(businessClass);

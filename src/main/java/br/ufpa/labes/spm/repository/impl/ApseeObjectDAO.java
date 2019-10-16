@@ -2,7 +2,7 @@ package br.ufpa.labes.spm.repository.impl;
 
 import br.ufpa.labes.spm.repository.interfaces.IApseeObjectDAO;
 
-public class ApseeObjectDAO extends BaseDAO<Object, Integer> implements IApseeObjectDAO {
+public class ApseeObjectDAO extends BaseDAO<Object, Long> implements IApseeObjectDAO {
 
   protected ApseeObjectDAO(Class<Object> businessClass) {
     super(businessClass);

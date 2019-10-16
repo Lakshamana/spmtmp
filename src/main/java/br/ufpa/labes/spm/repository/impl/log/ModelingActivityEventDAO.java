@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.IModelingActivityEventDAO;
 import br.ufpa.labes.spm.domain.ModelingActivityEvent;
 
-public class ModelingActivityEventDAO extends BaseDAO<ModelingActivityEvent, Integer>
+public class ModelingActivityEventDAO extends BaseDAO<ModelingActivityEvent, Long>
     implements IModelingActivityEventDAO {
 
   protected ModelingActivityEventDAO(Class<ModelingActivityEvent> businessClass) {

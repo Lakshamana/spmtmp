@@ -15,7 +15,7 @@ public interface IBaseDAO<T, PK> {
 
   public T daoDelete(T object);
 
-  public T retrieve(PK key);
+  public T retrieve(String key);
 
   public List<T> retrieveByCriteria(T searchCriteria);
 

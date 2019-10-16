@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IOrganizationMetricDAO;
 import br.ufpa.labes.spm.domain.OrganizationMetric;
 
-public class OrganizationMetricDAO extends BaseDAO<OrganizationMetric, Integer>
+public class OrganizationMetricDAO extends BaseDAO<OrganizationMetric, Long>
     implements IOrganizationMetricDAO {
 
   protected OrganizationMetricDAO(Class<OrganizationMetric> businessClass) {

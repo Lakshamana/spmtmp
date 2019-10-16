@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IResourceEstimationDAO;
 import br.ufpa.labes.spm.domain.ResourceEstimation;
 
-public class ResourceEstimationDAO extends BaseDAO<ResourceEstimation, Integer>
+public class ResourceEstimationDAO extends BaseDAO<ResourceEstimation, Long>
     implements IResourceEstimationDAO {
 
   protected ResourceEstimationDAO(Class<ResourceEstimation> businessClass) {

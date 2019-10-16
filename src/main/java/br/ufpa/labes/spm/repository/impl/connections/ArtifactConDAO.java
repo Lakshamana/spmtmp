@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.connections.IArtifactConDAO;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 
-public class ArtifactConDAO extends BaseDAO<ArtifactCon, Integer> implements IArtifactConDAO {
+public class ArtifactConDAO extends BaseDAO<ArtifactCon, Long> implements IArtifactConDAO {
 
   protected ArtifactConDAO(Class<ArtifactCon> businessClass) {
     super(businessClass);

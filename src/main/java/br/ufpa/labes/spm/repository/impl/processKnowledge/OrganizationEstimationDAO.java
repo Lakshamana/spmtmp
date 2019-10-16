@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IOrganizationEstimationDAO;
 import br.ufpa.labes.spm.domain.OrganizationEstimation;
 
-public class OrganizationEstimationDAO extends BaseDAO<OrganizationEstimation, Integer>
+public class OrganizationEstimationDAO extends BaseDAO<OrganizationEstimation, Long>
     implements IOrganizationEstimationDAO {
 
   protected OrganizationEstimationDAO(Class<OrganizationEstimation> businessClass) {
