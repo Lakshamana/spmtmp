@@ -8,13 +8,14 @@ import java.util.List;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
-import br.ufpa.labes.spm.repository.interfaces.agent.IAgentDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
+import br.ufpa.labes.spm.repository.AgentRepository;
+import br.ufpa.labes.spm.repository.ProcessRepository;
 import br.ufpa.labes.spm.service.dto.ActivityDTO;
 import br.ufpa.labes.spm.service.dto.ActivitysDTO;
 import br.ufpa.labes.spm.service.dto.DecomposedDTO;
@@ -38,13 +39,17 @@ public class ProcessServicesImpl implements ProcessServices {
 
 	private static final String PROCESSAGENDA_CLASSNAME = ProcessAgenda.class.getName();
 	private static final String PROJECT_CLASSNAME = Project.class.getName();
-	private static final String PROCESS_CLASSNAME = Process.class.getSimpleName();
-@Autowired
-	ProcessRepository processRepository;
-@Autowired
-	AgentRepository agentRepository;
-	private Query query;
-	private Converter converter = new ConverterImpl();
+  private static final String PROCESS_CLASSNAME = Process.class.getSimpleName();
+
+  @Autowired
+	private ProcessRepository processRepository;
+
+  @Autowired
+	private AgentRepository agentRepository;
+
+  private Query query;
+
+  private Converter converter = new ConverterImpl();
 
 	@Override
 	public ProjectsDTO getProjectsForAgent(String agentIdent) {
@@ -52,7 +57,7 @@ public class ProcessServicesImpl implements ProcessServices {
 		                     "WHERE pr.processRefered in (SELECT procAg.theProcess FROM "+
 		                     PROCESSAGENDA_CLASSNAME +" as procAg WHERE procAg.theTaskAgenda.theAgent.ident =:agentId )";
 
-		query = processDAO.getPersistenceContext().createQuery(hql_project);
+		query = processRepository.getPersistenceContext().createQuery(hql_project);
 		query.setParameter( "agentId", agentIdent );
 		List<Project> projectList = query.getResultList();
 
@@ -76,7 +81,7 @@ public class ProcessServicesImpl implements ProcessServices {
 	            " where ag.ident = :identAgent";
 
 
-		query = processDAO.getPersistenceContext().createQuery(hql_processes_with_manager);
+		query = processRepository.getPersistenceContext().createQuery(hql_processes_with_manager);
 		query.setParameter( "identAgent", agentIdent );
 		@SuppressWarnings("unchecked")
 		List<Process> processList = query.getResultList();
@@ -91,7 +96,7 @@ public class ProcessServicesImpl implements ProcessServices {
 	@Override
 	public List<ProcessDTO> getProcess(String agentIdent) {
 		String hql = "SELECT distinct proc FROM " + PROCESSAGENDA_CLASSNAME + " AS proc WHERE proc.theTaskAgenda.theAgent.ident <> :ident";
-		query = agentDAO.getPersistenceContext().createQuery(hql);
+		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("ident", agentIdent);
 		List<ProcessAgenda> procs = query.getResultList();
 		List<ProcessDTO> processes = new ArrayList<ProcessDTO>();
@@ -118,7 +123,7 @@ public class ProcessServicesImpl implements ProcessServices {
 
 	@Override
 	public ActivitysDTO getActivitiesFromProcess(String processIdent) {
-		Process process = processDAO
+		Process process = processRepository
 				.retrieveBySecondaryKey(processIdent);
 		Collection<Activity> result = null;
 		if(process != null && process.getTheProcessModel() != null) {

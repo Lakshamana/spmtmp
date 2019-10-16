@@ -37,19 +37,27 @@ import org.jdom2.filter.AbstractFilter;
 import org.jdom2.filter.ElementFilter;
 import org.jdom2.filter.Filter;
 import org.jdom2.input.SAXBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
+import br.ufpa.labes.spm.repository.AgentRepository;
+import br.ufpa.labes.spm.repository.ArtifactRepository;
+import br.ufpa.labes.spm.repository.DecomposedRepository;
+import br.ufpa.labes.spm.repository.GraphicCoordinateRepository;
+import br.ufpa.labes.spm.repository.ProcessEstimationRepository;
+import br.ufpa.labes.spm.repository.ProcessModelRepository;
+import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.ProjectRepository;
+import br.ufpa.labes.spm.repository.SpmLogRepository;
+import br.ufpa.labes.spm.repository.TaskRepository;
+import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
+import br.ufpa.labes.spm.repository.impl.reports.ReportDAO;
 import br.ufpa.labes.spm.repository.interfaces.IReportDAO;
-import br.ufpa.labes.spm.repository.interfaces.activities.IDecomposedDAO;
-import br.ufpa.labes.spm.repository.interfaces.agent.IAgentDAO;
-import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
 import br.ufpa.labes.spm.repository.interfaces.log.ISpmLogDAO;
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectDAO;
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IProcessEstimationDAO;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IGraphicCoordinateDAO;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IWebAPSEEObjectDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
 import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessModelDAO;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
 import br.ufpa.labes.spm.service.dto.dashboard.ProjectCost;
@@ -180,41 +188,41 @@ public class ProjectServicesImpl implements ProjectServices {
 
 	private static final String TASK_CLASSNAME = Task.class.getName();
 
-@Autowired
-	ProjectRepository projectRepository;
+  @Autowired
+	private ProjectRepository projectRepository;
 
-@Autowired
-	IArtfactRepository artifactRepository;
+  @Autowired
+	ArtifactRepository artifactRepository;
 
-@Autowired
+  @Autowired
 	AgentRepository agentRepository;
 
-@Autowired
+  @Autowired
 	ProcessRepository processRepository;
 
-@Autowired
+  @Autowired
 	SpmLogRepository logRepository;
 
-@Autowired
+  @Autowired
 	ProcessModelRepository processModelRepository;
 
-@Autowired
+  @Autowired
 	WebAPSEEObjectRepository webAPSEEObjRepository;
 
-@Autowired
-	IGraphicCoordnateRepository graphicCoordRepository;
+  @Autowired
+	GraphicCoordinateRepository graphicCoordRepository;
 
-@Autowired
+  @Autowired
 	DecomposedRepository decomposedRepository;
 
-@Autowired
-	IProcessEstimatonRepository processEstimationRepository;
+  @Autowired
+	ProcessEstimationRepository processEstimationRepository;
 
-@Autowired
+  @Autowired
 	TaskRepository taskRepository;
 
-@Autowired
-	ReportRepository reportRepository;
+  @Autowired
+	ReportDAO reportDAO;
 
 	// ReportServices reportServices;
 
@@ -236,7 +244,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		ProcessModel pModel = null;
 		if(!level.contains(".")){
 //			String hql = "select o from " + PROJECT_CLASSNAME + " o where o.ident = '" + level + "'";
-//			query = projectDAO.getPersistenceContext().createQuery(hql);
+//			query = projectRepository.getPersistenceContext().createQuery(hql);
 //			List<Project> projects = query.getResultList();
 //			if(projects.size()>0){
 //				Project project = (Project) projects.get(0);
@@ -244,11 +252,11 @@ public class ProjectServicesImpl implements ProjectServices {
 //				pModel = process.getTheProcessModel();
 //			}
 
-			Process process = processDAO.retrieveBySecondaryKey(level);
+			Process process = processRepository.retrieveBySecondaryKey(level);
 			pModel = process.getTheProcessModel();
 		}else{
 			String hql = "select o from " + Decomposed.class.getName() + " o where o.ident = '" + level + "'";
-			query = decomposedDAO.getPersistenceContext().createQuery(hql);
+			query = decomposedRepository.getPersistenceContext().createQuery(hql);
 			List<Decomposed> decomposeds = query.getResultList();
 			if(decomposeds.size() > 0) {
 				Decomposed decomposed = (Decomposed) decomposeds.get(0);
@@ -599,7 +607,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		WebAPSEEObject webAPSEEObject = null;
 		GraphicCoordinate graphicCoord = null;
 
-		webAPSEEObject = webAPSEEObjDAO.retrieveWebAPSEEObject(oid, className);
+		webAPSEEObject = webAPSEEObjRepository.retrieveWebAPSEEObject(oid, className);
 		if(webAPSEEObject!=null){
 			graphicCoord = webAPSEEObject.getTheGraphicCoordinate();
 			return "<POSITION X=\"" + graphicCoord.getX() + "\" Y=\"" + graphicCoord.getY() + "\"/>\n";
@@ -610,7 +618,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@Override
 	public ProjectDTO getProject(String projectName) {
 		String hql = "select o from " + PROJECT_CLASSNAME + " o where o.name = '" + projectName + "'";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 
 		if(query.getResultList().size() == SINGLE_RESULT) {
 			Project project = (Project) query.getSingleResult();
@@ -627,7 +635,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@Override
 	public ProjectDTO getProjectByIdent(String ident) {
 		String hql = "select o from " + PROJECT_CLASSNAME + " o where o.ident = '" + ident + "'";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 
 		if(query.getResultList().size() == SINGLE_RESULT) {
 			Project project = (Project) query.getSingleResult();
@@ -644,7 +652,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@SuppressWarnings("unchecked")
 	private Set<Agent> getAgentsFromProcess(Process processRefered) {
 		String hql = "SELECT DISTINCT a FROM " + AGENT_CLASSNAME + " a JOINCon a.theProcess p WHERE p.ident = :ident)";
-		query = agentDAO.getPersistenceContext().createQuery(hql);
+		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("ident", processRefered.getIdent());
     List<Agent> result = query.getResultList();
     return result.stream().collect(Collectors.toSet());
@@ -662,7 +670,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 		if(project == null) {
 			project = this.convertDTOToProject(projectDTO);
-			projectDAO.daoSave(project);
+			projectRepository.daoSave(project);
 		} else {
 			project = this.convertProjectDTOToProject(dto, project);
 			project = updateProjectFromDTO(projectDTO, project);
@@ -672,9 +680,9 @@ public class ProjectServicesImpl implements ProjectServices {
 		project.setIdent(project.getName());
 		this.saveProjectProcess(project, agents);
 		project.setFinalArtifacts(null);
-		projectDAO.update(project);
+		projectRepository.update(project);
 		project.setFinalArtifacts(artifacts);
-		projectDAO.update(project);
+		projectRepository.update(project);
 
 		projectDTO = convertProjectToProjectDTO(project);
 
@@ -697,7 +705,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 		process.setTheAgents(agents);
 		process.setIdent(project.getIdent());
-		processDAO.daoSave(process);
+		processRepository.daoSave(process);
 		project.setProcessRefered(process);
 	}
 
@@ -706,15 +714,15 @@ public class ProjectServicesImpl implements ProjectServices {
 		Project project;
 
 		String hql = "select o from " + PROJECT_CLASSNAME + " o where o.name = '" + projectName + "'";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 
 		project = (Project) query.getSingleResult();
 
 		if(project != null) {
-//			processModelDAO.getPersistenceContext().remove(project.getProcessRefered().getTheProcessModel());
-//			logDAO.getPersistenceContext().remove(project.getProcessRefered().getTheLog());
-			processDAO.getPersistenceContext().remove(project.getProcessRefered());
-			projectDAO.getPersistenceContext().remove(project);
+//			processModelRepository.getPersistenceContext().remove(project.getProcessRefered().getTheProcessModel());
+//			logRepository.getPersistenceContext().remove(project.getProcessRefered().getTheLog());
+			processRepository.getPersistenceContext().remove(project.getProcessRefered());
+			projectRepository.getPersistenceContext().remove(project);
 			return true;
 		}
 
@@ -740,7 +748,7 @@ public class ProjectServicesImpl implements ProjectServices {
 			hql = hql + dateFilter;
 		}
 
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("termo", "%"+ termoBusca + "%");
 
 		List<Project> resultado = query.getResultList();
@@ -765,7 +773,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		Project project = this.getProjectFromName(projectName);
 		if(project != null) {
 			project.setActive(false);
-			projectDAO.update(project);
+			projectRepository.update(project);
 		}
 
 		ProjectDTO projectDTO = this.convertProjectToProjectDTO(project);
@@ -777,7 +785,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		Project project = this.getProjectFromName(projectName);
 		if(project != null) {
 			project.setActive(true);
-			projectDAO.update(project);
+			projectRepository.update(project);
 		}
 
 		ProjectDTO projectDTO = this.convertProjectToProjectDTO(project);
@@ -794,7 +802,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	public ProjectDTO executeProcess(String projectName) throws DAOException, WebapseeException {
 		Project project = this.getProjectFromName(projectName);
 //		project.getProcessRefered().setPState(Process.ENACTING);
-//		projectDAO.daoSave(project);
+//		projectRepository.daoSave(project);
 
 		Process process = project.getProcessRefered();
 		enactmentEngineLocal.executeProcess(process.getIdent());
@@ -808,7 +816,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	public ArtifactsDTO getFinalArtifactsAvailableForProjects() {
 		ArtifactsDTO artifactsDTO = new ArtifactsDTO(new ArrayList<ArtifactDTO>());
 		List<Artifact> artifacts = new ArrayList<Artifact>();
-		query = artifactDAO.getPersistenceContext().createQuery("SELECT o FROM Artifact o");
+		query = processRepository.getPersistenceContext().createQuery("SELECT o FROM Artifact o");
 		artifacts = query.getResultList();
 
 		Set<Artifact> artifactsNotAvailableForProjects = new HashSet<Artifact>();
@@ -838,7 +846,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		if(isProjectOk && isArtifactOk) {
 			project.getFinalArtifacts().remove(artifact);
 
-			projectDAO.update(project);
+			projectRepository.update(project);
 			return true;
 		}
 
@@ -847,7 +855,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 	private Set<Task> getTasksForProject(String projectName) {
 		String hql = "select o from " + TASK_CLASSNAME + " o where o.theNormal.ident like :projectName";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("projectName", projectName + "%");
 
 		List<Task> result = query.getResultList();
@@ -857,7 +865,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@SuppressWarnings("unchecked")
 	private Set<Project> getAllProjects() {
 		String hql = "select o from " + PROJECT_CLASSNAME + " o";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 
 		List<Project> projects = query.getResultList();
 		return projects.stream().collect(Collectors.toSet());
@@ -866,7 +874,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@SuppressWarnings("unchecked")
 	private Set<Project> getProjectsUser(Long oid) {
 		String hql = "select o from " + PROJECT_CLASSNAME + " o where ";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 
 		List<Project> projects = query.getResultList();
 		return projects.stream().collect(Collectors.toSet());
@@ -884,7 +892,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 	private Project getProjectForId(Long oid) {
 		String hql = "select o from " + PROJECT_CLASSNAME + " o where o.oid = :oid";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("oid", oid);
 
 		List<Project> projects = query.getResultList();
@@ -900,7 +908,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	public Project getProjectFromName(String projectName) {
 		Project project = null;
 		String hql = "SELECT project FROM " + PROJECT_CLASSNAME + " AS project WHERE project.name = :name";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", projectName);
 		if(query.getResultList().size() == SINGLE_RESULT) {
 			project = (Project) query.getSingleResult();
@@ -987,7 +995,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		int totalHours = 0;
 		int totalMinutes = 0;
 
-		float estimatedHours = processEstimationDAO.getHoursEstimationForProject(project.getIdent());
+		float estimatedHours = processEstimationRepository.getHoursEstimationForProject(project.getIdent());
 		Time estimatedTime = new Time((int) estimatedHours, (int) ((estimatedHours * 60) % 60));
 
 		for (Task task : tasks) {
@@ -995,11 +1003,11 @@ public class ProjectServicesImpl implements ProjectServices {
 			if(isTaskFinished(task)) finishedTasks += 1;
 
 			String agentIdent = task.getTheProcessAgenda().getTheTaskAgenda().getTheAgent().getIdent();
-			Time taskRealEffort = taskDAO.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
+			Time taskRealEffort = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
 			if(taskRealEffort.getHour() > 0) totalHours += taskRealEffort.getHour();
 			if(taskRealEffort.getMinutes() > 0) totalMinutes += taskRealEffort.getMinutes();
 
-//			float estimatedTask = processEstimationDAO.getHoursEstimationForTask(task.getTheNormal().getIdent());
+//			float estimatedTask = processEstimationRepository.getHoursEstimationForTask(task.getTheNormal().getIdent());
 //			Time estimatedTaskTime = new Time((int) estimatedTask, (int) ((estimatedTask * 60) % 60));
 //			java.lang.System.out.println("--> " + task.getTheNormal().getIdent() + " - " + estimatedTaskTime);
 		}
@@ -1070,7 +1078,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	@SuppressWarnings("unchecked")
 	private ProjectsDTO getProjectsWhereActive(boolean isActive) {
 		String hql = "select project from " + PROJECT_CLASSNAME + " AS project WHERE project.active = :active";
-		query = projectDAO.getPersistenceContext().createQuery(hql);
+		query = projectRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("active", isActive);
 
 		List<Project> projects = query.getResultList();
@@ -1096,7 +1104,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		List<Agent> result = null;
 
 		hql = "select agent from "+ Agent.class.getSimpleName() +" as agent where agent.name = :agentName";
-		query = agentDAO.getPersistenceContext().createQuery(hql);
+		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("agentName", agentName);
 
 		result = query.getResultList();
@@ -1152,7 +1160,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	private Artifact getArtifact(String artifactName) {
 		Artifact artifact = null;
 		String hql = "SELECT artifact FROM " + Artifact.class.getSimpleName() + " AS artifact WHERE artifact.name = :name";
-		query = artifactDAO.getPersistenceContext().createQuery(hql);
+		query = processRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", artifactName);
 
 		if(!query.getResultList().isEmpty()) {
@@ -1197,7 +1205,7 @@ public class ProjectServicesImpl implements ProjectServices {
 				projectDTO.setProcessRefered(project.getProcessRefered().getIdent());
 				projectDTO.setpState(project.getProcessRefered().getpState());
 
-				float time = processEstimationDAO.getHoursEstimationForProject(project.getIdent());
+				float time = processEstimationRepository.getHoursEstimationForProject(project.getIdent());
 //				int hours = (int) time;
 				int hours   = (int) ((time / (1000*60*60)) % 24);
 	            int minutes = (int) (60 * (time - hours));
@@ -3386,8 +3394,8 @@ public class ProjectServicesImpl implements ProjectServices {
 			gc.setY(Integer.valueOf(graphCoordXML.getChildText("Y")));
 
 			// Persistence operations
-			this.webAPSEEObjDAO.daoSave(wobj);
-			this.graphicCoordDAO.daoSave(gc);
+			this.webAPSEEObjRepository.daoSave(wobj);
+			this.graphicCoordRepository.daoSave(gc);
 		}
 	}
 
@@ -3688,7 +3696,7 @@ public class ProjectServicesImpl implements ProjectServices {
 //		if(oid == null)
 //			UtilReflection.invokeMethod(dao, "save", parameter);
 //		else
-//			UtilReflection.invokeMethod(dao, "update", parameter); // It must be the save operation since ConnectionDAO.daoSave() is needed
+//			UtilReflection.invokeMethod(dao, "update", parameter); // It must be the save operation since ConnectionRepository.daoSave() is needed
 //
 		if(obj instanceof Connection){
 			String ident = ((Connection)obj).getIdent();
@@ -4058,7 +4066,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		                     " WHERE agent.oid = taskagenda.theAgent.oid AND taskagenda.oid = processagenda.theTaskAgenda.oid " +
 		                     "AND processagenda.theProcess.ident = :theProcess_oid and agent.oid <>:agent_oid";
 
-		query = agentDAO.getPersistenceContext().createQuery(hql_project);
+		query = agentRepository.getPersistenceContext().createQuery(hql_project);
 		query.setParameter( "theProcess_oid", theProcess_oid );
 		query.setParameter( "agent_oid", agent_oid );
 		Set<Agent> agentList = new HashSet<Agent>();
@@ -4073,7 +4081,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		String hql_project = "SELECT agent FROM " + AGENT_CLASSNAME + " as agent" +
 		                     " WHERE agent.online = true and agent.oid <> :agent_oid";
 
-		query = agentDAO.getPersistenceContext().createQuery(hql_project);
+		query = agentRepository.getPersistenceContext().createQuery(hql_project);
 		query.setParameter( "agent_oid", agent_oid );
 	    Set<Agent> agentList = new HashSet<Agent>();
 		agentList.addAll(query.getResultList());

@@ -3,6 +3,9 @@ package br.ufpa.labes.spm.repository.impl.taskagenda;
 import java.util.Collection;
 import java.util.Iterator;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.impl.BaseDAO;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.IProcessAgendaDAO;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
@@ -13,7 +16,7 @@ import br.ufpa.labes.spm.domain.Task;
 public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Integer> implements IProcessAgendaDAO {
 
   @Autowired
-  TaskRepository taskRepository;
+  private TaskRepository taskRepository;
 
   protected ProcessAgendaDAO(Class<ProcessAgenda> businessClass) {
     super(businessClass);
@@ -50,7 +53,7 @@ public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Integer> implements
       task.setTheProcessAgenda(pAgenda);
       pAgenda.getTheTasks().add(task);
 
-      task = (Task) taskDAO.daoSave(task);
+      task = (Task) taskRepository.save(task);
 
       //
       // System.out.println("Error on save Task: ProcessAgenda.addTask("+

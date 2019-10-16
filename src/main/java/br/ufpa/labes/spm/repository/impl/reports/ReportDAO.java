@@ -20,6 +20,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.interfaces.IReportDAO;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectDAO;
 import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
@@ -64,10 +68,10 @@ public class ReportDAO implements IReportDAO {
   private EntityManager em;
 
   @Autowired
-  ProjectRepository Repository;
+  private ProjectRepository projectRepository;
 
   @Autowired
-  ProcessRepository processRepository;
+  private ProcessRepository processRepository;
 
   @Override
   public List<Object[]> getAgentsReportData(LocalDate atDate) {
@@ -374,8 +378,8 @@ public class ReportDAO implements IReportDAO {
 
     List<Object[]> result = new ArrayList<Object[]>();
 
-    if (projectIdent != null) projects.add((Project) dao.retrieveBySecondaryKey(projectIdent));
-    else projects.addAll(dao.findAll());
+    if (projectIdent != null) projects.add((Project) projectRepository.retrieveBySecondaryKey(projectIdent));
+    else projects.addAll(projectRepository.findAll());
 
     if (projects.isEmpty()) return result;
 
@@ -556,7 +560,7 @@ public class ReportDAO implements IReportDAO {
     public OrderByPlannedBegin(String process) { // create cache of activities
       /*try {
       	ProcessDAO pDao = new ProcessDAO();
-      	processModels.classes.Process p = (Process) pDao.findBySecondaryKey(process);
+      	processModels.classes.Process p = (Process) pRepository.findBySecondaryKey(process);
 
       	build(p.getTheProcessModel());
       } catch (DAOException e) {
@@ -1153,7 +1157,7 @@ public class ReportDAO implements IReportDAO {
 
   @Override
   public List<Object[]> getScheduleData(String processIdent) {
-    Process process = processDAO.retrieveBySecondaryKey(processIdent);
+    Process process = processRepository.retrieveBySecondaryKey(processIdent);
     ProcessModel model = process.getTheProcessModel();
 
     List<Activity> activities = getActivitiesFromPModelOrderedByPlannedBegin(processIdent, model);
@@ -1168,7 +1172,7 @@ public class ReportDAO implements IReportDAO {
     List<String> criticalPathActs;
     try {
 
-      criticalPathActs = criticalPath.getCriticalPath(processIdent, processDAO);
+      criticalPathActs = criticalPath.getCriticalPath(processIdent, processRepository);
       if (criticalPathActs == null) criticalPathActs = new ArrayList<String>();
 
       for (Activity activity : activities) {
@@ -1297,7 +1301,7 @@ public class ReportDAO implements IReportDAO {
 
   @Override
   public List<Object[]> getDocumentManagementPlanData(String processIdent) {
-    Process process = processDAO.retrieveBySecondaryKey(processIdent);
+    Process process = processRepository.retrieveBySecondaryKey(processIdent);
     ProcessModel model = process.getTheProcessModel();
 
     List<Activity> activities = getActivitiesFromPModelOrderedByPlannedBegin(processIdent, model);
@@ -1676,7 +1680,7 @@ public class ReportDAO implements IReportDAO {
 
   @Override
   public List<Object[]> getWorkBreakdownStructureData(String processIdent) {
-    Process process = processDAO.retrieveBySecondaryKey(processIdent);
+    Process process = processRepository.retrieveBySecondaryKey(processIdent);
     ProcessModel model = process.getTheProcessModel();
 
     List<Activity> activities = getActivitiesFromPModelOrderedByPlannedBegin(processIdent, model);

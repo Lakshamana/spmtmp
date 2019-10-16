@@ -12,8 +12,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
+import br.ufpa.labes.spm.repository.ProcessRepository;
 import br.ufpa.labes.spm.exceptions.DAOException;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Decomposed;
@@ -32,8 +33,8 @@ import br.ufpa.labes.spm.domain.Connection;
 
 public class CriticalPathMethod {
 
-@Autowired
-	ProcessRepository processRepository;
+  @Autowired
+	private ProcessRepository processRepository;
 
 	private String processIdent;
 
@@ -49,9 +50,9 @@ public class CriticalPathMethod {
 		List<String> ret = new LinkedList<String>();
 
 		this.processIdent = procIdent;
-		System.out.println("dao: " + processDAO);
+		System.out.println("dao: " + processRepository);
 		System.out.println("ident: " + procIdent);
-		Process proc = (Process) processDAO.retrieveBySecondaryKey(this.processIdent);
+		Process proc = (Process) processRepository.retrieveBySecondaryKey(this.processIdent);
 		ProcessModel pModel = proc.getTheProcessModel();
 
 		this.mapActivitiesFromProcessModel(pModel);
@@ -85,13 +86,13 @@ public class CriticalPathMethod {
 	}
 
 	// m�todo criado pois o processDao estava null e pra n�o mexer no m�todo acima
-	public List<String> getCriticalPath(String procIdent, IProcessDAO processDAO) throws DAOException{
+	public List<String> getCriticalPath(String procIdent, ProcessRepository processRepository) throws DAOException{
 		List<String> ret = new LinkedList<String>();
 
 		this.processIdent = procIdent;
-		System.out.println("dao: " + processDAO);
+		System.out.println("dao: " + processRepository);
 		System.out.println("ident: " + procIdent);
-		Process proc = (Process) processDAO.retrieveBySecondaryKey(this.processIdent);
+		Process proc = (Process) processRepository.retrieveBySecondaryKey(this.processIdent);
 		ProcessModel pModel = proc.getTheProcessModel();
 
 		this.mapActivitiesFromProcessModel(pModel);

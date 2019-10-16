@@ -15,9 +15,9 @@ import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
 import br.ufpa.labes.spm.repository.ArtifactRepository;
+import br.ufpa.labes.spm.repository.ArtifactTypeRepository;
 import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.TypeRepository;
-import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectDAO;
 import br.ufpa.labes.spm.repository.interfaces.types.IArtifactTypeDAO;
 import br.ufpa.labes.spm.repository.interfaces.types.ITypeDAO;
@@ -42,14 +42,14 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	private static final String ARTIFACT_CLASS_NAME = Artifact.class.getSimpleName();
 
-@Autowired
+  @Autowired
 	ArtifactRepository artifactRepository;
 
-@Autowired
+  @Autowired
 	ProjectRepository projectRepository;
 
-@Autowired
-	TypeRepository typeRepository;
+  @Autowired
+	ArtifactTypeRepository artifactTypeRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -63,7 +63,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 		List<Type> typesLists = new ArrayList<Type>();
 
 		hql = "from " + ArtifactType.class.getSimpleName();
-		query = typeRepository.getPersistenceContext().createQuery(hql);
+		query = artifactTypeRepository.getPersistenceContext().createQuery(hql);
 		typesLists = query.getResultList();
 
 		TypesDTO typesDTO = new TypesDTO(typesLists.size());
@@ -129,13 +129,13 @@ public class ArtifactServicesImpl implements ArtifactServices {
 				if(artifact == null) {
 					artifact = (Artifact) converter.getEntity(artifactDTO, Artifact.class);
 					artifact.setTheArtifactType(artifactType);
-					artifactDAO.daoSave(artifact);
+					artifactRepository.daoSave(artifact);
 
 					String newIdent = artifactRepository.generateIdent(artifact.getName(), artifact);
 					System.out.println("new ident: " + newIdent);
 					artifact.setIdent(newIdent);
 					artifactDTO.setIdent(newIdent);
-					artifactDAO.update(artifact);
+					artifactRepository.update(artifact);
 
 				} else {
 					artifact.setName(artifactDTO.getName());
@@ -156,7 +156,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 				}											  //anteriormente, pra salvar
 				artifact.setPossesses(null);					  //somente as novas
 
-//				artifactDAO.update(artifact);
+//				artifactRepository.update(artifact);
 
 				artifact.setPossesses(possess.stream().collect(Collectors.toSet()));
 				artifact.setDerivedTos(derivedTo.stream().collect(Collectors.toSet()));
@@ -166,7 +166,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 				this.updateArtifacts(possess);
 				this.updateArtifacts(derivedTo);
 
-				artifactDAO.update(artifact);
+				artifactRepository.update(artifact);
 
 			} catch (ImplementationException e) {
 				e.printStackTrace();
@@ -331,7 +331,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 			this.updateArtifacts(possess);
 			this.updateArtifacts(derivedTo);
 
-			artifactDAO.getPersistenceContext().remove(artifact);
+			artifactRepository.getPersistenceContext().remove(artifact);
 			return true;
 		}
 
@@ -340,7 +340,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 
 	private void updateArtifacts(Collection<Artifact> possess) {
 		for (Artifact artifact : possess) {
-			artifactDAO.update(artifact);
+			artifactRepository.update(artifact);
 		}
 	}
 
