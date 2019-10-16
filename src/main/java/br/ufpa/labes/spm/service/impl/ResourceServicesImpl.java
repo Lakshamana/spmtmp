@@ -9,11 +9,13 @@ import java.util.stream.Collectors;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
-import br.ufpa.labes.spm.repository.interfaces.resources.IResourceDAO;
-import br.ufpa.labes.spm.repository.interfaces.types.IResourceTypeDAO;
+import br.ufpa.labes.spm.repository.ResourceRepository;
+import br.ufpa.labes.spm.repository.ResourceTypeRepository;
 import br.ufpa.labes.spm.service.dto.ResourceDTO;
 import br.ufpa.labes.spm.service.dto.ResourcesDTO;
 import br.ufpa.labes.spm.service.dto.TypesDTO;
@@ -27,11 +29,11 @@ public class ResourceServicesImpl implements ResourceServices{
 
 	private static final String RESOURCE_CLASS_NAME = Resource.class.getSimpleName();
 
-@Autowired
-	ResourceRepository resourceRepository;
+  @Autowired
+	private ResourceRepository resourceRepository;
 
-@Autowired
-	ResourceTypeRepository resourceTypeRepository;
+  @Autowired
+	private ResourceTypeRepository resourceTypeRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -39,7 +41,7 @@ public class ResourceServicesImpl implements ResourceServices{
 
 	@Override
 	public ResourceDTO getResource(String resourceIdent) {
-		Resource resource = resourceDAO.retrieveBySecondaryKey(resourceIdent);
+		Resource resource = resourceRepository.retrieveBySecondaryKey(resourceIdent);
 		ResourceDTO dto = this.convertResourceToResourceDTO(resource);
 		return dto;
 	}
@@ -48,7 +50,7 @@ public class ResourceServicesImpl implements ResourceServices{
 	public ResourcesDTO getResources() {
 		String hql;
 			hql = "select resource from " + RESOURCE_CLASS_NAME + " as resource";
-		TypedQuery<Resource> query = resourceDAO.getPersistenceContext().createQuery(hql, Resource.class);
+		TypedQuery<Resource> query = resourceRepository.getPersistenceContext().createQuery(hql, Resource.class);
 		List<Resource> resources = query.getResultList();
 
 		return this.convertResourcesToResourcesDTO(resources);
@@ -63,13 +65,13 @@ public class ResourceServicesImpl implements ResourceServices{
 		String hql;
 		if(domainFilter != null) {
 			hql = "select res from " + RESOURCE_CLASS_NAME + " as res where res.name like :termo and res.ident = :domain" + activeFilter;
-			query = resourceDAO.getPersistenceContext().createQuery(hql);
+			query = resourceRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("termo", "%"+ termoBusca + "%");
 			query.setParameter("domain", domainFilter);
 
 		} else {
 			hql = "select res from " + RESOURCE_CLASS_NAME + " as res where res.name like :termo" + activeFilter;
-			query = resourceDAO.getPersistenceContext().createQuery(hql);
+			query = resourceRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("termo", "%"+ termoBusca + "%");
 
 		}
@@ -90,7 +92,7 @@ public class ResourceServicesImpl implements ResourceServices{
 	@Override
 	public Resource getResourceFromName(String resourceName) {
 		String hql = "select o from " + RESOURCE_CLASS_NAME + " o where o.name = :name";
-		query = resourceDAO.getPersistenceContext().createQuery(hql);
+		query = resourceRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", resourceName);
 
 		return (Resource) query.getResultList().get(0);
@@ -100,7 +102,7 @@ public class ResourceServicesImpl implements ResourceServices{
 		List<Resource> resources = new ArrayList<Resource>();
 		for(String ident : resourcesIdents) {
 //			resources.add(this.getResourceFromName(name));
-			resources.add(resourceDAO.retrieveBySecondaryKey(ident));
+			resources.add(resourceRepository.retrieveBySecondaryKey(ident));
 		}
 
 		return resources;
@@ -110,9 +112,9 @@ public class ResourceServicesImpl implements ResourceServices{
 	public ResourceDTO saveResource(ResourceDTO resourceDTO) {
 		System.out.println("aqui " + resourceDTO);
 		try {
-			ResourceType resourceType = resourceTypeDAO.retrieveBySecondaryKey(resourceDTO.getTheResourceType());
+			ResourceType resourceType = resourceTypeRepository.retrieveBySecondaryKey(resourceDTO.getTheResourceType());
 			Resource resource = null;
-			Resource belongsTo = resourceDAO.retrieveBySecondaryKey(resourceDTO.getBelongsTo());
+			Resource belongsTo = resourceRepository.retrieveBySecondaryKey(resourceDTO.getBelongsTo());
 			System.out.println("no impl");
 			for (String requiresDTO : resourceDTO.getRequires()) {
 				System.out.println("requires: " + requiresDTO);
@@ -123,7 +125,7 @@ public class ResourceServicesImpl implements ResourceServices{
 			}
 
 			String hql = "SELECT o FROM " + RESOURCE_CLASS_NAME + " o WHERE o.name = '" + resourceDTO.getName() + "'";
-			query = resourceDAO.getPersistenceContext().createQuery(hql);
+			query = resourceRepository.getPersistenceContext().createQuery(hql);
 			if(query.getResultList().size() == SINGLE_RESULT) {
 				resource = (Resource) query.getSingleResult();
 			}
@@ -131,12 +133,12 @@ public class ResourceServicesImpl implements ResourceServices{
 				resource = (Resource) converter.getEntity(resourceDTO, Resource.class);
 				resource.setTheResourceType(resourceType);
 				resource.setBelongsTo(belongsTo);
-				resourceDAO.daoSave(resource);
+				resourceRepository.daoSave(resource);
 
-				String newIdent = resourceDAO.generateIdent(resource.getName(), resource);
+				String newIdent = resourceRepository.generateIdent(resource.getName(), resource);
 				resource.setIdent(newIdent);
 				resourceDTO.setIdent(newIdent);
-				resourceDAO.update(resource);
+				resourceRepository.update(resource);
 			} else {
 				resource.setName(resourceDTO.getName());
 				resource.setTheResourceType(resourceType);
@@ -152,7 +154,7 @@ public class ResourceServicesImpl implements ResourceServices{
 			}
 			resource.setRequires(requires.stream().collect(Collectors.toSet()));
 
-			resourceDAO.update(resource);
+			resourceRepository.update(resource);
 		} catch (ImplementationException e) {
 			e.printStackTrace();
 		}
@@ -163,10 +165,10 @@ public class ResourceServicesImpl implements ResourceServices{
 	@Override
 	public Boolean removeResource(ResourceDTO resourceDTO) throws SQLException {
 
-		Resource resource = resourceDAO.retrieveBySecondaryKey(resourceDTO.getIdent());
+		Resource resource = resourceRepository.retrieveBySecondaryKey(resourceDTO.getIdent());
 		System.out.println("aqui " + resource);
 		if (resource != null){
-			resourceDAO.daoDelete(resource);
+			resourceRepository.daoDelete(resource);
 			return true;
 		}
 		else return false;
@@ -179,7 +181,7 @@ public class ResourceServicesImpl implements ResourceServices{
 		List<Type> typesLists = new ArrayList<Type>();
 
 		hql = "from " + ResourceType.class.getSimpleName();
-		query = resourceTypeDAO.getPersistenceContext().createQuery(hql);
+		query = resourceTypeRepository.getPersistenceContext().createQuery(hql);
 		typesLists = query.getResultList();
 
 		TypesDTO typesDTO = new TypesDTO(typesLists.size());
@@ -229,7 +231,7 @@ public class ResourceServicesImpl implements ResourceServices{
 		ResourceDTO resourceDTO = new ResourceDTO();
 
 		String hql = "select resource from " + RESOURCE_CLASS_NAME + " as resource where resource.name = '" + resourceName + "'";
-		query = resourceDAO.getPersistenceContext().createQuery(hql);
+		query = resourceRepository.getPersistenceContext().createQuery(hql);
 		if(!query.getResultList().isEmpty()) {
 			Resource resource = (Resource) query.getResultList().get(0);
 			resource.setRequires(null);
@@ -255,7 +257,7 @@ public class ResourceServicesImpl implements ResourceServices{
 	@Override
 	public ResourcesDTO getRequiresResources(String resourceName) {
 		String hql = "select o.requires from " + RESOURCE_CLASS_NAME + " o where o.name = :name";
-		query = resourceDAO.getPersistenceContext().createQuery(hql);
+		query = resourceRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", resourceName);
 
 		List<Resource> resultado = query.getResultList();

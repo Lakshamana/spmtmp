@@ -22,8 +22,42 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.ufpa.labes.spm.beans.editor.WebAPSEENodePosition;
 import br.ufpa.labes.spm.repository.ActivityRepository;
+import br.ufpa.labes.spm.repository.AgentRepository;
+import br.ufpa.labes.spm.repository.ArtifactConRepository;
+import br.ufpa.labes.spm.repository.ArtifactRepository;
+import br.ufpa.labes.spm.repository.ArtifactTypeRepository;
+import br.ufpa.labes.spm.repository.AutomaticRepository;
+import br.ufpa.labes.spm.repository.BranchConCondToActivityRepository;
+import br.ufpa.labes.spm.repository.BranchConCondToMultipleConRepository;
+import br.ufpa.labes.spm.repository.BranchConRepository;
+import br.ufpa.labes.spm.repository.ConnectionRepository;
+import br.ufpa.labes.spm.repository.ConsumableRepository;
+import br.ufpa.labes.spm.repository.DecomposedRepository;
+import br.ufpa.labes.spm.repository.GraphicCoordinateRepository;
+import br.ufpa.labes.spm.repository.InvolvedArtifactRepository;
+import br.ufpa.labes.spm.repository.JoinConRepository;
+import br.ufpa.labes.spm.repository.MultipleConRepository;
+import br.ufpa.labes.spm.repository.NormalRepository;
+import br.ufpa.labes.spm.repository.ParameterRepository;
+import br.ufpa.labes.spm.repository.ProcessAgendaRepository;
+import br.ufpa.labes.spm.repository.ProcessModelRepository;
+import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.ReqAgentRepository;
+import br.ufpa.labes.spm.repository.ReqWorkGroupRepository;
+import br.ufpa.labes.spm.repository.RequiredResourceRepository;
+import br.ufpa.labes.spm.repository.ResourceRepository;
+import br.ufpa.labes.spm.repository.ResourceTypeRepository;
+import br.ufpa.labes.spm.repository.RoleRepository;
+import br.ufpa.labes.spm.repository.SimpleConRepository;
+import br.ufpa.labes.spm.repository.SubroutineRepository;
+import br.ufpa.labes.spm.repository.TaskRepository;
+import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
+import br.ufpa.labes.spm.repository.WorkGroupRepository;
+import br.ufpa.labes.spm.repository.WorkGroupTypeRepository;
 import br.ufpa.labes.spm.repository.impl.activities.DecomposedDAO;
 import br.ufpa.labes.spm.repository.impl.plainActivities.NormalDAO;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessDAO;
@@ -119,80 +153,111 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	private Properties allActs;
 	private Properties allConns;
 
-	EnactmentEngineLocal enactmentLocal;
-	ICalendarDAO calendarioDTO;
-	DynamicModeling dynamicModeling;
-@Autowired
-	ProcessRepository procRepository;
-	NotificationServices remote;
-@Autowired
-	DecomposedRepository decRepository;
-	ActivityRepository activityRepository;
-@Autowired
-	NormalRepository normRepository;
-@Autowired
-	IAutomatcRepository autoRepository;
-@Autowired
-	IArtfactRepository artRepository;
-@Autowired
-	IInvolvedArtfactsRepository involvedRepository;
-@Autowired
-	IGraphicCoordnateRepository coordRepository;
-@Autowired
-	ProcessModelRepository pmodelRepository;
-@Autowired
-	ISubroutneRepository subRepository;
-@Autowired
-	ParameterRepository paramRepository;
-@Autowired
-	IArtfactConRepository artConRepository;
-@Autowired
-	IArtfactTypeRepository artTypeRepository;
-@Autowired
-	IInvolvedArtfactsRepository invArtRepository;
-@Autowired
-	IMultpleConRepository multiRepository;
-@Autowired
-	IConnectonRepository conRepository;
-@Autowired
-	IBranchConCondToMultpleConRepository bctmcRepository;
-@Autowired
-	IJonConRepository joinConRepository;
-@Autowired
-	BranchConRepository branchConRepository;
-@Autowired
-	WorkGroupTypeRepository WorkGroupTypeRepository;
-@Autowired
-	RoleRepository roleRepository;
-@Autowired
-	ReqAgentRepository reqAgentRepository;
-@Autowired
-	AgentRepository agentRepository;
-@Autowired
-	TaskRepository taskRepository;
-@Autowired
-	WorkGroupRepository WorkGroupRepository;
-@Autowired
-	ReqWorkGroupRepository reqWorkGroupRepository;
-@Autowired
-	ResourceTypeRepository resTypeRepository;
-@Autowired
-	IRequredResourceRepository reqResRepository;
-@Autowired
-	ResourceRepository resRepository;
-@Autowired
-	ConsumableRepository consumableRepository;
-@Autowired
-	IBranchConCondToActivtyRepository branchConCondToActivityRepository;
-@Autowired
-	ISmpleConRepository simpleRepository;
-@Autowired
-	ProcessAgendaRepository pAgendaRepository;
-@Autowired
-	WebAPSEEObjectRepository webAPSEEObjRepository;
-@Autowired
-	IGraphicCoordnateRepository grapRepository;
+	// EnactmentEngineLocal enactmentLocal;
 
+  ICalendarDAO calendarioDTO;
+
+  DynamicModeling dynamicModeling;
+
+  @Autowired
+	private ProcessRepository procRepository;
+	NotificationServices remote;
+
+  @Autowired
+  private DecomposedRepository decRepository;
+
+  @Autowired
+	private ActivityRepository activityRepository;
+
+  @Autowired
+	private NormalRepository normRepository;
+
+  @Autowired
+	private AutomaticRepository autoRepository;
+
+  @Autowired
+	private ArtifactRepository artRepository;
+
+  @Autowired
+	private InvolvedArtifactRepository involvedRepository;
+
+  @Autowired
+	private GraphicCoordinateRepository coordRepository;
+
+  @Autowired
+	private ProcessModelRepository pmodelRepository;
+
+  @Autowired
+	private SubroutineRepository subRepository;
+
+  @Autowired
+	private ParameterRepository paramRepository;
+
+  @Autowired
+	private ArtifactConRepository artConRepository;
+
+  @Autowired
+  private ArtifactTypeRepository artTypeRepository;
+
+  @Autowired
+	private MultipleConRepository multiRepository;
+
+  @Autowired
+  private ConnectionRepository conRepository;
+
+  @Autowired
+	private BranchConCondToMultipleConRepository bctmcRepository;
+
+  @Autowired
+  private JoinConRepository joinConRepository;
+
+  @Autowired
+	private BranchConRepository branchConRepository;
+
+  @Autowired
+  private WorkGroupTypeRepository WorkGroupTypeRepository;
+
+  @Autowired
+	RoleRepository roleRepository;
+
+  @Autowired
+	ReqAgentRepository reqAgentRepository;
+
+  @Autowired
+	AgentRepository agentRepository;
+
+  @Autowired
+	TaskRepository taskRepository;
+
+  @Autowired
+	WorkGroupRepository WorkGroupRepository;
+
+  @Autowired
+	ReqWorkGroupRepository reqWorkGroupRepository;
+
+  @Autowired
+  ResourceTypeRepository resTypeRepository;
+
+  @Autowired
+  private RequiredResourceRepository reqResRepository;
+
+  @Autowired
+  private ResourceRepository resRepository;
+
+  @Autowired
+	private ConsumableRepository consumableRepository;
+
+  @Autowired
+	private BranchConCondToActivityRepository branchConCondToActivityRepository;
+
+  @Autowired
+	private SimpleConRepository simpleConRepository;
+
+  @Autowired
+	private ProcessAgendaRepository pAgendaRepository;
+
+  @Autowired
+	private WebAPSEEObjectRepository webAPSEEObjRepository;
 
 	private Date newBeginDate;
 
@@ -267,12 +332,12 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 				ok = false;
 
 				if(webAPSEENodePosition.getNodeType()==WebAPSEENodePosition.ACTIVITYNODE){
-          Activity act = (Activity) actDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
+          Activity act = (Activity) activityRepository.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
 					if(act!=null){
 						theReferredOid = act.getId();
 						className = act.getClass().getSimpleName();
 						ok = true;
-						webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+						webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 					}
 
 				} else if (webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.ARTIFACTCONNODE
@@ -280,34 +345,34 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 						|| webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.JOINNODE
 						|| webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.SEQUENCENODE) {
 
-					Connection con = (Connection) conDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
+					Connection con = (Connection) conRepository.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
 					if(!webAPSEENodePosition.getTheReferredObjects().isEmpty()) {
 
 						List<String> objs = (List<String>) webAPSEENodePosition.getTheReferredObjects();
 
 						con = new Connection();
 
-						con=(Connection) conDAO.retrieveBySecondaryKey(objs.get(0));
+						con=(Connection) conRepository.retrieveBySecondaryKey(objs.get(0));
 						System.out.print("aqui: "+con);
 					}
 
-					con = (Connection) conDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
+					con = (Connection) conRepository.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
 					if(con!=null){
 						System.out.print("com n�o nula: ");
 						theReferredOid = con.getId();
 						className = con.getClass().getSimpleName();
 						ok = true;
-						webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+						webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 					}
 
 					if (webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.ARTIFACTCONNODE) {
-						con = (Connection) conDAO.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
+						con = (Connection) conRepository.retrieveBySecondaryKey(webAPSEENodePosition.getInstanceID());
 						ArtifactCon artifactCon = (ArtifactCon) con;
 						System.out.println("ArtifactCon: " + artifactCon);
 						ok = true;
 						theReferredOid = artifactCon.getId();
 						className = artifactCon.getClass().getSimpleName();
-						webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+						webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 					}
 
 				}else if(webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.REQAGENTNODE){
@@ -319,14 +384,14 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 						theReferredObjs.toArray(normals);
 						String normal = normals[0];
 
-						ReqAgent reqAg = (ReqAgent) reqAgentDAO.findReqAgentFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
+						ReqAgent reqAg = (ReqAgent) reqAgentRepository.findReqAgentFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
 						if(reqAg!=null){
 //							System.out.println("caiu no ref id: "+reqAg.getId());
 
 							theReferredOid = reqAg.getId();
 							className = reqAg.getClass().getSimpleName();
 							ok = true;
-							webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+							webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 						}
 					}
 				}else if(webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.REQGROUPNODE){
@@ -336,12 +401,12 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 						theReferredObjs.toArray(normals);
 						String normal = normals[0];
 
-						ReqWorkGroup reqWorkGroup = (ReqWorkGroup) reqWorkGroupDAO.findReqWorkGroupFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
+						ReqWorkGroup reqWorkGroup = (ReqWorkGroup) reqWorkGroupRepository.findReqWorkGroupFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
 						if(reqWorkGroup!=null){
 							theReferredOid = reqWorkGroup.getId();
 							className = reqWorkGroup.getClass().getSimpleName();
 							ok = true;
-							webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+							webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 						}
 					}
 				}else if(webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.REQRESOURCENODE){
@@ -351,22 +416,22 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 						theReferredObjs.toArray(normals);
 						String normal = normals[0];
 
-						RequiredResource reqRes = (RequiredResource) reqResDAO.findRequiredResourceFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
+						RequiredResource reqRes = (RequiredResource) reqResRepository.findRequiredResourceFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
 						if(reqRes!=null){
 							theReferredOid = reqRes.getId();
 							className = reqRes.getClass().getSimpleName();
 							ok = true;
-							webAPSEEObj = webAPSEEObjDAO.retrieveWebAPSEEObject(theReferredOid, className);
+							webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
 						}
 					}
 				}
 				if(ok){
 					if(webAPSEEObj==null){
 						graphicCoord = updateGraphicCoordinate(webAPSEENodePosition, new GraphicCoordinate(), processIdent);
-						graphicCoord = (GraphicCoordinate) grapDAO.daoSave(graphicCoord);
+						graphicCoord = (GraphicCoordinate) coordRepository.daoSave(graphicCoord);
 						webAPSEEObj = new WebAPSEEObject(theReferredOid, className, graphicCoord);
 						System.out.println("caiu no ok"+webAPSEEObj.getTheReferredOid());
-						webAPSEEObjDAO.daoSave(webAPSEEObj);
+						webAPSEEObjRepository.daoSave(webAPSEEObj);
 
 
 					}else{
@@ -379,7 +444,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 							System.out.println(webAPSEEObj.getTheGraphicCoordinate().getY());
 						//}
 						graphicCoord = updateGraphicCoordinate(webAPSEENodePosition, webAPSEEObj.getTheGraphicCoordinate(), processIdent);
-						grapDAO.update(graphicCoord);
+						coordRepository.update(graphicCoord);
 					}
 				}
 			}
@@ -421,10 +486,10 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 		StringTokenizer st = new StringTokenizer(level_to_copy, "."); //$NON-NLS-1$
 // 		String process_id = st.nextToken();
 
-// 		procDAO.getPersistenceContext().getTransaction().begin();
+// 		procRepository.getPersistenceContext().getTransaction().begin();
 
 // 		Object proc;
-// 		proc = procDAO.retrieveBySecondaryKey(process_id);
+// 		proc = procRepository.retrieveBySecondaryKey(process_id);
 
 // 		if (proc == null)
 // 			try {
@@ -439,7 +504,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 // 		ProcessModel pmodel = null;
 
-// 		decDAO.getPersistenceContext().getTransaction().begin();
+// 		decRepository.getPersistenceContext().getTransaction().begin();
 
 // 		Decomposed actDecomposed = null; // it is used only if the new activity
 // 											// Is not in the root process model.
@@ -449,7 +514,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 				currentModel += "." + st.nextToken(); //$NON-NLS-1$
 // 			}
 // 			Object dec = null;
-// 			dec = decDAO.retrieveBySecondaryKey(currentModel);
+// 			dec = decRepository.retrieveBySecondaryKey(currentModel);
 
 // 			if (dec == null)
 // 				try {
@@ -468,7 +533,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 		}
 
 // 		Object act;
-// 		act = actDAO.retrieveBySecondaryKey(act_id);
+// 		act = activityRepository.retrieveBySecondaryKey(act_id);
 
 // 		if (act == null)
 // 			try {
@@ -568,8 +633,8 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 					}
 
 // 					// Persistence Operations
-// 					procDAO.update(process);
-// 					procDAO.getPersistenceContext().getTransaction().commit();
+// 					procRepository.update(process);
+// 					procRepository.getPersistenceContext().getTransaction().commit();
 // 					this.activitiesTable.clear();
 
 // //					this.saveCoordinates(coordinates);
@@ -578,7 +643,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 				} else {
 // 					this.activitiesTable.clear();
 
-// 					// BaseDAO.closeSession(currentSession);
+// 					// BaseRepository.closeSession(currentSession);
 // 					try {
 // 						throw new ModelingException("Process Model not ready to receive copies. It has already been concluded!");
 // 					} catch (ModelingException e) {
@@ -589,7 +654,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 			} else {
 // 				this.activitiesTable.clear();
 
-// 				// BaseDAO.closeSession(currentSession);
+// 				// BaseRepository.closeSession(currentSession);
 // 				try {
 // 					throw new ModelingException("Process " + process_id + " not ready to receive copies. It has already been concluded!");
 // 				} catch (ModelingException e) {
@@ -672,8 +737,8 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 				}
 
 // 				// Persistence Operations
-// 				procDAO.update(process);
-// 				procDAO.getPersistenceContext().getTransaction().commit();
+// 				procRepository.update(process);
+// 				procRepository.getPersistenceContext().getTransaction().commit();
 // 				this.activitiesTable.clear();
 
 // //				this.saveCoordinates(coordinates);
@@ -711,7 +776,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 		String process_id = st.nextToken();
 
 		Object proc;
-		proc = procDAO.retrieveBySecondaryKey(process_id);
+		proc = procRepository.retrieveBySecondaryKey(process_id);
 
 		if (proc == null)
 			try {
@@ -734,7 +799,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 				currentModel += "." + st.nextToken(); //$NON-NLS-1$
 			}
 			Object dec = null;
-			dec = decDAO.retrieveBySecondaryKey(currentModel);
+			dec = decRepository.retrieveBySecondaryKey(currentModel);
 
 			if (dec == null)
 				try {
@@ -757,7 +822,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 		for (int i = 0; i < act_ids.length; i++) {
 			String act_id = act_ids[i];
-			acts[i] = (Activity) actDAO.retrieveBySecondaryKey(act_id);
+			acts[i] = (Activity) activityRepository.retrieveBySecondaryKey(act_id);
 
 			if (acts[i] == null) {
 
@@ -778,7 +843,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 		for (int i = 0; i < cons_ids.length; i++) {
 			String con_id = cons_ids[i];
-			cons[i] = (Connection) conDAO.retrieveBySecondaryKey(con_id);
+			cons[i] = (Connection) conRepository.retrieveBySecondaryKey(con_id);
 
 			if (cons[i] == null) {
 
@@ -837,7 +902,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 					// pmodel.insertIntoTheConnection(newConnections);
 
 					// Peristence Operations
-					procDAO.update(process);
+					procRepository.update(process);
 					this.activitiesTable.clear();
 				} else {
 
@@ -888,7 +953,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 				// pmodel.insertIntoTheConnection(newConnections);
 
 				// Peristence Operations
-				procDAO.update(process);
+				procRepository.update(process);
 				this.activitiesTable.clear();
 			} else {
 
@@ -1043,7 +1108,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	// 	Normal normal = new Normal();
 	// 	Decomposed decomposed =  new Decomposed();
 
-	// 	Object tipo = actDAO.retrieveBySecondaryKey(act_id);
+	// 	Object tipo = activityRepository.retrieveBySecondaryKey(act_id);
 	// if(tipo instanceof Normal){
 	// 	normal =(Normal) tipo;
 
@@ -1092,7 +1157,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	// 		Decomposed upperDecomposed = normal.getTheProcessModel().getTheDecomposed();
 	// 		this.upperPropagation(upperDecomposed, normal,replanningDates);
 
-	// 		actDAO.update(normal);
+	// 		activityRepository.update(normal);
 
 
 
@@ -2839,7 +2904,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	public void applyAllocationToProcess(String process_id, String role_id, String agent_id) {
 
 
-		SimpleActivityQueryResult[] acts = procDAO.getAllNormalActivitiesFromProcess(process_id);
+		SimpleActivityQueryResult[] acts = procRepository.getAllNormalActivitiesFromProcess(process_id);
 
 		NormalDAO nDAO = new NormalDAO();
 
@@ -2928,7 +2993,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 			// this is not a root process model
 			pm = dec.getTheReferedProcessModel();
 		} else {
-			proc = (Process) procDAO.retrieveBySecondaryKey(pm_id);
+			proc = (Process) procRepository.retrieveBySecondaryKey(pm_id);
 			if (proc != null) {
 				// this is a root process model
 				pm = proc.getTheProcessModel();

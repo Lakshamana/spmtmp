@@ -5,9 +5,15 @@ import java.util.List;
 
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
+import br.ufpa.labes.spm.repository.AgentRepository;
+import br.ufpa.labes.spm.repository.TypeRepository;
+import br.ufpa.labes.spm.repository.WorkGroupRepository;
+import br.ufpa.labes.spm.repository.WorkGroupTypeRepository;
 import br.ufpa.labes.spm.repository.interfaces.agent.IAgentDAO;
 import br.ufpa.labes.spm.repository.interfaces.agent.IWorkGroupDAO;
 import br.ufpa.labes.spm.repository.interfaces.types.IWorkGroupTypeDAO;
@@ -28,17 +34,17 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 	private static final String GROUP_CLASS_NAME = WorkGroup.class.getSimpleName();
 
-@Autowired
-	WorkGroupRepository groupRepository;
+  @Autowired
+	private WorkGroupRepository groupRepository;
 
-@Autowired
-	WorkGroupTypeRepository groupTypeRepository;
+  @Autowired
+	private WorkGroupTypeRepository groupTypeRepository;
 
-@Autowired
-	TypeRepository typeRepository;
+  @Autowired
+	private TypeRepository typeRepository;
 
-@Autowired
-	AgentRepository agenteRepository;
+  @Autowired
+	private AgentRepository agenteRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -51,7 +57,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 		List<Type> typesLists = new ArrayList<Type>();
 
 		hql = "from " + WorkGroupType.class.getSimpleName();
-		query = typeDAO.getPersistenceContext().createQuery(hql);
+		query = typeRepository.getPersistenceContext().createQuery(hql);
 		typesLists = query.getResultList();
 
 		TypesDTO typesDTO = new TypesDTO(typesLists.size());
@@ -70,7 +76,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 	@SuppressWarnings("unchecked")
 	public GroupsDTO getWorkGroups() {
 		String hql = "SELECT group FROM " + GROUP_CLASS_NAME + " as group";
-		query = groupDAO.getPersistenceContext().createQuery(hql);
+		query = groupRepository.getPersistenceContext().createQuery(hql);
 		List<WorkGroup> result = query.getResultList();
 
 		GroupsDTO groupsDTO = this.convertGroupsToGroupsDTO(result);
@@ -84,19 +90,19 @@ public class GroupServicesImpl implements WorkGroupServices {
 	public GroupDTO saveWorkGroup(GroupDTO groupDTO) {
 		WorkGroup group = null;
 		WorkGroup superGroup = this.retrieveGroup(groupDTO.getSuperGroup());
-		WorkGroupType theGroupType = (WorkGroupType) typeDAO.retrieveBySecondaryKey(groupDTO.getTheGroupType());
+		WorkGroupType theGroupType = (WorkGroupType) typeRepository.retrieveBySecondaryKey(groupDTO.getTheGroupType());
 
 //		group = this.retrieveGroup(groupDTO.getName());
-		group = groupDAO.retrieveBySecondaryKey(groupDTO.getIdent());
+		group = groupRepository.retrieveBySecondaryKey(groupDTO.getIdent());
 		if(group != null) {
 			group.setIsActive(groupDTO.isIsActive());
 			group.setDescription(groupDTO.getDescription());
 
 		} else {
 			group = this.convertGroupDTOToGroup(groupDTO);
-			groupDAO.daoSave(group);
+			groupRepository.daoSave(group);
 
-			String newIdent = groupDAO.generateIdent(group.getName(), group);
+			String newIdent = groupRepository.generateIdent(group.getName(), group);
 			group.setIdent(newIdent);
 			groupDTO.setIdent(newIdent);
 		}
@@ -106,7 +112,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 		updateDependencies(groupDTO, group);
 
-		groupDAO.update(group);
+		groupRepository.update(group);
 
 		return groupDTO;
 	}
@@ -120,9 +126,9 @@ public class GroupServicesImpl implements WorkGroupServices {
 			}
 			group.getTheAgents().clear();
 
-			groupDAO.update(group);
+			groupRepository.update(group);
 
-			groupDAO.daoDelete(group);
+			groupRepository.daoDelete(group);
 			return true;
 		}
 
@@ -145,7 +151,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 	@Override
 	public GroupDTO getWorkGroup(String groupIdent) {
 //		WorkGroup result = this.retrieveGroup(groupIdent);
-		WorkGroup result = groupDAO.retrieveBySecondaryKey(groupIdent);
+		WorkGroup result = groupRepository.retrieveBySecondaryKey(groupIdent);
 		GroupDTO groupDTO = null;
 
 		if(result != null) {
@@ -164,12 +170,12 @@ public class GroupServicesImpl implements WorkGroupServices {
 		if(typeFilter != null) {
 			hql = "SELECT group FROM " + GROUP_CLASS_NAME + " AS group " +
 					"WHERE group.name like :name and group.theGroupType.ident = :type" + activeFilter;
-			query = groupDAO.getPersistenceContext().createQuery(hql);
+			query = groupRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("type", typeFilter);
 		} else {
 			hql = "SELECT group FROM " + GROUP_CLASS_NAME + " AS group " +
 					"WHERE group.name like :name" + activeFilter;
-			query = groupDAO.getPersistenceContext().createQuery(hql);
+			query = groupRepository.getPersistenceContext().createQuery(hql);
 		}
 		query.setParameter("name", "%"+ searchTerm + "%");
 
@@ -188,7 +194,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 	@SuppressWarnings("unchecked")
 	public AgentsDTO getAgents() {
 		String hql = "SELECT agent.name FROM " + Agent.class.getSimpleName() + " AS agent";
-		query = agenteDAO.getPersistenceContext().createQuery(hql);
+		query = agenteRepository.getPersistenceContext().createQuery(hql);
 
 		List<String> resultado = query.getResultList();
 		String[] list = new String[resultado.size()];
@@ -205,7 +211,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 	public AgentDTO getAgent(String agentName) {
 		String hql = "SELECT agent FROM " + Agent.class.getSimpleName() + " AS agent WHERE agent.name = :name";
 		query.setParameter("name", agentName);
-		query = agenteDAO.getPersistenceContext().createQuery(hql);
+		query = agenteRepository.getPersistenceContext().createQuery(hql);
 
 		List<Agent> agents = query.getResultList();
 		Agent agent = agents.get(0);
@@ -233,8 +239,8 @@ public class GroupServicesImpl implements WorkGroupServices {
 			group.getTheAgents().remove(agent);
 			agent.getTheWorkGroups().remove(group);
 
-			this.agenteDAO.update(agent);
-			this.groupDAO.update(group);
+			this.agenteRepository.update(agent);
+			this.groupRepository.update(group);
 
 			return true;
 		}
@@ -244,7 +250,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 	private Agent getAgentFromDatabase(String agentName) {
 		String hql = "SELECT agent FROM " + Agent.class.getSimpleName() + " AS agent WHERE agent.name = :name";
-		query = agenteDAO.getPersistenceContext().createQuery(hql);
+		query = agenteRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", agentName);
 
 		List<Agent> agents = query.getResultList();
@@ -255,7 +261,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 	public WorkGroup retrieveGroup(String groupName) {
 		String hql = "SELECT group FROM " + GROUP_CLASS_NAME + " as group where group.name = :name";
-		query = groupDAO.getPersistenceContext().createQuery(hql);
+		query = groupRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", groupName);
 
 		WorkGroup result = null;
