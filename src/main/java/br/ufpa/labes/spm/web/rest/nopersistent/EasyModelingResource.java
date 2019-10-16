@@ -1,4 +1,4 @@
-package br.ufpa.labes.spm.web.rest;
+package br.ufpa.labes.spm.web.rest.nopersistent;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

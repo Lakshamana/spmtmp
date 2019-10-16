@@ -64,41 +64,7 @@ import br.ufpa.labes.spm.repository.impl.activities.DecomposedDAO;
 import br.ufpa.labes.spm.repository.impl.plainActivities.NormalDAO;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessDAO;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelDAO;
-import br.ufpa.labes.spm.repository.interfaces.activities.IActivityDAO;
-import br.ufpa.labes.spm.repository.interfaces.activities.IDecomposedDAO;
-import br.ufpa.labes.spm.repository.interfaces.agent.IAgentDAO;
-import br.ufpa.labes.spm.repository.interfaces.agent.IWorkGroupDAO;
-import br.ufpa.labes.spm.repository.interfaces.agent.IRoleDAO;
-import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
 import br.ufpa.labes.spm.repository.interfaces.calendar.ICalendarDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IArtifactConDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IBranchConCondToActivityDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IBranchConCondToMultipleConDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IBranchConDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IConnectionDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IJoinConDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.IMultipleConDAO;
-import br.ufpa.labes.spm.repository.interfaces.connections.ISimpleConDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IAutomaticDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IInvolvedArtifactsDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.INormalDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IParameterDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqWorkGroupDAO;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredResourceDAO;
-// import br.ufpa.labes.spm.repository.interfaces.policies.staticPolicies.IPolConditionDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IGraphicCoordinateDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IWebAPSEEObjectDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessModelDAO;
-import br.ufpa.labes.spm.repository.interfaces.resources.IConsumableDAO;
-import br.ufpa.labes.spm.repository.interfaces.resources.IResourceDAO;
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.IProcessAgendaDAO;
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
-import br.ufpa.labes.spm.repository.interfaces.tools.ISubroutineDAO;
-import br.ufpa.labes.spm.repository.interfaces.types.IArtifactTypeDAO;
-import br.ufpa.labes.spm.repository.interfaces.types.IWorkGroupTypeDAO;
-import br.ufpa.labes.spm.repository.interfaces.types.IResourceTypeDAO;
 import br.ufpa.labes.spm.service.dto.CalendarDTO;
 import br.ufpa.labes.spm.exceptions.DAOException;
 import br.ufpa.labes.spm.exceptions.ModelingException;
@@ -158,7 +124,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	// EnactmentEngineLocal enactmentLocal;
 
-  ICalendarDAO calendarioDTO;
+  ICalendarDAO calendarDAO;
 
   DynamicModeling dynamicModeling;
 

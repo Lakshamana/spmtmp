@@ -82,47 +82,46 @@ public class AgentServicesImpl implements AgentServices {
 
 	private static final String AGENT_CLASSNAME = Agent.class.getSimpleName();
 
-@Autowired
+  @Autowired
 	AgentRepository agentRepository;
 
-@Autowired
+  @Autowired
 	AbilityRepository abilityRepository;
 
-@Autowired
+  @Autowired
 	RoleRepository roleRepository;
 
-@Autowired
+  @Autowired
 	RoleTypeRepository roleTypeRepository;
 
-@Autowired
+  @Autowired
   RoleNeedsAbilityRepository roleNeedsRepository;
 
-
-@Autowired
+  @Autowired
 	AgentPlaysRoleRepository agentPlaysRoleRepository;
 
-@Autowired
+  @Autowired
 	AgentHasAbilityRepository agentHasAbilityRepository;
 
-@Autowired
+  @Autowired
 	AgentAffinityAgentRepository agentAffinityAgentRepository;
 
-@Autowired
-  WorkGroupRepository WorkGroupRepository;
+  @Autowired
+  WorkGroupRepository workGroupRepository;
 
-@Autowired
+  @Autowired
 	SpmConfigurationRepository confiRepository;
 
-@Autowired
+  @Autowired
 	ProcessAgendaRepository processAgendaRepository;
 
-@Autowired
+  @Autowired
   TaskRepository taskRepository;
 
-@Autowired
+  @Autowired
 	TaskAgendaRepository taskAgendaRepository;
 
-@Autowired
+  @Autowired
 	ActivityEstimationRepository activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
@@ -747,7 +746,7 @@ public class AgentServicesImpl implements AgentServices {
 							&& !WorkGroup.getTheAgents().contains(agent)) {
 						agent.getTheWorkGroups().add(WorkGroup);
 						WorkGroup.getTheAgents().add(agent);
-						WorkGroupRepository.update(WorkGroup);
+						workGroupRepository.update(WorkGroup);
 						agentRepository.update(agent);
 					}
 				}
@@ -1067,7 +1066,7 @@ public class AgentServicesImpl implements AgentServices {
 	private WorkGroup getWorkGroupFromName(String WorkGroupName) {
 		String hql = "SELECT WorkGroup FROM " + WorkGroup_CLASSNAME
 				+ " as WorkGroup where WorkGroup.name = :name";
-		query = WorkGroupRepository.getPersistenceContext().createQuery(hql);
+		query = workGroupRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", WorkGroupName);
 
 		WorkGroup result = null;
