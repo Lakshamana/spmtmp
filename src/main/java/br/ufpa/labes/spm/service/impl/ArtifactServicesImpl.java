@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -36,6 +38,8 @@ import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
 
+@Service
+@Transactional
 public class ArtifactServicesImpl implements ArtifactServices {
 
 	private static final int SINGLE_RESULT = 1;

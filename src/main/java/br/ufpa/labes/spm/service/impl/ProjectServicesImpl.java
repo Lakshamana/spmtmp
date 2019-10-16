@@ -38,6 +38,8 @@ import org.jdom2.filter.ElementFilter;
 import org.jdom2.filter.Filter;
 import org.jdom2.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -172,6 +174,8 @@ import br.ufpa.labes.spm.service.interfaces.ProjectServices;
 // import br.ufpa.labes.spm.service.interfaces.ReportServices;
 import br.ufpa.labes.spm.util.UtilReflection;
 
+@Service
+@Transactional
 public class ProjectServicesImpl implements ProjectServices {
 
 	private static final int SINGLE_RESULT = 1;

@@ -23,6 +23,8 @@ import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.beans.editor.WebAPSEENodePosition;
 import br.ufpa.labes.spm.repository.ActivityRepository;
@@ -137,11 +139,12 @@ import br.ufpa.labes.spm.domain.Subroutine;
 import br.ufpa.labes.spm.domain.ToolParameter;
 import br.ufpa.labes.spm.service.interfaces.DynamicModeling;
 import br.ufpa.labes.spm.service.interfaces.EasyModelingServices;
-import br.ufpa.labes.spm.service.interfaces.EnactmentEngineLocal;
 import br.ufpa.labes.spm.service.interfaces.NotificationServices;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 import br.ufpa.labes.spm.util.i18n.Messages;
 
+@Service
+@Transactional
 public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	final int MILLIS_PER_DAY = 1000 * 60 * 60 * 24;
@@ -161,7 +164,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
   @Autowired
   private ProcessRepository procRepository;
-  
+
 	NotificationServices remote;
 
   @Autowired

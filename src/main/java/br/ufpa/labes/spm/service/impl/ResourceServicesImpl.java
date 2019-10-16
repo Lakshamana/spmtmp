@@ -10,6 +10,8 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -24,6 +26,8 @@ import br.ufpa.labes.spm.domain.ResourceType;
 import br.ufpa.labes.spm.domain.Type;
 import br.ufpa.labes.spm.service.interfaces.ResourceServices;
 
+@Service
+@Transactional
 public class ResourceServicesImpl implements ResourceServices{
 	private static final int SINGLE_RESULT = 1;
 

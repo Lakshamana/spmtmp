@@ -10,6 +10,8 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -54,6 +56,8 @@ import br.ufpa.labes.spm.domain.TaskAgenda;
 import br.ufpa.labes.spm.service.interfaces.AgentServices;
 import br.ufpa.labes.spm.util.Md5;
 
+@Service
+@Transactional
 public class AgentServicesImpl implements AgentServices {
 
 	private static final String PROJECT_CLASSNAME = Project.class.getSimpleName();

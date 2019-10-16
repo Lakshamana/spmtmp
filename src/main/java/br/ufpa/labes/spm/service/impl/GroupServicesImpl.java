@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
@@ -30,6 +32,8 @@ import br.ufpa.labes.spm.domain.WorkGroupType;
 import br.ufpa.labes.spm.domain.Type;
 import br.ufpa.labes.spm.service.interfaces.WorkGroupServices;
 
+@Service
+@Transactional
 public class GroupServicesImpl implements WorkGroupServices {
 
 	private static final String GROUP_CLASS_NAME = WorkGroup.class.getSimpleName();
