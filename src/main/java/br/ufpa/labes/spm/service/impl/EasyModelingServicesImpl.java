@@ -124,7 +124,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	// EnactmentEngineLocal enactmentLocal;
 
-  ICalendarDAO calendarDAO;
+  ICalendarRepositoryQuery calendarRepositoryQuery;
 
   DynamicModeling dynamicModeling;
 
@@ -2876,7 +2876,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 		SimpleActivityQueryResult[] acts = procRepository.getAllNormalActivitiesFromProcess(process_id);
 
-		NormalDAO nDAO = new NormalDAO();
+		NormalRepositoryQuery nRepositoryQuery = new NormalRepositoryQuery();
 
 		for (int i = 0; i < acts.length; i++) {
 
@@ -2884,7 +2884,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 			String normal_id = acts[i].getIdent();
 
 			Normal currentNormal = null;
-			currentNormal = (Normal) nDAO.retrieveBySecondaryKey(normal_id);
+			currentNormal = (Normal) nRepositoryQuery.retrieveBySecondaryKey(normal_id);
 
 			if (currentNormal == null)
 				continue;
@@ -2949,12 +2949,12 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	@Override
 	public void applyAllocationToProcessModel(String pm_id, String role_id, String agent_id) {
 
-		ProcessModelDAO pmDAO = new ProcessModelDAO();
+		ProcessModelRepositoryQuery pmRepositoryQuery = new ProcessModelRepositoryQuery();
 
 		ProcessModel pm = null;
 
-		DecomposedDAO dao = new DecomposedDAO();
-		ProcessDAO procDAO = new ProcessDAO();
+		DecomposedRepositoryQuery dao = new DecomposedRepositoryQuery();
+		ProcessRepositoryQuery procRepositoryQuery = new ProcessRepositoryQuery();
 
 		Decomposed dec = null;
 		Process proc = null;

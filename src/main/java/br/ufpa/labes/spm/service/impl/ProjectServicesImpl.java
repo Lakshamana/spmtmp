@@ -226,7 +226,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	TaskRepository taskRepository;
 
   @Autowired
-	ReportDAO reportDAO;
+	ReportRepositoryQuery reportRepositoryQuery;
 
 	// ReportServices reportServices;
 
@@ -3662,7 +3662,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	private Object persistObject(Object obj, String oldIdent){
 
 		String className = obj.getClass().getName();
-		String daoName = className.replace("org.qrconsult.spm.model", "org.qrconsult.spm.dataAccess.impl").concat("DAO");
+		String daoName = className.replace("org.qrconsult.spm.model", "org.qrconsult.spm.dataAccess.impl").concat("RepositoryQuery");
 //		String serviceName = className.replace("org.qrconsult.spm.model", "br.ufpa.labes.spm.service.interfaces").concat("Services");
 
 
@@ -3790,7 +3790,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		if(obj instanceof Connection) ident = element.getChildText("Ident");
 		// Persisting object before establish relationships
 		obj = this.persistObject(obj, ident); // Is it necessary since some objects such as Connection
-											  // (and subclasses) need to be saved by their DAO operations.
+											  // (and subclasses) need to be saved by their RepositoryQuery operations.
 		// Caching objects
 		this.processComponents.put(key, obj);
 
@@ -3864,7 +3864,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 		String className = key.substring(0, key.indexOf("_"));
 		String id = key.substring(key.indexOf("_") + 1, key.length());
-		String daoName = className.replace("org.qrconsult.spm.model", "org.qrconsult.spm.dataAccess.impl").concat("DAO");
+		String daoName = className.replace("org.qrconsult.spm.model", "org.qrconsult.spm.dataAccess.impl").concat("RepositoryQuery");
 //		Object dao = null;
 
 //		try {

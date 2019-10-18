@@ -559,7 +559,7 @@ public class ReportRepositoryQuery implements IReportRepositoryQuery {
 
     public OrderByPlannedBegin(String process) { // create cache of activities
       /*try {
-      	ProcessDAO pDao = new ProcessRepositoryQuery();
+      	ProcessRepositoryQuery pDao = new ProcessRepositoryQuery();
       	processModels.classes.Process p = (Process) pRepository.findBySecondaryKey(process);
 
       	build(p.getTheProcessModel());

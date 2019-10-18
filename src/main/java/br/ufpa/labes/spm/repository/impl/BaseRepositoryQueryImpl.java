@@ -234,7 +234,7 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
   public static void main(String[] args) {
     Agent a = new Agent();
     a.setId(336L);
-    AgentDAO agentDAO = new AgentRepositoryQuery();
+    AgentRepositoryQuery agentRepositoryQuery = new AgentRepositoryQuery();
     System.out.println(
         agentRepositoryQuery.generateIdent(
             "Template - Plano de Gerência de Documentos e Plano de Comunicação", a));

@@ -26,13 +26,13 @@ public final class UtilLabels {
     return cfg_file.getProperty(key);
   }
 
-  public static final String DAO_FIND_OID = "findByPrimaryKey";
-  public static final String DAO_FIND_IDENT = "findBySecondaryKey";
-  public static final String DAO_SAVE = "save";
-  public static final String DAO_DELETE = "delete";
-  public static final String DAO_UPDATE = "update";
-  public static final String DAO_FIND_ALL = "findAll";
-  public static final String DAO_FIND_CRITERIA = "findByCriteria";
+  public static final String RepositoryQuery_FIND_OID = "findByPrimaryKey";
+  public static final String RepositoryQuery_FIND_IDENT = "findBySecondaryKey";
+  public static final String RepositoryQuery_SAVE = "save";
+  public static final String RepositoryQuery_DELETE = "delete";
+  public static final String RepositoryQuery_UPDATE = "update";
+  public static final String RepositoryQuery_FIND_ALL = "findAll";
+  public static final String RepositoryQuery_FIND_CRITERIA = "findByCriteria";
   // ....
 
 }

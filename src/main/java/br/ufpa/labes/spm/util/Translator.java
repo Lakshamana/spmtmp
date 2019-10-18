@@ -6,7 +6,7 @@ public final class Translator {
     return UtilLabels.getPropertie("global." + className).trim();
   }
 
-  public static String getDAOPackageName(String className) {
+  public static String getRepositoryQueryPackageName(String className) {
     return UtilLabels.getPropertie("dao." + className).trim();
   }
 
