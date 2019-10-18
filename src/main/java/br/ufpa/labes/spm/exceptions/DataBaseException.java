@@ -4,7 +4,7 @@
 package br.ufpa.labes.spm.exceptions;
 
 /** @author breno */
-public class DataBaseException extends DAOException {
+public class DataBaseException extends RepositoryQueryException {
 
   public DataBaseException() {
     super();

@@ -5,7 +5,7 @@
 package br.ufpa.labes.spm.exceptions;
 
 /** @author Adailton Lima LABES-UFPA */
-public class DataConnectionException extends DAOException {
+public class DataConnectionException extends RepositoryQueryException {
 
   /** */
   public DataConnectionException() {

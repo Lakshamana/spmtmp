@@ -8,7 +8,7 @@ import br.ufpa.labes.spm.service.dto.AgentsDTO;
 import br.ufpa.labes.spm.service.dto.ArtifactsDTO;
 import br.ufpa.labes.spm.service.dto.ProjectDTO;
 import br.ufpa.labes.spm.service.dto.ProjectsDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 import br.ufpa.labes.spm.domain.Project;
 
@@ -46,7 +46,7 @@ public interface ProjectServices {
 
 	public String exportProcess(String processId, boolean exportArtifactVersions);
 
-	public ProjectDTO executeProcess(String projectName) throws DAOException, WebapseeException;
+	public ProjectDTO executeProcess(String projectName) throws RepositoryQueryException, WebapseeException;
 
 	public AgentsDTO getAgentsFromProjects(String theProcess_oid, Long agent_oid);
 

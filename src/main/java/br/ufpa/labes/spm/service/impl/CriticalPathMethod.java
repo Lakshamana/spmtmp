@@ -15,7 +15,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.ufpa.labes.spm.repository.ProcessRepository;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Decomposed;
 import br.ufpa.labes.spm.domain.BranchCon;
@@ -46,7 +46,7 @@ public class CriticalPathMethod {
 
 	private Date lastFinish = null;
 
-	public List<String> getCriticalPath(String procIdent) throws DAOException{
+	public List<String> getCriticalPath(String procIdent) throws RepositoryQueryException{
 		List<String> ret = new LinkedList<String>();
 
 		this.processIdent = procIdent;
@@ -86,7 +86,7 @@ public class CriticalPathMethod {
 	}
 
 	// m�todo criado pois o processDao estava null e pra n�o mexer no m�todo acima
-	public List<String> getCriticalPath(String procIdent, ProcessRepository processRepository) throws DAOException{
+	public List<String> getCriticalPath(String procIdent, ProcessRepository processRepository) throws RepositoryQueryException{
 		List<String> ret = new LinkedList<String>();
 
 		this.processIdent = procIdent;
@@ -125,7 +125,7 @@ public class CriticalPathMethod {
 		return (isEmpty)? null: ret;
 	}
 
-	private void mapActivitiesFromProcessModel(ProcessModel pModel) throws DAOException {
+	private void mapActivitiesFromProcessModel(ProcessModel pModel) throws RepositoryQueryException {
 		Collection acts = pModel.getTheActivities();
 
 		for (Iterator iterator = acts.iterator(); iterator.hasNext();) {
@@ -192,7 +192,7 @@ public class CriticalPathMethod {
 			}
 		}
 	}
-	private void removeDecomposedActsFromPModel(ProcessModel pModel) throws DAOException {
+	private void removeDecomposedActsFromPModel(ProcessModel pModel) throws RepositoryQueryException {
 		Collection<AuxiliarActivity> allActs = this.tableAct.values();
 
 		for (Iterator iterator = allActs.iterator(); iterator.hasNext();) {
@@ -216,7 +216,7 @@ public class CriticalPathMethod {
 			}
 		}
 	}
-	public Collection<AuxiliarConnection> getActsSucessorsOfAnAct(Activity beforeAct) throws DAOException{
+	public Collection<AuxiliarConnection> getActsSucessorsOfAnAct(Activity beforeAct) throws RepositoryQueryException{
 		Collection<AuxiliarConnection> ret = new HashSet<AuxiliarConnection>();
 
 		Collection connections = this.getConnectionsTo(beforeAct);
@@ -479,7 +479,7 @@ public class CriticalPathMethod {
 		}
 		return pred;
 	}
-	private Collection<Activity> getFirstActsFromPModel(ProcessModel pModel) throws DAOException {
+	private Collection<Activity> getFirstActsFromPModel(ProcessModel pModel) throws RepositoryQueryException {
 		Collection<Activity> ret = new HashSet<Activity>();
 
 		Collection acts = pModel.getTheActivities();
@@ -709,7 +709,7 @@ public class CriticalPathMethod {
 		return (isEmpty)? null: ret;
 	}
 
-	/*private Collection<Activity> getLatestActsFromPModel(ProcessModel pModel) throws DAOException {
+	/*private Collection<Activity> getLatestActsFromPModel(ProcessModel pModel) throws RepositoryQueryException {
 		Collection<Activity> ret = new HashSet<Activity>();
 
 		Collection acts = pModel.getTheActivity();
@@ -749,7 +749,7 @@ public class CriticalPathMethod {
 		return (isEmpty)? null: ret;
 	}*/
 
-	public static void main(String[] args) throws InterruptedException, DAOException {
+	public static void main(String[] args) throws InterruptedException, RepositoryQueryException {
 		CriticalPathMethod cpm = new CriticalPathMethod();
 		List<String> ret = cpm.getCriticalPath("Controle_Acesso");
 

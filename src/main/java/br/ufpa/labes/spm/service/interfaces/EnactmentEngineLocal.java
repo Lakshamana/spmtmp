@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.service.interfaces;
 
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessModel;
@@ -15,7 +15,7 @@ public interface EnactmentEngineLocal {
 
 	public boolean isActivityFinished(Normal act);
 
-	public void finishTask (Normal actNorm) throws WebapseeException, DAOException;
+	public void finishTask (Normal actNorm) throws WebapseeException, RepositoryQueryException;
 
 	public void createTasks(ProcessModel procModel) throws WebapseeException;
 
@@ -24,7 +24,7 @@ public interface EnactmentEngineLocal {
 
 
 
-	public void executeProcess (String process_id) throws WebapseeException, DAOException;
+	public void executeProcess (String process_id) throws WebapseeException, RepositoryQueryException;
 
 	/**
 	 * This method is called by the Process Manager to fail an Activity. It will

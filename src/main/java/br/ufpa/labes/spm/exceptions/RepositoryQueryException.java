@@ -5,24 +5,24 @@
 package br.ufpa.labes.spm.exceptions;
 
 /** @author root */
-public class DAOException extends WebapseeException {
+public class RepositoryQueryException extends WebapseeException {
 
   /** Comment for <code>serialVersionUID</code> */
   private static final long serialVersionUID = 3977859570704332337L;
 
-  public DAOException() {
+  public RepositoryQueryException() {
     super();
   }
 
-  public DAOException(String message) {
+  public RepositoryQueryException(String message) {
     super(message);
   }
 
-  public DAOException(String message, Throwable cause) {
+  public RepositoryQueryException(String message, Throwable cause) {
     super(message, cause);
   }
 
-  public DAOException(Throwable cause) {
+  public RepositoryQueryException(Throwable cause) {
     super(cause);
   }
 }

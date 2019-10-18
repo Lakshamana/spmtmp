@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.Collection;
 
 
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.ObjectLockedException;
 import br.ufpa.labes.spm.exceptions.UserDeniedException;
 import br.ufpa.labes.spm.exceptions.UserInvalidException;
@@ -15,18 +15,18 @@ public interface NotificationServices {
 	public abstract boolean isAgent(String name, String password) throws RemoteException;
 
 	public abstract boolean isAgentInGroup(String agent_id, String group_id)
-			throws DAOException, RemoteException;
+			throws RepositoryQueryException, RemoteException;
 
 	public abstract boolean isActivityInTasks(String id_activity,
-			String agent_id, String process_id) throws DAOException, RemoteException;
+			String agent_id, String process_id) throws RepositoryQueryException, RemoteException;
 
 	public abstract boolean isOutOfWorkPeriod(String agent_id)
-			throws DAOException, RemoteException;
+			throws RepositoryQueryException, RemoteException;
 
 	public abstract boolean isManagerInProcess(String agent_id,
-			String process_id) throws DAOException, RemoteException;
+			String process_id) throws RepositoryQueryException, RemoteException;
 
-	public abstract Collection<String> getUsersInSession() throws DAOException, RemoteException;
+	public abstract Collection<String> getUsersInSession() throws RepositoryQueryException, RemoteException;
 
 	public abstract boolean isSubordTo(String agent_subord_id,
 			String agent_chef_id) throws RemoteException ;
@@ -40,31 +40,31 @@ public interface NotificationServices {
 	public abstract float lockObject(String userName, Class classe,
 			Integer obj_oid, int ttl, int ttlbase) throws
 			UserDeniedException, UserNotManagerException, UserInvalidException,
-			DAOException, ObjectLockedException, RemoteException;
+			RepositoryQueryException, ObjectLockedException, RemoteException;
 
 	public abstract boolean unlockObject(String UserName, Class obj_class,
 			Integer object_oid, float key) throws
 			UserDeniedException, UserNotManagerException, UserInvalidException,
-			DAOException, ObjectLockedException, RemoteException;
+			RepositoryQueryException, ObjectLockedException, RemoteException;
 
 	public abstract boolean isLocked(Long oid, Class classe)
 			throws UserDeniedException,
-			UserNotManagerException, UserInvalidException, DAOException,
+			UserNotManagerException, UserInvalidException, RepositoryQueryException,
 			ObjectLockedException, RemoteException;
 
 	public abstract String isLockedTo(Long oid, Class classe)
 			throws UserDeniedException,
-			UserNotManagerException, UserInvalidException, DAOException,
+			UserNotManagerException, UserInvalidException, RepositoryQueryException,
 			ObjectLockedException, RemoteException;
 
 	public abstract String isLockedTo_with_key(Long oid, Class classe,
 			float key) throws UserDeniedException,
-			UserNotManagerException, UserInvalidException, DAOException,
+			UserNotManagerException, UserInvalidException, RepositoryQueryException,
 			ObjectLockedException, RemoteException;
 
 	public abstract boolean isAgentInProcess(String agent_id, String process_id)
 			throws UserDeniedException,
-			UserNotManagerException, UserInvalidException, DAOException, RemoteException;
+			UserNotManagerException, UserInvalidException, RepositoryQueryException, RemoteException;
 
 	public abstract void sendMessage(String msg) throws RemoteException;
 

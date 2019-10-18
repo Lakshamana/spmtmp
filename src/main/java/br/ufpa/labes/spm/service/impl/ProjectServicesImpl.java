@@ -73,7 +73,7 @@ import br.ufpa.labes.spm.service.dto.ProjectDTO;
 import br.ufpa.labes.spm.service.dto.ProjectsDTO;
 // import br.ufpa.labes.spm.service.dto.ResourcesCostPlanItem;
 import br.ufpa.labes.spm.service.dto.ProcessDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Decomposed;
@@ -273,7 +273,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 		try {
 			if(pModel!=null)loadObjectsFromProcessModel(pModel, processXML);
-		} catch (DAOException e) {
+		} catch (RepositoryQueryException e) {
 			e.printStackTrace();
 		}
 
@@ -285,7 +285,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	}
 
 	private void loadObjectsFromProcessModel(ProcessModel pModel,
-			StringBuffer processXML) throws DAOException {
+			StringBuffer processXML) throws RepositoryQueryException {
 
 		//Load activities
 		processXML.append("<ACTIVITIES>\n");
@@ -456,7 +456,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		processXML.append("</CONNECTIONS>\n");
 	}
 
-	private String getSequenceTag(SimpleCon simpleCon) throws DAOException{
+	private String getSequenceTag(SimpleCon simpleCon) throws RepositoryQueryException{
 		StringBuffer seqXML = new StringBuffer();
 		seqXML.append("<SEQUENCE ID=\"" + simpleCon.getId() + "\">\n");
 		seqXML.append("<DEPENDENCY>" + ((Sequence)simpleCon).getTheDependency().getKindDep() + "</DEPENDENCY>\n");
@@ -468,7 +468,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		return seqXML.toString();
 	}
 
-	private String getFeedbackTag(SimpleCon simpleCon) throws DAOException{
+	private String getFeedbackTag(SimpleCon simpleCon) throws RepositoryQueryException{
 		StringBuffer seqXML = new StringBuffer();
 		seqXML.append("<FEEDBACK ID=\"" + simpleCon.getId() + "\">\n");
 		// seqXML.append("<CONDITION>" + ((Feedback)simpleCon).getTheCondition().getThePolExpression().toString() + "</CONDITION>\n");
@@ -480,7 +480,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		return seqXML.toString();
 	}
 
-	private String getJoinTag(JoinCon joinCon) throws DAOException{
+	private String getJoinTag(JoinCon joinCon) throws RepositoryQueryException{
 		StringBuffer joinConXML = new StringBuffer();
 		joinConXML.append("<JOIN ID=\"" + joinCon.getId() + "\">\n");
 		joinConXML.append("<DEPENDENCY>" + joinCon.getTheDependency().getKindDep() + "</DEPENDENCY>\n");
@@ -522,7 +522,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		return joinConXML.toString();
 	}
 
-	private String getBranchTag(BranchANDCon branchCon) throws DAOException{
+	private String getBranchTag(BranchANDCon branchCon) throws RepositoryQueryException{
 		StringBuffer branchConXML = new StringBuffer();
 		branchConXML.append("<BRANCH ID=\"" + branchCon.getId() + "\">\n");
 		branchConXML.append("<DEPENDENCY>" + branchCon.getTheDependency().getKindDep() + "</DEPENDENCY>\n");
@@ -564,7 +564,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		return branchConXML.toString();
 	}
 
-	private String getArtifactConTag(ArtifactCon artifactCon) throws DAOException{
+	private String getArtifactConTag(ArtifactCon artifactCon) throws RepositoryQueryException{
 		StringBuffer artConXML = new StringBuffer();
 		artConXML.append("<ARTIFACTCON ID=\"" + artifactCon.getId() + "\">\n");
 		Artifact artifact = artifactCon.getTheArtifact();
@@ -607,7 +607,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		return artConXML.toString();
 	}
 
-	private String getPositionTag(Long oid, String className) throws DAOException{
+	private String getPositionTag(Long oid, String className) throws RepositoryQueryException{
 		WebAPSEEObject webAPSEEObject = null;
 		GraphicCoordinate graphicCoord = null;
 
@@ -797,13 +797,13 @@ public class ProjectServicesImpl implements ProjectServices {
 	}
 
 	/**
-     * DAOException = Nao encontrou o pocesso nao banco de dados
+     * RepositoryQueryException = Nao encontrou o pocesso nao banco de dados
      * WebapseeException = Processo ja foi iniciado
 	 * @throws WebapseeException
-	 * @throws DAOException
+	 * @throws RepositoryQueryException
      */
 	@Override
-	public ProjectDTO executeProcess(String projectName) throws DAOException, WebapseeException {
+	public ProjectDTO executeProcess(String projectName) throws RepositoryQueryException, WebapseeException {
 		Project project = this.getProjectFromName(projectName);
 //		project.getProcessRefered().setPState(Process.ENACTING);
 //		projectRepository.save(project);

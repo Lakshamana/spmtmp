@@ -6,7 +6,7 @@ import java.util.List;
 
 import br.ufpa.labes.spm.service.dto.SimpleUpdateDTO;
 import br.ufpa.labes.spm.service.dto.TemplateDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 
 public interface TemplateServices {
@@ -19,7 +19,7 @@ public interface TemplateServices {
 
 	public List<TemplateDTO> getTemplates();
 
-	public boolean copyTemplate(String newTemplateIdent,String oldTemplateIdent) throws DAOException;
+	public boolean copyTemplate(String newTemplateIdent,String oldTemplateIdent) throws RepositoryQueryException;
 
 	public boolean toBecomeDefined(String template_id)
 			throws WebapseeException;
@@ -28,5 +28,5 @@ public interface TemplateServices {
 
 	public Object[] getArtifactsIdentsFromProcessModelWithoutTemplates(String template_id);
 
-	public void processComposition(String template_id, String currentLevel_id, Object[] artifactsIdentsFromUser) throws DAOException;
+	public void processComposition(String template_id, String currentLevel_id, Object[] artifactsIdentsFromUser) throws RepositoryQueryException;
 }

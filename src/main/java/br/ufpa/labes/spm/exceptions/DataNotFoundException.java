@@ -5,7 +5,7 @@
 package br.ufpa.labes.spm.exceptions;
 
 /** @author Adailton Lima LABES-UFPA */
-public class DataNotFoundException extends DAOException {
+public class DataNotFoundException extends RepositoryQueryException {
 
   /** */
   public DataNotFoundException() {

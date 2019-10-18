@@ -27,7 +27,7 @@ import br.ufpa.labes.spm.service.dto.SimpleArtifactDescriptorDTO;
 import br.ufpa.labes.spm.service.dto.ArtifactDTO;
 import br.ufpa.labes.spm.service.dto.ArtifactsDTO;
 import br.ufpa.labes.spm.service.dto.TypesDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.Project;
 import br.ufpa.labes.spm.domain.ArtifactType;
@@ -103,11 +103,11 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	}
 
 	@Override
-	public ArtifactDTO alreadyExist(String artifactIdent) throws DAOException {
+	public ArtifactDTO alreadyExist(String artifactIdent) throws RepositoryQueryException {
 		Artifact artifact = artifactRepository.retrieveBySecondaryKey(artifactIdent);
 		ArtifactDTO artifactDTO;
 		if(artifact == null || artifact.getId().equals(null)) {
-			throw new DAOException("Não Existe");
+			throw new RepositoryQueryException("Não Existe");
 		} else {
 			artifactDTO = convertArtifactToArtifactDTO(artifact);
 		}

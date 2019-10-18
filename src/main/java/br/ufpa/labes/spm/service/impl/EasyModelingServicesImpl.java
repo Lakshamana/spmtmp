@@ -66,7 +66,7 @@ import br.ufpa.labes.spm.repository.impl.processModels.ProcessRepositoryQuery;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.calendar.ICalendarRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.CalendarDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.ModelingException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 import br.ufpa.labes.spm.domain.Activity;
@@ -463,9 +463,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 // 		if (proc == null)
 // 			try {
-// 				throw new DAOException(
+// 				throw new RepositoryQueryException(
 // 						Messages.getString("facades.DynamicModeling.DaoExcProcess") + process_id + Messages.getString("facades.DynamicModeling.DaoExc_NotFound"));
-// 			} catch (DAOException e) {
+// 			} catch (RepositoryQueryException e) {
 // 				// TODO Auto-generated catch block
 // 				e.printStackTrace();
 // 			} //$NON-NLS-1$ //$NON-NLS-2$
@@ -488,9 +488,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 // 			if (dec == null)
 // 				try {
-// 					throw new DAOException(Messages.getString("facades.DynamicModeling.DaoExcDecomActv") + currentModel //$NON-NLS-1$
+// 					throw new RepositoryQueryException(Messages.getString("facades.DynamicModeling.DaoExcDecomActv") + currentModel //$NON-NLS-1$
 // 							+ Messages.getString("facades.DynamicModeling.DaoExcNotFound"));
-// 				} catch (DAOException e) {
+// 				} catch (RepositoryQueryException e) {
 // 					// TODO Auto-generated catch block
 // 					e.printStackTrace();
 // 				} //$NON-NLS-1$
@@ -507,9 +507,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 // 		if (act == null)
 // 			try {
-// 				throw new DAOException(
+// 				throw new RepositoryQueryException(
 // 						Messages.getString("facades.DynamicModeling.ModelingExcActv") + act_id + Messages.getString("facades.DynamicModeling.DaoExcNotFound"));
-// 			} catch (DAOException e) {
+// 			} catch (RepositoryQueryException e) {
 // 				// TODO Auto-generated catch block
 // 				e.printStackTrace();
 // 			} //$NON-NLS-1$ //$NON-NLS-2$
@@ -538,7 +538,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 					Activity clone = null;
 // 					try {
 // 						clone = this.cloneActivity(activity, level_to_copy, coordinates);
-// 					} catch (DAOException e) {
+// 					} catch (RepositoryQueryException e) {
 // 						// TODO Auto-generated catch block
 // 						e.printStackTrace();
 // 					} // Rule
@@ -643,7 +643,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 // 				Activity clone = null;
 // 				try {
 // 					clone = this.cloneActivity(activity, level_to_copy, coordinates);
-// 				} catch (DAOException e) {
+// 				} catch (RepositoryQueryException e) {
 // 					// TODO Auto-generated catch block
 // 					e.printStackTrace();
 // 				}
@@ -750,9 +750,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 		if (proc == null)
 			try {
-				throw new DAOException(
+				throw new RepositoryQueryException(
 						Messages.getString("facades.DynamicModeling.DaoExcProcess") + process_id + Messages.getString("facades.DynamicModeling.DaoExc_NotFound"));
-			} catch (DAOException e) {
+			} catch (RepositoryQueryException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} //$NON-NLS-1$ //$NON-NLS-2$
@@ -773,9 +773,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 			if (dec == null)
 				try {
-					throw new DAOException(Messages.getString("facades.DynamicModeling.DaoExcDecomActv") + currentModel //$NON-NLS-1$
+					throw new RepositoryQueryException(Messages.getString("facades.DynamicModeling.DaoExcDecomActv") + currentModel //$NON-NLS-1$
 							+ Messages.getString("facades.DynamicModeling.DaoExcNotFound"));
-				} catch (DAOException e) {
+				} catch (RepositoryQueryException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} //$NON-NLS-1$
@@ -797,9 +797,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 			if (acts[i] == null) {
 
 				try {
-					throw new DAOException(
+					throw new RepositoryQueryException(
 							Messages.getString("facades.DynamicModeling.ModelingExcActv") + act_id + Messages.getString("facades.DynamicModeling.DaoExcNotFound"));
-				} catch (DAOException e) {
+				} catch (RepositoryQueryException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} //$NON-NLS-1$ //$NON-NLS-2$
@@ -818,9 +818,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 			if (cons[i] == null) {
 
 				try {
-					throw new DAOException(
+					throw new RepositoryQueryException(
 							Messages.getString("facades.DynamicModeling.ModelingExcActv") + con_id + Messages.getString("facades.DynamicModeling.DaoExcNotFound"));
-				} catch (DAOException e) {
+				} catch (RepositoryQueryException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} //$NON-NLS-1$ //$NON-NLS-2$
@@ -1147,10 +1147,10 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	/**
 	 * AUXILIAR METHODS
 	 *
-	 * @throws DAOException
+	 * @throws RepositoryQueryException
 	 */
 
-	private Activity cloneActivity(Activity activity, String level_to, Hashtable<String, String> coordinates) throws DAOException {
+	private Activity cloneActivity(Activity activity, String level_to, Hashtable<String, String> coordinates) throws RepositoryQueryException {
 
 		Activity clone = null;
 		if (activity != null) {
@@ -1185,7 +1185,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 		return clone;
 	}
 
-	private void addCoordinate(Long theReferredOid, String className, String newObjRef, Hashtable<String, String> coordinates) throws DAOException {
+	private void addCoordinate(Long theReferredOid, String className, String newObjRef, Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		String currentObjKey = className + ":" + String.valueOf(theReferredOid);
 		coordinates.put(currentObjKey, newObjRef);
 	}
@@ -1193,9 +1193,9 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	/**
 	 * @param destinationNormal
 	 * @param sourceNormal
-	 * @throws DAOException
+	 * @throws RepositoryQueryException
 	 */
-	private void copyNormalProperties(Normal destinationNormal, Normal sourceNormal, Hashtable<String, String> coordinates) throws DAOException {
+	private void copyNormalProperties(Normal destinationNormal, Normal sourceNormal, Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		// simple attributes
 		// destinationNormal.setHowLong(sourceNormal.getHowLong());
 		// destinationNormal.setHowLongUnit(sourceNormal.getHowLongUnit());
@@ -1298,7 +1298,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 
 	private Collection<RequiredResource> copyRequiredResources(Collection<RequiredResource> theRequiredResource, Normal destinationNormal,
-			Hashtable<String, String> coordinates) throws DAOException {
+			Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		Collection<RequiredResource> newRequiredResources = new HashSet<RequiredResource>();
 
 		String coordinateKey = null;
@@ -1338,7 +1338,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 
 	private Collection<RequiredPeople> copyRequiredPeople(Collection theRequiredPeople, Normal destinationNormal,
-			Hashtable<String, String> coordinates) throws DAOException {
+			Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		Collection<RequiredPeople> newRequiredPeoples = new HashSet<RequiredPeople>();
 
 		String coordinateKey = null;
@@ -1481,7 +1481,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 
 	private Hashtable<String, Activity> copyActivitiesOnProcessModel(Collection<Activity> activities, String level_to,
-			Hashtable<String, String> coordinates) throws DAOException {
+			Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		Hashtable<String, Activity> newActivities = new Hashtable<String, Activity>();
 
 		for (Iterator<Activity> activityIterator = activities.iterator(); activityIterator.hasNext();) {
@@ -1542,10 +1542,10 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	 * @param oldProcessIdent
 	 * @param newProcessIdent
 	 * @return
-	 * @throws DAOException
+	 * @throws RepositoryQueryException
 	 */
 	private Set<Connection> copyConnectionsOnProcessModel(Collection<Connection> connections, Hashtable<String, Activity> activitiesTable,
-			String level_to, Hashtable<String, String> coordinates) throws DAOException {
+			String level_to, Hashtable<String, String> coordinates) throws RepositoryQueryException {
 		// need to take care about all kind of connections
 
 		Hashtable<String, Connection> connectionTable = new Hashtable<String, Connection>(1000, 1);

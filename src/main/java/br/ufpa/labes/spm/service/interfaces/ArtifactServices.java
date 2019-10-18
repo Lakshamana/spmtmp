@@ -7,7 +7,7 @@ import br.ufpa.labes.spm.service.dto.SimpleArtifactDescriptorDTO;
 import br.ufpa.labes.spm.service.dto.ArtifactDTO;
 import br.ufpa.labes.spm.service.dto.ArtifactsDTO;
 import br.ufpa.labes.spm.service.dto.TypesDTO;
-import br.ufpa.labes.spm.exceptions.DAOException;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 
 public interface ArtifactServices {
 
@@ -33,6 +33,6 @@ public interface ArtifactServices {
 
 	public TypesDTO getArtifactTypes();
 
-	ArtifactDTO alreadyExist(String artifactIdent) throws DAOException;
+	ArtifactDTO alreadyExist(String artifactIdent) throws RepositoryQueryException;
 	Map<String, SimpleArtifactDescriptorDTO[]> getArtifactsForSelectedActivity(String identActivity);
 }
