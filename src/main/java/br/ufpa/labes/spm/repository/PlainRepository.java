@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.activities.IPlainDAO;
+import br.ufpa.labes.spm.repository.interfaces.activities.IPlainRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Plain;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PlainRepository extends IPlainDAO, JpaRepository<Plain, Long> {
+public interface PlainRepository extends IPlainRepositoryQuery, JpaRepository<Plain, Long> {
 
 }

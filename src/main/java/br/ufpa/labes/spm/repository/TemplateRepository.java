@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processModels.ITemplateDAO;
+import br.ufpa.labes.spm.repository.interfaces.processModels.ITemplateRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Template;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TemplateRepository extends ITemplateDAO, JpaRepository<Template, Long> {
+public interface TemplateRepository extends ITemplateRepositoryQuery, JpaRepository<Template, Long> {
 
 }

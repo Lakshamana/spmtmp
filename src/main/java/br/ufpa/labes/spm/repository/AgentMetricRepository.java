@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IAgentMetricDAO;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IAgentMetricRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentMetric;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentMetricRepository extends IAgentMetricDAO, JpaRepository<AgentMetric, Long> {
+public interface AgentMetricRepository extends IAgentMetricRepositoryQuery, JpaRepository<AgentMetric, Long> {
 
 }

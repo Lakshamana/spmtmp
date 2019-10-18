@@ -14,7 +14,7 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.annotations.Criteria;
 import br.ufpa.labes.spm.annotations.EnumCriteriaType;
-import br.ufpa.labes.spm.repository.impl.agent.AgentDAO;
+import br.ufpa.labes.spm.repository.impl.agent.AgentRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.util.PagingContext;
@@ -35,7 +35,7 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
   }
 
   @Override
-  public T daoSave(T object) {
+  public T RepositoryQuerySave(T object) {
     this.getPersistenceContext().persist(object);
     return object;
   }
@@ -164,7 +164,7 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
   }
 
   @Override
-  public T daoDelete(T object) {
+  public T RepositoryQueryDelete(T object) {
     this.getPersistenceContext().remove(object);
     return object;
   };
@@ -234,9 +234,9 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
   public static void main(String[] args) {
     Agent a = new Agent();
     a.setId(336L);
-    AgentDAO agentDAO = new AgentDAO();
+    AgentDAO agentDAO = new AgentRepositoryQuery();
     System.out.println(
-        agentDAO.generateIdent(
+        agentRepositoryQuery.generateIdent(
             "Template - Plano de Gerência de Documentos e Plano de Comunicação", a));
   }
 }

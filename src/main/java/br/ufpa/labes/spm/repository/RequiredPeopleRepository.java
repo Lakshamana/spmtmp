@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredPeopleDAO;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredPeopleRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.RequiredPeople;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RequiredPeopleRepository extends IRequiredPeopleDAO, JpaRepository<RequiredPeople, Long> {
+public interface RequiredPeopleRepository extends IRequiredPeopleRepositoryQuery, JpaRepository<RequiredPeople, Long> {
 
 }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
+import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Task;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TaskRepository extends ITaskDAO, JpaRepository<Task, Long> {
+public interface TaskRepository extends ITaskRepositoryQuery, JpaRepository<Task, Long> {
 
 }

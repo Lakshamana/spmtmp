@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IEstimationDAO;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IEstimationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Estimation;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EstimationRepository extends IEstimationDAO, JpaRepository<Estimation, Long> {
+public interface EstimationRepository extends IEstimationRepositoryQuery, JpaRepository<Estimation, Long> {
 
 }

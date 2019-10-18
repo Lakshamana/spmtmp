@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.tools.IScriptDAO;
+import br.ufpa.labes.spm.repository.interfaces.tools.IScriptRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Script;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ScriptRepository extends IScriptDAO, JpaRepository<Script, Long> {
+public interface ScriptRepository extends IScriptRepositoryQuery, JpaRepository<Script, Long> {
 
 }

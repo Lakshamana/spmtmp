@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.types.IConnectionTypeDAO;
+import br.ufpa.labes.spm.repository.interfaces.types.IConnectionTypeRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ConnectionType;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ConnectionTypeRepository extends IConnectionTypeDAO, JpaRepository<ConnectionType, Long> {
+public interface ConnectionTypeRepository extends IConnectionTypeRepositoryQuery, JpaRepository<ConnectionType, Long> {
 
 }

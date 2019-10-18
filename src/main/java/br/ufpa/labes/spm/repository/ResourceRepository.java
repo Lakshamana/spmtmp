@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.resources.IResourceDAO;
+import br.ufpa.labes.spm.repository.interfaces.resources.IResourceRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Resource;
@@ -17,7 +17,7 @@ import java.util.Optional;
  * Spring Data  repository for the Resource entity.
  */
 @Repository
-public interface ResourceRepository extends IResourceDAO, JpaRepository<Resource, Long> {
+public interface ResourceRepository extends IResourceRepositoryQuery, JpaRepository<Resource, Long> {
 
     @Query(value = "select distinct resource from Resource resource left join fetch resource.requires",
         countQuery = "select count(distinct resource) from Resource resource")

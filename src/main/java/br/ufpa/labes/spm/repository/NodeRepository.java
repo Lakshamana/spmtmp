@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.INodeDAO;
+import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.INodeRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Node;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface NodeRepository extends INodeDAO, JpaRepository<Node, Long> {
+public interface NodeRepository extends INodeRepositoryQuery, JpaRepository<Node, Long> {
 
 }

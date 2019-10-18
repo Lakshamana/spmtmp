@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.log.IResourceEventDAO;
+import br.ufpa.labes.spm.repository.interfaces.log.IResourceEventRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ResourceEvent;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ResourceEventRepository extends IResourceEventDAO, JpaRepository<ResourceEvent, Long> {
+public interface ResourceEventRepository extends IResourceEventRepositoryQuery, JpaRepository<ResourceEvent, Long> {
 
 }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.assets.IAssetDAO;
+import br.ufpa.labes.spm.repository.interfaces.assets.IAssetRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Asset;
@@ -17,7 +17,7 @@ import java.util.Optional;
  * Spring Data  repository for the Asset entity.
  */
 @Repository
-public interface AssetRepository extends IAssetDAO, JpaRepository<Asset, Long> {
+public interface AssetRepository extends IAssetRepositoryQuery, JpaRepository<Asset, Long> {
 
     @Query(value = "select distinct asset from Asset asset left join fetch asset.favoritedBies left join fetch asset.followers left join fetch asset.collaborators",
         countQuery = "select count(distinct asset) from Asset asset")

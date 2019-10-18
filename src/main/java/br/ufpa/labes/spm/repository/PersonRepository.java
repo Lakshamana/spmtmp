@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.people.IPersonDAO;
+import br.ufpa.labes.spm.repository.interfaces.people.IPersonRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Person;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PersonRepository extends IPersonDAO, JpaRepository<Person, Long> {
+public interface PersonRepository extends IPersonRepositoryQuery, JpaRepository<Person, Long> {
 
 }

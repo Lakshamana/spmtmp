@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.ufpa.labes.spm.repository.ActivityRepository;
 import br.ufpa.labes.spm.repository.DecomposedRepository;
-import br.ufpa.labes.spm.repository.interfaces.activities.IActivityDAO;
-import br.ufpa.labes.spm.repository.interfaces.activities.IDecomposedDAO;
+import br.ufpa.labes.spm.repository.interfaces.activities.IActivityRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.activities.IDecomposedRepositoryQuery;
 
-public class IDAOFactory {
+public class IRepositoryQueryFactory {
 
   @Autowired
   private ActivityRepository activityRepository;
@@ -21,18 +21,18 @@ public class IDAOFactory {
   @Autowired
   private DecomposedRepository decomposedRepository;
 
-  public IDAOFactory() {
+  public IRepositoryQueryFactory() {
     try {
       Properties properties = new Properties();
       InitialContext context = new InitialContext(properties);
-      Object obj = context.lookup("ActivityDAOLocal");
+      Object obj = context.lookup("ActivityRepositoryQueryLocal");
       activityRepository = (ActivityRepository) obj;
     } catch (NamingException e) {
       e.printStackTrace();
     }
   }
 
-  public Object getIDAO(String daoName) {
+  public Object getIDAO(String RepositoryQueryName) {
     // TO-DO
     return activityRepository;
   }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
+import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Artifact;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ArtifactRepository extends IArtifactDAO, JpaRepository<Artifact, Long> {
+public interface ArtifactRepository extends IArtifactRepositoryQuery, JpaRepository<Artifact, Long> {
 
 }

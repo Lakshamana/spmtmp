@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.assets.ITagStatsDAO;
+import br.ufpa.labes.spm.repository.interfaces.assets.ITagStatsRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.TagStats;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TagStatsRepository extends ITagStatsDAO, JpaRepository<TagStats, Long> {
+public interface TagStatsRepository extends ITagStatsRepositoryQuery, JpaRepository<TagStats, Long> {
 
 }

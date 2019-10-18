@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.agent.IOutOfWorkPeriodDAO;
+import br.ufpa.labes.spm.repository.interfaces.agent.IOutOfWorkPeriodRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.OutOfWorkPeriod;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OutOfWorkPeriodRepository extends IOutOfWorkPeriodDAO, JpaRepository<OutOfWorkPeriod, Long> {
+public interface OutOfWorkPeriodRepository extends IOutOfWorkPeriodRepositoryQuery, JpaRepository<OutOfWorkPeriod, Long> {
 
 }

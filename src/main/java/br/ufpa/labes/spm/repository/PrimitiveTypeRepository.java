@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.tools.IPrimitiveTypeDAO;
+import br.ufpa.labes.spm.repository.interfaces.tools.IPrimitiveTypeRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.PrimitiveType;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PrimitiveTypeRepository extends IPrimitiveTypeDAO, JpaRepository<PrimitiveType, Long> {
+public interface PrimitiveTypeRepository extends IPrimitiveTypeRepositoryQuery, JpaRepository<PrimitiveType, Long> {
 
 }

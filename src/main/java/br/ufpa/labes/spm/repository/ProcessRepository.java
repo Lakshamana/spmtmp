@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
+import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Process;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessRepository extends IProcessDAO, JpaRepository<Process, Long> {
+public interface ProcessRepository extends IProcessRepositoryQuery, JpaRepository<Process, Long> {
 
 }

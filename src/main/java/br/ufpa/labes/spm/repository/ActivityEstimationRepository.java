@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IActivityEstimationDAO;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IActivityEstimationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ActivityEstimation;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityEstimationRepository extends IActivityEstimationDAO, JpaRepository<ActivityEstimation, Long> {
+public interface ActivityEstimationRepository extends IActivityEstimationRepositoryQuery, JpaRepository<ActivityEstimation, Long> {
 
 }

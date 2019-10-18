@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IMetricDefinitionDAO;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IMetricDefinitionRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.MetricDefinition;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MetricDefinitionRepository extends IMetricDefinitionDAO, JpaRepository<MetricDefinition, Long> {
+public interface MetricDefinitionRepository extends IMetricDefinitionRepositoryQuery, JpaRepository<MetricDefinition, Long> {
 
 }

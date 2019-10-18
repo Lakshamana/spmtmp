@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.agent.IRoleDAO;
+import br.ufpa.labes.spm.repository.interfaces.agent.IRoleRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Role;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RoleRepository extends IRoleDAO, JpaRepository<Role, Long> {
+public interface RoleRepository extends IRoleRepositoryQuery, JpaRepository<Role, Long> {
 
 }
