@@ -202,12 +202,12 @@ public class AgentServicesImpl implements AgentServices {
 			agentDTO.setArtifactMngPassword(Md5.getMd5Digest(agentDTO.getArtifactMngPassword()));
 
 			agent = this.convertAgentDTOToAgent(agentDTO);
-			agentRepository.daoSave(agent);
+			agentRepository.save(agent);
 
 			TaskAgenda theTaskAgenda = new TaskAgenda();
 			agent.setTheTaskAgenda(theTaskAgenda);
 			theTaskAgenda.setTheAgent(agent);
-			taskAgendaRepository.daoSave(theTaskAgenda);
+			taskAgendaRepository.save(theTaskAgenda);
 
 			String newIdent = agentRepository.generateIdent(agent.getName(), agent);
 			agent.setIdent(newIdent);
@@ -345,19 +345,19 @@ public class AgentServicesImpl implements AgentServices {
 			if(!query.getResultList().isEmpty()) {
 				SpmConfiguration config = query.getResultList().get(0);
 				config.setAgent(null);
-				confiRepository.daoDelete(config);
+				confiRepository.delete(config);
 			}
 			if(!query2.getResultList().isEmpty()) {
 				TaskAgenda taskAgenda = query2.getResultList().get(0);
 				taskAgenda.setTheAgent(null);
-				taskAgendaRepository.daoDelete(taskAgenda);
+				taskAgendaRepository.delete(taskAgenda);
 			}
 
 			for (AgentHasAbility agentHasAbility : agent
 					.getTheAgentHasAbilities()) {
 				agentHasAbility.removeFromTheAbility();
 				agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.daoDelete(agentHasAbility);
+				agentHasAbilityRepository.delete(agentHasAbility);
 			}
 
 			for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
@@ -373,14 +373,14 @@ public class AgentServicesImpl implements AgentServices {
 					.getFromAgentAffinities()) {
 				agentAffinityAgent.removeFromFromAffinity();
 				agentAffinityAgent.setToAffinity(null);
-				agentAffinityAgentRepository.daoDelete(agentAffinityAgent);
+				agentAffinityAgentRepository.delete(agentAffinityAgent);
 			}
 
 			for (AgentAffinityAgent agentAffinityAgent : agent
 					.getToAgentAffinities()) {
 				agentAffinityAgent.removeFromToAffinity();
 				agentAffinityAgent.setFromAffinity(null);
-				agentAffinityAgentRepository.daoDelete(agentAffinityAgent);
+				agentAffinityAgentRepository.delete(agentAffinityAgent);
 			}
 
 			agent.setTheWorkGroups(new HashSet<WorkGroup>());
@@ -389,7 +389,7 @@ public class AgentServicesImpl implements AgentServices {
 			agent.setTheAgentPlaysRoles(new HashSet<AgentPlaysRole>());
 			agent.setTheAgentHasAbilities(new HashSet<AgentHasAbility>());
 
-			agentRepository.daoDelete(agent);
+			agentRepository.delete(agent);
 			return true;
 		}
 
@@ -872,7 +872,7 @@ public class AgentServicesImpl implements AgentServices {
 				agentHasAbilitiesToRemove.add(agentHasAbility);
 				// agentHasAbility.setTheAbility(null);
 				// agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.daoDelete(agentHasAbility);
+				agentHasAbilityRepository.delete(agentHasAbility);
 			}
 		}
 
@@ -908,7 +908,7 @@ public class AgentServicesImpl implements AgentServices {
 				agentPlaysRolesToRemove.add(agentPlaysRole);
 				agentPlaysRole.setTheAgent(null);
 				agentPlaysRole.setTheRole(null);
-				agentPlaysRoleRepository.daoDelete(agentPlaysRole);
+				agentPlaysRoleRepository.delete(agentPlaysRole);
 			}
 
 		}
@@ -935,8 +935,8 @@ public class AgentServicesImpl implements AgentServices {
 				|| agent.getToAgentAffinities().contains(agentAffinityAgent)) {
 			agentAffinityAgent.removeFromFromAffinity();
 			agentAffinityAgent.removeFromToAffinity();
-			agentAffinityAgentRepository.daoDelete(agentAffinityAgent);
-			agentAffinityAgentRepository.daoDelete(inverseAgentAffinityAgent);
+			agentAffinityAgentRepository.delete(agentAffinityAgent);
+			agentAffinityAgentRepository.delete(inverseAgentAffinityAgent);
 
 			return true;
 		}

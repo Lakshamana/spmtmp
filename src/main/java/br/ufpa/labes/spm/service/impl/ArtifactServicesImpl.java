@@ -133,7 +133,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 				if(artifact == null) {
 					artifact = (Artifact) converter.getEntity(artifactDTO, Artifact.class);
 					artifact.setTheArtifactType(artifactType);
-					artifactRepository.daoSave(artifact);
+					artifactRepository.save(artifact);
 
 					String newIdent = artifactRepository.generateIdent(artifact.getName(), artifact);
 					System.out.println("new ident: " + newIdent);

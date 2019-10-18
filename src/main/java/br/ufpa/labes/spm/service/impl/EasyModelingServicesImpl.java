@@ -398,10 +398,10 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 				if(ok){
 					if(webAPSEEObj==null){
 						graphicCoord = updateGraphicCoordinate(webAPSEENodePosition, new GraphicCoordinate(), processIdent);
-						graphicCoord = (GraphicCoordinate) coordRepository.daoSave(graphicCoord);
+						graphicCoord = (GraphicCoordinate) coordRepository.save(graphicCoord);
 						webAPSEEObj = new WebAPSEEObject(theReferredOid, className, graphicCoord);
 						System.out.println("caiu no ok"+webAPSEEObj.getTheReferredOid());
-						webAPSEEObjRepository.daoSave(webAPSEEObj);
+						webAPSEEObjRepository.save(webAPSEEObj);
 
 
 					}else{

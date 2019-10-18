@@ -104,7 +104,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 		} else {
 			group = this.convertGroupDTOToGroup(groupDTO);
-			groupRepository.daoSave(group);
+			groupRepository.save(group);
 
 			String newIdent = groupRepository.generateIdent(group.getName(), group);
 			group.setIdent(newIdent);
@@ -132,7 +132,7 @@ public class GroupServicesImpl implements WorkGroupServices {
 
 			groupRepository.update(group);
 
-			groupRepository.daoDelete(group);
+			groupRepository.delete(group);
 			return true;
 		}
 
