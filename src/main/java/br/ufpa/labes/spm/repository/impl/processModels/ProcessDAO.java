@@ -5,14 +5,14 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessDAO;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
-public class ProcessDAO extends BaseDAO<Process, Long> implements IProcessDAO {
+public class ProcessDAO extends BaseDAOImpl<Process, Long> implements IProcessDAO {
 
   protected ProcessDAO(Class<Process> businessClass) {
     super(businessClass);

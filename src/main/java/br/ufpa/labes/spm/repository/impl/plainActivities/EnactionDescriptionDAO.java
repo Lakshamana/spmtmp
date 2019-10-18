@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.plainActivities;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IEnactionDescriptionDAO;
 import br.ufpa.labes.spm.domain.EnactionDescription;
 
-public class EnactionDescriptionDAO extends BaseDAO<EnactionDescription, Long>
+public class EnactionDescriptionDAO extends BaseDAOImpl<EnactionDescription, Long>
     implements IEnactionDescriptionDAO {
 
   protected EnactionDescriptionDAO(Class<EnactionDescription> businessClass) {

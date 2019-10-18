@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.assets.ITagStatsDAO;
 import br.ufpa.labes.spm.domain.TagStats;
 
-public class TagStatsDAO extends BaseDAO<TagStats, Long> implements ITagStatsDAO {
+public class TagStatsDAO extends BaseDAOImpl<TagStats, Long> implements ITagStatsDAO {
 
   protected TagStatsDAO() {
     super(TagStats.class);

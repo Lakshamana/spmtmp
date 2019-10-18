@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.artifacts;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactTaskDAO;
 import br.ufpa.labes.spm.domain.ArtifactTask;
 
-public class ArtifactTaskDAO extends BaseDAO<ArtifactTask, Long> implements IArtifactTaskDAO {
+public class ArtifactTaskDAO extends BaseDAOImpl<ArtifactTask, Long> implements IArtifactTaskDAO {
 
   protected ArtifactTaskDAO(Class<ArtifactTask> businessClass) {
     super(businessClass);

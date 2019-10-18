@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.agent;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.agent.IAgentHasAbilityDAO;
 import br.ufpa.labes.spm.domain.AgentHasAbility;
 
-public class AgentHasAbilityDAO extends BaseDAO<AgentHasAbility, Long>
+public class AgentHasAbilityDAO extends BaseDAOImpl<AgentHasAbility, Long>
     implements IAgentHasAbilityDAO {
 
   protected AgentHasAbilityDAO(Class<AgentHasAbility> businessClass) {

@@ -6,14 +6,14 @@ import java.util.Iterator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.ufpa.labes.spm.repository.TaskRepository;
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.IProcessAgendaDAO;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
 import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ProcessAgendaDAO extends BaseDAO<ProcessAgenda, Long> implements IProcessAgendaDAO {
+public class ProcessAgendaDAO extends BaseDAOImpl<ProcessAgenda, Long> implements IProcessAgendaDAO {
 
   @Autowired
   private TaskRepository taskRepository;

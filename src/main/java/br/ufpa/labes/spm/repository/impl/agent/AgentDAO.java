@@ -2,12 +2,12 @@ package br.ufpa.labes.spm.repository.impl.agent;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.agent.IAgentDAO;
 import br.ufpa.labes.spm.service.dto.AgentDTO;
 import br.ufpa.labes.spm.domain.Agent;
 
-public class AgentDAO extends BaseDAO<Agent, Long> implements IAgentDAO {
+public class AgentDAO extends BaseDAOImpl<Agent, Long> implements IAgentDAO {
 
   protected AgentDAO(Class<Agent> businessClass) {
     super(businessClass);

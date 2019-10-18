@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectDAO;
 import br.ufpa.labes.spm.domain.Project;
 
-public class ProjectDAO extends BaseDAO<Project, Long> implements IProjectDAO {
+public class ProjectDAO extends BaseDAOImpl<Project, Long> implements IProjectDAO {
 
   protected ProjectDAO(Class<Project> businessClass) {
     super(businessClass);

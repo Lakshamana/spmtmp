@@ -4,13 +4,13 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import javax.persistence.Query;
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IWebAPSEEObjectDAO;
 import br.ufpa.labes.spm.exceptions.DAOException;
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
 import br.ufpa.labes.spm.domain.WebAPSEEObject;
 
-public class WebAPSEEObjectDAO extends BaseDAO<WebAPSEEObject, Long>
+public class WebAPSEEObjectDAO extends BaseDAOImpl<WebAPSEEObject, Long>
     implements IWebAPSEEObjectDAO {
 
   public WebAPSEEObjectDAO() {

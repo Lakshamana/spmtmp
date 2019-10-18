@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.connections;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.connections.IArtifactConDAO;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 
-public class ArtifactConDAO extends BaseDAO<ArtifactCon, Long> implements IArtifactConDAO {
+public class ArtifactConDAO extends BaseDAOImpl<ArtifactCon, Long> implements IArtifactConDAO {
 
   protected ArtifactConDAO(Class<ArtifactCon> businessClass) {
     super(businessClass);

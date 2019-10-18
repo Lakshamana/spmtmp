@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.log;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.log.ICatalogEventDAO;
 import br.ufpa.labes.spm.domain.CatalogEvent;
 
-public class CatalogEventDAO extends BaseDAO<CatalogEvent, Long> implements ICatalogEventDAO {
+public class CatalogEventDAO extends BaseDAOImpl<CatalogEvent, Long> implements ICatalogEventDAO {
 
   protected CatalogEventDAO(Class<CatalogEvent> businessClass) {
     super(businessClass);

@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentDAO;
 import br.ufpa.labes.spm.domain.ReqAgent;
 
-public class ReqAgentDAO extends BaseDAO<ReqAgent, Long> implements IReqAgentDAO {
+public class ReqAgentDAO extends BaseDAOImpl<ReqAgent, Long> implements IReqAgentDAO {
 
   protected ReqAgentDAO(Class<ReqAgent> businessClass) {
     super(businessClass);

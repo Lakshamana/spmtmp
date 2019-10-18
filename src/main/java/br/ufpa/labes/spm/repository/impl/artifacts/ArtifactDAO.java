@@ -6,14 +6,14 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.artifacts.IArtifactDAO;
 import br.ufpa.labes.spm.service.dto.SimpleArtifactDescriptorDTO;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 import br.ufpa.labes.spm.domain.InvolvedArtifact;
 
-public class ArtifactDAO extends BaseDAO<Artifact, Long> implements IArtifactDAO {
+public class ArtifactDAO extends BaseDAOImpl<Artifact, Long> implements IArtifactDAO {
 
   protected ArtifactDAO(Class<Artifact> businessClass) {
     super(businessClass);

@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.processKnowledge;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IEstimationDAO;
 import br.ufpa.labes.spm.domain.Estimation;
 
-public class EstimationDAO extends BaseDAO<Estimation, Long> implements IEstimationDAO {
+public class EstimationDAO extends BaseDAOImpl<Estimation, Long> implements IEstimationDAO {
 
   protected EstimationDAO(Class<Estimation> businessClass) {
     super(businessClass);

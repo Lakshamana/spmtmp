@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredResourceDAO;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class RequiredResourceDAO extends BaseDAO<RequiredResource, Long>
+public class RequiredResourceDAO extends BaseDAOImpl<RequiredResource, Long>
     implements IRequiredResourceDAO {
 
   protected RequiredResourceDAO(Class<RequiredResource> businessClass) {

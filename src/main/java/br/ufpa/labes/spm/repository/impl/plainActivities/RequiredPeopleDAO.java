@@ -5,14 +5,14 @@ import java.util.HashSet;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredPeopleDAO;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.ReqAgent;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 
-public class RequiredPeopleDAO extends BaseDAO<RequiredPeople, Long>
+public class RequiredPeopleDAO extends BaseDAOImpl<RequiredPeople, Long>
     implements IRequiredPeopleDAO {
 
   protected RequiredPeopleDAO(Class<RequiredPeople> businessClass) {

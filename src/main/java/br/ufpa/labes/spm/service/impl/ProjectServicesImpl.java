@@ -3869,7 +3869,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 //		try {
 //			dao = Class.forName(daoName).newInstance();
-//			((BaseDAO) dao).setSession(this.currentSession);
+//			((BaseDAOImpl) dao).setSession(this.currentSession);
 //		} catch (InstantiationException e1) {
 //			e1.printStackTrace();
 //			return null;

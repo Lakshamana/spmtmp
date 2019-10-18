@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.agent;
 
-import br.ufpa.labes.spm.repository.interfaces.IBaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
 import br.ufpa.labes.spm.domain.RoleNeedsAbility;
 
-public interface IRoleNeedsAbilityDAO extends IBaseDAO<RoleNeedsAbility, Long> {}
+public interface IRoleNeedsAbilityDAO extends BaseDAO<RoleNeedsAbility, Long> {}

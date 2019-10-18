@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAO;
+import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IActivityEstimationDAO;
 import br.ufpa.labes.spm.domain.ActivityEstimation;
 
-public class ActivityEstimationDAO extends BaseDAO<ActivityEstimation, Long>
+public class ActivityEstimationDAO extends BaseDAOImpl<ActivityEstimation, Long>
     implements IActivityEstimationDAO {
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
