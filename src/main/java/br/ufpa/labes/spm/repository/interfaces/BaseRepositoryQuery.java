@@ -9,11 +9,7 @@ import br.ufpa.labes.spm.util.SortCriteria;
 
 public interface BaseRepositoryQuery<T, PK> {
 
-  public T RepositoryQuerySave(T object);
-
   public T update(T object);
-
-  public T RepositoryQueryDelete(T object);
 
   public T retrieve(String key);
 

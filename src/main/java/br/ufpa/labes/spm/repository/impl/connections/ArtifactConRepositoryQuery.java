@@ -14,12 +14,12 @@ public class ArtifactConRepositoryQuery extends BaseRepositoryQueryImpl<Artifact
     super(ArtifactCon.class);
   }
 
-  @Override
-  public ArtifactCon RepositoryQuerySave(ArtifactCon conn) {
-    super.RepositoryQuerySave(conn);
-    String ident = conn.getIdent() + "." + conn.getId();
-    conn.setIdent(ident);
-    this.update(conn);
-    return conn;
-  }
+  // @Override
+  // public ArtifactCon save(ArtifactCon conn) {
+  //   super.save(conn);
+  //   String ident = conn.getIdent() + "." + conn.getId();
+  //   conn.setIdent(ident);
+  //   this.update(conn);
+  //   return conn;
+  // }
 }

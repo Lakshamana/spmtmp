@@ -14,13 +14,13 @@ public class ConnectionRepositoryQuery extends BaseRepositoryQueryImpl<Connectio
     super(Connection.class);
   }
 
-  @Override
-  public Connection RepositoryQuerySave(Connection conn) {
+  // @Override
+  // public Connection save(Connection conn) {
 
-    super.RepositoryQuerySave(conn);
-    String ident = conn.getIdent() + "." + conn.getId();
-    conn.setIdent(ident);
-    this.update(conn);
-    return conn;
-  }
+  //   super.save(conn);
+  //   String ident = conn.getIdent() + "." + conn.getId();
+  //   conn.setIdent(ident);
+  //   this.update(conn);
+  //   return conn;
+  // }
 }
