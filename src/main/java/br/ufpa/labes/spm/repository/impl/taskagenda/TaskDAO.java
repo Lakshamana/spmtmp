@@ -6,14 +6,14 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskDAO;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
 import br.ufpa.labes.spm.domain.AgendaEvent;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.util.ServicesUtil;
 
-public class TaskDAO extends BaseDAOImpl<Task, Long> implements ITaskDAO {
+public class TaskDAO extends BaseRepositoryQueryImpl<Task, Long> implements ITaskDAO {
 
   protected TaskDAO(Class<Task> businessClass) {
     super(businessClass);

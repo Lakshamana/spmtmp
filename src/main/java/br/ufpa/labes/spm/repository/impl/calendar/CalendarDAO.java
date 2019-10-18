@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.calendar;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.calendar.ICalendarDAO;
 import br.ufpa.labes.spm.domain.Calendar;
 
-public class CalendarDAO extends BaseDAOImpl<Calendar, Long> implements ICalendarDAO {
+public class CalendarDAO extends BaseRepositoryQueryImpl<Calendar, Long> implements ICalendarDAO {
 
   protected CalendarDAO(Class<Calendar> businessClass) {
     super(businessClass);

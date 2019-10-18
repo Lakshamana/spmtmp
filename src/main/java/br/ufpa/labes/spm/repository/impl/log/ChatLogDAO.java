@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.log;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.log.IChatLogDAO;
 import br.ufpa.labes.spm.domain.ChatLog;
 
-public class ChatLogDAO extends BaseDAOImpl<ChatLog, Long> implements IChatLogDAO {
+public class ChatLogDAO extends BaseRepositoryQueryImpl<ChatLog, Long> implements IChatLogDAO {
 
   protected ChatLogDAO(Class<ChatLog> businessClass) {
     super(businessClass);

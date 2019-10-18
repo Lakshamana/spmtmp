@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.plainActivities;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IParameterDAO;
 import br.ufpa.labes.spm.domain.Parameter;
 
-public class ParameterDAO extends BaseDAOImpl<Parameter, Long> implements IParameterDAO {
+public class ParameterDAO extends BaseRepositoryQueryImpl<Parameter, Long> implements IParameterDAO {
 
   protected ParameterDAO(Class<Parameter> businessClass) {
     super(businessClass);

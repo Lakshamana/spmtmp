@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.plannerInfo;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.AgentInstSug;
 
-public interface IAgentInstantiationSuggestionDAO extends BaseDAO<AgentInstSug, Long> {}
+public interface IAgentInstantiationSuggestionDAO extends BaseRepositoryQuery<AgentInstSug, Long> {}

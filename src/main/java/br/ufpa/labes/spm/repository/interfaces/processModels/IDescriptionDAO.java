@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.processModels;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Description;
 
-public interface IDescriptionDAO extends BaseDAO<Description, Long> {}
+public interface IDescriptionDAO extends BaseRepositoryQuery<Description, Long> {}

@@ -7,7 +7,7 @@ import javax.persistence.EntityManager;
 import br.ufpa.labes.spm.util.PagingContext;
 import br.ufpa.labes.spm.util.SortCriteria;
 
-public interface BaseDAO<T, PK> {
+public interface BaseRepositoryQuery<T, PK> {
 
   public T daoSave(T object);
 

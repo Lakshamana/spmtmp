@@ -4,11 +4,11 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqWorkGroupDAO;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 
-public class ReqWorkGroupDAO extends BaseDAOImpl<ReqWorkGroup, Long> implements IReqWorkGroupDAO {
+public class ReqWorkGroupDAO extends BaseRepositoryQueryImpl<ReqWorkGroup, Long> implements IReqWorkGroupDAO {
 
   protected ReqWorkGroupDAO(Class<ReqWorkGroup> businessClass) {
     super(businessClass);

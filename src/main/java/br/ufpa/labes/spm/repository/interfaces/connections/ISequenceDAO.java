@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.connections;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Sequence;
 
-public interface ISequenceDAO extends BaseDAO<Sequence, Long> {}
+public interface ISequenceDAO extends BaseRepositoryQuery<Sequence, Long> {}

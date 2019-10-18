@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.agent;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.AgentAffinityAgent;
 
-public interface IAgentAffinityAgentDAO extends BaseDAO<AgentAffinityAgent, Long> {}
+public interface IAgentAffinityAgentDAO extends BaseRepositoryQuery<AgentAffinityAgent, Long> {}

@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.interfaces.processModels;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
-public interface IProcessDAO extends BaseDAO<Process, Long> {
+public interface IProcessDAO extends BaseRepositoryQuery<Process, Long> {
 
   public SimpleActivityQueryResult[] getAllNormalActivitiesFromProcess(String processIdent);
 

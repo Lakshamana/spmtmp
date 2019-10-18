@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.interfaces.artifacts;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.SimpleArtifactDescriptorDTO;
 import br.ufpa.labes.spm.domain.Artifact;
 
-public interface IArtifactDAO extends BaseDAO<Artifact, Long> {
+public interface IArtifactDAO extends BaseRepositoryQuery<Artifact, Long> {
 
   public Object[] getArtifactsIdentsFromProcessModelWithoutTemplates(String ident);
 

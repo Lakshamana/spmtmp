@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository.interfaces.organizationPolicies;
 
-import br.ufpa.labes.spm.repository.interfaces.BaseDAO;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.DevelopingSystem;
 
-public interface IDevelopingSystemDAO extends BaseDAO<DevelopingSystem, Long> {}
+public interface IDevelopingSystemDAO extends BaseRepositoryQuery<DevelopingSystem, Long> {}

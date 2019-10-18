@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.plannerInfo;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IPeopleInstantiationSuggestionDAO;
 import br.ufpa.labes.spm.domain.PeopleInstSug;
 
-public class PeopleInstantiationSuggestionDAO extends BaseDAOImpl<PeopleInstSug, Long>
+public class PeopleInstantiationSuggestionDAO extends BaseRepositoryQueryImpl<PeopleInstSug, Long>
     implements IPeopleInstantiationSuggestionDAO {
 
   protected PeopleInstantiationSuggestionDAO(Class<PeopleInstSug> businessClass) {

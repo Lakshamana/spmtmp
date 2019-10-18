@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.assets.IAssetDAO;
 import br.ufpa.labes.spm.domain.Asset;
 import br.ufpa.labes.spm.domain.AssetRelationship;
 // import org.qrconsult.spm.vo.AssetCatalog;
 
-public class AssetDAO extends BaseDAOImpl<Asset, Long> implements IAssetDAO {
+public class AssetDAO extends BaseRepositoryQueryImpl<Asset, Long> implements IAssetDAO {
 
   public AssetDAO() {
     super(Asset.class);

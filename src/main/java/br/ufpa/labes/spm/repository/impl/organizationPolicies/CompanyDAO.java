@@ -2,11 +2,11 @@ package br.ufpa.labes.spm.repository.impl.organizationPolicies;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ICompanyDAO;
 import br.ufpa.labes.spm.domain.Company;
 
-public class CompanyDAO extends BaseDAOImpl<Company, Long> implements ICompanyDAO {
+public class CompanyDAO extends BaseRepositoryQueryImpl<Company, Long> implements ICompanyDAO {
 
   protected CompanyDAO(Class<Company> businessClass) {
     super(businessClass);

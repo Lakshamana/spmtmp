@@ -2,12 +2,12 @@ package br.ufpa.labes.spm.repository.impl.organizationPolicies;
 
 import javax.persistence.Query;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IRepositoryDAO;
 import br.ufpa.labes.spm.domain.VCSRepository;
 import br.ufpa.labes.spm.domain.Structure;
 
-public class RepositoryDAO extends BaseDAOImpl<VCSRepository, Long> implements IRepositoryDAO {
+public class RepositoryDAO extends BaseRepositoryQueryImpl<VCSRepository, Long> implements IRepositoryDAO {
   protected RepositoryDAO(Class<VCSRepository> businessClass) {
     super(businessClass);
   }

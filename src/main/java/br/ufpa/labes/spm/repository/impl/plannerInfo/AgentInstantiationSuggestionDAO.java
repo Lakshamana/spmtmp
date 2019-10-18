@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.plannerInfo;
 
-import br.ufpa.labes.spm.repository.impl.BaseDAOImpl;
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IAgentInstantiationSuggestionDAO;
 import br.ufpa.labes.spm.domain.AgentInstSug;
 
-public class AgentInstantiationSuggestionDAO extends BaseDAOImpl<AgentInstSug, Long>
+public class AgentInstantiationSuggestionDAO extends BaseRepositoryQueryImpl<AgentInstSug, Long>
     implements IAgentInstantiationSuggestionDAO {
 
   protected AgentInstantiationSuggestionDAO(Class<AgentInstSug> businessClass) {
