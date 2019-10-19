@@ -15,7 +15,7 @@ import javax.persistence.Query;
 import br.ufpa.labes.spm.annotations.Criteria;
 import br.ufpa.labes.spm.annotations.EnumCriteriaType;
 import br.ufpa.labes.spm.domain.Agent;
-import br.ufpa.labes.spm.repository.impl.agent.AgentRepositoryQuery;
+import br.ufpa.labes.spm.repository.impl.agent.AgentRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.util.PagingContext;
 import br.ufpa.labes.spm.util.SortCriteria;
@@ -222,7 +222,7 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
   public static void main(String[] args) {
     Agent a = new Agent();
     a.setId(336L);
-    AgentRepositoryQuery agentRepositoryQuery = new AgentRepositoryQuery();
+    AgentRepositoryQueryImpl agentRepositoryQuery = new AgentRepositoryQueryImpl();
     System.out.println(
         agentRepositoryQuery.generateIdent(
             "Template - Plano de Gerência de Documentos e Plano de Comunicação", a));

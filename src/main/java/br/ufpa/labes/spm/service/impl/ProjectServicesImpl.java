@@ -55,7 +55,6 @@ import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.SpmLogRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
-import br.ufpa.labes.spm.repository.impl.reports.ReportRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.IReportRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.log.ISpmLogRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IGraphicCoordinateRepositoryQuery;
@@ -226,7 +225,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	TaskRepository taskRepository;
 
   @Autowired
-	ReportRepositoryQuery reportRepositoryQuery;
+	IReportRepositoryQuery reportRepositoryQuery;
 
 	// ReportServices reportServices;
 

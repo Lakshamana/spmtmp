@@ -12,7 +12,7 @@ import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ArtifactManagementRepositoryQuery implements IArtifactManagementRepositoryQuery {
+public class ArtifactManagementRepositoryQueryImpl implements IArtifactManagementRepositoryQuery {
 
   @PersistenceContext(unitName = "SPMPU")
   private EntityManager em;

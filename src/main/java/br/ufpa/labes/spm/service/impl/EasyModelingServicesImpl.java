@@ -60,10 +60,10 @@ import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
 import br.ufpa.labes.spm.repository.WorkGroupRepository;
 import br.ufpa.labes.spm.repository.WorkGroupTypeRepository;
-import br.ufpa.labes.spm.repository.impl.activities.DecomposedRepositoryQuery;
-import br.ufpa.labes.spm.repository.impl.plainActivities.NormalRepositoryQuery;
-import br.ufpa.labes.spm.repository.impl.processModels.ProcessRepositoryQuery;
-import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelRepositoryQuery;
+import br.ufpa.labes.spm.repository.impl.activities.DecomposedRepositoryQueryImpl;
+import br.ufpa.labes.spm.repository.impl.plainActivities.NormalRepositoryQueryImpl;
+import br.ufpa.labes.spm.repository.impl.processModels.ProcessRepositoryQueryImpl;
+import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.calendar.ICalendarRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.CalendarDTO;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
@@ -2876,7 +2876,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 		SimpleActivityQueryResult[] acts = procRepository.getAllNormalActivitiesFromProcess(process_id);
 
-		NormalRepositoryQuery nRepositoryQuery = new NormalRepositoryQuery();
+		NormalRepositoryQueryImpl nRepositoryQuery = new NormalRepositoryQueryImpl();
 
 		for (int i = 0; i < acts.length; i++) {
 
@@ -2949,12 +2949,12 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	@Override
 	public void applyAllocationToProcessModel(String pm_id, String role_id, String agent_id) {
 
-		ProcessModelRepositoryQuery pmRepositoryQuery = new ProcessModelRepositoryQuery();
+		ProcessModelRepositoryQueryImpl pmRepositoryQuery = new ProcessModelRepositoryQueryImpl();
 
 		ProcessModel pm = null;
 
-		DecomposedRepositoryQuery dao = new DecomposedRepositoryQuery();
-		ProcessRepositoryQuery procRepositoryQuery = new ProcessRepositoryQuery();
+		DecomposedRepositoryQueryImpl dao = new DecomposedRepositoryQueryImpl();
+		ProcessRepositoryQueryImpl procRepositoryQuery = new ProcessRepositoryQueryImpl();
 
 		Decomposed dec = null;
 		Process proc = null;
