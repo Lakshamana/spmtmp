@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.plannerInfo.InstantiationPolicyLo
 import br.ufpa.labes.spm.domain.InstantiationPolicyLog;
 
 public class InstantiationPolicyLogRepositoryQueryImpl extends BaseRepositoryQueryImpl<InstantiationPolicyLog, Long>
-    implements nstantiationPolicyLogRepositoryQuery{
+    implements InstantiationPolicyLogRepositoryQuery{
 
   protected InstantiationPolicyLogRepositoryQueryImpl(Class<InstantiationPolicyLog> businessClass) {
     super(businessClass);

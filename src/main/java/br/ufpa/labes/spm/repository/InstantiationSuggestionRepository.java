@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface nstantiationSuggestionRepository extends IInstantiationSuggestionRepositoryQuery, JpaRepository<InstantiationSuggestion, Long> {
+public interface InstantiationSuggestionRepository extends InstantiationSuggestionRepositoryQuery, JpaRepository<InstantiationSuggestion, Long> {
 
 }

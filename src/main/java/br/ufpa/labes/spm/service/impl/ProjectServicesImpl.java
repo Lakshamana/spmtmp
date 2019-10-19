@@ -224,8 +224,8 @@ public class ProjectServicesImpl implements ProjectServices {
   @Autowired
 	TaskRepository taskRepository;
 
-  @Autowired
-	ReportRepositoryQueryreportRepositoryQuery;
+  // @Autowired
+	// ReportRepositoryQuery reportRepositoryQuery;
 
 	// ReportServices reportServices;
 

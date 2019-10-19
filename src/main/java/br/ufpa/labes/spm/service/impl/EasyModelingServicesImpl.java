@@ -124,14 +124,15 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	// EnactmentEngineLocal enactmentLocal;
 
-  CalendarRepositoryQuerycalendarRepositoryQuery;
+  @Autowired
+  CalendarRepositoryQuery calendarRepositoryQuery;
 
-  DynamicModeling dynamicModeling;
+  // DynamicModeling dynamicModeling;
 
   @Autowired
   private ProcessRepository procRepository;
 
-	NotificationServices remote;
+	// NotificationServices remote;
 
   @Autowired
   private DecomposedRepository decRepository;
@@ -2897,13 +2898,13 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 					if (((ReqAgent) reqp).getTheAgent() == null) {
 						if ((((ReqAgent) reqp).getTheRole() != null) && (((ReqAgent) reqp).getTheRole().getIdent().equals(role_id))) {
 							// allocate agent to this role
-							try {
-								// String act_id, String role_id, String ag_id
-								dynamicModeling.defineRequiredAgent(currentNormal.getIdent(), role_id, agent_id);
-							} catch (WebapseeException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+							// try {
+							// 	// String act_id, String role_id, String ag_id
+							// 	dynamicModeling.defineRequiredAgent(currentNormal.getIdent(), role_id, agent_id);
+							// } catch (WebapseeException e) {
+							// 	// TODO Auto-generated catch block
+							// 	e.printStackTrace();
+							// }
 							break;// break current loop, because we can
 							// allocate only once the same agent
 							// to one activity
@@ -2983,14 +2984,14 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 							if (((ReqAgent) reqp).getTheAgent() == null) {
 								if ((((ReqAgent) reqp).getTheRole() != null) && (((ReqAgent) reqp).getTheRole().getIdent().equals(role_id))) {
 									// alocate agent to this role
-									try {
-										// String act_id, String role_id, String
-										// ag_id
-										dynamicModeling.defineRequiredAgent(act.getIdent(), role_id, agent_id);
-									} catch (WebapseeException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
+									// try {
+									// 	// String act_id, String role_id, String
+									// 	// ag_id
+									// 	dynamicModeling.defineRequiredAgent(act.getIdent(), role_id, agent_id);
+									// } catch (WebapseeException e) {
+									// 	// TODO Auto-generated catch block
+									// 	e.printStackTrace();
+									// }
 									break;// break current loop, because we can
 									// allocate only once the same agent
 									// to one activity

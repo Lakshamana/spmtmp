@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.plannerInfo.InstantiationSuggesti
 import br.ufpa.labes.spm.domain.InstantiationSuggestion;
 
 public class InstantiationSuggestionRepositoryQueryImpl extends BaseRepositoryQueryImpl<InstantiationSuggestion, Long>
-    implements nstantiationSuggestionRepositoryQuery{
+    implements InstantiationSuggestionRepositoryQuery {
 
   protected InstantiationSuggestionRepositoryQueryImpl(Class<InstantiationSuggestion> businessClass) {
     super(businessClass);

@@ -3,4 +3,4 @@ package br.ufpa.labes.spm.repository.interfaces.plannerInfo;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.InstantiationSuggestion;
 
-public interface nstantiationSuggestionRepositoryQuery extends BaseRepositoryQuery<InstantiationSuggestion, Long> {}
+public interface InstantiationSuggestionRepositoryQuery extends BaseRepositoryQuery<InstantiationSuggestion, Long> {}
