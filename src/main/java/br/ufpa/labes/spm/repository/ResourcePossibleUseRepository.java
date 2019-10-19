@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IResourcePossibleUseRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plannerInfo.ResourcePossibleUseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ResourcePossibleUse;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ResourcePossibleUseRepository extends IResourcePossibleUseRepositoryQuery, JpaRepository<ResourcePossibleUse, Long> {
+public interface ResourcePossibleUseRepository extends ResourcePossibleUseRepositoryQuery, JpaRepository<ResourcePossibleUse, Long> {
 
 }

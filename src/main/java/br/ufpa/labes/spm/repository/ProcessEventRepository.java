@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.log.IProcessEventRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.log.ProcessEventRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ProcessEvent;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessEventRepository extends IProcessEventRepositoryQuery, JpaRepository<ProcessEvent, Long> {
+public interface ProcessEventRepository extends ProcessEventRepositoryQuery, JpaRepository<ProcessEvent, Long> {
 
 }

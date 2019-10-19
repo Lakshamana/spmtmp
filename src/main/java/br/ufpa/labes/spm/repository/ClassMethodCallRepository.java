@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.tools.IClassMethodCallRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.tools.ClassMethodCallRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ClassMethodCall;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ClassMethodCallRepository extends IClassMethodCallRepositoryQuery, JpaRepository<ClassMethodCall, Long> {
+public interface ClassMethodCallRepository extends ClassMethodCallRepositoryQuery, JpaRepository<ClassMethodCall, Long> {
 
 }

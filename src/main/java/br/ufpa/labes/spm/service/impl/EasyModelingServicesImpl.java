@@ -64,7 +64,7 @@ import br.ufpa.labes.spm.repository.impl.activities.DecomposedRepositoryQueryImp
 import br.ufpa.labes.spm.repository.impl.plainActivities.NormalRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.calendar.ICalendarRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.calendar.CalendarRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.CalendarDTO;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.ModelingException;
@@ -124,7 +124,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	// EnactmentEngineLocal enactmentLocal;
 
-  ICalendarRepositoryQuery calendarRepositoryQuery;
+  CalendarRepositoryQuerycalendarRepositoryQuery;
 
   DynamicModeling dynamicModeling;
 

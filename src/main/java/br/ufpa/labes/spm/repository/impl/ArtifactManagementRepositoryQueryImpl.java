@@ -7,12 +7,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
-import br.ufpa.labes.spm.repository.interfaces.IArtifactManagementRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.ArtifactManagementRepositoryQuery;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ArtifactManagementRepositoryQueryImpl implements IArtifactManagementRepositoryQuery {
+public class ArtifactManagementRepositoryQueryImpl implements ArtifactManagementRepositoryQuery{
 
   @PersistenceContext(unitName = "SPMPU")
   private EntityManager em;

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.resources.IShareableRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.resources.ShareableRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Shareable;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ShareableRepository extends IShareableRepositoryQuery, JpaRepository<Shareable, Long> {
+public interface ShareableRepository extends ShareableRepositoryQuery, JpaRepository<Shareable, Long> {
 
 }

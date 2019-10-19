@@ -5,11 +5,11 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredResourceRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.RequiredResourceRepositoryQuery;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
 public class RequiredResourceRepositoryQueryImpl extends BaseRepositoryQueryImpl<RequiredResource, Long>
-    implements IRequiredResourceRepositoryQuery {
+    implements RequiredResourceRepositoryQuery{
 
   protected RequiredResourceRepositoryQueryImpl(Class<RequiredResource> businessClass) {
     super(businessClass);

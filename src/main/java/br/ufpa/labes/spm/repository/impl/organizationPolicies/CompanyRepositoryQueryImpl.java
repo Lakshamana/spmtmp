@@ -3,10 +3,10 @@ package br.ufpa.labes.spm.repository.impl.organizationPolicies;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ICompanyRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.CompanyRepositoryQuery;
 import br.ufpa.labes.spm.domain.Company;
 
-public class CompanyRepositoryQueryImpl extends BaseRepositoryQueryImpl<Company, Long> implements ICompanyRepositoryQuery {
+public class CompanyRepositoryQueryImpl extends BaseRepositoryQueryImpl<Company, Long> implements CompanyRepositoryQuery{
 
   protected CompanyRepositoryQueryImpl(Class<Company> businessClass) {
     super(businessClass);

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IAgentEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.AgentEstimationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentEstimation;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentEstimationRepository extends IAgentEstimationRepositoryQuery, JpaRepository<AgentEstimation, Long> {
+public interface AgentEstimationRepository extends AgentEstimationRepositoryQuery, JpaRepository<AgentEstimation, Long> {
 
 }

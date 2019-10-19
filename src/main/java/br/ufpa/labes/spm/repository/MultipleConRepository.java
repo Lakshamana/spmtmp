@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.connections.IMultipleConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.connections.MultipleConRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.MultipleCon;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MultipleConRepository extends IMultipleConRepositoryQuery, JpaRepository<MultipleCon, Long> {
+public interface MultipleConRepository extends MultipleConRepositoryQuery, JpaRepository<MultipleCon, Long> {
 
 }

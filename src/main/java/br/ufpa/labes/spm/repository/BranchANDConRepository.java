@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.connections.IBranchANDConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.connections.BranchANDConRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.BranchANDCon;
@@ -17,7 +17,7 @@ import java.util.Optional;
  * Spring Data  repository for the BranchANDCon entity.
  */
 @Repository
-public interface BranchANDConRepository extends IBranchANDConRepositoryQuery, JpaRepository<BranchANDCon, Long> {
+public interface BranchANDConRepository extends BranchANDConRepositoryQuery, JpaRepository<BranchANDCon, Long> {
 
     @Query(value = "select distinct branchANDCon from BranchANDCon branchANDCon left join fetch branchANDCon.toMultipleCons",
         countQuery = "select count(distinct branchANDCon) from BranchANDCon branchANDCon")

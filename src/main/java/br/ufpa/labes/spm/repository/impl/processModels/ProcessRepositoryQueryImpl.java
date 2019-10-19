@@ -6,13 +6,13 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessRepositoryQuery;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
-public class ProcessRepositoryQueryImpl extends BaseRepositoryQueryImpl<Process, Long> implements IProcessRepositoryQuery {
+public class ProcessRepositoryQueryImpl extends BaseRepositoryQueryImpl<Process, Long> implements ProcessRepositoryQuery{
 
   protected ProcessRepositoryQueryImpl(Class<Process> businessClass) {
     super(businessClass);

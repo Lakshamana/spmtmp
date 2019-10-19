@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.connections.ISequenceRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.connections.SequenceRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Sequence;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SequenceRepository extends ISequenceRepositoryQuery, JpaRepository<Sequence, Long> {
+public interface SequenceRepository extends SequenceRepositoryQuery, JpaRepository<Sequence, Long> {
 
 }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.INormalRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.NormalRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Normal;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface NormalRepository extends INormalRepositoryQuery, JpaRepository<Normal, Long> {
+public interface NormalRepository extends NormalRepositoryQuery, JpaRepository<Normal, Long> {
 
 }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.agent.IAbilityRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.agent.AbilityRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Ability;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AbilityRepository extends IAbilityRepositoryQuery, JpaRepository<Ability, Long> {
+public interface AbilityRepository extends AbilityRepositoryQuery, JpaRepository<Ability, Long> {
 
 }

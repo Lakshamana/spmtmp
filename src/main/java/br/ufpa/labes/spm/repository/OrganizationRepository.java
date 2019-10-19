@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.people.IOrganizationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.people.OrganizationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Organization;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OrganizationRepository extends IOrganizationRepositoryQuery, JpaRepository<Organization, Long> {
+public interface OrganizationRepository extends OrganizationRepositoryQuery, JpaRepository<Organization, Long> {
 
 }

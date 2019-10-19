@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IDevelopingSystemRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.DevelopingSystemRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.DevelopingSystem;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DevelopingSystemRepository extends IDevelopingSystemRepositoryQuery, JpaRepository<DevelopingSystem, Long> {
+public interface DevelopingSystemRepository extends DevelopingSystemRepositoryQuery, JpaRepository<DevelopingSystem, Long> {
 
 }

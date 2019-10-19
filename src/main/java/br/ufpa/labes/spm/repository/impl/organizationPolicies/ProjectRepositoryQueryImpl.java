@@ -5,10 +5,10 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
 import br.ufpa.labes.spm.domain.Project;
 
-public class ProjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Project, Long> implements IProjectRepositoryQuery {
+public class ProjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Project, Long> implements ProjectRepositoryQuery{
 
   protected ProjectRepositoryQueryImpl(Class<Project> businessClass) {
     super(businessClass);

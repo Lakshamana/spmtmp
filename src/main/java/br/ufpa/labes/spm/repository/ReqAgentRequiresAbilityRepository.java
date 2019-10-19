@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentRequiresAbilityRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqAgentRequiresAbilityRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ReqAgentRequiresAbility;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReqAgentRequiresAbilityRepository extends IReqAgentRequiresAbilityRepositoryQuery, JpaRepository<ReqAgentRequiresAbility, Long> {
+public interface ReqAgentRequiresAbilityRepository extends ReqAgentRequiresAbilityRepositoryQuery, JpaRepository<ReqAgentRequiresAbility, Long> {
 
 }

@@ -1,10 +1,10 @@
 package br.ufpa.labes.spm.repository.impl.connections;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.connections.IArtifactConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.connections.ArtifactConRepositoryQuery;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 
-public class ArtifactConRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactCon, Long> implements IArtifactConRepositoryQuery {
+public class ArtifactConRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactCon, Long> implements ArtifactConRepositoryQuery{
 
   protected ArtifactConRepositoryQueryImpl(Class<ArtifactCon> businessClass) {
     super(businessClass);

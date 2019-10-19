@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqAgentRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ReqAgent;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReqAgentRepository extends IReqAgentRepositoryQuery, JpaRepository<ReqAgent, Long> {
+public interface ReqAgentRepository extends ReqAgentRepositoryQuery, JpaRepository<ReqAgent, Long> {
 
 }

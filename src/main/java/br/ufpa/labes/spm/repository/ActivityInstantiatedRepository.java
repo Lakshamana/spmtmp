@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IActivityInstantiatedRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plannerInfo.ActivityInstantiatedRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ActivityInstantiated;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityInstantiatedRepository extends IActivityInstantiatedRepositoryQuery, JpaRepository<ActivityInstantiated, Long> {
+public interface ActivityInstantiatedRepository extends ActivityInstantiatedRepositoryQuery, JpaRepository<ActivityInstantiated, Long> {
 
 }

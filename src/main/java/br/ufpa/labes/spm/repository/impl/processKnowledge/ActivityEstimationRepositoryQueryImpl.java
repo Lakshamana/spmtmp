@@ -5,11 +5,11 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IActivityEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ActivityEstimationRepositoryQuery;
 import br.ufpa.labes.spm.domain.ActivityEstimation;
 
 public class ActivityEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<ActivityEstimation, Long>
-    implements IActivityEstimationRepositoryQuery {
+    implements ActivityEstimationRepositoryQuery{
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 

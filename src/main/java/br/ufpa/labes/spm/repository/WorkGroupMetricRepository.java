@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IWorkGroupMetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.WorkGroupMetricRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.WorkGroupMetric;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface WorkGroupMetricRepository extends IWorkGroupMetricRepositoryQuery, JpaRepository<WorkGroupMetric, Long> {
+public interface WorkGroupMetricRepository extends WorkGroupMetricRepositoryQuery, JpaRepository<WorkGroupMetric, Long> {
 
 }

@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.types.IToolTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.types.ToolTypeRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ToolType;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ToolTypeRepository extends IToolTypeRepositoryQuery, JpaRepository<ToolType, Long> {
+public interface ToolTypeRepository extends ToolTypeRepositoryQuery, JpaRepository<ToolType, Long> {
 
 }

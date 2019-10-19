@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IResourceMetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ResourceMetricRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ResourceMetric;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ResourceMetricRepository extends IResourceMetricRepositoryQuery, JpaRepository<ResourceMetric, Long> {
+public interface ResourceMetricRepository extends ResourceMetricRepositoryQuery, JpaRepository<ResourceMetric, Long> {
 
 }

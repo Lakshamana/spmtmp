@@ -55,12 +55,12 @@ import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.SpmLogRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
-import br.ufpa.labes.spm.repository.interfaces.IReportRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.log.ISpmLogRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IGraphicCoordinateRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.IWebAPSEEObjectRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessModelRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.ITaskRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.log.SpmLogRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.GraphicCoordinateRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.WebAPSEEObjectRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessModelRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.taskagenda.TaskRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.dashboard.ProjectCost;
 import br.ufpa.labes.spm.service.dto.dashboard.ProjectStatistic;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
@@ -225,7 +225,7 @@ public class ProjectServicesImpl implements ProjectServices {
 	TaskRepository taskRepository;
 
   @Autowired
-	IReportRepositoryQuery reportRepositoryQuery;
+	ReportRepositoryQueryreportRepositoryQuery;
 
 	// ReportServices reportServices;
 

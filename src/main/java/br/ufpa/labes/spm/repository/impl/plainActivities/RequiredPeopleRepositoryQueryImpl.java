@@ -6,14 +6,14 @@ import java.util.HashSet;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IRequiredPeopleRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.RequiredPeopleRepositoryQuery;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.ReqAgent;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 
 public class RequiredPeopleRepositoryQueryImpl extends BaseRepositoryQueryImpl<RequiredPeople, Long>
-    implements IRequiredPeopleRepositoryQuery {
+    implements RequiredPeopleRepositoryQuery{
 
   protected RequiredPeopleRepositoryQueryImpl(Class<RequiredPeople> businessClass) {
     super(businessClass);

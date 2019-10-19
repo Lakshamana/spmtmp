@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.IOcurrenceRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.taskagenda.OcurrenceRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Ocurrence;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OcurrenceRepository extends IOcurrenceRepositoryQuery, JpaRepository<Ocurrence, Long> {
+public interface OcurrenceRepository extends OcurrenceRepositoryQuery, JpaRepository<Ocurrence, Long> {
 
 }

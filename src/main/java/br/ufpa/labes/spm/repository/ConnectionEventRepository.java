@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.log.IConnectionEventRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.log.ConnectionEventRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ConnectionEvent;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ConnectionEventRepository extends IConnectionEventRepositoryQuery, JpaRepository<ConnectionEvent, Long> {
+public interface ConnectionEventRepository extends ConnectionEventRepositoryQuery, JpaRepository<ConnectionEvent, Long> {
 
 }

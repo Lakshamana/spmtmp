@@ -24,9 +24,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.ufpa.labes.spm.repository.ProcessRepository;
 import br.ufpa.labes.spm.repository.ProjectRepository;
-import br.ufpa.labes.spm.repository.interfaces.IReportRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.IProjectRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModels.IProcessRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessRepositoryQuery;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Decomposed;
@@ -60,7 +60,7 @@ import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.service.impl.CriticalPathMethod;
 
-public class ReportRepositoryQueryImpl implements IReportRepositoryQuery {
+public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 

@@ -5,10 +5,10 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.assets.ITagStatsRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.assets.TagStatsRepositoryQuery;
 import br.ufpa.labes.spm.domain.TagStats;
 
-public class TagStatsRepositoryQueryImpl extends BaseRepositoryQueryImpl<TagStats, Long> implements ITagStatsRepositoryQuery {
+public class TagStatsRepositoryQueryImpl extends BaseRepositoryQueryImpl<TagStats, Long> implements TagStatsRepositoryQuery{
 
   protected TagStatsRepositoryQueryImpl() {
     super(TagStats.class);

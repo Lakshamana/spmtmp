@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.types.IWorkGroupTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.types.WorkGroupTypeRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.WorkGroupType;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface WorkGroupTypeRepository extends IWorkGroupTypeRepositoryQuery, JpaRepository<WorkGroupType, Long> {
+public interface WorkGroupTypeRepository extends WorkGroupTypeRepositoryQuery, JpaRepository<WorkGroupType, Long> {
 
 }

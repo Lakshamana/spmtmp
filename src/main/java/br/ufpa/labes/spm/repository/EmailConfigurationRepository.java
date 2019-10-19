@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.agent.IEmailConfigurationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.agent.EmailConfigurationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.EmailConfiguration;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EmailConfigurationRepository extends IEmailConfigurationRepositoryQuery, JpaRepository<EmailConfiguration, Long> {
+public interface EmailConfigurationRepository extends EmailConfigurationRepositoryQuery, JpaRepository<EmailConfiguration, Long> {
 
 }

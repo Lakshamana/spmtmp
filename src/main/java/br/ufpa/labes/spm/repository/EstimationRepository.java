@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.EstimationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Estimation;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EstimationRepository extends IEstimationRepositoryQuery, JpaRepository<Estimation, Long> {
+public interface EstimationRepository extends EstimationRepositoryQuery, JpaRepository<Estimation, Long> {
 
 }

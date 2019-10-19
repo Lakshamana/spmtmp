@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.processKnowledge.IResourceEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ResourceEstimationRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ResourceEstimation;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ResourceEstimationRepository extends IResourceEstimationRepositoryQuery, JpaRepository<ResourceEstimation, Long> {
+public interface ResourceEstimationRepository extends ResourceEstimationRepositoryQuery, JpaRepository<ResourceEstimation, Long> {
 
 }

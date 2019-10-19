@@ -1,6 +1,6 @@
 package br.ufpa.labes.spm.repository;
 
-import br.ufpa.labes.spm.repository.interfaces.plannerInfo.IAgentInstSuggestionToAgentRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plannerInfo.AgentInstSuggestionToAgentRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentInstSuggestionToAgent;
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentInstSuggestionToAgentRepository extends IAgentInstSuggestionToAgentRepositoryQuery, JpaRepository<AgentInstSuggestionToAgent, Long> {
+public interface AgentInstSuggestionToAgentRepository extends AgentInstSuggestionToAgentRepositoryQuery, JpaRepository<AgentInstSuggestionToAgent, Long> {
 
 }

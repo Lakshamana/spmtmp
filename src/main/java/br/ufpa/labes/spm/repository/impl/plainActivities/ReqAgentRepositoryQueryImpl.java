@@ -5,10 +5,10 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
-import br.ufpa.labes.spm.repository.interfaces.plainActivities.IReqAgentRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqAgentRepositoryQuery;
 import br.ufpa.labes.spm.domain.ReqAgent;
 
-public class ReqAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgent, Long> implements IReqAgentRepositoryQuery {
+public class ReqAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgent, Long> implements ReqAgentRepositoryQuery{
 
   protected ReqAgentRepositoryQueryImpl(Class<ReqAgent> businessClass) {
     super(businessClass);
