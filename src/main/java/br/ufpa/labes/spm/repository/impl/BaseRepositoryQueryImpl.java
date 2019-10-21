@@ -27,10 +27,9 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
-@Repository
 public class BaseRepositoryQueryImpl<T, PK> extends SimpleJpaRepository<T, PK> implements BaseRepositoryQuery<T, PK> {
 
-  @PersistenceContext(unitName = "SPMPU")
+  @PersistenceContext
   private static EntityManager em;
 
   private Class<T> businessClass;
