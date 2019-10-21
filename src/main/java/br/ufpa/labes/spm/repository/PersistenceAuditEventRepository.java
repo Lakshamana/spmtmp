@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Spring Data JPA repository for the {@link PersistentAuditEvent} entity.
  */
+@Repository
 public interface PersistenceAuditEventRepository extends BaseRepositoryQuery<PersistentAuditEvent, Long> {
 
     List<PersistentAuditEvent> findByPrincipal(String principal);

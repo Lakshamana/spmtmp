@@ -14,6 +14,7 @@ import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.stereotype.Repository;
 
 import br.ufpa.labes.spm.annotations.Criteria;
 import br.ufpa.labes.spm.annotations.EnumCriteriaType;
@@ -26,6 +27,7 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
+@Repository
 public class BaseRepositoryQueryImpl<T, PK> extends SimpleJpaRepository<T, PK> implements BaseRepositoryQuery<T, PK> {
 
   @PersistenceContext(unitName = "SPMPU")
@@ -33,7 +35,7 @@ public class BaseRepositoryQueryImpl<T, PK> extends SimpleJpaRepository<T, PK> i
 
   private Class<T> businessClass;
 
-  protected BaseRepositoryQueryImpl(Class<T> businessClass) {
+  public BaseRepositoryQueryImpl(Class<T> businessClass) {
     super(businessClass, em);
     this.businessClass = businessClass;
   }
