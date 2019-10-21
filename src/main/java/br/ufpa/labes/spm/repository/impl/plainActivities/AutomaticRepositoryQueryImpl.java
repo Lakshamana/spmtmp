@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.plainActivities.AutomaticReposito
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Automatic;
 
-public class AutomaticRepositoryQueryImpl implements AutomaticRepositoryQuery {
+public class AutomaticRepositoryQueryImpl extends BaseRepositoryQueryImpl<Automatic, Long> implements AutomaticRepositoryQuery {
 
   protected AutomaticRepositoryQueryImpl(Class<Automatic> businessClass) {
     super(businessClass);

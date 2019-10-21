@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.types.EventTypeRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.EventType;
 
-public class EventTypeRepositoryQueryImpl implements EventTypeRepositoryQuery {
+public class EventTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<EventType, Long> implements EventTypeRepositoryQuery {
 
   protected EventTypeRepositoryQueryImpl(Class<EventType> businessClass) {
     super(businessClass);

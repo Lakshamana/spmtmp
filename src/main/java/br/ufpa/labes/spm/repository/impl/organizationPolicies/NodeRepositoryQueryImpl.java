@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.NodeReposito
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Node;
 
-public class NodeRepositoryQueryImpl implements NodeRepositoryQuery {
+public class NodeRepositoryQueryImpl extends BaseRepositoryQueryImpl<Node, Long> implements NodeRepositoryQuery {
 
   protected NodeRepositoryQueryImpl(Class<Node> businessClass) {
     super(businessClass);

@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processKnowledge.AgentMetricRepos
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.AgentMetric;
 
-public class AgentMetricRepositoryQueryImpl implements AgentMetricRepositoryQuery {
+public class AgentMetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<AgentMetric, Long> implements AgentMetricRepositoryQuery {
 
   protected AgentMetricRepositoryQueryImpl(Class<AgentMetric> businessClass) {
     super(businessClass);

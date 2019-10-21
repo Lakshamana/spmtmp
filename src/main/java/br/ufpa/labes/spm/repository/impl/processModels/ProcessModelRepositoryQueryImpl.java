@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessModelReposit
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ProcessModel;
 
-public class ProcessModelRepositoryQueryImpl implements ProcessModelRepositoryQuery {
+public class ProcessModelRepositoryQueryImpl extends BaseRepositoryQueryImpl<ProcessModel, Long> implements ProcessModelRepositoryQuery {
 
   protected ProcessModelRepositoryQueryImpl(Class<ProcessModel> businessClass) {
     super(businessClass);

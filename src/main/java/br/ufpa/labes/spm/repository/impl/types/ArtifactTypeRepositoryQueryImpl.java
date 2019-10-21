@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.types.ArtifactTypeRepositoryQuery
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ArtifactType;
 
-public class ArtifactTypeRepositoryQueryImpl implements ArtifactTypeRepositoryQuery {
+public class ArtifactTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactType, Long> implements ArtifactTypeRepositoryQuery {
 
   protected ArtifactTypeRepositoryQueryImpl(Class<ArtifactType> businessClass) {
     super(businessClass);

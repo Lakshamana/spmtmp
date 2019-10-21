@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.assets.TagStatsRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.TagStats;
 
-public class TagStatsRepositoryQueryImpl implements TagStatsRepositoryQuery {
+public class TagStatsRepositoryQueryImpl extends BaseRepositoryQueryImpl<TagStats, Long> implements TagStatsRepositoryQuery {
 
   protected TagStatsRepositoryQueryImpl() {
     super(TagStats.class);

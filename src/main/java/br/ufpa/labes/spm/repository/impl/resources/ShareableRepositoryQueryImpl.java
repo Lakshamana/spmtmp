@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.resources.ShareableRepositoryQuer
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Shareable;
 
-public class ShareableRepositoryQueryImpl implements ShareableRepositoryQuery {
+public class ShareableRepositoryQueryImpl extends BaseRepositoryQueryImpl<Shareable, Long> implements ShareableRepositoryQuery {
 
   protected ShareableRepositoryQueryImpl(Class<Shareable> businessClass) {
     super(businessClass);

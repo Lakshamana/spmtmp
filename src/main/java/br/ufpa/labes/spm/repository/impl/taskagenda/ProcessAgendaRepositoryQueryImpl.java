@@ -15,7 +15,7 @@ import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ProcessAgendaRepositoryQueryImpl implements ProcessAgendaRepositoryQuery {
+public class ProcessAgendaRepositoryQueryImpl extends BaseRepositoryQueryImpl<ProcessAgenda, Long> implements ProcessAgendaRepositoryQuery {
 
   @Autowired
   private TaskRepository taskRepository;

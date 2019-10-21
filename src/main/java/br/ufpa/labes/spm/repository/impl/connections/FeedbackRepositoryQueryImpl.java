@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.connections.FeedbackRepositoryQue
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Feedback;
 
-public class FeedbackRepositoryQueryImpl implements FeedbackRepositoryQuery {
+public class FeedbackRepositoryQueryImpl extends BaseRepositoryQueryImpl<Feedback, Long> implements FeedbackRepositoryQuery {
 
   protected FeedbackRepositoryQueryImpl(Class<Feedback> businessClass) {
     super(businessClass);

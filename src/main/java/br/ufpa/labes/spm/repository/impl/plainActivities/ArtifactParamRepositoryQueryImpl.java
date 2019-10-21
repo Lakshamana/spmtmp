@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.plainActivities.ArtifactParamRepo
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ArtifactParam;
 
-public class ArtifactParamRepositoryQueryImpl implements ArtifactParamRepositoryQuery {
+public class ArtifactParamRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactParam, Long> implements ArtifactParamRepositoryQuery {
 
   protected ArtifactParamRepositoryQueryImpl(Class<ArtifactParam> businessClass) {
     super(businessClass);

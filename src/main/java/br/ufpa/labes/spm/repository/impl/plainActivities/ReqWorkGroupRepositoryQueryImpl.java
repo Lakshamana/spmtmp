@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqWorkGroupRepos
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 
-public class ReqWorkGroupRepositoryQueryImpl implements ReqWorkGroupRepositoryQuery {
+public class ReqWorkGroupRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqWorkGroup, Long> implements ReqWorkGroupRepositoryQuery {
 
   protected ReqWorkGroupRepositoryQueryImpl(Class<ReqWorkGroup> businessClass) {
     super(businessClass);

@@ -8,7 +8,7 @@ import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.AgentDTO;
 import br.ufpa.labes.spm.domain.Agent;
 
-public class AgentRepositoryQueryImpl implements AgentRepositoryQuery {
+public class AgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<Agent, Long> implements AgentRepositoryQuery {
 
   protected AgentRepositoryQueryImpl(Class<Agent> businessClass) {
     super(businessClass);

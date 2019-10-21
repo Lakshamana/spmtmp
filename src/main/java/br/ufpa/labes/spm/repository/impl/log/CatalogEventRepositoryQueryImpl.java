@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.log.CatalogEventRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.CatalogEvent;
 
-public class CatalogEventRepositoryQueryImpl implements CatalogEventRepositoryQuery {
+public class CatalogEventRepositoryQueryImpl extends BaseRepositoryQueryImpl<CatalogEvent, Long> implements CatalogEventRepositoryQuery {
 
   protected CatalogEventRepositoryQueryImpl(Class<CatalogEvent> businessClass) {
     super(businessClass);

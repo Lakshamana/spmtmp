@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.connections.BranchConCondReposito
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.BranchConCond;
 
-public class BranchConCondRepositoryQueryImpl implements BranchConCondRepositoryQuery {
+public class BranchConCondRepositoryQueryImpl extends BaseRepositoryQueryImpl<BranchConCond, Long> implements BranchConCondRepositoryQuery {
 
   protected BranchConCondRepositoryQueryImpl(Class<BranchConCond> businessClass) {
     super(businessClass);

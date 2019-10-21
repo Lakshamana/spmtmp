@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqAgentRepositor
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ReqAgent;
 
-public class ReqAgentRepositoryQueryImpl implements ReqAgentRepositoryQuery {
+public class ReqAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgent, Long> implements ReqAgentRepositoryQuery {
 
   protected ReqAgentRepositoryQueryImpl(Class<ReqAgent> businessClass) {
     super(businessClass);

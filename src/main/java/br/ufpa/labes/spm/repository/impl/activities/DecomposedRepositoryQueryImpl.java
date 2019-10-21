@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.activities.DecomposedRepositoryQu
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Decomposed;
 
-public class DecomposedRepositoryQueryImpl implements DecomposedRepositoryQuery {
+public class DecomposedRepositoryQueryImpl extends BaseRepositoryQueryImpl<Decomposed, Long> implements DecomposedRepositoryQuery {
 
   protected DecomposedRepositoryQueryImpl(Class<Decomposed> businessClass) {
     super(businessClass);

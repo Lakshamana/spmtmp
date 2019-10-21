@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.plainActivities.ParameterReposito
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Parameter;
 
-public class ParameterRepositoryQueryImpl implements ParameterRepositoryQuery {
+public class ParameterRepositoryQueryImpl extends BaseRepositoryQueryImpl<Parameter, Long> implements ParameterRepositoryQuery {
 
   protected ParameterRepositoryQueryImpl(Class<Parameter> businessClass) {
     super(businessClass);

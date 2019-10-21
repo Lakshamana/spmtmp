@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.types.ResourceTypeRepositoryQuery
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ResourceType;
 
-public class ResourceTypeRepositoryQueryImpl implements ResourceTypeRepositoryQuery {
+public class ResourceTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ResourceType, Long> implements ResourceTypeRepositoryQuery {
 
   protected ResourceTypeRepositoryQueryImpl(Class<ResourceType> businessClass) {
     super(businessClass);

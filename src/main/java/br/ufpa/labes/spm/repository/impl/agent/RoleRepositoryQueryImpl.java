@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.agent.RoleRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Role;
 
-public class RoleRepositoryQueryImpl implements RoleRepositoryQuery {
+public class RoleRepositoryQueryImpl extends BaseRepositoryQueryImpl<Role, Long> implements RoleRepositoryQuery {
 
   protected RoleRepositoryQueryImpl(Class<Role> businessClass) {
     super(businessClass);

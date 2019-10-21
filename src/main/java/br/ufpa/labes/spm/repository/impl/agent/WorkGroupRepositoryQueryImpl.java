@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.agent.WorkGroupRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.WorkGroup;
 
-public class WorkGroupRepositoryQueryImpl implements WorkGroupRepositoryQuery {
+public class WorkGroupRepositoryQueryImpl extends BaseRepositoryQueryImpl<WorkGroup, Long> implements WorkGroupRepositoryQuery {
 
   protected WorkGroupRepositoryQueryImpl(Class<WorkGroup> businessClass) {
     super(businessClass);

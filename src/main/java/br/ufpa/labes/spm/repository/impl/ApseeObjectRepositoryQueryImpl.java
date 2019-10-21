@@ -1,8 +1,9 @@
 package br.ufpa.labes.spm.repository.impl;
 
+import br.ufpa.labes.spm.domain.WebAPSEEObject;
 import br.ufpa.labes.spm.repository.interfaces.ApseeObjectRepositoryQuery;
 
-public class ApseeObjectRepositoryQueryImpl implements ApseeObjectRepositoryQuery {
+public class ApseeObjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Object, Long> implements ApseeObjectRepositoryQuery {
 
   protected ApseeObjectRepositoryQueryImpl(Class<Object> businessClass) {
     super(businessClass);

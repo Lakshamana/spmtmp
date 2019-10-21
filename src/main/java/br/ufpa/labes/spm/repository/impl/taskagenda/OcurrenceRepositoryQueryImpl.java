@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.taskagenda.OcurrenceRepositoryQue
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Ocurrence;
 
-public class OcurrenceRepositoryQueryImpl implements OcurrenceRepositoryQuery {
+public class OcurrenceRepositoryQueryImpl extends BaseRepositoryQueryImpl<Ocurrence, Long> implements OcurrenceRepositoryQuery {
 
   protected OcurrenceRepositoryQueryImpl(Class<Ocurrence> businessClass) {
     super(businessClass);

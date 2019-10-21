@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.connections.MultipleConRepository
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.MultipleCon;
 
-public class MultipleConRepositoryQueryImpl implements MultipleConRepositoryQuery {
+public class MultipleConRepositoryQueryImpl extends BaseRepositoryQueryImpl<MultipleCon, Long> implements MultipleConRepositoryQuery {
 
   protected MultipleConRepositoryQueryImpl(Class<MultipleCon> businessClass) {
     super(businessClass);

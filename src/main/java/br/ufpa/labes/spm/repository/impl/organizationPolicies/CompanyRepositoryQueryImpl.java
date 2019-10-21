@@ -7,7 +7,7 @@ import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.CompanyRepos
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Company;
 
-public class CompanyRepositoryQueryImpl implements CompanyRepositoryQuery {
+public class CompanyRepositoryQueryImpl extends BaseRepositoryQueryImpl<Company, Long> implements CompanyRepositoryQuery {
 
   protected CompanyRepositoryQueryImpl(Class<Company> businessClass) {
     super(businessClass);

@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.types.ToolTypeRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ToolType;
 
-public class ToolTypeRepositoryQueryImpl implements ToolTypeRepositoryQuery {
+public class ToolTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ToolType, Long> implements ToolTypeRepositoryQuery {
 
   protected ToolTypeRepositoryQueryImpl(Class<ToolType> businessClass) {
     super(businessClass);

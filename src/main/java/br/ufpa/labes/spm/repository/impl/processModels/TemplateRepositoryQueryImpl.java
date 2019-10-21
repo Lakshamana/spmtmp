@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processModels.TemplateRepositoryQ
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Template;
 
-public class TemplateRepositoryQueryImpl implements TemplateRepositoryQuery {
+public class TemplateRepositoryQueryImpl extends BaseRepositoryQueryImpl<Template, Long> implements TemplateRepositoryQuery {
 
   protected TemplateRepositoryQueryImpl(Class<Template> businessClass) {
     super(businessClass);

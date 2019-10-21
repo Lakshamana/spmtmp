@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processModels.DescriptionReposito
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Description;
 
-public class DescriptionRepositoryQueryImpl implements DescriptionRepositoryQuery {
+public class DescriptionRepositoryQueryImpl extends BaseRepositoryQueryImpl<Description, Long> implements DescriptionRepositoryQuery {
 
   protected DescriptionRepositoryQueryImpl(Class<Description> businessClass) {
     super(businessClass);

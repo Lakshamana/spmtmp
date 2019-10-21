@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.log.ResourceEventRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ResourceEvent;
 
-public class ResourceEventRepositoryQueryImpl implements ResourceEventRepositoryQuery {
+public class ResourceEventRepositoryQueryImpl extends BaseRepositoryQueryImpl<ResourceEvent, Long> implements ResourceEventRepositoryQuery {
 
   protected ResourceEventRepositoryQueryImpl(Class<ResourceEvent> businessClass) {
     super(businessClass);

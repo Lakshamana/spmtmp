@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.driver.DriverRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Driver;
 
-public class DriverRepositoryQueryImpl implements DriverRepositoryQuery {
+public class DriverRepositoryQueryImpl extends BaseRepositoryQueryImpl<Driver, Long> implements DriverRepositoryQuery {
 
   protected DriverRepositoryQueryImpl(Class<Driver> businessClass) {
     super(businessClass);

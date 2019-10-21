@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.activities.ActivityRepositoryQuer
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Activity;
 
-public class ActivityRepositoryQueryImpl implements ActivityRepositoryQuery {
+public class ActivityRepositoryQueryImpl extends BaseRepositoryQueryImpl<Activity, Long> implements ActivityRepositoryQuery {
 
   public ActivityRepositoryQueryImpl(Class<Activity> businessClass) {
     super(businessClass);

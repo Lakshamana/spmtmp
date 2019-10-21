@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.StructureRep
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Structure;
 
-public class StructureRepositoryQueryImpl implements StructureRepositoryQuery {
+public class StructureRepositoryQueryImpl extends BaseRepositoryQueryImpl<Structure, Long> implements StructureRepositoryQuery {
 
   protected StructureRepositoryQueryImpl(Class<Structure> businessClass) {
     super(businessClass);

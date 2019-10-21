@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.agent.AbilityRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Ability;
 
-public class AbilityRepositoryQueryImpl implements AbilityRepositoryQuery {
+public class AbilityRepositoryQueryImpl extends BaseRepositoryQueryImpl<Ability, Long> implements AbilityRepositoryQuery {
 
   protected AbilityRepositoryQueryImpl(Class<Ability> businessClass) {
     super(businessClass);

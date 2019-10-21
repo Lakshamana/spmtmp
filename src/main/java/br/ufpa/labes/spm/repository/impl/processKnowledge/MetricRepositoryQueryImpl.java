@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processKnowledge.MetricRepository
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Metric;
 
-public class MetricRepositoryQueryImpl implements MetricRepositoryQuery {
+public class MetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<Metric, Long> implements MetricRepositoryQuery {
 
   protected MetricRepositoryQueryImpl(Class<Metric> businessClass) {
     super(businessClass);

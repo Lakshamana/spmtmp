@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepos
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Project;
 
-public class ProjectRepositoryQueryImpl implements ProjectRepositoryQuery {
+public class ProjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Project, Long> implements ProjectRepositoryQuery {
 
   protected ProjectRepositoryQueryImpl(Class<Project> businessClass) {
     super(businessClass);

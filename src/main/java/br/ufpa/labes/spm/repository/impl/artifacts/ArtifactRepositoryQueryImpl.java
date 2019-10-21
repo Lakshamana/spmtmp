@@ -14,7 +14,7 @@ import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 import br.ufpa.labes.spm.domain.InvolvedArtifact;
 
-public class ArtifactRepositoryQueryImpl implements ArtifactRepositoryQuery {
+public class ArtifactRepositoryQueryImpl extends BaseRepositoryQueryImpl<Artifact, Long> implements ArtifactRepositoryQuery {
 
   protected ArtifactRepositoryQueryImpl(Class<Artifact> businessClass) {
     super(businessClass);

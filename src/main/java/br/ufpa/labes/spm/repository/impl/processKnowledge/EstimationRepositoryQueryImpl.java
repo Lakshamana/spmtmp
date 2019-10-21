@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.repository.interfaces.processKnowledge.EstimationReposi
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Estimation;
 
-public class EstimationRepositoryQueryImpl implements EstimationRepositoryQuery {
+public class EstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<Estimation, Long> implements EstimationRepositoryQuery {
 
   protected EstimationRepositoryQueryImpl(Class<Estimation> businessClass) {
     super(businessClass);

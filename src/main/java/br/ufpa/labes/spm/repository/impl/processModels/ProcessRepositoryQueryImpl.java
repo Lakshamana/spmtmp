@@ -13,7 +13,7 @@ import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
-public class ProcessRepositoryQueryImpl implements ProcessRepositoryQuery {
+public class ProcessRepositoryQueryImpl extends BaseRepositoryQueryImpl<Process, Long> implements ProcessRepositoryQuery {
 
   protected ProcessRepositoryQueryImpl(Class<Process> businessClass) {
     super(businessClass);
