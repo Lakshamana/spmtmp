@@ -12,6 +12,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.springframework.data.repository.NoRepositoryBean;
+
 import br.ufpa.labes.spm.annotations.Criteria;
 import br.ufpa.labes.spm.annotations.EnumCriteriaType;
 import br.ufpa.labes.spm.domain.Agent;
