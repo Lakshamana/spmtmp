@@ -14,15 +14,6 @@ import br.ufpa.labes.spm.domain.RequiredPeople;
 
 public class RequiredPeopleRepositoryQueryImpl extends BaseRepositoryQueryImpl<RequiredPeople, Long>
     implements RequiredPeopleRepositoryQuery{
-
-  protected RequiredPeopleRepositoryQueryImpl(Class<RequiredPeople> businessClass) {
-    super(businessClass);
-  }
-
-  public RequiredPeopleRepositoryQueryImpl() {
-    super(RequiredPeople.class);
-  }
-
   public Collection<String> getReqPeopleEmails(String normalIdent) {
     getPersistenceContext().getTransaction().begin();
 

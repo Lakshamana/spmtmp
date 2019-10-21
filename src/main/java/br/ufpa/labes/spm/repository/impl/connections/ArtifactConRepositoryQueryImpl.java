@@ -6,14 +6,6 @@ import br.ufpa.labes.spm.domain.ArtifactCon;
 
 public class ArtifactConRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactCon, Long> implements ArtifactConRepositoryQuery{
 
-  protected ArtifactConRepositoryQueryImpl(Class<ArtifactCon> businessClass) {
-    super(businessClass);
-  }
-
-  public ArtifactConRepositoryQueryImpl() {
-    super(ArtifactCon.class);
-  }
-
   // @Override
   // public ArtifactCon save(ArtifactCon conn) {
   //   super.save(conn);

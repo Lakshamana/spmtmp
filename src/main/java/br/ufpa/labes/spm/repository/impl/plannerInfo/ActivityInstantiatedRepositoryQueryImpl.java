@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ActivityInstantiated;
 
 public class ActivityInstantiatedRepositoryQueryImpl extends BaseRepositoryQueryImpl<ActivityInstantiated, Long>
     implements ActivityInstantiatedRepositoryQuery{
-
-  protected ActivityInstantiatedRepositoryQueryImpl(Class<ActivityInstantiated> businessClass) {
-    super(businessClass);
-  }
-
-  public ActivityInstantiatedRepositoryQueryImpl() {
-    super(ActivityInstantiated.class);
-  }
 }

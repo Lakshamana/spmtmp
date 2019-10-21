@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.DevelopingSystem;
 
 public class DevelopingSystemRepositoryQueryImpl extends BaseRepositoryQueryImpl<DevelopingSystem, Long>
     implements DevelopingSystemRepositoryQuery{
-
-  protected DevelopingSystemRepositoryQueryImpl(Class<DevelopingSystem> businessClass) {
-    super(businessClass);
-  }
-
-  public DevelopingSystemRepositoryQueryImpl() {
-    super(DevelopingSystem.class);
-  }
 }

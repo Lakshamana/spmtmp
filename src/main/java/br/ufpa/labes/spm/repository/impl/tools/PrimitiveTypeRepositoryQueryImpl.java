@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.repository.interfaces.tools.PrimitiveTypeRepositoryQuer
 
 public class PrimitiveTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<PrimitiveType, Long> implements PrimitiveTypeRepositoryQuery{
 
-  protected PrimitiveTypeRepositoryQueryImpl(Class<PrimitiveType> businessClass) {
-    super(businessClass);
-  }
 
-  public PrimitiveTypeRepositoryQueryImpl() {
-    super(PrimitiveType.class);
-  }
 }

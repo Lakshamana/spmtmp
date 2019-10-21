@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.WorkGroupInstSug;
 
 public class WorkGroupInstantiationSuggestionRepositoryQueryImpl extends BaseRepositoryQueryImpl<WorkGroupInstSug, Long>
     implements WorkGroupInstantiationSuggestionRepositoryQuery{
-
-  protected WorkGroupInstantiationSuggestionRepositoryQueryImpl(Class<WorkGroupInstSug> businessClass) {
-    super(businessClass);
-  }
-
-  public WorkGroupInstantiationSuggestionRepositoryQueryImpl() {
-    super(WorkGroupInstSug.class);
-  }
 }

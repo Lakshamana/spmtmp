@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.PeopleInstSug;
 
 public class PeopleInstantiationSuggestionRepositoryQueryImpl extends BaseRepositoryQueryImpl<PeopleInstSug, Long>
     implements PeopleInstantiationSuggestionRepositoryQuery{
-
-  protected PeopleInstantiationSuggestionRepositoryQueryImpl(Class<PeopleInstSug> businessClass) {
-    super(businessClass);
-  }
-
-  public PeopleInstantiationSuggestionRepositoryQueryImpl() {
-    super(PeopleInstSug.class);
-  }
 }

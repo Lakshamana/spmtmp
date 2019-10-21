@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ResourcePossibleUse;
 
 public class ResourcePossibleUseRepositoryQueryImpl extends BaseRepositoryQueryImpl<ResourcePossibleUse, Long>
     implements ResourcePossibleUseRepositoryQuery{
-
-  protected ResourcePossibleUseRepositoryQueryImpl(Class<ResourcePossibleUse> businessClass) {
-    super(businessClass);
-  }
-
-  public ResourcePossibleUseRepositoryQueryImpl() {
-    super(ResourcePossibleUse.class);
-  }
 }

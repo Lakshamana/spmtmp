@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ResourceMetric;
 public class ResourceMetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<ResourceMetric, Long>
     implements ResourceMetricRepositoryQuery{
 
-  protected ResourceMetricRepositoryQueryImpl(Class<ResourceMetric> businessClass) {
-    super(businessClass);
-  }
 
-  public ResourceMetricRepositoryQueryImpl() {
-    super(ResourceMetric.class);
-  }
 }

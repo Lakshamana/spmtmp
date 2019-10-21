@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ModelingActivityEvent;
 
 public class ModelingActivityEventRepositoryQueryImpl extends BaseRepositoryQueryImpl<ModelingActivityEvent, Long>
     implements ModelingActivityEventRepositoryQuery{
-
-  protected ModelingActivityEventRepositoryQueryImpl(Class<ModelingActivityEvent> businessClass) {
-    super(businessClass);
-  }
-
-  public ModelingActivityEventRepositoryQueryImpl() {
-    super(ModelingActivityEvent.class);
-  }
 }

@@ -8,14 +8,6 @@ import br.ufpa.labes.spm.domain.Company;
 
 public class CompanyRepositoryQueryImpl extends BaseRepositoryQueryImpl<Company, Long> implements CompanyRepositoryQuery{
 
-  protected CompanyRepositoryQueryImpl(Class<Company> businessClass) {
-    super(businessClass);
-  }
-
-  public CompanyRepositoryQueryImpl() {
-    super(Company.class);
-  }
-
   @Override
   public boolean alreadyExistCNPJ(String cnpj, String ident) {
     String hql =

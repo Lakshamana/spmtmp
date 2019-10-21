@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.OrganizationEstimation;
 public class OrganizationEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<OrganizationEstimation, Long>
     implements OrganizationEstimationRepositoryQuery{
 
-  protected OrganizationEstimationRepositoryQueryImpl(Class<OrganizationEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public OrganizationEstimationRepositoryQueryImpl() {
-    super(OrganizationEstimation.class);
-  }
 }

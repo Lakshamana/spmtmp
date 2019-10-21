@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.InvolvedArtifact;
 
 public class InvolvedArtifactRepositoryQueryImpl extends BaseRepositoryQueryImpl<InvolvedArtifact, Long>
     implements InvolvedArtifactRepositoryQuery {
-
-  protected InvolvedArtifactRepositoryQueryImpl(Class<InvolvedArtifact> businessClass) {
-    super(businessClass);
-  }
-
-  public InvolvedArtifactRepositoryQueryImpl() {
-    super(InvolvedArtifact.class);
-  }
 }

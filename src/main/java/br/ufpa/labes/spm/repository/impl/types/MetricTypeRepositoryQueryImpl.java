@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.MetricType;
 
 public class MetricTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<MetricType, Long> implements MetricTypeRepositoryQuery{
 
-  protected MetricTypeRepositoryQueryImpl(Class<MetricType> businessClass) {
-    super(businessClass);
-  }
 
-  public MetricTypeRepositoryQueryImpl() {
-    super(MetricType.class);
-  }
 }

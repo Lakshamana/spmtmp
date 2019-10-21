@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ProcessModelEvent;
 
 public class ProcessModelEventRepositoryQueryImpl extends BaseRepositoryQueryImpl<ProcessModelEvent, Long>
     implements ProcessModelEventRepositoryQuery{
-
-  protected ProcessModelEventRepositoryQueryImpl(Class<ProcessModelEvent> businessClass) {
-    super(businessClass);
-  }
-
-  public ProcessModelEventRepositoryQueryImpl() {
-    super(ProcessModelEvent.class);
-  }
 }

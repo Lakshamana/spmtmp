@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.ToolType;
 
 public class ToolTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ToolType, Long> implements ToolTypeRepositoryQuery{
 
-  protected ToolTypeRepositoryQueryImpl(Class<ToolType> businessClass) {
-    super(businessClass);
-  }
 
-  public ToolTypeRepositoryQueryImpl() {
-    super(ToolType.class);
-  }
 }

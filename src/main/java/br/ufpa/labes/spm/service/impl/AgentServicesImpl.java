@@ -16,20 +16,20 @@ import org.springframework.transaction.annotation.Transactional;
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
-import br.ufpa.labes.spm.repository.AbilityRepository;
-import br.ufpa.labes.spm.repository.ActivityEstimationRepository;
-import br.ufpa.labes.spm.repository.AgentAffinityAgentRepository;
-import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
-import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
-import br.ufpa.labes.spm.repository.AgentRepository;
-import br.ufpa.labes.spm.repository.ProcessAgendaRepository;
-import br.ufpa.labes.spm.repository.RoleNeedsAbilityRepository;
-import br.ufpa.labes.spm.repository.RoleRepository;
-import br.ufpa.labes.spm.repository.RoleTypeRepository;
-import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
-import br.ufpa.labes.spm.repository.TaskAgendaRepository;
-import br.ufpa.labes.spm.repository.TaskRepository;
-import br.ufpa.labes.spm.repository.WorkGroupRepository;
+// import br.ufpa.labes.spm.repository.AbilityRepository;
+// import br.ufpa.labes.spm.repository.ActivityEstimationRepository;
+//  import br.ufpa.labes.spm.repository.AgentAffinityagentRepository;
+// import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
+// import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
+ import br.ufpa.labes.spm.repository.AgentRepository;
+// import br.ufpa.labes.spm.repository.ProcessAgendaRepository;
+// import br.ufpa.labes.spm.repository.RoleNeedsAbilityRepository;
+// import br.ufpa.labes.spm.repository.RoleRepository;
+// import br.ufpa.labes.spm.repository.RoleTypeRepository;
+// import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
+// import br.ufpa.labes.spm.repository.TaskAgendaRepository;
+// import br.ufpa.labes.spm.repository.TaskRepository;
+// import br.ufpa.labes.spm.repository.WorkGroupRepository;
 import br.ufpa.labes.spm.service.dto.TaskDTO;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
 import br.ufpa.labes.spm.service.dto.AbilityDTO;
@@ -83,46 +83,46 @@ public class AgentServicesImpl implements AgentServices {
 	private static final String AGENT_CLASSNAME = Agent.class.getSimpleName();
 
   @Autowired
-	AgentRepository agentRepository;
+  AgentRepository agentRepository;
 
-  @Autowired
-	AbilityRepository abilityRepository;
+//   @Autowired
+//   //	AbilityRepository abilityRepository;
 
-  @Autowired
-	RoleRepository roleRepository;
+//   @Autowired
+//   //	RoleRepository roleRepository;
 
-  @Autowired
-	RoleTypeRepository roleTypeRepository;
+//   @Autowired
+//   //	RoleTypeRepository roleTypeRepository;
 
-  @Autowired
-  RoleNeedsAbilityRepository roleNeedsRepository;
+//   @Autowired
+//   //  RoleNeedsAbilityRepository roleNeedsRepository;
 
-  @Autowired
-	AgentPlaysRoleRepository agentPlaysRoleRepository;
+//   @Autowired
+//   //	AgentPlaysRoleRepository agentPlaysRoleRepository;
 
-  @Autowired
-	AgentHasAbilityRepository agentHasAbilityRepository;
+//   @Autowired
+//   //	AgentHasAbilityRepository agentHasAbilityRepository;
 
-  @Autowired
-	AgentAffinityAgentRepository agentAffinityAgentRepository;
+//   @Autowired
+   //	AgentAffinityAgentRepository agentAffinityagentRepository;
 
-  @Autowired
-  WorkGroupRepository workGroupRepository;
+//   @Autowired
+//   //  WorkGroupRepository workGroupRepository;
 
-  @Autowired
-	SpmConfigurationRepository confiRepository;
+//   @Autowired
+//   //	SpmConfigurationRepository confiRepository;
 
-  @Autowired
-	ProcessAgendaRepository processAgendaRepository;
+//   @Autowired
+//   //	ProcessAgendaRepository processAgendaRepository;
 
-  @Autowired
-  TaskRepository taskRepository;
+//   @Autowired
+//   //  TaskRepository taskRepository;
 
-  @Autowired
-	TaskAgendaRepository taskAgendaRepository;
+//   @Autowired
+//   //	TaskAgendaRepository taskAgendaRepository;
 
-  @Autowired
-	ActivityEstimationRepository activityEstimationRepository;
+//   @Autowired
+//   //	ActivityEstimationRepository activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -135,7 +135,7 @@ public class AgentServicesImpl implements AgentServices {
 	@Override
 	public AgentDTO getAgent(String agentIdent) {
 //		Agent agent = this.getAgentForName(nameAgent);
-		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
+ 		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
 
 		AgentDTO agentDTO = this.convertAgentToAgentDTO(agent, false);
 
@@ -150,7 +150,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		hql = "select agent from " + AGENT_CLASSNAME
 				+ " as agent where agent.name = :rolname";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("rolname", nome);
 
 		result = query.getResultList();
@@ -172,7 +172,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		hql = "select agent from " + AGENT_CLASSNAME
 				+ " as agent where agent.eMail = :email";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("email", login);
 
 		result = query.getResultList();
@@ -191,27 +191,27 @@ public class AgentServicesImpl implements AgentServices {
 		agent = new Agent();
 
 //		agent = this.getAgentForName(agentDTO.getName());
-		agent = agentRepository.retrieveBySecondaryKey(agentDTO.getIdent());
+ 		agent = agentRepository.retrieveBySecondaryKey(agentDTO.getIdent());
 
 		if (agent != null) {
 			updateAgent(agent, agentDTO);
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 
 		} else {
 			agentDTO.setPassword(Md5.getMd5Digest(agentDTO.getPassword()));
 			agentDTO.setArtifactMngPassword(Md5.getMd5Digest(agentDTO.getArtifactMngPassword()));
 
 			agent = this.convertAgentDTOToAgent(agentDTO);
-			agentRepository.save(agent);
+ 			agentRepository.save(agent);
 
 			TaskAgenda theTaskAgenda = new TaskAgenda();
 			agent.setTheTaskAgenda(theTaskAgenda);
 			theTaskAgenda.setTheAgent(agent);
-			taskAgendaRepository.save(theTaskAgenda);
+// 			taskAgendaRepository.save(theTaskAgenda);
 
-			String newIdent = agentRepository.generateIdent(agent.getName(), agent);
+ 			String newIdent = agentRepository.generateIdent(agent.getName(), agent);
 			agent.setIdent(newIdent);
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 
 			getPerfilAgentePadrao(agent.getIdent());
 
@@ -221,7 +221,7 @@ public class AgentServicesImpl implements AgentServices {
 			spmconfiguration.setIdioma(config.getIdioma());
 			spmconfiguration.setSenhaEmRecuperacao(false);
 
-			confiRepository.save(spmconfiguration);
+// 			confiRepository.save(spmconfiguration);
 		}
 
 
@@ -236,14 +236,14 @@ public class AgentServicesImpl implements AgentServices {
 		Boolean retorno = null;
 
 		try {
-			agent = agentRepository.retrieveBySecondaryKey(agentDTO.getIdent());
+ 			agent = agentRepository.retrieveBySecondaryKey(agentDTO.getIdent());
 
 			if (agent != null) {
 				agentDTO.setPassword(Md5.getMd5Digest(agentDTO.getPassword()));
 				System.out.println("nova senha: "+agentDTO.getPassword());
 				agent.setPasswordHash(Md5.getMd5Digest(agentDTO.getPassword()));
 				updateAgent(agent, agentDTO);
-				agentRepository.update(agent);
+ 				agentRepository.update(agent);
 
 			}
 
@@ -261,7 +261,7 @@ public class AgentServicesImpl implements AgentServices {
 	@Override
 	public Agent getPerfilAgentePadrao(String ident) {
 
-		query = agentRepository
+ 		query = agentRepository
 				.getPersistenceContext()
 				.createQuery(
 						"SELECT agent FROM "
@@ -325,39 +325,39 @@ public class AgentServicesImpl implements AgentServices {
 			}
 		}
 
-		agentRepository.update(agent);
+ 		agentRepository.update(agent);
 		agent = null;
 	}
 
 	@Override
 	public Boolean removeAgent(String agentIdent) {
 //		Agent agent = this.getAgentForName(nameAgent);
-		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
+ 		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
 		String hql = "SELECT c FROM " + SpmConfiguration.class.getSimpleName() + " AS c WHERE c.agent.ident = :ident";
-		TypedQuery<SpmConfiguration> query = confiRepository.getPersistenceContext().createQuery(hql, SpmConfiguration.class);
+// 		TypedQuery<SpmConfiguration> query = confiRepository.getPersistenceContext().createQuery(hql, SpmConfiguration.class);
 		query.setParameter("ident", agentIdent);
 
 		hql = "SELECT ta FROM " + TaskAgenda.class.getSimpleName() + " AS ta WHERE ta.theAgent.ident = :ident";
-		TypedQuery<TaskAgenda> query2 = taskAgendaRepository.getPersistenceContext().createQuery(hql, TaskAgenda.class);
+// 		TypedQuery<TaskAgenda> query2 = taskAgendaRepository.getPersistenceContext().createQuery(hql, TaskAgenda.class);
 		query2.setParameter("ident", agentIdent);
 
 		if (agent != null) {
 			if(!query.getResultList().isEmpty()) {
 				SpmConfiguration config = query.getResultList().get(0);
 				config.setAgent(null);
-				confiRepository.delete(config);
+// 				confiRepository.delete(config);
 			}
 			if(!query2.getResultList().isEmpty()) {
 				TaskAgenda taskAgenda = query2.getResultList().get(0);
 				taskAgenda.setTheAgent(null);
-				taskAgendaRepository.delete(taskAgenda);
+// 				taskAgendaRepository.delete(taskAgenda);
 			}
 
 			for (AgentHasAbility agentHasAbility : agent
 					.getTheAgentHasAbilities()) {
 				agentHasAbility.removeFromTheAbility();
 				agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.delete(agentHasAbility);
+// 				agentHasAbilityRepository.delete(agentHasAbility);
 			}
 
 			for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
@@ -373,14 +373,14 @@ public class AgentServicesImpl implements AgentServices {
 					.getFromAgentAffinities()) {
 				agentAffinityAgent.removeFromFromAffinity();
 				agentAffinityAgent.setToAffinity(null);
-				agentAffinityAgentRepository.delete(agentAffinityAgent);
+ 				agentAffinityagentRepository.delete(agentAffinityAgent);
 			}
 
 			for (AgentAffinityAgent agentAffinityAgent : agent
 					.getToAgentAffinities()) {
 				agentAffinityAgent.removeFromToAffinity();
 				agentAffinityAgent.setFromAffinity(null);
-				agentAffinityAgentRepository.delete(agentAffinityAgent);
+ 				agentAffinityagentRepository.delete(agentAffinityAgent);
 			}
 
 			agent.setTheWorkGroups(new HashSet<WorkGroup>());
@@ -389,7 +389,7 @@ public class AgentServicesImpl implements AgentServices {
 			agent.setTheAgentPlaysRoles(new HashSet<AgentPlaysRole>());
 			agent.setTheAgentHasAbilities(new HashSet<AgentHasAbility>());
 
-			agentRepository.delete(agent);
+ 			agentRepository.delete(agent);
 			return true;
 		}
 
@@ -411,7 +411,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		hql = "select ability from " + ABILITY_CLASSNAME
 				+ " as ability";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		result = query.getResultList();
 		Converter converter = new ConverterImpl();
 
@@ -442,7 +442,7 @@ public class AgentServicesImpl implements AgentServices {
 		List<RoleDTO> resultDTO = new ArrayList<RoleDTO>();
 
 		hql = "select role from " + ROLE_CLASSNAME + " as role";
-		query = roleRepository.getPersistenceContext().createQuery(hql);
+// 		query = roleRepository.getPersistenceContext().createQuery(hql);
 		result = query.getResultList();
 		Converter converter = new ConverterImpl();
 
@@ -472,7 +472,7 @@ public class AgentServicesImpl implements AgentServices {
 		List<AgentDTO> resultDTO = new ArrayList<AgentDTO>();
 
 		hql = "select agente from " + AGENT_CLASSNAME + " as agente";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		result = query.getResultList();
 		Converter converter = new ConverterImpl();
 
@@ -499,7 +499,7 @@ public class AgentServicesImpl implements AgentServices {
 		String hql = "SELECT afa FROM "
 				+ AGENT_AFFINITY_AGENT_CLASSNAME
 				+ " as afa WHERE afa.toAffinity.name = :toAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentAffinityagentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("toAffinity", affinityAgentName);
 
 		List<AgentAffinityAgent> result = query.getResultList();
@@ -520,7 +520,7 @@ public class AgentServicesImpl implements AgentServices {
 		String hql = "SELECT afa FROM "
 				+ AGENT_AFFINITY_AGENT_CLASSNAME
 				+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentAffinityagentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("toAffinity", toAffinityName);
 		query.setParameter("fromAffinity", fromAffinityName);
 
@@ -544,7 +544,7 @@ public class AgentServicesImpl implements AgentServices {
 		List<WorkGroupDTO> resultDTO = new ArrayList<WorkGroupDTO>();
 
 		hql = "select grupo from " + WorkGroup_CLASSNAME + " as grupo";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		result = query.getResultList();
 		Converter converter = new ConverterImpl();
 
@@ -587,7 +587,7 @@ public class AgentServicesImpl implements AgentServices {
 				}
 			}
 		}
-		agentRepository.update(agent);
+ 		agentRepository.update(agent);
 		agent = null;
 
 		return agentDTO;
@@ -605,7 +605,7 @@ public class AgentServicesImpl implements AgentServices {
 		String hql = "SELECT aha FROM "
 				+ AGENT_HAS_ABILLITY_CLASSNAME
 				+ " as aha WHERE aha.theAgent.name = :theAgent AND aha.theAbility.name = :theAbility";
-		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
+// 		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("theAgent", agentHasAbilityDTO.getTheAgent());
 		query.setParameter("theAbility", agentHasAbilityDTO.getTheAbility());
 
@@ -618,14 +618,14 @@ public class AgentServicesImpl implements AgentServices {
 
 			if (newDegreeDifferentFromOld) {
 				old.setDegree(agentHasAbilityDTO.getDegree());
-				agentHasAbilityRepository.update(old);
+// 				agentHasAbilityRepository.update(old);
 			}
 		} else {
 			Ability ability = this.getAbilityFromName(agentHasAbilityDTO
 					.getTheAbility());
 			new AgentHasAbility(agentHasAbilityDTO.getDegree(), agent, ability);
 
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 		}
 
 		agent = null;
@@ -638,7 +638,7 @@ public class AgentServicesImpl implements AgentServices {
 	public AgentHasAbilityDTO getAbilityToAgent(String abilityName) {
 		String hql = "SELECT aha FROM " + AGENT_HAS_ABILLITY_CLASSNAME + " AS aha WHERE aha.theAbility.name = :abilityName";
 
-		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
+// 		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("abilityName", abilityName);
 
 		List<AgentHasAbility> result = query.getResultList();
@@ -688,14 +688,14 @@ public class AgentServicesImpl implements AgentServices {
 
 			if (newDegreeDifferentFromOld) {
 				old.setDegree(agentAffinityAgentDTO.getDegree());
-				agentAffinityAgentRepository.update(old);
+ 				agentAffinityagentRepository.update(old);
 
 				AgentAffinityAgent inverseOld = this.getAffinityByName(
 						agentAffinityAgentDTO.getFromAffinity(),
 						agentAffinityAgentDTO.getToAffinity());
 
 				inverseOld.setDegree(agentAffinityAgentDTO.getDegree());
-				agentAffinityAgentRepository.update(inverseOld);
+ 				agentAffinityagentRepository.update(inverseOld);
 			}
 		} else {
 			new AgentAffinityAgent(agentAffinityAgentDTO.getDegree(),
@@ -705,7 +705,7 @@ public class AgentServicesImpl implements AgentServices {
 					agentAffinityAgent.getToAffinity(),
 					agentAffinityAgent.getFromAffinity());
 
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 		}
 
 		agent = null;
@@ -719,7 +719,7 @@ public class AgentServicesImpl implements AgentServices {
 		String hql = "SELECT afa FROM "
 				+ AGENT_AFFINITY_AGENT_CLASSNAME
 				+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentAffinityagentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("toAffinity", toAffinity);
 		query.setParameter("fromAffinity", fromAffinity);
 
@@ -746,14 +746,14 @@ public class AgentServicesImpl implements AgentServices {
 							&& !WorkGroup.getTheAgents().contains(agent)) {
 						agent.getTheWorkGroups().add(WorkGroup);
 						WorkGroup.getTheAgents().add(agent);
-						workGroupRepository.update(WorkGroup);
-						agentRepository.update(agent);
+// 						workGroupRepository.update(WorkGroup);
+ 						agentRepository.update(agent);
 					}
 				}
 			}
 		}
 
-		agentRepository.update(agent);
+ 		agentRepository.update(agent);
 		agent = null;
 
 		return agentDTO;
@@ -765,7 +765,7 @@ public class AgentServicesImpl implements AgentServices {
 		String hql;
 
 		hql = "SELECT name FROM " + AGENT_CLASSNAME;
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 
 		List<String> agents = new ArrayList<String>();
 		agents = query.getResultList();
@@ -788,7 +788,7 @@ public class AgentServicesImpl implements AgentServices {
 		AgentsDTO agentsDTO = new AgentsDTO();
 
 		hql = "SELECT agent FROM " + AGENT_CLASSNAME + " AS agent";
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		List<Agent> result = query.getResultList();
 		List<String> idents = new ArrayList<String>();
 
@@ -812,7 +812,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		String hql = "SELECT agent FROM " + AGENT_CLASSNAME + " AS agent "
 				+ "WHERE agent.name like :name" + activeFilter;
-		query = agentRepository.getPersistenceContext().createQuery(hql);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", "%" + agentName + "%");
 		if (isActive != null) {
 			query.setParameter("isActive", isActive);
@@ -825,7 +825,7 @@ public class AgentServicesImpl implements AgentServices {
 					+ AGENT_PLAY_ROLE_CLASSNAME
 					+ " AS agentPlaysRole "
 					+ "WHERE agentPlaysRole.theRole.name = :roleName";
-			query = agentPlaysRoleRepository.getPersistenceContext().createQuery(hql);
+// 			query = agentPlaysRoleRepository.getPersistenceContext().createQuery(hql);
 			query.setParameter("roleName", roleName);
 
 			List<AgentPlaysRole> agents = query.getResultList();
@@ -872,17 +872,17 @@ public class AgentServicesImpl implements AgentServices {
 				agentHasAbilitiesToRemove.add(agentHasAbility);
 				// agentHasAbility.setTheAbility(null);
 				// agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.delete(agentHasAbility);
+// 				agentHasAbilityRepository.delete(agentHasAbility);
 			}
 		}
 
 		if (!agentHasAbilitiesToRemove.isEmpty()) {
 			agent.getTheAgentHasAbilities().removeAll(agentHasAbilitiesToRemove);
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 
 			ability.getTheAgentHasAbilities()
 					.removeAll(agentHasAbilitiesToRemove);
-			abilityRepository.update(ability);
+// 			abilityRepository.update(ability);
 		}
 
 		return false;
@@ -908,14 +908,14 @@ public class AgentServicesImpl implements AgentServices {
 				agentPlaysRolesToRemove.add(agentPlaysRole);
 				agentPlaysRole.setTheAgent(null);
 				agentPlaysRole.setTheRole(null);
-				agentPlaysRoleRepository.delete(agentPlaysRole);
+// 				agentPlaysRoleRepository.delete(agentPlaysRole);
 			}
 
 		}
 
 		if (!agent.getTheAgentPlaysRoles().isEmpty()) {
 			agent.getTheAgentPlaysRoles().removeAll(agentPlaysRolesToRemove);
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 
 			return true;
 		}
@@ -935,8 +935,8 @@ public class AgentServicesImpl implements AgentServices {
 				|| agent.getToAgentAffinities().contains(agentAffinityAgent)) {
 			agentAffinityAgent.removeFromFromAffinity();
 			agentAffinityAgent.removeFromToAffinity();
-			agentAffinityAgentRepository.delete(agentAffinityAgent);
-			agentAffinityAgentRepository.delete(inverseAgentAffinityAgent);
+ 			agentAffinityagentRepository.delete(agentAffinityAgent);
+ 			agentAffinityagentRepository.delete(inverseAgentAffinityAgent);
 
 			return true;
 		}
@@ -951,7 +951,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		if (agent.getTheWorkGroups().contains(WorkGroup)) {
 			agent.getTheWorkGroups().remove(WorkGroup);
-			agentRepository.update(agent);
+ 			agentRepository.update(agent);
 		}
 
 		return false;
@@ -962,7 +962,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		String hql = "SELECT role FROM " + ROLE_CLASSNAME
 				+ " AS role WHERE role.name = :rolename";
-		query = roleRepository.getPersistenceContext().createQuery(hql);
+// 		query = roleRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("rolename", nome);
 
 		List<Role> result = query.getResultList();
@@ -1002,7 +1002,7 @@ public class AgentServicesImpl implements AgentServices {
 		                     "AND taskagenda.theAgent.oid = agent.oid " +
 		                     "AND project.oid = :theProject";
 
-		query = agentRepository.getPersistenceContext().createQuery(hql_project);
+ 		query = agentRepository.getPersistenceContext().createQuery(hql_project);
 		query.setParameter("theProject", theProjectOid);
 		List<Agent> agentList = new ArrayList<Agent>();
 		agentList.addAll(query.getResultList());
@@ -1016,7 +1016,7 @@ public class AgentServicesImpl implements AgentServices {
 
 //		String hql = "SELECT task FROM " + TASK_CLASSNAME + " task WHERE task.theProcessAgenda.theProcess.ident = :processID";
 
-		query = processAgendaRepository.getPersistenceContext().createQuery(hql);
+// 		query = processAgendaRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter( "agentID", agentIdent );
 		query.setParameter( "processID", processIdent );
 
@@ -1035,9 +1035,9 @@ public class AgentServicesImpl implements AgentServices {
 				agentName = p.getTheTaskAgenda().getTheAgent().getName();
 			}
 
-			float workingHours = taskRepository.getWorkingHoursForTask(task.getTheNormal().getIdent(), agentIdent);
-			Time realWorkingTime = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
-			float estimatedTime = activityEstimationRepository.getHoursEstimationForActivity(task.getTheNormal().getIdent());
+// 			float workingHours = taskRepository.getWorkingHoursForTask(task.getTheNormal().getIdent(), agentIdent);
+// 			Time realWorkingTime = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
+// 			float estimatedTime = activityEstimationRepository.getHoursEstimationForActivity(task.getTheNormal().getIdent());
 			Time estimatedTaskTime = new Time((int) estimatedTime, (int) ((estimatedTime * 60) % 60));
 
 			TaskDTO t = new TaskDTO(task.getId(), task.getTheNormal().getName(),
@@ -1066,7 +1066,7 @@ public class AgentServicesImpl implements AgentServices {
 	private WorkGroup getWorkGroupFromName(String WorkGroupName) {
 		String hql = "SELECT WorkGroup FROM " + WorkGroup_CLASSNAME
 				+ " as WorkGroup where WorkGroup.name = :name";
-		query = workGroupRepository.getPersistenceContext().createQuery(hql);
+// 		query = workGroupRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("name", WorkGroupName);
 
 		WorkGroup result = null;
@@ -1081,7 +1081,7 @@ public class AgentServicesImpl implements AgentServices {
 	public Ability getAbilityFromName(String name) {
 		String hql = "select ability from " + ABILITY_CLASSNAME
 				+ " as ability where ability.name = :abiname";
-		query = abilityRepository.getPersistenceContext().createQuery(hql);
+// 		query = abilityRepository.getPersistenceContext().createQuery(hql);
 		query.setParameter("abiname", name);
 
 		List<Ability> result = query.getResultList();
@@ -1197,7 +1197,7 @@ public class AgentServicesImpl implements AgentServices {
 	public AgentDTO login(String email, String password) {
 		password = Md5.getMd5Digest(password);
 		System.out.println("caiu aqui no login"+email+password);
-		query = agentRepository
+ 		query = agentRepository
 				.getPersistenceContext()
 				.createQuery(
 						"SELECT agent FROM "
@@ -1225,7 +1225,7 @@ public class AgentServicesImpl implements AgentServices {
 	public AgentDTO getUserForEmail(String email) {
 
 		System.out.println("caiu aqui no envia email" + email);
-		query = agentRepository.getPersistenceContext().createQuery(
+ 		query = agentRepository.getPersistenceContext().createQuery(
 				"SELECT agent FROM " + AGENT_CLASSNAME + " AS agent "
 						+ "WHERE agent.eMail like :email");
 
@@ -1250,7 +1250,7 @@ public class AgentServicesImpl implements AgentServices {
 
 		agentd = agente;
 
-		agentRepository.update(convertAgentDTOToAgent(agentd));
+ 		agentRepository.update(convertAgentDTOToAgent(agentd));
 		System.out.println(agentd.getPassword());
 		if (agent != null)
 			return true;
@@ -1266,7 +1266,7 @@ public class AgentServicesImpl implements AgentServices {
 
 	@Override
 	public AgentDTO getAgentFromEMail(String email) {
-		query = agentRepository
+ 		query = agentRepository
 				.getPersistenceContext()
 				.createQuery(
 						"SELECT agent FROM "

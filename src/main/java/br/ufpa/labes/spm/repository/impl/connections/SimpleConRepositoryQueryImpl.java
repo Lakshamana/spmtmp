@@ -5,12 +5,4 @@ import br.ufpa.labes.spm.repository.interfaces.connections.SimpleConRepositoryQu
 import br.ufpa.labes.spm.domain.SimpleCon;
 
 public class SimpleConRepositoryQueryImpl extends BaseRepositoryQueryImpl<SimpleCon, Long> implements SimpleConRepositoryQuery{
-
-  protected SimpleConRepositoryQueryImpl(Class<SimpleCon> businessClass) {
-    super(businessClass);
-  }
-
-  public SimpleConRepositoryQueryImpl() {
-    super(SimpleCon.class);
-  }
 }

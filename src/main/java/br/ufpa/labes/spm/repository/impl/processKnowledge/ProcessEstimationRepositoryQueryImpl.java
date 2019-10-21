@@ -14,13 +14,7 @@ public class ProcessEstimationRepositoryQueryImpl extends BaseRepositoryQueryImp
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 
-  protected ProcessEstimationRepositoryQueryImpl(Class<ProcessEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public ProcessEstimationRepositoryQueryImpl() {
-    super(ProcessEstimation.class);
-  }
 
   @Override
   @SuppressWarnings("unchecked")

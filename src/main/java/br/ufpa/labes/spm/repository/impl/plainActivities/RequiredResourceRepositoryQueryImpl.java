@@ -10,15 +10,6 @@ import br.ufpa.labes.spm.domain.RequiredResource;
 
 public class RequiredResourceRepositoryQueryImpl extends BaseRepositoryQueryImpl<RequiredResource, Long>
     implements RequiredResourceRepositoryQuery{
-
-  protected RequiredResourceRepositoryQueryImpl(Class<RequiredResource> businessClass) {
-    super(businessClass);
-  }
-
-  public RequiredResourceRepositoryQueryImpl() {
-    super(RequiredResource.class);
-  }
-
   public RequiredResource findRequiredResourceFromProcessModel(
       String resourceIdent, String resourceTypeIdent, String normalIdent) {
     List<RequiredResource> retorno = null;

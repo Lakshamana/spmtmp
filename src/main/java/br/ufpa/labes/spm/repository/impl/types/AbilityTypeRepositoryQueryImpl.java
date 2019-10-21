@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.AbilityType;
 
 public class AbilityTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<AbilityType, Long> implements AbilityTypeRepositoryQuery{
 
-  protected AbilityTypeRepositoryQueryImpl(Class<AbilityType> businessClass) {
-    super(businessClass);
-  }
 
-  public AbilityTypeRepositoryQueryImpl() {
-    super(AbilityType.class);
-  }
 }

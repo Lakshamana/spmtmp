@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.AgentEstimation;
 public class AgentEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<AgentEstimation, Long>
     implements AgentEstimationRepositoryQuery{
 
-  protected AgentEstimationRepositoryQueryImpl(Class<AgentEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public AgentEstimationRepositoryQueryImpl() {
-    super(AgentEstimation.class);
-  }
 }

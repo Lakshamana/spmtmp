@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ResourceEstimation;
 public class ResourceEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<ResourceEstimation, Long>
     implements ResourceEstimationRepositoryQuery{
 
-  protected ResourceEstimationRepositoryQueryImpl(Class<ResourceEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public ResourceEstimationRepositoryQueryImpl() {
-    super(ResourceEstimation.class);
-  }
 }

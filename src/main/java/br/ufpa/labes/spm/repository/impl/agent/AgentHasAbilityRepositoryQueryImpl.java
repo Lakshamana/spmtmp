@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.AgentHasAbility;
 
 public class AgentHasAbilityRepositoryQueryImpl extends BaseRepositoryQueryImpl<AgentHasAbility, Long>
     implements AgentHasAbilityRepositoryQuery{
-
-  protected AgentHasAbilityRepositoryQueryImpl(Class<AgentHasAbility> businessClass) {
-    super(businessClass);
-  }
-
-  public AgentHasAbilityRepositoryQueryImpl() {
-    super(AgentHasAbility.class);
-  }
 }

@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.TaskAgenda;
 
 public class TaskAgendaRepositoryQueryImpl extends BaseRepositoryQueryImpl<TaskAgenda, Long> implements TaskAgendaRepositoryQuery{
 
-  protected TaskAgendaRepositoryQueryImpl(Class<TaskAgenda> businessClass) {
-    super(businessClass);
-  }
 
-  public TaskAgendaRepositoryQueryImpl() {
-    super(TaskAgenda.class);
-  }
 }

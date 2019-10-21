@@ -5,12 +5,4 @@ import br.ufpa.labes.spm.repository.interfaces.connections.SequenceRepositoryQue
 import br.ufpa.labes.spm.domain.Sequence;
 
 public class SequenceRepositoryQueryImpl extends BaseRepositoryQueryImpl<Sequence, Long> implements SequenceRepositoryQuery{
-
-  protected SequenceRepositoryQueryImpl(Class<Sequence> businessClass) {
-    super(businessClass);
-  }
-
-  public SequenceRepositoryQueryImpl() {
-    super(Sequence.class);
-  }
 }

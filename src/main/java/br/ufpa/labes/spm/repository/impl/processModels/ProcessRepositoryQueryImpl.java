@@ -14,13 +14,7 @@ import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
 public class ProcessRepositoryQueryImpl extends BaseRepositoryQueryImpl<Process, Long> implements ProcessRepositoryQuery{
 
-  protected ProcessRepositoryQueryImpl(Class<Process> businessClass) {
-    super(businessClass);
-  }
 
-  public ProcessRepositoryQueryImpl() {
-    super(Process.class);
-  }
 
   @Override
   public SimpleActivityQueryResult[] getAllNormalActivitiesFromProcess(String processIdent) {

@@ -13,14 +13,6 @@ import br.ufpa.labes.spm.domain.WebAPSEEObject;
 public class WebAPSEEObjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<WebAPSEEObject, Long>
     implements WebAPSEEObjectRepositoryQuery{
 
-  public WebAPSEEObjectRepositoryQueryImpl() {
-    super(WebAPSEEObject.class);
-  }
-
-  protected WebAPSEEObjectRepositoryQueryImpl(Class<WebAPSEEObject> businessClass) {
-    super(businessClass);
-  }
-
   public WebAPSEEObject retrieveWebAPSEEObject(Long theReferredOid, String className)
       throws RepositoryQueryException {
 

@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.Exclusive;
 
 public class ExclusiveRepositoryQueryImpl extends BaseRepositoryQueryImpl<Exclusive, Long> implements ExclusiveRepositoryQuery{
 
-  protected ExclusiveRepositoryQueryImpl(Class<Exclusive> businessClass) {
-    super(businessClass);
-  }
 
-  public ExclusiveRepositoryQueryImpl() {
-    super(Exclusive.class);
-  }
 }

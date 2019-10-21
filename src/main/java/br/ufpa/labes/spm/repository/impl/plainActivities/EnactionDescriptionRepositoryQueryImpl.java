@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.EnactionDescription;
 
 public class EnactionDescriptionRepositoryQueryImpl extends BaseRepositoryQueryImpl<EnactionDescription, Long>
     implements EnactionDescriptionRepositoryQuery{
-
-  protected EnactionDescriptionRepositoryQueryImpl(Class<EnactionDescription> businessClass) {
-    super(businessClass);
-  }
-
-  public EnactionDescriptionRepositoryQueryImpl() {
-    super(EnactionDescription.class);
-  }
 }

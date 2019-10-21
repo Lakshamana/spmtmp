@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.ArtifactType;
 
 public class ArtifactTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactType, Long> implements ArtifactTypeRepositoryQuery{
 
-  protected ArtifactTypeRepositoryQueryImpl(Class<ArtifactType> businessClass) {
-    super(businessClass);
-  }
 
-  public ArtifactTypeRepositoryQueryImpl() {
-    super(ArtifactType.class);
-  }
 }

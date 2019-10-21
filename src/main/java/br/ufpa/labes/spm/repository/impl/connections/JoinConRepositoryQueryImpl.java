@@ -5,12 +5,4 @@ import br.ufpa.labes.spm.repository.interfaces.connections.JoinConRepositoryQuer
 import br.ufpa.labes.spm.domain.JoinCon;
 
 public class JoinConRepositoryQueryImpl extends BaseRepositoryQueryImpl<JoinCon, Long> implements JoinConRepositoryQuery{
-
-  protected JoinConRepositoryQueryImpl(Class<JoinCon> businessClass) {
-    super(businessClass);
-  }
-
-  public JoinConRepositoryQueryImpl() {
-    super(JoinCon.class);
-  }
 }

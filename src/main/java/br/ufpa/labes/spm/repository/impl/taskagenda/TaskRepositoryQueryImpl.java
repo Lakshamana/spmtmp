@@ -15,13 +15,7 @@ import br.ufpa.labes.spm.util.ServicesUtil;
 
 public class TaskRepositoryQueryImpl extends BaseRepositoryQueryImpl<Task, Long> implements TaskRepositoryQuery{
 
-  protected TaskRepositoryQueryImpl(Class<Task> businessClass) {
-    super(businessClass);
-  }
 
-  public TaskRepositoryQueryImpl() {
-    super(Task.class);
-  }
 
   @Override
   public float getWorkingHoursForTask(String normalIdent, String agentIdent) {

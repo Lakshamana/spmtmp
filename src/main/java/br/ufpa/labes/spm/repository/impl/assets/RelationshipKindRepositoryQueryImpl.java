@@ -6,8 +6,4 @@ import br.ufpa.labes.spm.domain.RelationshipKind;
 
 public class RelationshipKindRepositoryQueryImpl extends BaseRepositoryQueryImpl<RelationshipKind, Long>
     implements RelationshipKindRepositoryQuery{
-
-  public RelationshipKindRepositoryQueryImpl() {
-    super(RelationshipKind.class);
-  }
 }

@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.Consumable;
 
 public class ConsumableRepositoryQueryImpl extends BaseRepositoryQueryImpl<Consumable, Long> implements ConsumableRepositoryQuery{
 
-  protected ConsumableRepositoryQueryImpl(Class<Consumable> businessClass) {
-    super(businessClass);
-  }
 
-  public ConsumableRepositoryQueryImpl() {
-    super(Consumable.class);
-  }
 }

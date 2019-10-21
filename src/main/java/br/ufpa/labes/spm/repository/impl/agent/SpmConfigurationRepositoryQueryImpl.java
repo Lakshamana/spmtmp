@@ -6,11 +6,4 @@ import br.ufpa.labes.spm.repository.interfaces.agent.SpmConfigurationRepositoryQ
 
 public class SpmConfigurationRepositoryQueryImpl extends BaseRepositoryQueryImpl<SpmConfiguration, Long> implements SpmConfigurationRepositoryQuery{
 
-  protected SpmConfigurationRepositoryQueryImpl(Class<SpmConfiguration> businessClass) {
-    super(businessClass);
-  }
-
-  public SpmConfigurationRepositoryQueryImpl() {
-    super(SpmConfiguration.class);
-  }
 }

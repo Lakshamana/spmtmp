@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ActivityMetric;
 public class ActivityMetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<ActivityMetric, Long>
     implements ActivityMetricRepositoryQuery{
 
-  protected ActivityMetricRepositoryQueryImpl(Class<ActivityMetric> businessClass) {
-    super(businessClass);
-  }
 
-  public ActivityMetricRepositoryQueryImpl() {
-    super(ActivityMetric.class);
-  }
 }

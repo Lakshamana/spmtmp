@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.ProcessMetric;
 
 public class ProcessMetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<ProcessMetric, Long> implements ProcessMetricRepositoryQuery{
 
-  protected ProcessMetricRepositoryQueryImpl(Class<ProcessMetric> businessClass) {
-    super(businessClass);
-  }
 
-  public ProcessMetricRepositoryQueryImpl() {
-    super(ProcessMetric.class);
-  }
 }

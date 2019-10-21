@@ -6,11 +6,4 @@ import br.ufpa.labes.spm.domain.Plain;
 
 public class PlainRepositoryQueryImpl extends BaseRepositoryQueryImpl<Plain, Long> implements PlainRepositoryQuery{
 
-  protected PlainRepositoryQueryImpl(Class<Plain> businessClass) {
-    super(businessClass);
-  }
-
-  public PlainRepositoryQueryImpl() {
-    super(Plain.class);
-  }
 }

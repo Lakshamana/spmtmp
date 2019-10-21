@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.ToolParameter;
 
 public class ToolParameterRepositoryQueryImpl extends BaseRepositoryQueryImpl<ToolParameter, Long> implements ToolParameterRepositoryQuery{
 
-  protected ToolParameterRepositoryQueryImpl(Class<ToolParameter> businessClass) {
-    super(businessClass);
-  }
 
-  public ToolParameterRepositoryQueryImpl() {
-    super(ToolParameter.class);
-  }
 }

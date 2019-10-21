@@ -6,11 +6,4 @@ import br.ufpa.labes.spm.domain.ChatLog;
 
 public class ChatLogRepositoryQueryImpl extends BaseRepositoryQueryImpl<ChatLog, Long> implements ChatLogRepositoryQuery{
 
-  protected ChatLogRepositoryQueryImpl(Class<ChatLog> businessClass) {
-    super(businessClass);
-  }
-
-  public ChatLogRepositoryQueryImpl() {
-    super(ChatLog.class);
-  }
 }

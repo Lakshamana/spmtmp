@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.Reservation;
 
 public class ReservationRepositoryQueryImpl extends BaseRepositoryQueryImpl<Reservation, Long> implements ReservationRepositoryQuery{
 
-  protected ReservationRepositoryQueryImpl(Class<Reservation> businessClass) {
-    super(businessClass);
-  }
 
-  public ReservationRepositoryQueryImpl() {
-    super(Reservation.class);
-  }
 }

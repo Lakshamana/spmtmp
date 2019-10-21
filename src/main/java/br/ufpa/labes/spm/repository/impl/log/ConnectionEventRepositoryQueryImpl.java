@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ConnectionEvent;
 
 public class ConnectionEventRepositoryQueryImpl extends BaseRepositoryQueryImpl<ConnectionEvent, Long>
     implements ConnectionEventRepositoryQuery{
-
-  protected ConnectionEventRepositoryQueryImpl(Class<ConnectionEvent> businessClass) {
-    super(businessClass);
-  }
-
-  public ConnectionEventRepositoryQueryImpl() {
-    super(ConnectionEvent.class);
-  }
 }

@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.AgentInstSuggestionToAgent;
 
 public class AgentInstSuggestionToAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<AgentInstSuggestionToAgent, Long>
     implements AgentInstSuggestionToAgentRepositoryQuery{
-
-  protected AgentInstSuggestionToAgentRepositoryQueryImpl(Class<AgentInstSuggestionToAgent> businessClass) {
-    super(businessClass);
-  }
-
-  public AgentInstSuggestionToAgentRepositoryQueryImpl() {
-    super(AgentInstSuggestionToAgent.class);
-  }
 }

@@ -20,14 +20,6 @@ import br.ufpa.labes.spm.domain.RequiredResource;
 
 public class NormalRepositoryQueryImpl extends BaseRepositoryQueryImpl<Normal, Long> implements NormalRepositoryQuery{
 
-  protected NormalRepositoryQueryImpl(Class<Normal> businessClass) {
-    super(businessClass);
-  }
-
-  public NormalRepositoryQueryImpl() {
-    super(Normal.class);
-  }
-
   public String[] getInvolvedAgentsForNormal(String normalIdent) {
 
     getPersistenceContext().getTransaction().begin();

@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ClassMethodCall;
 public class ClassMethodCallRepositoryQueryImpl extends BaseRepositoryQueryImpl<ClassMethodCall, Long>
     implements ClassMethodCallRepositoryQuery{
 
-  protected ClassMethodCallRepositoryQueryImpl(Class<ClassMethodCall> businessClass) {
-    super(businessClass);
-  }
 
-  public ClassMethodCallRepositoryQueryImpl() {
-    super(ClassMethodCall.class);
-  }
 }

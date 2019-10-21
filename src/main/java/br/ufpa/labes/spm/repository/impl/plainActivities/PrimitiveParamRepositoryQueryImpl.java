@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.PrimitiveParam;
 
 public class PrimitiveParamRepositoryQueryImpl extends BaseRepositoryQueryImpl<PrimitiveParam, Long>
     implements PrimitiveParamRepositoryQuery{
-
-  protected PrimitiveParamRepositoryQueryImpl(Class<PrimitiveParam> businessClass) {
-    super(businessClass);
-  }
-
-  public PrimitiveParamRepositoryQueryImpl() {
-    super(PrimitiveParam.class);
-  }
 }

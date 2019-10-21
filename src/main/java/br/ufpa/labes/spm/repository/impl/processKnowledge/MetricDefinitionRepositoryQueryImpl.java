@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.MetricDefinition;
 public class MetricDefinitionRepositoryQueryImpl extends BaseRepositoryQueryImpl<MetricDefinition, Long>
     implements MetricDefinitionRepositoryQuery{
 
-  protected MetricDefinitionRepositoryQueryImpl(Class<MetricDefinition> businessClass) {
-    super(businessClass);
-  }
 
-  public MetricDefinitionRepositoryQueryImpl() {
-    super(MetricDefinition.class);
-  }
 }

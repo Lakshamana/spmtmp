@@ -10,14 +10,6 @@ import br.ufpa.labes.spm.domain.Project;
 
 public class ProjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Project, Long> implements ProjectRepositoryQuery{
 
-  protected ProjectRepositoryQueryImpl(Class<Project> businessClass) {
-    super(businessClass);
-  }
-
-  public ProjectRepositoryQueryImpl() {
-    super(Project.class);
-  }
-
   @Override
   public List<Project> findAll() {
     String hql = "select project from " + Project.class.getSimpleName() + " as artifact";

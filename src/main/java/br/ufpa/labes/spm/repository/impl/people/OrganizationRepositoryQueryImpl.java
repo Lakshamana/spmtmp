@@ -5,8 +5,4 @@ import br.ufpa.labes.spm.repository.interfaces.people.OrganizationRepositoryQuer
 import br.ufpa.labes.spm.domain.Organization;
 
 public class OrganizationRepositoryQueryImpl extends BaseRepositoryQueryImpl<Organization, Long> implements OrganizationRepositoryQuery{
-
-  public OrganizationRepositoryQueryImpl() {
-    super(Organization.class);
-  }
 }

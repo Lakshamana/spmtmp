@@ -10,14 +10,6 @@ import br.ufpa.labes.spm.domain.ReqAgent;
 
 public class ReqAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgent, Long> implements ReqAgentRepositoryQuery{
 
-  protected ReqAgentRepositoryQueryImpl(Class<ReqAgent> businessClass) {
-    super(businessClass);
-  }
-
-  public ReqAgentRepositoryQueryImpl() {
-    super(ReqAgent.class);
-  }
-
   public ReqAgent findReqAgentFromProcessModel(
       String agentIdent, String roleIdent, String normalIdent) {
     List<ReqAgent> retorno = null;

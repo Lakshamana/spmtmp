@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.Script;
 
 public class ScriptRepositoryQueryImpl extends BaseRepositoryQueryImpl<Script, Long> implements ScriptRepositoryQuery{
 
-  protected ScriptRepositoryQueryImpl(Class<Script> businessClass) {
-    super(businessClass);
-  }
 
-  public ScriptRepositoryQueryImpl() {
-    super(Script.class);
-  }
 }

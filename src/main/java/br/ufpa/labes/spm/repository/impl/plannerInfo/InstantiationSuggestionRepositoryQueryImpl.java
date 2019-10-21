@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.InstantiationSuggestion;
 
 public class InstantiationSuggestionRepositoryQueryImpl extends BaseRepositoryQueryImpl<InstantiationSuggestion, Long>
     implements InstantiationSuggestionRepositoryQuery {
-
-  protected InstantiationSuggestionRepositoryQueryImpl(Class<InstantiationSuggestion> businessClass) {
-    super(businessClass);
-  }
-
-  public InstantiationSuggestionRepositoryQueryImpl() {
-    super(InstantiationSuggestion.class);
-  }
 }

@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.ActivityType;
 
 public class ActivityTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ActivityType, Long> implements ActivityTypeRepositoryQuery{
 
-  protected ActivityTypeRepositoryQueryImpl(Class<ActivityType> businessClass) {
-    super(businessClass);
-  }
 
-  public ActivityTypeRepositoryQueryImpl() {
-    super(ActivityType.class);
-  }
 }

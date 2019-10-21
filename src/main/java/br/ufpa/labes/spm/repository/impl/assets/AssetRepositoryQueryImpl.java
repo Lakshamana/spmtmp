@@ -12,10 +12,6 @@ import br.ufpa.labes.spm.domain.AssetRelationship;
 
 public class AssetRepositoryQueryImpl extends BaseRepositoryQueryImpl<Asset, Long> implements AssetRepositoryQuery{
 
-  public AssetRepositoryQueryImpl() {
-    super(Asset.class);
-  }
-
   @SuppressWarnings("unchecked")
   @Override
   public List<AssetRelationship> retrieveRelatedAssetsTo(String assetUid) {

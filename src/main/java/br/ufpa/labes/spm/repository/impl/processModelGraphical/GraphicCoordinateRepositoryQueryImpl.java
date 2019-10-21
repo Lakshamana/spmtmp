@@ -11,13 +11,7 @@ import br.ufpa.labes.spm.domain.GraphicCoordinate;
 public class GraphicCoordinateRepositoryQueryImpl extends BaseRepositoryQueryImpl<GraphicCoordinate, Long>
     implements GraphicCoordinateRepositoryQuery{
 
-  protected GraphicCoordinateRepositoryQueryImpl(Class<GraphicCoordinate> businessClass) {
-    super(businessClass);
-  }
 
-  public GraphicCoordinateRepositoryQueryImpl() {
-    super(GraphicCoordinate.class);
-  }
 
   @Override
   public Collection<GraphicCoordinate> getProcessCoordinates(String processId) throws RepositoryQueryException {

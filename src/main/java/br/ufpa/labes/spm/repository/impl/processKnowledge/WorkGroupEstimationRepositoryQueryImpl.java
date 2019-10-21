@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.WorkGroupEstimation;
 public class WorkGroupEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<WorkGroupEstimation, Long>
     implements WorkGroupEstimationRepositoryQuery{
 
-  protected WorkGroupEstimationRepositoryQueryImpl(Class<WorkGroupEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public WorkGroupEstimationRepositoryQueryImpl() {
-    super(WorkGroupEstimation.class);
-  }
 }

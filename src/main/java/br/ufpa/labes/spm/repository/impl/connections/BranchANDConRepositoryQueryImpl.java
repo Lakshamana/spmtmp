@@ -5,12 +5,4 @@ import br.ufpa.labes.spm.repository.interfaces.connections.BranchANDConRepositor
 import br.ufpa.labes.spm.domain.BranchANDCon;
 
 public class BranchANDConRepositoryQueryImpl extends BaseRepositoryQueryImpl<BranchANDCon, Long> implements BranchANDConRepositoryQuery{
-
-  protected BranchANDConRepositoryQueryImpl(Class<BranchANDCon> businessClass) {
-    super(businessClass);
-  }
-
-  public BranchANDConRepositoryQueryImpl() {
-    super(BranchANDCon.class);
-  }
 }

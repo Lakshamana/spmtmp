@@ -6,14 +6,6 @@ import br.ufpa.labes.spm.domain.Connection;
 
 public class ConnectionRepositoryQueryImpl extends BaseRepositoryQueryImpl<Connection, Long> implements ConnectionRepositoryQuery{
 
-  protected ConnectionRepositoryQueryImpl(Class<Connection> businessClass) {
-    super(businessClass);
-  }
-
-  public ConnectionRepositoryQueryImpl() {
-    super(Connection.class);
-  }
-
   // @Override
   // public Connection save(Connection conn) {
 

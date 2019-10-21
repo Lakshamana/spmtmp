@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.RoleNeedsAbility;
 
 public class RoleNeedsAbilityRepositoryQueryImpl extends BaseRepositoryQueryImpl<RoleNeedsAbility, Long>
     implements RoleNeedsAbilityRepositoryQuery{
-
-  protected RoleNeedsAbilityRepositoryQueryImpl(Class<RoleNeedsAbility> businessClass) {
-    super(businessClass);
-  }
-
-  public RoleNeedsAbilityRepositoryQueryImpl() {
-    super(RoleNeedsAbility.class);
-  }
 }

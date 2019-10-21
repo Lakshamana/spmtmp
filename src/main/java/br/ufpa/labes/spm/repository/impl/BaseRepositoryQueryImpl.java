@@ -30,10 +30,6 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
 
   private Class<T> businessClass;
 
-  protected BaseRepositoryQueryImpl(Class<T> businessClass) {
-    this.businessClass = businessClass;
-  }
-
   @Override
   public T update(T object) {
     this.getPersistenceContext().merge(object);
@@ -217,14 +213,5 @@ public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK
       e.printStackTrace();
     }
     return oid;
-  }
-
-  public static void main(String[] args) {
-    Agent a = new Agent();
-    a.setId(336L);
-    AgentRepositoryQueryImpl agentRepositoryQuery = new AgentRepositoryQueryImpl();
-    System.out.println(
-        agentRepositoryQuery.generateIdent(
-            "Template - Plano de Gerência de Documentos e Plano de Comunicação", a));
   }
 }

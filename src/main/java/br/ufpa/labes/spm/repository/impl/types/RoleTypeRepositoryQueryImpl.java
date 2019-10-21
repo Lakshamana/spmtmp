@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.RoleType;
 
 public class RoleTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<RoleType, Long> implements RoleTypeRepositoryQuery{
 
-  protected RoleTypeRepositoryQueryImpl(Class<RoleType> businessClass) {
-    super(businessClass);
-  }
 
-  public RoleTypeRepositoryQueryImpl() {
-    super(RoleType.class);
-  }
 }

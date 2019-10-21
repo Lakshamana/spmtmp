@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ArtifactMetric;
 public class ArtifactMetricRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactMetric, Long>
     implements ArtifactMetricRepositoryQuery{
 
-  protected ArtifactMetricRepositoryQueryImpl(Class<ArtifactMetric> businessClass) {
-    super(businessClass);
-  }
 
-  public ArtifactMetricRepositoryQueryImpl() {
-    super(ArtifactMetric.class);
-  }
 }

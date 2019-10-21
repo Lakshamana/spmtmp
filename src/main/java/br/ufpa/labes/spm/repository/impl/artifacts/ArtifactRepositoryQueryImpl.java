@@ -15,14 +15,6 @@ import br.ufpa.labes.spm.domain.InvolvedArtifact;
 
 public class ArtifactRepositoryQueryImpl extends BaseRepositoryQueryImpl<Artifact, Long> implements ArtifactRepositoryQuery{
 
-  protected ArtifactRepositoryQueryImpl(Class<Artifact> businessClass) {
-    super(businessClass);
-  }
-
-  public ArtifactRepositoryQueryImpl() {
-    super(Artifact.class);
-  }
-
   @Override
   public Object[] getArtifactsIdentsFromProcessModelWithoutTemplates(String ident) {
     String hql =

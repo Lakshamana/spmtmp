@@ -18,13 +18,7 @@ public class ProcessAgendaRepositoryQueryImpl extends BaseRepositoryQueryImpl<Pr
   @Autowired
   private TaskRepository taskRepository;
 
-  protected ProcessAgendaRepositoryQueryImpl(Class<ProcessAgenda> businessClass) {
-    super(businessClass);
-  }
 
-  public ProcessAgendaRepositoryQueryImpl() {
-    super(ProcessAgenda.class);
-  }
 
   // TODO: HAVE TO FINISH THE INTEGRATION TO MESSAGE SERVICES
 

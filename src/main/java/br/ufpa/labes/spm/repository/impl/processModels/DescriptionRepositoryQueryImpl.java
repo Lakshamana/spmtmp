@@ -6,11 +6,5 @@ import br.ufpa.labes.spm.domain.Description;
 
 public class DescriptionRepositoryQueryImpl extends BaseRepositoryQueryImpl<Description, Long> implements DescriptionRepositoryQuery{
 
-  protected DescriptionRepositoryQueryImpl(Class<Description> businessClass) {
-    super(businessClass);
-  }
 
-  public DescriptionRepositoryQueryImpl() {
-    super(Description.class);
-  }
 }

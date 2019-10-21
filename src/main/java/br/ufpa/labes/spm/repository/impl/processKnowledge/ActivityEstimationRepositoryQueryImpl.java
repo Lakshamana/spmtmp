@@ -13,14 +13,6 @@ public class ActivityEstimationRepositoryQueryImpl extends BaseRepositoryQueryIm
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 
-  protected ActivityEstimationRepositoryQueryImpl(Class<ActivityEstimation> businessClass) {
-    super(businessClass);
-  }
-
-  public ActivityEstimationRepositoryQueryImpl() {
-    super(ActivityEstimation.class);
-  }
-
   public float getHoursEstimationForActivity(String normalIdent) {
 
     String queryString =

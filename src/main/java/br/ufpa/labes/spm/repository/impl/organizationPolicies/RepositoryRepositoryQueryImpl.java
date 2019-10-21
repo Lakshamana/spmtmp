@@ -8,13 +8,6 @@ import br.ufpa.labes.spm.domain.VCSRepository;
 import br.ufpa.labes.spm.domain.Structure;
 
 public class RepositoryRepositoryQueryImpl extends BaseRepositoryQueryImpl<VCSRepository, Long> implements RepositoryRepositoryQuery{
-  protected RepositoryRepositoryQueryImpl(Class<VCSRepository> businessClass) {
-    super(businessClass);
-  }
-
-  public RepositoryRepositoryQueryImpl() {
-    super(VCSRepository.class);
-  }
 
   @Override
   public Structure getTheStructure(String ident) {

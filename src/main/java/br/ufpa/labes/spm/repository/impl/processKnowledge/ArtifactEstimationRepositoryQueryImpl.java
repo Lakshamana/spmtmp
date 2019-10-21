@@ -7,11 +7,5 @@ import br.ufpa.labes.spm.domain.ArtifactEstimation;
 public class ArtifactEstimationRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactEstimation, Long>
     implements ArtifactEstimationRepositoryQuery{
 
-  protected ArtifactEstimationRepositoryQueryImpl(Class<ArtifactEstimation> businessClass) {
-    super(businessClass);
-  }
 
-  public ArtifactEstimationRepositoryQueryImpl() {
-    super(ArtifactEstimation.class);
-  }
 }

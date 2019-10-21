@@ -6,11 +6,4 @@ import br.ufpa.labes.spm.domain.Decomposed;
 
 public class DecomposedRepositoryQueryImpl extends BaseRepositoryQueryImpl<Decomposed, Long> implements DecomposedRepositoryQuery{
 
-  protected DecomposedRepositoryQueryImpl(Class<Decomposed> businessClass) {
-    super(businessClass);
-  }
-
-  public DecomposedRepositoryQueryImpl() {
-    super(Decomposed.class);
-  }
 }

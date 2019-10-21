@@ -6,12 +6,4 @@ import br.ufpa.labes.spm.domain.ReqAgentRequiresAbility;
 
 public class ReqAgentRequiresAbilityRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgentRequiresAbility, Long>
     implements ReqAgentRequiresAbilityRepositoryQuery{
-
-  protected ReqAgentRequiresAbilityRepositoryQueryImpl(Class<ReqAgentRequiresAbility> businessClass) {
-    super(businessClass);
-  }
-
-  public ReqAgentRequiresAbilityRepositoryQueryImpl() {
-    super(ReqAgentRequiresAbility.class);
-  }
 }
