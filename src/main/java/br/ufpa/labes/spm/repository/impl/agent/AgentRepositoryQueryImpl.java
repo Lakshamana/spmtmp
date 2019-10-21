@@ -1,5 +1,15 @@
 package br.ufpa.labes.spm.repository.impl.agent;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
@@ -38,5 +48,9 @@ public class AgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<Agent, Lon
 
       return null;
     }
+  }
+
+  public Class<Agent> getBusinessClass() {
+    return this.businessClass;
   }
 }

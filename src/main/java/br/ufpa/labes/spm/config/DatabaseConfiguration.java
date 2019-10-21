@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import java.sql.SQLException;
 
 @Configuration
-@EnableJpaRepositories("br.ufpa.labes.spm.repository")
+// @EnableJpaRepositories("br.ufpa.labes.spm.repository")
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
 public class DatabaseConfiguration {

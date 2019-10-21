@@ -16,20 +16,20 @@ import org.springframework.transaction.annotation.Transactional;
 import br.ufpa.labes.spm.converter.Converter;
 import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
-import br.ufpa.labes.spm.repository.AbilityRepository;
-import br.ufpa.labes.spm.repository.ActivityEstimationRepository;
-import br.ufpa.labes.spm.repository.AgentAffinityAgentRepository;
-import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
-import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
-import br.ufpa.labes.spm.repository.AgentRepository;
-import br.ufpa.labes.spm.repository.ProcessAgendaRepository;
-import br.ufpa.labes.spm.repository.RoleNeedsAbilityRepository;
-import br.ufpa.labes.spm.repository.RoleRepository;
-import br.ufpa.labes.spm.repository.RoleTypeRepository;
-import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
-import br.ufpa.labes.spm.repository.TaskAgendaRepository;
-import br.ufpa.labes.spm.repository.TaskRepository;
-import br.ufpa.labes.spm.repository.WorkGroupRepository;
+// import br.ufpa.labes.spm.repository.AbilityRepository;
+// import br.ufpa.labes.spm.repository.ActivityEstimationRepository;
+//  import br.ufpa.labes.spm.repository.agentAffinityAgentRepository;
+// import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
+// import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
+ import br.ufpa.labes.spm.repository.AgentRepository;
+// import br.ufpa.labes.spm.repository.ProcessAgendaRepository;
+// import br.ufpa.labes.spm.repository.RoleNeedsAbilityRepository;
+// import br.ufpa.labes.spm.repository.RoleRepository;
+// import br.ufpa.labes.spm.repository.RoleTypeRepository;
+// import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
+// import br.ufpa.labes.spm.repository.TaskAgendaRepository;
+// import br.ufpa.labes.spm.repository.TaskRepository;
+// import br.ufpa.labes.spm.repository.WorkGroupRepository;
 import br.ufpa.labes.spm.service.dto.TaskDTO;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
 import br.ufpa.labes.spm.service.dto.AbilityDTO;
@@ -103,8 +103,8 @@ public class AgentServicesImpl implements AgentServices {
   @Autowired
 	AgentHasAbilityRepository agentHasAbilityRepository;
 
-  @Autowired
-	AgentAffinityAgentRepository agentAffinityAgentRepository;
+//   @Autowired
+   //	agentAffinityAgentRepository agentAffinityAgentRepository;
 
   @Autowired
   WorkGroupRepository workGroupRepository;
@@ -332,66 +332,66 @@ public class AgentServicesImpl implements AgentServices {
 	@Override
 	public Boolean removeAgent(String agentIdent) {
 //		Agent agent = this.getAgentForName(nameAgent);
-		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
-		String hql = "SELECT c FROM " + SpmConfiguration.class.getSimpleName() + " AS c WHERE c.agent.ident = :ident";
-		TypedQuery<SpmConfiguration> query = confiRepository.getPersistenceContext().createQuery(hql, SpmConfiguration.class);
-		query.setParameter("ident", agentIdent);
+//  		Agent agent = agentRepository.retrieveBySecondaryKey(agentIdent);
+// 		String hql = "SELECT c FROM " + SpmConfiguration.class.getSimpleName() + " AS c WHERE c.agent.ident = :ident";
+// // 		TypedQuery<SpmConfiguration> query = confiRepository.getPersistenceContext().createQuery(hql, SpmConfiguration.class);
+// 		query.setParameter("ident", agentIdent);
 
-		hql = "SELECT ta FROM " + TaskAgenda.class.getSimpleName() + " AS ta WHERE ta.theAgent.ident = :ident";
-		TypedQuery<TaskAgenda> query2 = taskAgendaRepository.getPersistenceContext().createQuery(hql, TaskAgenda.class);
-		query2.setParameter("ident", agentIdent);
+// 		hql = "SELECT ta FROM " + TaskAgenda.class.getSimpleName() + " AS ta WHERE ta.theAgent.ident = :ident";
+// // 		TypedQuery<TaskAgenda> query2 = taskAgendaRepository.getPersistenceContext().createQuery(hql, TaskAgenda.class);
+// 		query2.setParameter("ident", agentIdent);
 
-		if (agent != null) {
-			if(!query.getResultList().isEmpty()) {
-				SpmConfiguration config = query.getResultList().get(0);
-				config.setAgent(null);
-				confiRepository.delete(config);
-			}
-			if(!query2.getResultList().isEmpty()) {
-				TaskAgenda taskAgenda = query2.getResultList().get(0);
-				taskAgenda.setTheAgent(null);
-				taskAgendaRepository.delete(taskAgenda);
-			}
+// 		if (agent != null) {
+// 			if(!query.getResultList().isEmpty()) {
+// 				SpmConfiguration config = query.getResultList().get(0);
+// 				config.setAgent(null);
+// // 				confiRepository.delete(config);
+// 			}
+// 			if(!query2.getResultList().isEmpty()) {
+// 				TaskAgenda taskAgenda = query2.getResultList().get(0);
+// 				taskAgenda.setTheAgent(null);
+// // 				taskAgendaRepository.delete(taskAgenda);
+// 			}
 
-			for (AgentHasAbility agentHasAbility : agent
-					.getTheAgentHasAbilities()) {
-				agentHasAbility.removeFromTheAbility();
-				agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.delete(agentHasAbility);
-			}
+// 			for (AgentHasAbility agentHasAbility : agent
+// 					.getTheAgentHasAbilities()) {
+// 				agentHasAbility.removeFromTheAbility();
+// 				agentHasAbility.setTheAgent(null);
+// // 				agentHasAbilityRepository.delete(agentHasAbility);
+// 			}
 
-			for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
-				agentPlaysRole.removeFromTheRole();
-				agentPlaysRole.setTheAgent(null);
-			}
+// 			for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
+// 				agentPlaysRole.removeFromTheRole();
+// 				agentPlaysRole.setTheAgent(null);
+// 			}
 
-			for (WorkGroup WorkGroup : agent.getTheWorkGroups()) {
-				WorkGroup.getTheAgents().remove(agent);
-			}
+// 			for (WorkGroup WorkGroup : agent.getTheWorkGroups()) {
+// 				WorkGroup.getTheAgents().remove(agent);
+// 			}
 
-			for (AgentAffinityAgent agentAffinityAgent : agent
-					.getFromAgentAffinities()) {
-				agentAffinityAgent.removeFromFromAffinity();
-				agentAffinityAgent.setToAffinity(null);
-				agentAffinityAgentRepository.delete(agentAffinityAgent);
-			}
+// 			for (AgentAffinityAgent agentAffinityAgent : agent
+// 					.getFromAgentAffinities()) {
+// 				agentAffinityAgent.removeFromFromAffinity();
+// 				agentAffinityAgent.setToAffinity(null);
+//  				// agentAffinityAgentRepository.delete(agentAffinityAgent);
+// 			}
 
-			for (AgentAffinityAgent agentAffinityAgent : agent
-					.getToAgentAffinities()) {
-				agentAffinityAgent.removeFromToAffinity();
-				agentAffinityAgent.setFromAffinity(null);
-				agentAffinityAgentRepository.delete(agentAffinityAgent);
-			}
+// 			for (AgentAffinityAgent agentAffinityAgent : agent
+// 					.getToAgentAffinities()) {
+// 				agentAffinityAgent.removeFromToAffinity();
+// 				agentAffinityAgent.setFromAffinity(null);
+//  				// agentAffinityAgentRepository.delete(agentAffinityAgent);
+// 			}
 
-			agent.setTheWorkGroups(new HashSet<WorkGroup>());
-			agent.setFromAgentAffinities(new HashSet<AgentAffinityAgent>());
-			agent.setToAgentAffinities(new HashSet<AgentAffinityAgent>());
-			agent.setTheAgentPlaysRoles(new HashSet<AgentPlaysRole>());
-			agent.setTheAgentHasAbilities(new HashSet<AgentHasAbility>());
+// 			agent.setTheWorkGroups(new HashSet<WorkGroup>());
+// 			agent.setFromAgentAffinities(new HashSet<AgentAffinityAgent>());
+// 			agent.setToAgentAffinities(new HashSet<AgentAffinityAgent>());
+// 			agent.setTheAgentPlaysRoles(new HashSet<AgentPlaysRole>());
+// 			agent.setTheAgentHasAbilities(new HashSet<AgentHasAbility>());
 
-			agentRepository.delete(agent);
-			return true;
-		}
+//  			agentRepository.delete(agent);
+// 			return true;
+// 		}
 
 		return false;
 	}
@@ -436,31 +436,32 @@ public class AgentServicesImpl implements AgentServices {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<RoleDTO> getRolesToAgent() {
-		String hql;
-		Query query;
-		List<Role> result = new ArrayList<Role>();
-		List<RoleDTO> resultDTO = new ArrayList<RoleDTO>();
+// 		String hql;
+// 		Query query;
+// 		List<Role> result = new ArrayList<Role>();
+// 		List<RoleDTO> resultDTO = new ArrayList<RoleDTO>();
 
-		hql = "select role from " + ROLE_CLASSNAME + " as role";
-		query = roleRepository.getPersistenceContext().createQuery(hql);
-		result = query.getResultList();
-		Converter converter = new ConverterImpl();
+// 		hql = "select role from " + ROLE_CLASSNAME + " as role";
+// // 		query = roleRepository.getPersistenceContext().createQuery(hql);
+// 		result = query.getResultList();
+// 		Converter converter = new ConverterImpl();
 
-		if (!result.isEmpty()) {
-			RoleDTO abi = null;
-			for (int i = 0; i < result.size(); i++) {
-				try {
-					abi = (RoleDTO) converter.getDTO(result.get(i),
-							RoleDTO.class);
-					resultDTO.add(abi);
-				} catch (ImplementationException e) {
-					e.printStackTrace();
-				}
-			}
-			return resultDTO;
-		} else {
-			return new ArrayList<RoleDTO>();
-		}
+// 		if (!result.isEmpty()) {
+// 			RoleDTO abi = null;
+// 			for (int i = 0; i < result.size(); i++) {
+// 				try {
+// 					abi = (RoleDTO) converter.getDTO(result.get(i),
+// 							RoleDTO.class);
+// 					resultDTO.add(abi);
+// 				} catch (ImplementationException e) {
+// 					e.printStackTrace();
+// 				}
+// 			}
+// 			return resultDTO;
+// 		} else {
+// 			return new ArrayList<RoleDTO>();
+// 		}
+    return null;
 	}
 
 	@Override
@@ -496,19 +497,19 @@ public class AgentServicesImpl implements AgentServices {
 
 	@SuppressWarnings("unchecked")
 	public AgentAffinityAgentDTO getAffinityAgent(String affinityAgentName) {
-		String hql = "SELECT afa FROM "
-				+ AGENT_AFFINITY_AGENT_CLASSNAME
-				+ " as afa WHERE afa.toAffinity.name = :toAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("toAffinity", affinityAgentName);
+		// String hql = "SELECT afa FROM "
+		// 		+ AGENT_AFFINITY_AGENT_CLASSNAME
+		// 		+ " as afa WHERE afa.toAffinity.name = :toAffinity";
+ 		// query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("toAffinity", affinityAgentName);
 
-		List<AgentAffinityAgent> result = query.getResultList();
+		// List<AgentAffinityAgent> result = query.getResultList();
 
-		if (!result.isEmpty()) {
-			AgentAffinityAgent afa = result.get(0);
-			return new AgentAffinityAgentDTO(afa.getDegree(), afa
-					.getToAffinity().getName(), afa.getFromAffinity().getName());
-		}
+		// if (!result.isEmpty()) {
+		// 	AgentAffinityAgent afa = result.get(0);
+		// 	return new AgentAffinityAgentDTO(afa.getDegree(), afa
+		// 			.getToAffinity().getName(), afa.getFromAffinity().getName());
+		// }
 
 		return null;
 	}
@@ -517,20 +518,20 @@ public class AgentServicesImpl implements AgentServices {
 	@SuppressWarnings("unchecked")
 	public AgentAffinityAgentDTO getAffinityAgent(String fromAffinityName,
 			String toAffinityName) {
-		String hql = "SELECT afa FROM "
-				+ AGENT_AFFINITY_AGENT_CLASSNAME
-				+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("toAffinity", toAffinityName);
-		query.setParameter("fromAffinity", fromAffinityName);
+		// String hql = "SELECT afa FROM "
+		// 		+ AGENT_AFFINITY_AGENT_CLASSNAME
+		// 		+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
+ 		// query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("toAffinity", toAffinityName);
+		// query.setParameter("fromAffinity", fromAffinityName);
 
-		List<AgentAffinityAgent> result = query.getResultList();
+		// List<AgentAffinityAgent> result = query.getResultList();
 
-		if (!result.isEmpty()) {
-			AgentAffinityAgent afa = result.get(0);
-			return new AgentAffinityAgentDTO(afa.getDegree(), afa
-					.getToAffinity().getName(), afa.getFromAffinity().getName());
-		}
+		// if (!result.isEmpty()) {
+		// 	AgentAffinityAgent afa = result.get(0);
+		// 	return new AgentAffinityAgentDTO(afa.getDegree(), afa
+		// 			.getToAffinity().getName(), afa.getFromAffinity().getName());
+		// }
 
 		return null;
 	}
@@ -667,68 +668,69 @@ public class AgentServicesImpl implements AgentServices {
 	public AgentAffinityAgentDTO saveAfinityToAgent(
 			AgentAffinityAgentDTO agentAffinityAgentDTO) {
 
-		agent = this.getAgentForName(agentAffinityAgentDTO.getFromAffinity());
-		if (agent == null) {
-			return null;
-		}
+		// agent = this.getAgentForName(agentAffinityAgentDTO.getFromAffinity());
+		// if (agent == null) {
+		// 	return null;
+		// }
 
-		Agent affinityAgent = this.getAgentForName(agentAffinityAgentDTO
-				.getToAffinity());
+		// Agent affinityAgent = this.getAgentForName(agentAffinityAgentDTO
+		// 		.getToAffinity());
 
-		AgentAffinityAgent agentAffinityAgent = new AgentAffinityAgent(
-				agentAffinityAgentDTO.getDegree(), agent, affinityAgent);
-		AgentAffinityAgent old = this.getAffinityByName(
-				agentAffinityAgentDTO.getToAffinity(),
-				agentAffinityAgentDTO.getFromAffinity());
+		// AgentAffinityAgent agentAffinityAgent = new AgentAffinityAgent(
+		// 		agentAffinityAgentDTO.getDegree(), agent, affinityAgent);
+		// AgentAffinityAgent old = this.getAffinityByName(
+		// 		agentAffinityAgentDTO.getToAffinity(),
+		// 		agentAffinityAgentDTO.getFromAffinity());
 
-		System.out.println("OLD?  = " + old);
-		if (old != null) {
-			boolean newDegreeDifferentFromOld = !old.getDegree().equals(
-					agentAffinityAgent.getDegree());
+		// System.out.println("OLD?  = " + old);
+		// if (old != null) {
+		// 	boolean newDegreeDifferentFromOld = !old.getDegree().equals(
+		// 			agentAffinityAgent.getDegree());
 
-			if (newDegreeDifferentFromOld) {
-				old.setDegree(agentAffinityAgentDTO.getDegree());
-				agentAffinityAgentRepository.update(old);
+		// 	if (newDegreeDifferentFromOld) {
+		// 		old.setDegree(agentAffinityAgentDTO.getDegree());
+ 		// 		agentAffinityAgentRepository.update(old);
 
-				AgentAffinityAgent inverseOld = this.getAffinityByName(
-						agentAffinityAgentDTO.getFromAffinity(),
-						agentAffinityAgentDTO.getToAffinity());
+		// 		AgentAffinityAgent inverseOld = this.getAffinityByName(
+		// 				agentAffinityAgentDTO.getFromAffinity(),
+		// 				agentAffinityAgentDTO.getToAffinity());
 
-				inverseOld.setDegree(agentAffinityAgentDTO.getDegree());
-				agentAffinityAgentRepository.update(inverseOld);
-			}
-		} else {
-			new AgentAffinityAgent(agentAffinityAgentDTO.getDegree(),
-					agentAffinityAgent.getFromAffinity(),
-					agentAffinityAgent.getToAffinity());
-			new AgentAffinityAgent(agentAffinityAgentDTO.getDegree(),
-					agentAffinityAgent.getToAffinity(),
-					agentAffinityAgent.getFromAffinity());
+		// 		inverseOld.setDegree(agentAffinityAgentDTO.getDegree());
+ 		// 		agentAffinityAgentRepository.update(inverseOld);
+		// 	}
+		// } else {
+		// 	new AgentAffinityAgent(agentAffinityAgentDTO.getDegree(),
+		// 			agentAffinityAgent.getFromAffinity(),
+		// 			agentAffinityAgent.getToAffinity());
+		// 	new AgentAffinityAgent(agentAffinityAgentDTO.getDegree(),
+		// 			agentAffinityAgent.getToAffinity(),
+		// 			agentAffinityAgent.getFromAffinity());
 
-			agentRepository.update(agent);
-		}
+ 		// 	agentRepository.update(agent);
+		// }
 
-		agent = null;
+		// agent = null;
 
-		return agentAffinityAgentDTO;
+    // return agentAffinityAgentDTO;
+    return null;
 	}
 
 	@SuppressWarnings("unchecked")
 	public AgentAffinityAgent getAffinityByName(String toAffinity,
 			String fromAffinity) {
-		String hql = "SELECT afa FROM "
-				+ AGENT_AFFINITY_AGENT_CLASSNAME
-				+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
-		query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("toAffinity", toAffinity);
-		query.setParameter("fromAffinity", fromAffinity);
+		// String hql = "SELECT afa FROM "
+		// 		+ AGENT_AFFINITY_AGENT_CLASSNAME
+		// 		+ " as afa WHERE afa.toAffinity.name = :toAffinity AND afa.fromAffinity.name = :fromAffinity";
+ 		// query = agentAffinityAgentRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("toAffinity", toAffinity);
+		// query.setParameter("fromAffinity", fromAffinity);
 
-		List<AgentAffinityAgent> result = query.getResultList();
-		if (!result.isEmpty()) {
-			AgentAffinityAgent agentAffinityAgent = result.get(0);
+		// List<AgentAffinityAgent> result = query.getResultList();
+		// if (!result.isEmpty()) {
+		// 	AgentAffinityAgent agentAffinityAgent = result.get(0);
 
-			return agentAffinityAgent;
-		}
+		// 	return agentAffinityAgent;
+		// }
 
 		return null;
 	}
@@ -925,21 +927,21 @@ public class AgentServicesImpl implements AgentServices {
 
 	@Override
 	public Boolean removeAfinityAgent(AgentDTO agentDTO, String affinityName) {
-		AgentAffinityAgent agentAffinityAgent = this.getAffinityByName(
-				affinityName, agentDTO.getName());
-		AgentAffinityAgent inverseAgentAffinityAgent = this.getAffinityByName(
-				agentDTO.getName(), affinityName);
-		Agent agent = this.getAgentForName(agentDTO.getName());
+		// AgentAffinityAgent agentAffinityAgent = this.getAffinityByName(
+		// 		affinityName, agentDTO.getName());
+		// AgentAffinityAgent inverseAgentAffinityAgent = this.getAffinityByName(
+		// 		agentDTO.getName(), affinityName);
+		// Agent agent = this.getAgentForName(agentDTO.getName());
 
-		if (agent.getFromAgentAffinities().contains(agentAffinityAgent)
-				|| agent.getToAgentAffinities().contains(agentAffinityAgent)) {
-			agentAffinityAgent.removeFromFromAffinity();
-			agentAffinityAgent.removeFromToAffinity();
-			agentAffinityAgentRepository.delete(agentAffinityAgent);
-			agentAffinityAgentRepository.delete(inverseAgentAffinityAgent);
+		// if (agent.getFromAgentAffinities().contains(agentAffinityAgent)
+		// 		|| agent.getToAgentAffinities().contains(agentAffinityAgent)) {
+		// 	agentAffinityAgent.removeFromFromAffinity();
+		// 	agentAffinityAgent.removeFromToAffinity();
+ 		// 	agentAffinityAgentRepository.delete(agentAffinityAgent);
+ 		// 	agentAffinityAgentRepository.delete(inverseAgentAffinityAgent);
 
-			return true;
-		}
+		// 	return true;
+		// }
 
 		return false;
 	}
@@ -1026,33 +1028,34 @@ public class AgentServicesImpl implements AgentServices {
 	}
 
 	private List<TaskDTO> convertTasksToTasksDTO(String agentIdent, Collection<Task> tasks) {
-		List<TaskDTO> tasksDTO = new ArrayList<TaskDTO>();
+// 		List<TaskDTO> tasksDTO = new ArrayList<TaskDTO>();
 
-		for (Task task : tasks) {
-			ProcessAgenda p = task.getTheProcessAgenda();
-			String agentName = "";
-			if(p != null) {
-				agentName = p.getTheTaskAgenda().getTheAgent().getName();
-			}
+// 		for (Task task : tasks) {
+// 			ProcessAgenda p = task.getTheProcessAgenda();
+// 			String agentName = "";
+// 			if(p != null) {
+// 				agentName = p.getTheTaskAgenda().getTheAgent().getName();
+// 			}
 
-			float workingHours = taskRepository.getWorkingHoursForTask(task.getTheNormal().getIdent(), agentIdent);
-			Time realWorkingTime = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
-			float estimatedTime = activityEstimationRepository.getHoursEstimationForActivity(task.getTheNormal().getIdent());
-			Time estimatedTaskTime = new Time((int) estimatedTime, (int) ((estimatedTime * 60) % 60));
+// // 			float workingHours = taskRepository.getWorkingHoursForTask(task.getTheNormal().getIdent(), agentIdent);
+// // 			Time realWorkingTime = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
+// // 			float estimatedTime = activityEstimationRepository.getHoursEstimationForActivity(task.getTheNormal().getIdent());
+// 			Time estimatedTaskTime = new Time((int) estimatedTime, (int) ((estimatedTime * 60) % 60));
 
-			TaskDTO t = new TaskDTO(task.getId(), task.getTheNormal().getName(),
-					task.getLocalState(), task.getBeginDate(),
-					task.getEndDate(), workingHours,
-					task.getDateDelegatedTo(), task.getDateDelegatedFrom(),
-					task.getTheNormal().getHowLong(), task.getTheNormal().getHowLongUnit(),
-					task.getTheNormal().getPlannedBegin(), task.getTheNormal().getPlannedEnd(),
-					task.getTheNormal().getScript(), task.getTheNormal().getIdent(), agentName);
+// 			TaskDTO t = new TaskDTO(task.getId(), task.getTheNormal().getName(),
+// 					task.getLocalState(), task.getBeginDate(),
+// 					task.getEndDate(), workingHours,
+// 					task.getDateDelegatedTo(), task.getDateDelegatedFrom(),
+// 					task.getTheNormal().getHowLong(), task.getTheNormal().getHowLongUnit(),
+// 					task.getTheNormal().getPlannedBegin(), task.getTheNormal().getPlannedEnd(),
+// 					task.getTheNormal().getScript(), task.getTheNormal().getIdent(), agentName);
 
-			t.setEstimatedTime(estimatedTaskTime);
-			t.setRealWorkingTime(realWorkingTime);
-			tasksDTO.add(t);
-		}
-		return tasksDTO;
+// 			t.setEstimatedTime(estimatedTaskTime);
+// 			t.setRealWorkingTime(realWorkingTime);
+// 			tasksDTO.add(t);
+// 		}
+// 		return tasksDTO;
+    return null;
 	}
 
 	private List<String> getAgentNames(List<Agent> agents) {
