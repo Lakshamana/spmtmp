@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PrimitiveTypeRepository extends BaseRepositoryQuery<PrimitiveType, Long>, JpaRepository<PrimitiveType, Long> {
+public interface PrimitiveTypeRepository extends BaseRepositoryQuery<PrimitiveType, Long> {
 
 }

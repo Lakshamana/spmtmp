@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgendaEventRepository extends BaseRepositoryQuery<AgendaEvent, Long>, JpaRepository<AgendaEvent, Long> {
+public interface AgendaEventRepository extends BaseRepositoryQuery<AgendaEvent, Long> {
 
 }

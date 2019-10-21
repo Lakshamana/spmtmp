@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReqWorkGroupRepository extends BaseRepositoryQuery<ReqWorkGroup, Long>, JpaRepository<ReqWorkGroup, Long> {
+public interface ReqWorkGroupRepository extends BaseRepositoryQuery<ReqWorkGroup, Long> {
 
 }

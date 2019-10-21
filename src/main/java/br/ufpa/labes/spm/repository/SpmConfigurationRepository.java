@@ -13,6 +13,6 @@ import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SpmConfigurationRepository extends BaseRepositoryQuery<SpmConfiguration, Long>, JpaRepository<SpmConfiguration, Long> {
+public interface SpmConfigurationRepository extends BaseRepositoryQuery<SpmConfiguration, Long> {
 
 }

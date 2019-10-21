@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OcurrenceRepository extends BaseRepositoryQuery<Ocurrence, Long>, JpaRepository<Ocurrence, Long> {
+public interface OcurrenceRepository extends BaseRepositoryQuery<Ocurrence, Long> {
 
 }

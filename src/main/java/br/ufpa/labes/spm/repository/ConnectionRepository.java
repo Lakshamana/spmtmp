@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ConnectionRepository extends BaseRepositoryQuery<Connection, Long>, JpaRepository<Connection, Long> {
+public interface ConnectionRepository extends BaseRepositoryQuery<Connection, Long> {
 
 }

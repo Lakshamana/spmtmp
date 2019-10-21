@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the Author entity.
  */
 @Repository
-public interface AuthorRepository extends BaseRepositoryQuery<Author, Long>, JpaRepository<Author, Long> {
+public interface AuthorRepository extends BaseRepositoryQuery<Author, Long> {
 
     @Query(value = "select distinct author from Author author left join fetch author.authorsFolloweds",
         countQuery = "select count(distinct author) from Author author")

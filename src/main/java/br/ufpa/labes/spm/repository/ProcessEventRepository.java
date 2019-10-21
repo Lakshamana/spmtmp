@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessEventRepository extends BaseRepositoryQuery<ProcessEvent, Long>, JpaRepository<ProcessEvent, Long> {
+public interface ProcessEventRepository extends BaseRepositoryQuery<ProcessEvent, Long> {
 
 }

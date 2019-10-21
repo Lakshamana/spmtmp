@@ -13,10 +13,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
+
 import java.sql.SQLException;
 
 @Configuration
-@EnableJpaRepositories("br.ufpa.labes.spm.repository")
+@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryQueryImpl.class)
 @EnableJpaAuditing(auditorAwareRef = "springSecurityAuditorAware")
 @EnableTransactionManagement
 public class DatabaseConfiguration {

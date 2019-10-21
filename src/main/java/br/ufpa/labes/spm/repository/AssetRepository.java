@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the Asset entity.
  */
 @Repository
-public interface AssetRepository extends BaseRepositoryQuery<Asset, Long>, JpaRepository<Asset, Long> {
+public interface AssetRepository extends BaseRepositoryQuery<Asset, Long> {
 
     @Query(value = "select distinct asset from Asset asset left join fetch asset.favoritedBies left join fetch asset.followers left join fetch asset.collaborators",
         countQuery = "select count(distinct asset) from Asset asset")

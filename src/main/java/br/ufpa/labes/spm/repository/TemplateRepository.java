@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TemplateRepository extends BaseRepositoryQuery<Template, Long>, JpaRepository<Template, Long> {
+public interface TemplateRepository extends BaseRepositoryQuery<Template, Long> {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AbilityTypeRepository extends BaseRepositoryQuery<AbilityType, Long>, JpaRepository<AbilityType, Long> {
+public interface AbilityTypeRepository extends BaseRepositoryQuery<AbilityType, Long> {
 
 }

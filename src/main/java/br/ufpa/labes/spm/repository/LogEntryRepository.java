@@ -11,7 +11,7 @@ import java.util.List;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface LogEntryRepository extends JpaRepository<LogEntry, Long> {
+public interface LogEntryRepository extends JpaRepository<LogEntry, Long>  {
 
     @Query("select logEntry from LogEntry logEntry where logEntry.user.login = ?#{principal.username}")
     List<LogEntry> findByUserIsCurrentUser();

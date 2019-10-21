@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BranchConRepository extends BaseRepositoryQuery<BranchCon, Long>, JpaRepository<BranchCon, Long> {
+public interface BranchConRepository extends BaseRepositoryQuery<BranchCon, Long> {
 
 }

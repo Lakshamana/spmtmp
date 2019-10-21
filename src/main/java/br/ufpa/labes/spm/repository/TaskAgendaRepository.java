@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TaskAgendaRepository extends BaseRepositoryQuery<TaskAgenda, Long>, JpaRepository<TaskAgenda, Long> {
+public interface TaskAgendaRepository extends BaseRepositoryQuery<TaskAgenda, Long> {
 
 }

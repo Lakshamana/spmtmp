@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ClassMethodCallRepository extends BaseRepositoryQuery<ClassMethodCall, Long>, JpaRepository<ClassMethodCall, Long> {
+public interface ClassMethodCallRepository extends BaseRepositoryQuery<ClassMethodCall, Long> {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SpmLogRepository extends BaseRepositoryQuery<SpmLog, Long>, JpaRepository<SpmLog, Long> {
+public interface SpmLogRepository extends BaseRepositoryQuery<SpmLog, Long> {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MultipleConRepository extends BaseRepositoryQuery<MultipleCon, Long>, JpaRepository<MultipleCon, Long> {
+public interface MultipleConRepository extends BaseRepositoryQuery<MultipleCon, Long> {
 
 }

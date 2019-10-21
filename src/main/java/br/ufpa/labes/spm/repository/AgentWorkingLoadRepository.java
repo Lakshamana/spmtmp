@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentWorkingLoadRepository extends BaseRepositoryQuery<AgentWorkingLoad, Long>, JpaRepository<AgentWorkingLoad, Long> {
+public interface AgentWorkingLoadRepository extends BaseRepositoryQuery<AgentWorkingLoad, Long> {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BranchConCondToMultipleConRepository extends BaseRepositoryQuery<BranchConCondToMultipleCon, Long>, JpaRepository<BranchConCondToMultipleCon, Long> {
+public interface BranchConCondToMultipleConRepository extends BaseRepositoryQuery<BranchConCondToMultipleCon, Long> {
 
 }

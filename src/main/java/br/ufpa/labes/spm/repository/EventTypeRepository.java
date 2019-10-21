@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EventTypeRepository extends BaseRepositoryQuery<EventType, Long>, JpaRepository<EventType, Long> {
+public interface EventTypeRepository extends BaseRepositoryQuery<EventType, Long> {
 
 }

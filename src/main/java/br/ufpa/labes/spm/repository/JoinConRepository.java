@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the JoinCon entity.
  */
 @Repository
-public interface JoinConRepository extends BaseRepositoryQuery<JoinCon, Long>, JpaRepository<JoinCon, Long> {
+public interface JoinConRepository extends BaseRepositoryQuery<JoinCon, Long> {
 
     @Query(value = "select distinct joinCon from JoinCon joinCon left join fetch joinCon.fromMultipleCons",
         countQuery = "select count(distinct joinCon) from JoinCon joinCon")

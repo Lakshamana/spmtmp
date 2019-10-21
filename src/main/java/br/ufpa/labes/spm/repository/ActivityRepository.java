@@ -19,7 +19,7 @@ import java.util.Optional;
  * Spring Data  repository for the Activity entity.
  */
 @Repository
-public interface ActivityRepository extends BaseRepositoryQuery<Activity, Long>, JpaRepository<Activity, Long> {
+public interface ActivityRepository extends BaseRepositoryQuery<Activity, Long> {
 
     @Query(value = "select distinct activity from Activity activity left join fetch activity.toJoinCons left join fetch activity.fromBranchANDCons left join fetch activity.fromArtifactCons left join fetch activity.toArtifactCons",
         countQuery = "select count(distinct activity) from Activity activity")

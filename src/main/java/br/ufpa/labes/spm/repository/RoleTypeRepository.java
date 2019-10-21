@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RoleTypeRepository extends BaseRepositoryQuery<RoleType, Long>, JpaRepository<RoleType, Long> {
+public interface RoleTypeRepository extends BaseRepositoryQuery<RoleType, Long> {
 
 }

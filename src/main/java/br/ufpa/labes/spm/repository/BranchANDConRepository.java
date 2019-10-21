@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the BranchANDCon entity.
  */
 @Repository
-public interface BranchANDConRepository extends BaseRepositoryQuery<BranchANDCon, Long>, JpaRepository<BranchANDCon, Long> {
+public interface BranchANDConRepository extends BaseRepositoryQuery<BranchANDCon, Long> {
 
     @Query(value = "select distinct branchANDCon from BranchANDCon branchANDCon left join fetch branchANDCon.toMultipleCons",
         countQuery = "select count(distinct branchANDCon) from BranchANDCon branchANDCon")

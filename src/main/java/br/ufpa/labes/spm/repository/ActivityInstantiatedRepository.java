@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityInstantiatedRepository extends BaseRepositoryQuery<ActivityInstantiated, Long>, JpaRepository<ActivityInstantiated, Long> {
+public interface ActivityInstantiatedRepository extends BaseRepositoryQuery<ActivityInstantiated, Long> {
 
 }

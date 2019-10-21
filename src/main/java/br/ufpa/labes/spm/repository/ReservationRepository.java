@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReservationRepository extends BaseRepositoryQuery<Reservation, Long>, JpaRepository<Reservation, Long> {
+public interface ReservationRepository extends BaseRepositoryQuery<Reservation, Long> {
 
 }

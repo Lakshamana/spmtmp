@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityMetricRepository extends BaseRepositoryQuery<ActivityMetric, Long>, JpaRepository<ActivityMetric, Long> {
+public interface ActivityMetricRepository extends BaseRepositoryQuery<ActivityMetric, Long> {
 
 }

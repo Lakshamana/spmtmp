@@ -1,6 +1,8 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.domain.ResourceInstSug;
+import br.ufpa.labes.spm.repository.interfaces.plannerInfo.ResourceInstantiationSuggestionRepositoryQuery;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.*;
@@ -14,7 +16,7 @@ import java.util.Optional;
  * Spring Data  repository for the ResourceInstSug entity.
  */
 @Repository
-public interface ResourceInstSugRepository extends JpaRepository<ResourceInstSug, Long> {
+public interface ResourceInstSugRepository extends JpaRepository<ResourceInstSug, Long>, ResourceInstantiationSuggestionRepositoryQuery {
 
     @Query(value = "select distinct resourceInstSug from ResourceInstSug resourceInstSug left join fetch resourceInstSug.resourceSuggesteds",
         countQuery = "select count(distinct resourceInstSug) from ResourceInstSug resourceInstSug")

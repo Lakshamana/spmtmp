@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MetricRepository extends BaseRepositoryQuery<Metric, Long>, JpaRepository<Metric, Long> {
+public interface MetricRepository extends BaseRepositoryQuery<Metric, Long> {
 
 }

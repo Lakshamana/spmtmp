@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReqAgentRepository extends BaseRepositoryQuery<ReqAgent, Long>, JpaRepository<ReqAgent, Long> {
+public interface ReqAgentRepository extends BaseRepositoryQuery<ReqAgent, Long> {
 
 }

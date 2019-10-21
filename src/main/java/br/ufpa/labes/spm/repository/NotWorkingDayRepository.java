@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface NotWorkingDayRepository extends JpaRepository<NotWorkingDay, Long> {
+public interface NotWorkingDayRepository extends JpaRepository<NotWorkingDay, Long>  {
 
 }

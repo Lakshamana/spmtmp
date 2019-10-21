@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EnactionDescriptionRepository extends BaseRepositoryQuery<EnactionDescription, Long>, JpaRepository<EnactionDescription, Long> {
+public interface EnactionDescriptionRepository extends BaseRepositoryQuery<EnactionDescription, Long> {
 
 }

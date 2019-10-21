@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CalendarRepository extends BaseRepositoryQuery<Calendar, Long>, JpaRepository<Calendar, Long> {
+public interface CalendarRepository extends BaseRepositoryQuery<Calendar, Long> {
 
 }
