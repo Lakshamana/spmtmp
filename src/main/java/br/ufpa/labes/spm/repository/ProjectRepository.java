@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Project;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProjectRepository extends ProjectRepositoryQuery, JpaRepository<Project, Long> {
+public interface ProjectRepository extends BaseRepositoryQuery<Project, Long>, JpaRepository<Project, Long> {
 
 }

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.BranchConCondToActivityRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.BranchConCondToActivity;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BranchConCondToActivityRepository extends BranchConCondToActivityRepositoryQuery, JpaRepository<BranchConCondToActivity, Long> {
+public interface BranchConCondToActivityRepository extends BaseRepositoryQuery<BranchConCondToActivity, Long>, JpaRepository<BranchConCondToActivity, Long> {
 
 }

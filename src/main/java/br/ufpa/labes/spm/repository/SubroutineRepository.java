@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.tools.SubroutineRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Subroutine;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SubroutineRepository extends SubroutineRepositoryQuery, JpaRepository<Subroutine, Long> {
+public interface SubroutineRepository extends BaseRepositoryQuery<Subroutine, Long>, JpaRepository<Subroutine, Long> {
 
 }

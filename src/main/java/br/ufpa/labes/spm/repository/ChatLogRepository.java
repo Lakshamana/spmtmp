@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.log.ChatLogRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ChatLog;
@@ -17,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the ChatLog entity.
  */
 @Repository
-public interface ChatLogRepository extends ChatLogRepositoryQuery, JpaRepository<ChatLog, Long> {
+public interface ChatLogRepository extends BaseRepositoryQuery<ChatLog, Long>, JpaRepository<ChatLog, Long> {
 
     @Query(value = "select distinct chatLog from ChatLog chatLog left join fetch chatLog.involvedAgentsInChats",
         countQuery = "select count(distinct chatLog) from ChatLog chatLog")

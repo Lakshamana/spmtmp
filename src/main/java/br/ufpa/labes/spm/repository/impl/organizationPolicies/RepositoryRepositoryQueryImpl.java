@@ -4,10 +4,11 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.RepositoryRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.VCSRepository;
 import br.ufpa.labes.spm.domain.Structure;
 
-public class RepositoryRepositoryQueryImpl extends BaseRepositoryQueryImpl<VCSRepository, Long> implements RepositoryRepositoryQuery{
+public class RepositoryRepositoryQueryImpl implements RepositoryRepositoryQuery {
   protected RepositoryRepositoryQueryImpl(Class<VCSRepository> businessClass) {
     super(businessClass);
   }

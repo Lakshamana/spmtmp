@@ -4,8 +4,9 @@ import javax.lang.model.type.PrimitiveType;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.tools.PrimitiveTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
-public class PrimitiveTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<PrimitiveType, Long> implements PrimitiveTypeRepositoryQuery{
+public class PrimitiveTypeRepositoryQueryImpl implements PrimitiveTypeRepositoryQuery {
 
   protected PrimitiveTypeRepositoryQueryImpl(Class<PrimitiveType> businessClass) {
     super(businessClass);

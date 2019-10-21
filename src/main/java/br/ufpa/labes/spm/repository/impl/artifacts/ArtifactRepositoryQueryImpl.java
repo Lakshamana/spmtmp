@@ -8,12 +8,13 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.artifacts.ArtifactRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.SimpleArtifactDescriptorDTO;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 import br.ufpa.labes.spm.domain.InvolvedArtifact;
 
-public class ArtifactRepositoryQueryImpl extends BaseRepositoryQueryImpl<Artifact, Long> implements ArtifactRepositoryQuery{
+public class ArtifactRepositoryQueryImpl implements ArtifactRepositoryQuery {
 
   protected ArtifactRepositoryQueryImpl(Class<Artifact> businessClass) {
     super(businessClass);

@@ -6,9 +6,10 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.ReqWorkGroupRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 
-public class ReqWorkGroupRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqWorkGroup, Long> implements ReqWorkGroupRepositoryQuery{
+public class ReqWorkGroupRepositoryQueryImpl implements ReqWorkGroupRepositoryQuery {
 
   protected ReqWorkGroupRepositoryQueryImpl(Class<ReqWorkGroup> businessClass) {
     super(businessClass);

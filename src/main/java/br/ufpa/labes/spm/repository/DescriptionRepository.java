@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processModels.DescriptionRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Description;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DescriptionRepository extends DescriptionRepositoryQuery, JpaRepository<Description, Long> {
+public interface DescriptionRepository extends BaseRepositoryQuery<Description, Long>, JpaRepository<Description, Long> {
 
 }

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.log.AgendaEventRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgendaEvent;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgendaEventRepository extends AgendaEventRepositoryQuery, JpaRepository<AgendaEvent, Long> {
+public interface AgendaEventRepository extends BaseRepositoryQuery<AgendaEvent, Long>, JpaRepository<AgendaEvent, Long> {
 
 }

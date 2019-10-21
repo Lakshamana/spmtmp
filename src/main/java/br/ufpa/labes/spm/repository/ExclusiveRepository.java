@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.resources.ExclusiveRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Exclusive;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ExclusiveRepository extends ExclusiveRepositoryQuery, JpaRepository<Exclusive, Long> {
+public interface ExclusiveRepository extends BaseRepositoryQuery<Exclusive, Long>, JpaRepository<Exclusive, Long> {
 
 }

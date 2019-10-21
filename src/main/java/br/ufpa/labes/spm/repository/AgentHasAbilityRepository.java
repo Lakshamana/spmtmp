@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.agent.AgentHasAbilityRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentHasAbility;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentHasAbilityRepository extends AgentHasAbilityRepositoryQuery, JpaRepository<AgentHasAbility, Long> {
+public interface AgentHasAbilityRepository extends BaseRepositoryQuery<AgentHasAbility, Long>, JpaRepository<AgentHasAbility, Long> {
 
 }

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.agent.AgentPlaysRoleRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentPlaysRole;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentPlaysRoleRepository extends AgentPlaysRoleRepositoryQuery, JpaRepository<AgentPlaysRole, Long> {
+public interface AgentPlaysRoleRepository extends BaseRepositoryQuery<AgentPlaysRole, Long>, JpaRepository<AgentPlaysRole, Long> {
 
 }

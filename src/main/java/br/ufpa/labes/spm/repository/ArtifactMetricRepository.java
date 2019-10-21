@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ArtifactMetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ArtifactMetric;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ArtifactMetricRepository extends ArtifactMetricRepositoryQuery, JpaRepository<ArtifactMetric, Long> {
+public interface ArtifactMetricRepository extends BaseRepositoryQuery<ArtifactMetric, Long>, JpaRepository<ArtifactMetric, Long> {
 
 }

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.calendar.CalendarRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Calendar;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CalendarRepository extends CalendarRepositoryQuery, JpaRepository<Calendar, Long> {
+public interface CalendarRepository extends BaseRepositoryQuery<Calendar, Long>, JpaRepository<Calendar, Long> {
 
 }

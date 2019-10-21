@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import br.ufpa.labes.spm.domain.SpmConfiguration;
 import br.ufpa.labes.spm.repository.interfaces.agent.SpmConfigurationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 /**
@@ -12,6 +13,6 @@ import br.ufpa.labes.spm.repository.interfaces.agent.SpmConfigurationRepositoryQ
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SpmConfigurationRepository extends SpmConfigurationRepositoryQuery, JpaRepository<SpmConfiguration, Long> {
+public interface SpmConfigurationRepository extends BaseRepositoryQuery<SpmConfiguration, Long>, JpaRepository<SpmConfiguration, Long> {
 
 }

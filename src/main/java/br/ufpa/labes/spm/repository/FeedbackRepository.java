@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.FeedbackRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Feedback;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface FeedbackRepository extends FeedbackRepositoryQuery, JpaRepository<Feedback, Long> {
+public interface FeedbackRepository extends BaseRepositoryQuery<Feedback, Long>, JpaRepository<Feedback, Long> {
 
 }

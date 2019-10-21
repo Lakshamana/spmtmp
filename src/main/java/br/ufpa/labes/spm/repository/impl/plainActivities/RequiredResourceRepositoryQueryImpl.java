@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.RequiredResourceRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
 public class RequiredResourceRepositoryQueryImpl extends BaseRepositoryQueryImpl<RequiredResource, Long>

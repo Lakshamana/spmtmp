@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.types.ActivityTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ActivityType;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityTypeRepository extends ActivityTypeRepositoryQuery, JpaRepository<ActivityType, Long> {
+public interface ActivityTypeRepository extends BaseRepositoryQuery<ActivityType, Long>, JpaRepository<ActivityType, Long> {
 
 }

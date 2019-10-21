@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.BranchConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.BranchCon;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BranchConRepository extends BranchConRepositoryQuery, JpaRepository<BranchCon, Long> {
+public interface BranchConRepository extends BaseRepositoryQuery<BranchCon, Long>, JpaRepository<BranchCon, Long> {
 
 }

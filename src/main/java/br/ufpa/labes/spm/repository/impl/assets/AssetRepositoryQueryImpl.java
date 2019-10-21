@@ -6,11 +6,12 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.assets.AssetRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Asset;
 import br.ufpa.labes.spm.domain.AssetRelationship;
 // import org.qrconsult.spm.vo.AssetCatalog;
 
-public class AssetRepositoryQueryImpl extends BaseRepositoryQueryImpl<Asset, Long> implements AssetRepositoryQuery{
+public class AssetRepositoryQueryImpl implements AssetRepositoryQuery {
 
   public AssetRepositoryQueryImpl() {
     super(Asset.class);

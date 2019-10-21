@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Process;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessRepository extends ProcessRepositoryQuery, JpaRepository<Process, Long> {
+public interface ProcessRepository extends BaseRepositoryQuery<Process, Long>, JpaRepository<Process, Long> {
 
 }

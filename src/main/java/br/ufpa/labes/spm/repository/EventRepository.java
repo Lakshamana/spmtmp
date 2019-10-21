@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.log.EventRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Event;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EventRepository extends EventRepositoryQuery, JpaRepository<Event, Long> {
+public interface EventRepository extends BaseRepositoryQuery<Event, Long>, JpaRepository<Event, Long> {
 
 }

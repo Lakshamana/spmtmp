@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ProcessAgendaRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ProcessAgenda;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessAgendaRepository extends ProcessAgendaRepositoryQuery, JpaRepository<ProcessAgenda, Long> {
+public interface ProcessAgendaRepository extends BaseRepositoryQuery<ProcessAgenda, Long>, JpaRepository<ProcessAgenda, Long> {
 
 }

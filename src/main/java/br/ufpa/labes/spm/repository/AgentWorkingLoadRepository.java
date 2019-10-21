@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.AgentWorkingLoadRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.AgentWorkingLoad;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentWorkingLoadRepository extends AgentWorkingLoadRepositoryQuery, JpaRepository<AgentWorkingLoad, Long> {
+public interface AgentWorkingLoadRepository extends BaseRepositoryQuery<AgentWorkingLoad, Long>, JpaRepository<AgentWorkingLoad, Long> {
 
 }

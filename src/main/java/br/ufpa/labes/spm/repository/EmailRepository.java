@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.email.EmailRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Email;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EmailRepository extends EmailRepositoryQuery, JpaRepository<Email, Long> {
+public interface EmailRepository extends BaseRepositoryQuery<Email, Long>, JpaRepository<Email, Long> {
 
 }

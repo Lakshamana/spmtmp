@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.resources.ReservationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Reservation;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ReservationRepository extends ReservationRepositoryQuery, JpaRepository<Reservation, Long> {
+public interface ReservationRepository extends BaseRepositoryQuery<Reservation, Long>, JpaRepository<Reservation, Long> {
 
 }

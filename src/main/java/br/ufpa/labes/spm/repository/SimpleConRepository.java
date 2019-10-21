@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.SimpleConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.SimpleCon;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SimpleConRepository extends SimpleConRepositoryQuery, JpaRepository<SimpleCon, Long> {
+public interface SimpleConRepository extends BaseRepositoryQuery<SimpleCon, Long>, JpaRepository<SimpleCon, Long> {
 
 }

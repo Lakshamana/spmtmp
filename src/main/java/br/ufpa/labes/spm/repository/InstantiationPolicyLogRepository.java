@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.plannerInfo.InstantiationPolicyLogRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.InstantiationPolicyLog;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface InstantiationPolicyLogRepository extends InstantiationPolicyLogRepositoryQuery, JpaRepository<InstantiationPolicyLog, Long> {
+public interface InstantiationPolicyLogRepository extends BaseRepositoryQuery<InstantiationPolicyLog, Long>, JpaRepository<InstantiationPolicyLog, Long> {
 
 }

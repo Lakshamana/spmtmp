@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.DependencyRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Dependency;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DependencyRepository extends DependencyRepositoryQuery, JpaRepository<Dependency, Long> {
+public interface DependencyRepository extends BaseRepositoryQuery<Dependency, Long>, JpaRepository<Dependency, Long> {
 
 }

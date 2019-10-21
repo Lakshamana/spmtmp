@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.artifacts.ArtifactRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Artifact;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ArtifactRepository extends ArtifactRepositoryQuery, JpaRepository<Artifact, Long> {
+public interface ArtifactRepository extends BaseRepositoryQuery<Artifact, Long>, JpaRepository<Artifact, Long> {
 
 }

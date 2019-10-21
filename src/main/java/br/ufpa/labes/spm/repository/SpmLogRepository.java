@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.log.SpmLogRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.SpmLog;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SpmLogRepository extends SpmLogRepositoryQuery, JpaRepository<SpmLog, Long> {
+public interface SpmLogRepository extends BaseRepositoryQuery<SpmLog, Long>, JpaRepository<SpmLog, Long> {
 
 }

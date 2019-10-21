@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.GraphicCoordinateRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
 

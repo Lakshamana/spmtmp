@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.tools.ToolParameterRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ToolParameter;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ToolParameterRepository extends ToolParameterRepositoryQuery, JpaRepository<ToolParameter, Long> {
+public interface ToolParameterRepository extends BaseRepositoryQuery<ToolParameter, Long>, JpaRepository<ToolParameter, Long> {
 
 }

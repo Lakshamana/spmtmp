@@ -4,10 +4,11 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.agent.AgentRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.AgentDTO;
 import br.ufpa.labes.spm.domain.Agent;
 
-public class AgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<Agent, Long> implements AgentRepositoryQuery{
+public class AgentRepositoryQueryImpl implements AgentRepositoryQuery {
 
   protected AgentRepositoryQueryImpl(Class<Agent> businessClass) {
     super(businessClass);

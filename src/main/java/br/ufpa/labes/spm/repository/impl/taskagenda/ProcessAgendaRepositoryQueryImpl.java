@@ -8,12 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.ProcessAgendaRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.TaskRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 
-public class ProcessAgendaRepositoryQueryImpl extends BaseRepositoryQueryImpl<ProcessAgenda, Long> implements ProcessAgendaRepositoryQuery{
+public class ProcessAgendaRepositoryQueryImpl implements ProcessAgendaRepositoryQuery {
 
   @Autowired
   private TaskRepository taskRepository;

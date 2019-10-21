@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ActivityMetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ActivityMetric;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityMetricRepository extends ActivityMetricRepositoryQuery, JpaRepository<ActivityMetric, Long> {
+public interface ActivityMetricRepository extends BaseRepositoryQuery<ActivityMetric, Long>, JpaRepository<ActivityMetric, Long> {
 
 }

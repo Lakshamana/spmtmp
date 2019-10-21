@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ProcessMetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ProcessMetric;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ProcessMetricRepository extends ProcessMetricRepositoryQuery, JpaRepository<ProcessMetric, Long> {
+public interface ProcessMetricRepository extends BaseRepositoryQuery<ProcessMetric, Long>, JpaRepository<ProcessMetric, Long> {
 
 }

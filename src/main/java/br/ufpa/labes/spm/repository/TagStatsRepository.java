@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.assets.TagStatsRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.TagStats;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TagStatsRepository extends TagStatsRepositoryQuery, JpaRepository<TagStats, Long> {
+public interface TagStatsRepository extends BaseRepositoryQuery<TagStats, Long>, JpaRepository<TagStats, Long> {
 
 }

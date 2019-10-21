@@ -8,12 +8,13 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.taskagenda.TaskRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
 import br.ufpa.labes.spm.domain.AgendaEvent;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.util.ServicesUtil;
 
-public class TaskRepositoryQueryImpl extends BaseRepositoryQueryImpl<Task, Long> implements TaskRepositoryQuery{
+public class TaskRepositoryQueryImpl implements TaskRepositoryQuery {
 
   protected TaskRepositoryQueryImpl(Class<Task> businessClass) {
     super(businessClass);

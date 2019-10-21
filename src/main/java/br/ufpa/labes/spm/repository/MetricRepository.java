@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.MetricRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Metric;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MetricRepository extends MetricRepositoryQuery, JpaRepository<Metric, Long> {
+public interface MetricRepository extends BaseRepositoryQuery<Metric, Long>, JpaRepository<Metric, Long> {
 
 }

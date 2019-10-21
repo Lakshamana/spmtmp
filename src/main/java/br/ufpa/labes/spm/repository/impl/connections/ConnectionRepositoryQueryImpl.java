@@ -2,9 +2,10 @@ package br.ufpa.labes.spm.repository.impl.connections;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.connections.ConnectionRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Connection;
 
-public class ConnectionRepositoryQueryImpl extends BaseRepositoryQueryImpl<Connection, Long> implements ConnectionRepositoryQuery{
+public class ConnectionRepositoryQueryImpl implements ConnectionRepositoryQuery {
 
   protected ConnectionRepositoryQueryImpl(Class<Connection> businessClass) {
     super(businessClass);

@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.ProcessEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ActivityEstimation;
 import br.ufpa.labes.spm.domain.ProcessEstimation;
 

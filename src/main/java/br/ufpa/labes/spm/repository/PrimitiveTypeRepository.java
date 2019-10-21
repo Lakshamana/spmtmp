@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.tools.PrimitiveTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.PrimitiveType;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PrimitiveTypeRepository extends PrimitiveTypeRepositoryQuery, JpaRepository<PrimitiveType, Long> {
+public interface PrimitiveTypeRepository extends BaseRepositoryQuery<PrimitiveType, Long>, JpaRepository<PrimitiveType, Long> {
 
 }

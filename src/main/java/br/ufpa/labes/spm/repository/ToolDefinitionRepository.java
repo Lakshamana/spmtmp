@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.tools.ToolDefinitionRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.ToolDefinition;
@@ -17,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the ToolDefinition entity.
  */
 @Repository
-public interface ToolDefinitionRepository extends ToolDefinitionRepositoryQuery, JpaRepository<ToolDefinition, Long> {
+public interface ToolDefinitionRepository extends BaseRepositoryQuery<ToolDefinition, Long>, JpaRepository<ToolDefinition, Long> {
 
     @Query(value = "select distinct toolDefinition from ToolDefinition toolDefinition left join fetch toolDefinition.theArtifactTypes",
         countQuery = "select count(distinct toolDefinition) from ToolDefinition toolDefinition")

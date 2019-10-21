@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.CompanyUnitRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.CompanyUnit;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface CompanyUnitRepository extends CompanyUnitRepositoryQuery, JpaRepository<CompanyUnit, Long> {
+public interface CompanyUnitRepository extends BaseRepositoryQuery<CompanyUnit, Long>, JpaRepository<CompanyUnit, Long> {
 
 }

@@ -2,9 +2,10 @@ package br.ufpa.labes.spm.repository.impl.types;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.types.ActivityTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ActivityType;
 
-public class ActivityTypeRepositoryQueryImpl extends BaseRepositoryQueryImpl<ActivityType, Long> implements ActivityTypeRepositoryQuery{
+public class ActivityTypeRepositoryQueryImpl implements ActivityTypeRepositoryQuery {
 
   protected ActivityTypeRepositoryQueryImpl(Class<ActivityType> businessClass) {
     super(businessClass);

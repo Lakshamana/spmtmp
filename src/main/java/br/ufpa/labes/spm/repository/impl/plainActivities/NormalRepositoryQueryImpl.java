@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.NormalRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.WorkGroup;
 import br.ufpa.labes.spm.domain.Artifact;
@@ -18,7 +19,7 @@ import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class NormalRepositoryQueryImpl extends BaseRepositoryQueryImpl<Normal, Long> implements NormalRepositoryQuery{
+public class NormalRepositoryQueryImpl implements NormalRepositoryQuery {
 
   protected NormalRepositoryQueryImpl(Class<Normal> businessClass) {
     super(businessClass);

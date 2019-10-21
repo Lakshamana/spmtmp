@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.RequiredPeopleRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.ReqAgent;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.types.RoleTypeRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.RoleType;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RoleTypeRepository extends RoleTypeRepositoryQuery, JpaRepository<RoleType, Long> {
+public interface RoleTypeRepository extends BaseRepositoryQuery<RoleType, Long>, JpaRepository<RoleType, Long> {
 
 }

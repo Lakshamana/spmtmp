@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.Normal;
 
-public interface NormalRepositoryQuery extends BaseRepositoryQuery<Normal, Long> {
+public interface NormalRepositoryQuery {
   public String[] getInvolvedAgentsForNormal(String normalIdent);
 
   public String[] getRequiredResourcesForNormal(String normalIdent);

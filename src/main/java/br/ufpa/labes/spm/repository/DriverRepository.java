@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.driver.DriverRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Driver;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DriverRepository extends DriverRepositoryQuery, JpaRepository<Driver, Long> {
+public interface DriverRepository extends BaseRepositoryQuery<Driver, Long>, JpaRepository<Driver, Long> {
 
 }

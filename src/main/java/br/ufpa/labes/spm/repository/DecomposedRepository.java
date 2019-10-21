@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.activities.DecomposedRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.Decomposed;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DecomposedRepository extends DecomposedRepositoryQuery, JpaRepository<Decomposed, Long> {
+public interface DecomposedRepository extends BaseRepositoryQuery<Decomposed, Long>, JpaRepository<Decomposed, Long> {
 
 }

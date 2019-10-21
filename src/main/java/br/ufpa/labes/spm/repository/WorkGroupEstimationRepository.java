@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.processKnowledge.WorkGroupEstimationRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.WorkGroupEstimation;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface WorkGroupEstimationRepository extends WorkGroupEstimationRepositoryQuery, JpaRepository<WorkGroupEstimation, Long> {
+public interface WorkGroupEstimationRepository extends BaseRepositoryQuery<WorkGroupEstimation, Long>, JpaRepository<WorkGroupEstimation, Long> {
 
 }

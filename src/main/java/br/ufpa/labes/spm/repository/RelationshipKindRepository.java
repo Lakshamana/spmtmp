@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.assets.RelationshipKindRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.RelationshipKind;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RelationshipKindRepository extends RelationshipKindRepositoryQuery, JpaRepository<RelationshipKind, Long> {
+public interface RelationshipKindRepository extends BaseRepositoryQuery<RelationshipKind, Long>, JpaRepository<RelationshipKind, Long> {
 
 }

@@ -6,9 +6,10 @@ import javax.persistence.Query;
 
 import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Project;
 
-public class ProjectRepositoryQueryImpl extends BaseRepositoryQueryImpl<Project, Long> implements ProjectRepositoryQuery{
+public class ProjectRepositoryQueryImpl implements ProjectRepositoryQuery {
 
   protected ProjectRepositoryQueryImpl(Class<Project> businessClass) {
     super(businessClass);

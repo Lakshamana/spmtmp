@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.repository;
 
 import br.ufpa.labes.spm.repository.interfaces.connections.BranchConCondToMultipleConRepositoryQuery;
+import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 
 
 import br.ufpa.labes.spm.domain.BranchConCondToMultipleCon;
@@ -13,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface BranchConCondToMultipleConRepository extends BranchConCondToMultipleConRepositoryQuery, JpaRepository<BranchConCondToMultipleCon, Long> {
+public interface BranchConCondToMultipleConRepository extends BaseRepositoryQuery<BranchConCondToMultipleCon, Long>, JpaRepository<BranchConCondToMultipleCon, Long> {
 
 }
