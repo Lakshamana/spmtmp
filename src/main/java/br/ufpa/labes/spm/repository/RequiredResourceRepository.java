@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface RequiredResourceRepository extends BaseRepositoryQuery<RequiredResource, Long> {
+public interface RequiredResourceRepository extends BaseRepositoryQuery<RequiredResource, Long>, RequiredResourceRepositoryQuery {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface WebAPSEEObjectRepository extends BaseRepositoryQuery<WebAPSEEObject, Long> {
+public interface WebAPSEEObjectRepository extends BaseRepositoryQuery<WebAPSEEObject, Long>, WebAPSEEObjectRepositoryQuery {
 
 }

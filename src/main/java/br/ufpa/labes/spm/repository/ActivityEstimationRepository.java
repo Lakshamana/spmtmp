@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ActivityEstimationRepository extends BaseRepositoryQuery<ActivityEstimation, Long> {
+public interface ActivityEstimationRepository extends BaseRepositoryQuery<ActivityEstimation, Long>, ActivityEstimationRepositoryQuery {
 
 }
