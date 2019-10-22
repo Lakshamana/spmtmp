@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ShareableRepository extends BaseRepositoryQuery<Shareable, Long> {
+public interface ShareableRepository extends JpaRepository<Shareable, Long> {
 
 }

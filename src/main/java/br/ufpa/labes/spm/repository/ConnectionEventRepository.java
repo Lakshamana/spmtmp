@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ConnectionEventRepository extends BaseRepositoryQuery<ConnectionEvent, Long> {
+public interface ConnectionEventRepository extends JpaRepository<ConnectionEvent, Long> {
 
 }

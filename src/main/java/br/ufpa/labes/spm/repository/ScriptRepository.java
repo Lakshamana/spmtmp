@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ScriptRepository extends BaseRepositoryQuery<Script, Long> {
+public interface ScriptRepository extends JpaRepository<Script, Long> {
 
 }

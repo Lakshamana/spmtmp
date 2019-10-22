@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OutOfWorkPeriodRepository extends BaseRepositoryQuery<OutOfWorkPeriod, Long> {
+public interface OutOfWorkPeriodRepository extends JpaRepository<OutOfWorkPeriod, Long> {
 
 }

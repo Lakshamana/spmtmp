@@ -64,22 +64,26 @@ import br.ufpa.labes.spm.repository.impl.activities.DecomposedRepositoryQueryImp
 import br.ufpa.labes.spm.repository.impl.plainActivities.NormalRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.impl.processModels.ProcessModelRepositoryQueryImpl;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.interfaces.calendar.CalendarRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.CalendarDTO;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.exceptions.ModelingException;
 import br.ufpa.labes.spm.exceptions.WebapseeException;
 import br.ufpa.labes.spm.domain.Activity;
+import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.Decomposed;
 import br.ufpa.labes.spm.domain.Plain;
 import br.ufpa.labes.spm.domain.Artifact;
 import br.ufpa.labes.spm.domain.ArtifactCon;
+import br.ufpa.labes.spm.domain.ArtifactType;
 import br.ufpa.labes.spm.domain.BranchCon;
 import br.ufpa.labes.spm.domain.BranchANDCon;
 import br.ufpa.labes.spm.domain.BranchConCond;
 import br.ufpa.labes.spm.domain.BranchConCondToActivity;
 import br.ufpa.labes.spm.domain.BranchConCondToMultipleCon;
 import br.ufpa.labes.spm.domain.Connection;
+import br.ufpa.labes.spm.domain.Consumable;
 import br.ufpa.labes.spm.domain.Dependency;
 import br.ufpa.labes.spm.domain.Feedback;
 import br.ufpa.labes.spm.domain.JoinCon;
@@ -98,10 +102,17 @@ import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
 import br.ufpa.labes.spm.domain.WebAPSEEObject;
+import br.ufpa.labes.spm.domain.WorkGroup;
+import br.ufpa.labes.spm.domain.WorkGroupType;
 import br.ufpa.labes.spm.domain.Process;
+import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.ProcessModel;
 import br.ufpa.labes.spm.domain.Reservation;
+import br.ufpa.labes.spm.domain.Resource;
+import br.ufpa.labes.spm.domain.ResourceType;
+import br.ufpa.labes.spm.domain.Role;
 import br.ufpa.labes.spm.domain.Subroutine;
+import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.domain.ToolParameter;
 import br.ufpa.labes.spm.service.interfaces.DynamicModeling;
 import br.ufpa.labes.spm.service.interfaces.EasyModelingServices;
@@ -130,105 +141,105 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   // DynamicModeling dynamicModeling;
 
   @Autowired
-  private ProcessRepository procRepository;
+  private GenericRepository<Process, Long> procRepository;
 
 	// NotificationServices remote;
 
   @Autowired
-  private DecomposedRepository decRepository;
+  private GenericRepository<Decomposed, Long> decRepository;
 
   @Autowired
-	private ActivityRepository activityRepository;
+	private GenericRepository<Activity, Long> activityRepository;
 
   @Autowired
-	private NormalRepository normRepository;
+	private GenericRepository<Normal, Long> normRepository;
 
   @Autowired
-	private AutomaticRepository autoRepository;
+	private GenericRepository<Automatic, Long> autoRepository;
 
   @Autowired
-	private ArtifactRepository artRepository;
+	private GenericRepository<Artifact, Long> artRepository;
 
   @Autowired
-	private InvolvedArtifactRepository involvedRepository;
+	private GenericRepository<InvolvedArtifact, Long> involvedRepository;
 
   @Autowired
-	private GraphicCoordinateRepository coordRepository;
+	private GenericRepository<GraphicCoordinate, Long> coordRepository;
 
   @Autowired
-	private ProcessModelRepository pmodelRepository;
+	private GenericRepository<ProcessModel, Long> pmodelRepository;
 
   @Autowired
-	private SubroutineRepository subRepository;
+	private GenericRepository<Subroutine, Long> subRepository;
 
   @Autowired
-	private ParameterRepository paramRepository;
+	private GenericRepository<Parameter, Long> paramRepository;
 
   @Autowired
-	private ArtifactConRepository artConRepository;
+	private GenericRepository<ArtifactCon, Long> artConRepository;
 
   @Autowired
-  private ArtifactTypeRepository artTypeRepository;
+  private GenericRepository<ArtifactType, Long> artTypeRepository;
 
   @Autowired
-	private MultipleConRepository multiRepository;
+	private GenericRepository<MultipleCon, Long> multiRepository;
 
   @Autowired
-  private ConnectionRepository conRepository;
+  private GenericRepository<Connection, Long> conRepository;
 
   @Autowired
-	private BranchConCondToMultipleConRepository bctmcRepository;
+	private GenericRepository<BranchConCondToMultipleCon, Long> bctmcRepository;
 
   @Autowired
-  private JoinConRepository joinConRepository;
+  private GenericRepository<JoinCon, Long> joinConRepository;
 
   @Autowired
-	private BranchConRepository branchConRepository;
+	private GenericRepository<BranchCon, Long> branchConRepository;
 
   @Autowired
-  private WorkGroupTypeRepository WorkGroupTypeRepository;
+  private GenericRepository<WorkGroupType, Long> workGroupTypeRepository;
 
   @Autowired
-	RoleRepository roleRepository;
+	GenericRepository<Role, Long> roleRepository;
 
   @Autowired
-	ReqAgentRepository reqAgentRepository;
+	GenericRepository<ReqAgent, Long> reqAgentRepository;
 
   @Autowired
-	AgentRepository agentRepository;
+	GenericRepository<Agent, Long> agentRepository;
 
   @Autowired
-	TaskRepository taskRepository;
+	GenericRepository<Task, Long> taskRepository;
 
   @Autowired
-	WorkGroupRepository WorkGroupRepository;
+	GenericRepository<WorkGroup, Long> WorkGroupRepository;
 
   @Autowired
-	ReqWorkGroupRepository reqWorkGroupRepository;
+	GenericRepository<ReqWorkGroup, Long> reqWorkGroupRepository;
 
   @Autowired
-  ResourceTypeRepository resTypeRepository;
+  GenericRepository<ResourceType, Long> resTypeRepository;
 
   @Autowired
-  private RequiredResourceRepository reqResRepository;
+  private GenericRepository<RequiredResource, Long> reqResRepository;
 
   @Autowired
-  private ResourceRepository resRepository;
+  private GenericRepository<Resource, Long> resRepository;
 
   @Autowired
-	private ConsumableRepository consumableRepository;
+	private GenericRepository<Consumable, Long> consumableRepository;
 
   @Autowired
-	private BranchConCondToActivityRepository branchConCondToActivityRepository;
+	private GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
 
   @Autowired
-	private SimpleConRepository simpleConRepository;
+	private GenericRepository<SimpleCon, Long> simpleConRepository;
 
   @Autowired
-	private ProcessAgendaRepository pAgendaRepository;
+	private GenericRepository<ProcessAgenda, Long> pAgendaRepository;
 
   @Autowired
-	private WebAPSEEObjectRepository webAPSEEObjRepository;
+	private GenericRepository<WebAPSEEObject, Long> webAPSEEObjRepository;
 
 	private Date newBeginDate;
 

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SimpleConRepository extends BaseRepositoryQuery<SimpleCon, Long> {
+public interface SimpleConRepository extends JpaRepository<SimpleCon, Long> {
 
 }

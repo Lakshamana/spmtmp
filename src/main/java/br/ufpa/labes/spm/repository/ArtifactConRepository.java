@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the ArtifactCon entity.
  */
 @Repository
-public interface ArtifactConRepository extends BaseRepositoryQuery<ArtifactCon, Long> {
+public interface ArtifactConRepository extends JpaRepository<ArtifactCon, Long> {
 
     @Query(value = "select distinct artifactCon from ArtifactCon artifactCon left join fetch artifactCon.toMultipleCons",
         countQuery = "select count(distinct artifactCon) from ArtifactCon artifactCon")

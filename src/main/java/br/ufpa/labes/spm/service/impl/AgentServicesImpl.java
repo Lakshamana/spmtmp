@@ -30,6 +30,7 @@ import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
 import br.ufpa.labes.spm.repository.TaskAgendaRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WorkGroupRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.service.dto.TaskDTO;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
 import br.ufpa.labes.spm.service.dto.AbilityDTO;
@@ -41,12 +42,15 @@ import br.ufpa.labes.spm.service.dto.SpmConfigurationDTO;
 import br.ufpa.labes.spm.service.dto.WorkGroupDTO;
 import br.ufpa.labes.spm.service.dto.RoleDTO;
 import br.ufpa.labes.spm.domain.Ability;
+import br.ufpa.labes.spm.domain.ActivityEstimation;
 import br.ufpa.labes.spm.domain.Agent;
 import br.ufpa.labes.spm.domain.AgentAffinityAgent;
 import br.ufpa.labes.spm.domain.AgentHasAbility;
 import br.ufpa.labes.spm.domain.AgentPlaysRole;
 import br.ufpa.labes.spm.domain.WorkGroup;
 import br.ufpa.labes.spm.domain.Role;
+import br.ufpa.labes.spm.domain.RoleNeedsAbility;
+import br.ufpa.labes.spm.domain.RoleType;
 import br.ufpa.labes.spm.domain.SpmConfiguration;
 import br.ufpa.labes.spm.domain.Project;
 import br.ufpa.labes.spm.domain.Process;
@@ -83,46 +87,46 @@ public class AgentServicesImpl implements AgentServices {
 	private static final String AGENT_CLASSNAME = Agent.class.getSimpleName();
 
   @Autowired
-	AgentRepository agentRepository;
+	GenericRepository<Agent, Long> agentRepository;
 
   @Autowired
-	AbilityRepository abilityRepository;
+	GenericRepository<Ability, Long> abilityRepository;
 
   @Autowired
-	RoleRepository roleRepository;
+	GenericRepository<Role, Long> roleRepository;
 
   @Autowired
-	RoleTypeRepository roleTypeRepository;
+	GenericRepository<RoleType, Long> roleTypeRepository;
 
   @Autowired
-  RoleNeedsAbilityRepository roleNeedsRepository;
+  GenericRepository<RoleNeedsAbility, Long> roleNeedsRepository;
 
   @Autowired
-	AgentPlaysRoleRepository agentPlaysRoleRepository;
+	GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository;
 
   @Autowired
-	AgentHasAbilityRepository agentHasAbilityRepository;
+	GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository;
 
   @Autowired
-	AgentAffinityAgentRepository agentAffinityAgentRepository;
+	GenericRepository<AgentAffinityAgent, Long> agentAffinityAgentRepository;
 
   @Autowired
-  WorkGroupRepository workGroupRepository;
+  GenericRepository<WorkGroup, Long> workGroupRepository;
 
   @Autowired
-	SpmConfigurationRepository confiRepository;
+	GenericRepository<SpmConfiguration, Long> confiRepository;
 
   @Autowired
-	ProcessAgendaRepository processAgendaRepository;
+	GenericRepository<ProcessAgenda, Long> processAgendaRepository;
 
   @Autowired
-  TaskRepository taskRepository;
+  GenericRepository<Task, Long> taskRepository;
 
   @Autowired
-	TaskAgendaRepository taskAgendaRepository;
+	GenericRepository<TaskAgenda, Long> taskAgendaRepository;
 
   @Autowired
-	ActivityEstimationRepository activityEstimationRepository;
+	GenericRepository<ActivityEstimation, Long> activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
 

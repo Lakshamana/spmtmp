@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AgentInstSuggestionToAgentRepository extends BaseRepositoryQuery<AgentInstSuggestionToAgent, Long> {
+public interface AgentInstSuggestionToAgentRepository extends JpaRepository<AgentInstSuggestionToAgent, Long> {
 
 }

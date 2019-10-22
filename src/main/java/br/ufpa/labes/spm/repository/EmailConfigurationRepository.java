@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EmailConfigurationRepository extends BaseRepositoryQuery<EmailConfiguration, Long> {
+public interface EmailConfigurationRepository extends JpaRepository<EmailConfiguration, Long> {
 
 }

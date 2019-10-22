@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DriverRepository extends BaseRepositoryQuery<Driver, Long> {
+public interface DriverRepository extends JpaRepository<Driver, Long> {
 
 }

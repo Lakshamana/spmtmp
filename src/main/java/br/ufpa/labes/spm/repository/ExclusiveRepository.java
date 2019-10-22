@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ExclusiveRepository extends BaseRepositoryQuery<Exclusive, Long> {
+public interface ExclusiveRepository extends JpaRepository<Exclusive, Long> {
 
 }

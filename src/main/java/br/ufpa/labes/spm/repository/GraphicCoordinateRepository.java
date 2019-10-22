@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface GraphicCoordinateRepository extends BaseRepositoryQuery<GraphicCoordinate, Long> {
+public interface GraphicCoordinateRepository extends JpaRepository<GraphicCoordinate, Long> {
 
 }

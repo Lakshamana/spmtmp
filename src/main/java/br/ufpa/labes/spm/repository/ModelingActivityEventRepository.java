@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ModelingActivityEventRepository extends BaseRepositoryQuery<ModelingActivityEvent, Long> {
+public interface ModelingActivityEventRepository extends JpaRepository<ModelingActivityEvent, Long> {
 
 }

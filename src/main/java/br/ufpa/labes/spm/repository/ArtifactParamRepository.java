@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ArtifactParamRepository extends BaseRepositoryQuery<ArtifactParam, Long> {
+public interface ArtifactParamRepository extends JpaRepository<ArtifactParam, Long> {
 
 }

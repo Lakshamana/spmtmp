@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface OrganizationMetricRepository extends BaseRepositoryQuery<OrganizationMetric, Long> {
+public interface OrganizationMetricRepository extends JpaRepository<OrganizationMetric, Long> {
 
 }

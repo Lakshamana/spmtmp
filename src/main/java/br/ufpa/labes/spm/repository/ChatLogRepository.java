@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the ChatLog entity.
  */
 @Repository
-public interface ChatLogRepository extends BaseRepositoryQuery<ChatLog, Long> {
+public interface ChatLogRepository extends JpaRepository<ChatLog, Long> {
 
     @Query(value = "select distinct chatLog from ChatLog chatLog left join fetch chatLog.involvedAgentsInChats",
         countQuery = "select count(distinct chatLog) from ChatLog chatLog")

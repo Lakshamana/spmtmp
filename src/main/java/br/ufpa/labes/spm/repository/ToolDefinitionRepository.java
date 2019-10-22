@@ -18,7 +18,7 @@ import java.util.Optional;
  * Spring Data  repository for the ToolDefinition entity.
  */
 @Repository
-public interface ToolDefinitionRepository extends BaseRepositoryQuery<ToolDefinition, Long> {
+public interface ToolDefinitionRepository extends JpaRepository<ToolDefinition, Long> {
 
     @Query(value = "select distinct toolDefinition from ToolDefinition toolDefinition left join fetch toolDefinition.theArtifactTypes",
         countQuery = "select count(distinct toolDefinition) from ToolDefinition toolDefinition")

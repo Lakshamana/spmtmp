@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface AutomaticRepository extends BaseRepositoryQuery<Automatic, Long> {
+public interface AutomaticRepository extends JpaRepository<Automatic, Long> {
 
 }

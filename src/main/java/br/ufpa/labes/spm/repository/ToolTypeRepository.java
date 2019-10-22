@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ToolTypeRepository extends BaseRepositoryQuery<ToolType, Long> {
+public interface ToolTypeRepository extends JpaRepository<ToolType, Long> {
 
 }

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ConsumableRepository extends BaseRepositoryQuery<Consumable, Long> {
+public interface ConsumableRepository extends JpaRepository<Consumable, Long> {
 
 }

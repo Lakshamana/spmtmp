@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TagStatsRepository extends BaseRepositoryQuery<TagStats, Long> {
+public interface TagStatsRepository extends JpaRepository<TagStats, Long> {
 
 }
