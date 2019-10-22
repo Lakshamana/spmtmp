@@ -64,7 +64,7 @@ public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 
-  @PersistenceContext(unitName = "SPMPU")
+  @PersistenceContext
   private EntityManager em;
 
   @Autowired
