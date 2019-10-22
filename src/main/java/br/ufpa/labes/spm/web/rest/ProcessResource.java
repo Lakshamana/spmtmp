@@ -41,12 +41,12 @@ public class ProcessResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Process, Long> processRepository;
+    private final ProcessRepository processRepository;
 
     @Autowired
     private ProcessServices processServices;
 
-    public ProcessResource(GenericRepository<Process, Long> processRepository) {
+    public ProcessResource(ProcessRepository processRepository) {
         this.processRepository = processRepository;
     }
 

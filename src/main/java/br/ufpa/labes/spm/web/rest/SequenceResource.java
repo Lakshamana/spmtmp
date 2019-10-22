@@ -35,9 +35,9 @@ public class SequenceResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Sequence, Long> sequenceRepository;
+    private final SequenceRepository sequenceRepository;
 
-    public SequenceResource(GenericRepository<Sequence, Long> sequenceRepository) {
+    public SequenceResource(SequenceRepository sequenceRepository) {
         this.sequenceRepository = sequenceRepository;
     }
 

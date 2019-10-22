@@ -33,9 +33,9 @@ public class AgentPlaysRoleResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository;
+    private final AgentPlaysRoleRepository agentPlaysRoleRepository;
 
-    public AgentPlaysRoleResource(GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository) {
+    public AgentPlaysRoleResource(AgentPlaysRoleRepository agentPlaysRoleRepository) {
         this.agentPlaysRoleRepository = agentPlaysRoleRepository;
     }
 

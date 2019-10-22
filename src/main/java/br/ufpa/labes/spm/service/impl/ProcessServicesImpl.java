@@ -16,6 +16,7 @@ import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
 import br.ufpa.labes.spm.repository.AgentRepository;
 import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.service.dto.ActivityDTO;
 import br.ufpa.labes.spm.service.dto.ActivitysDTO;
 import br.ufpa.labes.spm.service.dto.DecomposedDTO;

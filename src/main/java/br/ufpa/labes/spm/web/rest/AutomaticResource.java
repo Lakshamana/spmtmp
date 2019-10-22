@@ -33,9 +33,9 @@ public class AutomaticResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Automatic, Long> automaticRepository;
+    private final AutomaticRepository automaticRepository;
 
-    public AutomaticResource(GenericRepository<Automatic, Long> automaticRepository) {
+    public AutomaticResource(AutomaticRepository automaticRepository) {
         this.automaticRepository = automaticRepository;
     }
 

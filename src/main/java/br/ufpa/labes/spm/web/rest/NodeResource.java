@@ -36,9 +36,9 @@ public class NodeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Node, Long> nodeRepository;
+    private final NodeRepository nodeRepository;
 
-    public NodeResource(GenericRepository<Node, Long> nodeRepository) {
+    public NodeResource(NodeRepository nodeRepository) {
         this.nodeRepository = nodeRepository;
     }
 

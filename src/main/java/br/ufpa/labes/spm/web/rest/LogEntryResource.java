@@ -33,9 +33,9 @@ public class LogEntryResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<LogEntry, Long> logEntryRepository;
+    private final LogEntryRepository logEntryRepository;
 
-    public LogEntryResource(GenericRepository<LogEntry, Long> logEntryRepository) {
+    public LogEntryResource(LogEntryRepository logEntryRepository) {
         this.logEntryRepository = logEntryRepository;
     }
 

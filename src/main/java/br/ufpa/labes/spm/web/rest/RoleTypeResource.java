@@ -33,9 +33,9 @@ public class RoleTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<RoleType, Long> roleTypeRepository;
+    private final RoleTypeRepository roleTypeRepository;
 
-    public RoleTypeResource(GenericRepository<RoleType, Long> roleTypeRepository) {
+    public RoleTypeResource(RoleTypeRepository roleTypeRepository) {
         this.roleTypeRepository = roleTypeRepository;
     }
 

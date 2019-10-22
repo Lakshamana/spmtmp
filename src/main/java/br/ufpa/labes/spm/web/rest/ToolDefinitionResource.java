@@ -33,9 +33,9 @@ public class ToolDefinitionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ToolDefinition, Long> toolDefinitionRepository;
+    private final ToolDefinitionRepository toolDefinitionRepository;
 
-    public ToolDefinitionResource(GenericRepository<ToolDefinition, Long> toolDefinitionRepository) {
+    public ToolDefinitionResource(ToolDefinitionRepository toolDefinitionRepository) {
         this.toolDefinitionRepository = toolDefinitionRepository;
     }
 

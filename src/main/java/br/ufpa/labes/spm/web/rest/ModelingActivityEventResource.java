@@ -33,9 +33,9 @@ public class ModelingActivityEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ModelingActivityEvent, Long> modelingActivityEventRepository;
+    private final ModelingActivityEventRepository modelingActivityEventRepository;
 
-    public ModelingActivityEventResource(GenericRepository<ModelingActivityEvent, Long> modelingActivityEventRepository) {
+    public ModelingActivityEventResource(ModelingActivityEventRepository modelingActivityEventRepository) {
         this.modelingActivityEventRepository = modelingActivityEventRepository;
     }
 

@@ -33,9 +33,9 @@ public class AgentAffinityAgentResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<AgentAffinityAgent, Long> agentAffinityAgentRepository;
+    private final AgentAffinityAgentRepository agentAffinityAgentRepository;
 
-    public AgentAffinityAgentResource(GenericRepository<AgentAffinityAgent, Long> agentAffinityAgentRepository) {
+    public AgentAffinityAgentResource(AgentAffinityAgentRepository agentAffinityAgentRepository) {
         this.agentAffinityAgentRepository = agentAffinityAgentRepository;
     }
 

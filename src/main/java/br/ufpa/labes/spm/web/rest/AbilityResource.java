@@ -33,9 +33,9 @@ public class AbilityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Ability, Long> abilityRepository;
+    private final AbilityRepository abilityRepository;
 
-    public AbilityResource(GenericRepository<Ability, Long> abilityRepository) {
+    public AbilityResource(AbilityRepository abilityRepository) {
         this.abilityRepository = abilityRepository;
     }
 

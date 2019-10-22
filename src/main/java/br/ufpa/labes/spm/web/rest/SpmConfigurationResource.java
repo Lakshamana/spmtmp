@@ -35,9 +35,9 @@ public class SpmConfigurationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<SpmConfiguration, Long> spmConfigurationRepository;
+    private final SpmConfigurationRepository spmConfigurationRepository;
 
-    public SpmConfigurationResource(GenericRepository<SpmConfiguration, Long> spmConfigurationRepository) {
+    public SpmConfigurationResource(SpmConfigurationRepository spmConfigurationRepository) {
         this.spmConfigurationRepository = spmConfigurationRepository;
     }
 

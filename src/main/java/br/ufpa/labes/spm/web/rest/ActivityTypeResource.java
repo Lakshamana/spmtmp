@@ -33,9 +33,9 @@ public class ActivityTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ActivityType, Long> activityTypeRepository;
+    private final ActivityTypeRepository activityTypeRepository;
 
-    public ActivityTypeResource(GenericRepository<ActivityType, Long> activityTypeRepository) {
+    public ActivityTypeResource(ActivityTypeRepository activityTypeRepository) {
         this.activityTypeRepository = activityTypeRepository;
     }
 

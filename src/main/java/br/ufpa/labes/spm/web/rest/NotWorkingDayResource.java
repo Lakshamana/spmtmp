@@ -34,9 +34,9 @@ public class NotWorkingDayResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<NotWorkingDay, Long> notWorkingDayRepository;
+    private final NotWorkingDayRepository notWorkingDayRepository;
 
-    public NotWorkingDayResource(GenericRepository<NotWorkingDay, Long> notWorkingDayRepository) {
+    public NotWorkingDayResource(NotWorkingDayRepository notWorkingDayRepository) {
         this.notWorkingDayRepository = notWorkingDayRepository;
     }
 

@@ -33,9 +33,9 @@ public class OcurrenceResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Ocurrence, Long> ocurrenceRepository;
+    private final OcurrenceRepository ocurrenceRepository;
 
-    public OcurrenceResource(GenericRepository<Ocurrence, Long> ocurrenceRepository) {
+    public OcurrenceResource(OcurrenceRepository ocurrenceRepository) {
         this.ocurrenceRepository = ocurrenceRepository;
     }
 

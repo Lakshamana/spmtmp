@@ -33,9 +33,9 @@ public class CompanyUnitResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<CompanyUnit, Long> companyUnitRepository;
+    private final CompanyUnitRepository companyUnitRepository;
 
-    public CompanyUnitResource(GenericRepository<CompanyUnit, Long> companyUnitRepository) {
+    public CompanyUnitResource(CompanyUnitRepository companyUnitRepository) {
         this.companyUnitRepository = companyUnitRepository;
     }
 

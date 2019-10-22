@@ -33,9 +33,9 @@ public class ChatLogResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ChatLog, Long> chatLogRepository;
+    private final ChatLogRepository chatLogRepository;
 
-    public ChatLogResource(GenericRepository<ChatLog, Long> chatLogRepository) {
+    public ChatLogResource(ChatLogRepository chatLogRepository) {
         this.chatLogRepository = chatLogRepository;
     }
 

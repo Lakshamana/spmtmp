@@ -33,9 +33,9 @@ public class WorkGroupInstSugResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<WorkGroupInstSug, Long> workGroupInstSugRepository;
+    private final WorkGroupInstSugRepository workGroupInstSugRepository;
 
-    public WorkGroupInstSugResource(GenericRepository<WorkGroupInstSug, Long> workGroupInstSugRepository) {
+    public WorkGroupInstSugResource(WorkGroupInstSugRepository workGroupInstSugRepository) {
         this.workGroupInstSugRepository = workGroupInstSugRepository;
     }
 

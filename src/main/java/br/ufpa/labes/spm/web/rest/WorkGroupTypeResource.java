@@ -33,9 +33,9 @@ public class WorkGroupTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<WorkGroupType, Long> workGroupTypeRepository;
+    private final WorkGroupTypeRepository workGroupTypeRepository;
 
-    public WorkGroupTypeResource(GenericRepository<WorkGroupType, Long> workGroupTypeRepository) {
+    public WorkGroupTypeResource(WorkGroupTypeRepository workGroupTypeRepository) {
         this.workGroupTypeRepository = workGroupTypeRepository;
     }
 

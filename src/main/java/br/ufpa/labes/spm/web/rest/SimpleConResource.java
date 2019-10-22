@@ -33,9 +33,9 @@ public class SimpleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<SimpleCon, Long> simpleConRepository;
+    private final SimpleConRepository simpleConRepository;
 
-    public SimpleConResource(GenericRepository<SimpleCon, Long> simpleConRepository) {
+    public SimpleConResource(SimpleConRepository simpleConRepository) {
         this.simpleConRepository = simpleConRepository;
     }
 

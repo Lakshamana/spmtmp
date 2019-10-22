@@ -35,9 +35,9 @@ public class DependencyResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Dependency, Long> dependencyRepository;
+    private final DependencyRepository dependencyRepository;
 
-    public DependencyResource(GenericRepository<Dependency, Long> dependencyRepository) {
+    public DependencyResource(DependencyRepository dependencyRepository) {
         this.dependencyRepository = dependencyRepository;
     }
 

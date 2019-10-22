@@ -34,9 +34,9 @@ public class AuthorResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Author, Long> authorRepository;
+    private final AuthorRepository authorRepository;
 
-    public AuthorResource(GenericRepository<Author, Long> authorRepository) {
+    public AuthorResource(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
 

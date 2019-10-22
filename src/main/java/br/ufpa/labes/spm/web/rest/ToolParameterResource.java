@@ -33,9 +33,9 @@ public class ToolParameterResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ToolParameter, Long> toolParameterRepository;
+    private final ToolParameterRepository toolParameterRepository;
 
-    public ToolParameterResource(GenericRepository<ToolParameter, Long> toolParameterRepository) {
+    public ToolParameterResource(ToolParameterRepository toolParameterRepository) {
         this.toolParameterRepository = toolParameterRepository;
     }
 

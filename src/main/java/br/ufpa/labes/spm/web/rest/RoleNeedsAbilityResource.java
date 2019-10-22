@@ -33,9 +33,9 @@ public class RoleNeedsAbilityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<RoleNeedsAbility, Long> roleNeedsAbilityRepository;
+    private final RoleNeedsAbilityRepository roleNeedsAbilityRepository;
 
-    public RoleNeedsAbilityResource(GenericRepository<RoleNeedsAbility, Long> roleNeedsAbilityRepository) {
+    public RoleNeedsAbilityResource(RoleNeedsAbilityRepository roleNeedsAbilityRepository) {
         this.roleNeedsAbilityRepository = roleNeedsAbilityRepository;
     }
 

@@ -33,9 +33,9 @@ public class InstantiationSuggestionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<InstantiationSuggestion, Long> instantiationSuggestionRepository;
+    private final InstantiationSuggestionRepository instantiationSuggestionRepository;
 
-    public InstantiationSuggestionResource(GenericRepository<InstantiationSuggestion, Long> instantiationSuggestionRepository) {
+    public InstantiationSuggestionResource(InstantiationSuggestionRepository instantiationSuggestionRepository) {
         this.instantiationSuggestionRepository = instantiationSuggestionRepository;
     }
 

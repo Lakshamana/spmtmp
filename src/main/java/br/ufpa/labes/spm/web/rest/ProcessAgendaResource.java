@@ -33,9 +33,9 @@ public class ProcessAgendaResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ProcessAgenda, Long> processAgendaRepository;
+    private final ProcessAgendaRepository processAgendaRepository;
 
-    public ProcessAgendaResource(GenericRepository<ProcessAgenda, Long> processAgendaRepository) {
+    public ProcessAgendaResource(ProcessAgendaRepository processAgendaRepository) {
         this.processAgendaRepository = processAgendaRepository;
     }
 

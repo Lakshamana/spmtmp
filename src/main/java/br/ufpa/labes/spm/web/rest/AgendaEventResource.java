@@ -33,9 +33,9 @@ public class AgendaEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<AgendaEvent, Long> agendaEventRepository;
+    private final AgendaEventRepository agendaEventRepository;
 
-    public AgendaEventResource(GenericRepository<AgendaEvent, Long> agendaEventRepository) {
+    public AgendaEventResource(AgendaEventRepository agendaEventRepository) {
         this.agendaEventRepository = agendaEventRepository;
     }
 

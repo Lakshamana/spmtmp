@@ -33,9 +33,9 @@ public class CatalogEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<CatalogEvent, Long> catalogEventRepository;
+    private final CatalogEventRepository catalogEventRepository;
 
-    public CatalogEventResource(GenericRepository<CatalogEvent, Long> catalogEventRepository) {
+    public CatalogEventResource(CatalogEventRepository catalogEventRepository) {
         this.catalogEventRepository = catalogEventRepository;
     }
 

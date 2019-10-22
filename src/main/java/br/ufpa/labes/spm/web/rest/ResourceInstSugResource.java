@@ -33,9 +33,9 @@ public class ResourceInstSugResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ResourceInstSug, Long> resourceInstSugRepository;
+    private final ResourceInstSugRepository resourceInstSugRepository;
 
-    public ResourceInstSugResource(GenericRepository<ResourceInstSug, Long> resourceInstSugRepository) {
+    public ResourceInstSugResource(ResourceInstSugRepository resourceInstSugRepository) {
         this.resourceInstSugRepository = resourceInstSugRepository;
     }
 

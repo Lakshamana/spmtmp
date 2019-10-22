@@ -35,9 +35,9 @@ public class EnactionDescriptionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<EnactionDescription, Long> enactionDescriptionRepository;
+    private final EnactionDescriptionRepository enactionDescriptionRepository;
 
-    public EnactionDescriptionResource(GenericRepository<EnactionDescription, Long> enactionDescriptionRepository) {
+    public EnactionDescriptionResource(EnactionDescriptionRepository enactionDescriptionRepository) {
         this.enactionDescriptionRepository = enactionDescriptionRepository;
     }
 

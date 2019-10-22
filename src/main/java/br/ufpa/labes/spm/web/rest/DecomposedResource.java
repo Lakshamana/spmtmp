@@ -33,9 +33,9 @@ public class DecomposedResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Decomposed, Long> decomposedRepository;
+    private final DecomposedRepository decomposedRepository;
 
-    public DecomposedResource(GenericRepository<Decomposed, Long> decomposedRepository) {
+    public DecomposedResource(DecomposedRepository decomposedRepository) {
         this.decomposedRepository = decomposedRepository;
     }
 

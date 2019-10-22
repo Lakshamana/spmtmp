@@ -33,9 +33,9 @@ public class InvolvedArtifactResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<InvolvedArtifact, Long> involvedArtifactRepository;
+    private final InvolvedArtifactRepository involvedArtifactRepository;
 
-    public InvolvedArtifactResource(GenericRepository<InvolvedArtifact, Long> involvedArtifactRepository) {
+    public InvolvedArtifactResource(InvolvedArtifactRepository involvedArtifactRepository) {
         this.involvedArtifactRepository = involvedArtifactRepository;
     }
 

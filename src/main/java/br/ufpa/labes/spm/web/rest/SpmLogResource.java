@@ -33,9 +33,9 @@ public class SpmLogResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<SpmLog, Long> spmLogRepository;
+    private final SpmLogRepository spmLogRepository;
 
-    public SpmLogResource(GenericRepository<SpmLog, Long> spmLogRepository) {
+    public SpmLogResource(SpmLogRepository spmLogRepository) {
         this.spmLogRepository = spmLogRepository;
     }
 

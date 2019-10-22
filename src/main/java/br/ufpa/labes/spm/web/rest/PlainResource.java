@@ -33,9 +33,9 @@ public class PlainResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Plain, Long> plainRepository;
+    private final PlainRepository plainRepository;
 
-    public PlainResource(GenericRepository<Plain, Long> plainRepository) {
+    public PlainResource(PlainRepository plainRepository) {
         this.plainRepository = plainRepository;
     }
 

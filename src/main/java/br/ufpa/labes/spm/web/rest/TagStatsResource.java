@@ -33,9 +33,9 @@ public class TagStatsResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<TagStats, Long> tagStatsRepository;
+    private final TagStatsRepository tagStatsRepository;
 
-    public TagStatsResource(GenericRepository<TagStats, Long> tagStatsRepository) {
+    public TagStatsResource(TagStatsRepository tagStatsRepository) {
         this.tagStatsRepository = tagStatsRepository;
     }
 

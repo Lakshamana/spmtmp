@@ -33,9 +33,9 @@ public class AgentEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<AgentEstimation, Long> agentEstimationRepository;
+    private final AgentEstimationRepository agentEstimationRepository;
 
-    public AgentEstimationResource(GenericRepository<AgentEstimation, Long> agentEstimationRepository) {
+    public AgentEstimationResource(AgentEstimationRepository agentEstimationRepository) {
         this.agentEstimationRepository = agentEstimationRepository;
     }
 

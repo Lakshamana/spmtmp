@@ -33,9 +33,9 @@ public class ScriptResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Script, Long> scriptRepository;
+    private final ScriptRepository scriptRepository;
 
-    public ScriptResource(GenericRepository<Script, Long> scriptRepository) {
+    public ScriptResource(ScriptRepository scriptRepository) {
         this.scriptRepository = scriptRepository;
     }
 

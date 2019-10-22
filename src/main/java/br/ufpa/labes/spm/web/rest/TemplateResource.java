@@ -33,9 +33,9 @@ public class TemplateResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Template, Long> templateRepository;
+    private final TemplateRepository templateRepository;
 
-    public TemplateResource(GenericRepository<Template, Long> templateRepository) {
+    public TemplateResource(TemplateRepository templateRepository) {
         this.templateRepository = templateRepository;
     }
 

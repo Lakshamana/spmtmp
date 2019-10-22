@@ -33,9 +33,9 @@ public class AuthorStatResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<AuthorStat, Long> authorStatRepository;
+    private final AuthorStatRepository authorStatRepository;
 
-    public AuthorStatResource(GenericRepository<AuthorStat, Long> authorStatRepository) {
+    public AuthorStatResource(AuthorStatRepository authorStatRepository) {
         this.authorStatRepository = authorStatRepository;
     }
 

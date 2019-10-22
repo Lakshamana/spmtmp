@@ -35,9 +35,9 @@ public class ProcessModelResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ProcessModel, Long> processModelRepository;
+    private final ProcessModelRepository processModelRepository;
 
-    public ProcessModelResource(GenericRepository<ProcessModel, Long> processModelRepository) {
+    public ProcessModelResource(ProcessModelRepository processModelRepository) {
         this.processModelRepository = processModelRepository;
     }
 

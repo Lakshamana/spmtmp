@@ -33,9 +33,9 @@ public class ActivityEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ActivityEstimation, Long> activityEstimationRepository;
+    private final ActivityEstimationRepository activityEstimationRepository;
 
-    public ActivityEstimationResource(GenericRepository<ActivityEstimation, Long> activityEstimationRepository) {
+    public ActivityEstimationResource(ActivityEstimationRepository activityEstimationRepository) {
         this.activityEstimationRepository = activityEstimationRepository;
     }
 

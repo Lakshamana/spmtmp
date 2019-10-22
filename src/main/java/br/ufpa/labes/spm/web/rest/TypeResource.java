@@ -33,9 +33,9 @@ public class TypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Type, Long> typeRepository;
+    private final TypeRepository typeRepository;
 
-    public TypeResource(GenericRepository<Type, Long> typeRepository) {
+    public TypeResource(TypeRepository typeRepository) {
         this.typeRepository = typeRepository;
     }
 

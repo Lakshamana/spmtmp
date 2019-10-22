@@ -33,9 +33,9 @@ public class DevelopingSystemResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<DevelopingSystem, Long> developingSystemRepository;
+    private final DevelopingSystemRepository developingSystemRepository;
 
-    public DevelopingSystemResource(GenericRepository<DevelopingSystem, Long> developingSystemRepository) {
+    public DevelopingSystemResource(DevelopingSystemRepository developingSystemRepository) {
         this.developingSystemRepository = developingSystemRepository;
     }
 

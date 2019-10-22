@@ -36,9 +36,9 @@ public class PluginResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Plugin, Long> pluginRepository;
+    private final PluginRepository pluginRepository;
 
-    public PluginResource(GenericRepository<Plugin, Long> pluginRepository) {
+    public PluginResource(PluginRepository pluginRepository) {
         this.pluginRepository = pluginRepository;
     }
 

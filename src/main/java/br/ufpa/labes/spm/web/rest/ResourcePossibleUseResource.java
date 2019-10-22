@@ -33,9 +33,9 @@ public class ResourcePossibleUseResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<ResourcePossibleUse, Long> resourcePossibleUseRepository;
+    private final ResourcePossibleUseRepository resourcePossibleUseRepository;
 
-    public ResourcePossibleUseResource(GenericRepository<ResourcePossibleUse, Long> resourcePossibleUseRepository) {
+    public ResourcePossibleUseResource(ResourcePossibleUseRepository resourcePossibleUseRepository) {
         this.resourcePossibleUseRepository = resourcePossibleUseRepository;
     }
 

@@ -33,9 +33,9 @@ public class MultipleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<MultipleCon, Long> multipleConRepository;
+    private final MultipleConRepository multipleConRepository;
 
-    public MultipleConResource(GenericRepository<MultipleCon, Long> multipleConRepository) {
+    public MultipleConResource(MultipleConRepository multipleConRepository) {
         this.multipleConRepository = multipleConRepository;
     }
 

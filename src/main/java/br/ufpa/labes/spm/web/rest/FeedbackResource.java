@@ -33,9 +33,9 @@ public class FeedbackResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Feedback, Long> feedbackRepository;
+    private final FeedbackRepository feedbackRepository;
 
-    public FeedbackResource(GenericRepository<Feedback, Long> feedbackRepository) {
+    public FeedbackResource(FeedbackRepository feedbackRepository) {
         this.feedbackRepository = feedbackRepository;
     }
 

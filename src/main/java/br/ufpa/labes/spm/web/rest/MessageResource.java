@@ -33,9 +33,9 @@ public class MessageResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<Message, Long> messageRepository;
+    private final MessageRepository messageRepository;
 
-    public MessageResource(GenericRepository<Message, Long> messageRepository) {
+    public MessageResource(MessageRepository messageRepository) {
         this.messageRepository = messageRepository;
     }
 

@@ -34,9 +34,9 @@ public class WebAPSEEObjectResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GenericRepository<WebAPSEEObject, Long> webAPSEEObjectRepository;
+    private final WebAPSEEObjectRepository webAPSEEObjectRepository;
 
-    public WebAPSEEObjectResource(GenericRepository<WebAPSEEObject, Long> webAPSEEObjectRepository) {
+    public WebAPSEEObjectResource(WebAPSEEObjectRepository webAPSEEObjectRepository) {
         this.webAPSEEObjectRepository = webAPSEEObjectRepository;
     }
 

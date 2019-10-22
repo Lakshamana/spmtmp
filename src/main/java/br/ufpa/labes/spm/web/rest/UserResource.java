@@ -68,7 +68,7 @@ public class UserResource {
 
     private final UserService userService;
 
-    private final GenericRepository<User, Long> userRepository;
+    private final UserRepository userRepository;
 
     private final MailService mailService;
 
