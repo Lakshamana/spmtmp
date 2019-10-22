@@ -231,7 +231,7 @@ public class ProjectServicesImpl implements ProjectServices {
 
 	EnactmentEngineLocal enactmentEngineLocal;
 
-	@PersistenceContext(unitName = "SPMPU")
+	@PersistenceContext
 	private EntityManager dao;
 
 	Converter converter = new ConverterImpl();
