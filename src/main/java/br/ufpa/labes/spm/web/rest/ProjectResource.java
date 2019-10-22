@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Project;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.service.interfaces.ProjectServices;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
@@ -37,9 +38,9 @@ public class ProjectResource {
     @Autowired
     private ProjectServices projectServices;
 
-    private final ProjectRepository projectRepository;
+    private final GenericRepository<Project, Long> projectRepository;
 
-    public ProjectResource(ProjectRepository projectRepository) {
+    public ProjectResource(GenericRepository<Project, Long> projectRepository) {
         this.projectRepository = projectRepository;
     }
 

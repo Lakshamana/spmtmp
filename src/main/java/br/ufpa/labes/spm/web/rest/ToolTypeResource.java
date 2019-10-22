@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ToolType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ToolTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ToolTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ToolTypeRepository toolTypeRepository;
+    private final GenericRepository<ToolType, Long> toolTypeRepository;
 
-    public ToolTypeResource(ToolTypeRepository toolTypeRepository) {
+    public ToolTypeResource(GenericRepository<ToolType, Long> toolTypeRepository) {
         this.toolTypeRepository = toolTypeRepository;
     }
 

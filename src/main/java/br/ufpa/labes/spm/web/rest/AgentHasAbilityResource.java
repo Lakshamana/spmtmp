@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgentHasAbility;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgentHasAbilityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentHasAbilityRepository agentHasAbilityRepository;
+    private final GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository;
 
-    public AgentHasAbilityResource(AgentHasAbilityRepository agentHasAbilityRepository) {
+    public AgentHasAbilityResource(GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository) {
         this.agentHasAbilityRepository = agentHasAbilityRepository;
     }
 

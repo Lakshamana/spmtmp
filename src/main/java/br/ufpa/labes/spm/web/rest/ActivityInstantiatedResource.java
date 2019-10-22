@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ActivityInstantiated;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ActivityInstantiatedRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ActivityInstantiatedResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ActivityInstantiatedRepository activityInstantiatedRepository;
+    private final GenericRepository<ActivityInstantiated, Long> activityInstantiatedRepository;
 
-    public ActivityInstantiatedResource(ActivityInstantiatedRepository activityInstantiatedRepository) {
+    public ActivityInstantiatedResource(GenericRepository<ActivityInstantiated, Long> activityInstantiatedRepository) {
         this.activityInstantiatedRepository = activityInstantiatedRepository;
     }
 

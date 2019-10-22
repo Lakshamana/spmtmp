@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ResourceInstSug;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourceInstSugRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class ResourceInstSugResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(resourceInstSug.getId().intValue())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllResourceInstSugsWithEagerRelationshipsIsEnabled() throws Exception {
         ResourceInstSugResource resourceInstSugResource = new ResourceInstSugResource(resourceInstSugRepositoryMock);

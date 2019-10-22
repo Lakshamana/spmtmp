@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Tag;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TagRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class TagResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(tag.getId().intValue())))
             .andExpect(jsonPath("$.[*].ident").value(hasItem(DEFAULT_IDENT.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getTag() throws Exception {

@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Structure;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.StructureRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -144,7 +145,7 @@ public class StructureResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(structure.getId().intValue())));
     }
-    
+
     @Test
     @Transactional
     public void getStructure() throws Exception {

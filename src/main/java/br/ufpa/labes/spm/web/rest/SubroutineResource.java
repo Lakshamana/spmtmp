@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Subroutine;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.SubroutineRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class SubroutineResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final SubroutineRepository subroutineRepository;
+    private final GenericRepository<Subroutine, Long> subroutineRepository;
 
-    public SubroutineResource(SubroutineRepository subroutineRepository) {
+    public SubroutineResource(GenericRepository<Subroutine, Long> subroutineRepository) {
         this.subroutineRepository = subroutineRepository;
     }
 

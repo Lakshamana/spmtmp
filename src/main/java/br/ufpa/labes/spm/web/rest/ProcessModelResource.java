@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ProcessModel;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ProcessModelRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class ProcessModelResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessModelRepository processModelRepository;
+    private final GenericRepository<ProcessModel, Long> processModelRepository;
 
-    public ProcessModelResource(ProcessModelRepository processModelRepository) {
+    public ProcessModelResource(GenericRepository<ProcessModel, Long> processModelRepository) {
         this.processModelRepository = processModelRepository;
     }
 

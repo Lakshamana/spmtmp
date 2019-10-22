@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.RelationshipKind;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RelationshipKindRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -158,7 +159,7 @@ public class RelationshipKindResourceIT {
             .andExpect(jsonPath("$.[*].typeIdent").value(hasItem(DEFAULT_TYPE_IDENT.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getRelationshipKind() throws Exception {

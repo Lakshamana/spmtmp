@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.RequiredResource;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RequiredResourceRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class RequiredResourceResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final RequiredResourceRepository requiredResourceRepository;
+    private final GenericRepository<RequiredResource, Long> requiredResourceRepository;
 
-    public RequiredResourceResource(RequiredResourceRepository requiredResourceRepository) {
+    public RequiredResourceResource(GenericRepository<RequiredResource, Long> requiredResourceRepository) {
         this.requiredResourceRepository = requiredResourceRepository;
     }
 

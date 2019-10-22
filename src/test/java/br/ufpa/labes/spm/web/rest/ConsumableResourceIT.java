@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Consumable;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ConsumableRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -174,7 +175,7 @@ public class ConsumableResourceIT {
             .andExpect(jsonPath("$.[*].totalQuantity").value(hasItem(DEFAULT_TOTAL_QUANTITY.doubleValue())))
             .andExpect(jsonPath("$.[*].amountUsed").value(hasItem(DEFAULT_AMOUNT_USED.doubleValue())));
     }
-    
+
     @Test
     @Transactional
     public void getConsumable() throws Exception {

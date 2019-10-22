@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ToolParameter;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ToolParameterRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -158,7 +159,7 @@ public class ToolParameterResourceIT {
             .andExpect(jsonPath("$.[*].label").value(hasItem(DEFAULT_LABEL.toString())))
             .andExpect(jsonPath("$.[*].separatorSymbol").value(hasItem(DEFAULT_SEPARATOR_SYMBOL.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getToolParameter() throws Exception {

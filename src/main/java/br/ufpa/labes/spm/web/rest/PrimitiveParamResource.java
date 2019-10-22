@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.PrimitiveParam;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.PrimitiveParamRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class PrimitiveParamResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final PrimitiveParamRepository primitiveParamRepository;
+    private final GenericRepository<PrimitiveParam, Long> primitiveParamRepository;
 
-    public PrimitiveParamResource(PrimitiveParamRepository primitiveParamRepository) {
+    public PrimitiveParamResource(GenericRepository<PrimitiveParam, Long> primitiveParamRepository) {
         this.primitiveParamRepository = primitiveParamRepository;
     }
 

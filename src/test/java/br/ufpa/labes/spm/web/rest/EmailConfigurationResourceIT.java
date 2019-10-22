@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.EmailConfiguration;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EmailConfigurationRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -186,7 +187,7 @@ public class EmailConfigurationResourceIT {
             .andExpect(jsonPath("$.[*].taskDelegated").value(hasItem(DEFAULT_TASK_DELEGATED.booleanValue())))
             .andExpect(jsonPath("$.[*].decisionBranchCond").value(hasItem(DEFAULT_DECISION_BRANCH_COND.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getEmailConfiguration() throws Exception {

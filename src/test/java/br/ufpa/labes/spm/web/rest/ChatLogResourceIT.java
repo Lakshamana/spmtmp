@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ChatLog;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ChatLogRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -169,7 +170,7 @@ public class ChatLogResourceIT {
             .andExpect(jsonPath("$.[*].log").value(hasItem(DEFAULT_LOG.toString())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllChatLogsWithEagerRelationshipsIsEnabled() throws Exception {
         ChatLogResource chatLogResource = new ChatLogResource(chatLogRepositoryMock);

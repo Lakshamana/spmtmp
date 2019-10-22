@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.MultipleCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MultipleConRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class MultipleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final MultipleConRepository multipleConRepository;
+    private final GenericRepository<MultipleCon, Long> multipleConRepository;
 
-    public MultipleConResource(MultipleConRepository multipleConRepository) {
+    public MultipleConResource(GenericRepository<MultipleCon, Long> multipleConRepository) {
         this.multipleConRepository = multipleConRepository;
     }
 

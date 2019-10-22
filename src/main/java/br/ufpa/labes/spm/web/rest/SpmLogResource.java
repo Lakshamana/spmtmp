@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.SpmLog;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.SpmLogRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class SpmLogResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final SpmLogRepository spmLogRepository;
+    private final GenericRepository<SpmLog, Long> spmLogRepository;
 
-    public SpmLogResource(SpmLogRepository spmLogRepository) {
+    public SpmLogResource(GenericRepository<SpmLog, Long> spmLogRepository) {
         this.spmLogRepository = spmLogRepository;
     }
 

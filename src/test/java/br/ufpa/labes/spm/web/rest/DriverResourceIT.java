@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Driver;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DriverRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -186,7 +187,7 @@ public class DriverResourceIT {
             .andExpect(jsonPath("$.[*].appSecretGoogle").value(hasItem(DEFAULT_APP_SECRET_GOOGLE.toString())))
             .andExpect(jsonPath("$.[*].requestUrl").value(hasItem(DEFAULT_REQUEST_URL.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getDriver() throws Exception {

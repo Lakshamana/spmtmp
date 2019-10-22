@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.LessonLearned;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.LessonLearnedRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class LessonLearnedResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final LessonLearnedRepository lessonLearnedRepository;
+    private final GenericRepository<LessonLearned, Long> lessonLearnedRepository;
 
-    public LessonLearnedResource(LessonLearnedRepository lessonLearnedRepository) {
+    public LessonLearnedResource(GenericRepository<LessonLearned, Long> lessonLearnedRepository) {
         this.lessonLearnedRepository = lessonLearnedRepository;
     }
 

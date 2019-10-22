@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Email;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EmailRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class EmailResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EmailRepository emailRepository;
+    private final GenericRepository<Email, Long> emailRepository;
 
-    public EmailResource(EmailRepository emailRepository) {
+    public EmailResource(GenericRepository<Email, Long> emailRepository) {
         this.emailRepository = emailRepository;
     }
 

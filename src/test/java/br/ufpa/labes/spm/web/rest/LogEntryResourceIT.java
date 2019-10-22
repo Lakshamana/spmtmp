@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.LogEntry;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.LogEntryRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -175,7 +176,7 @@ public class LogEntryResourceIT {
             .andExpect(jsonPath("$.[*].className").value(hasItem(DEFAULT_CLASS_NAME.toString())))
             .andExpect(jsonPath("$.[*].uid").value(hasItem(DEFAULT_UID.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getLogEntry() throws Exception {

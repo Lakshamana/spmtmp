@@ -3,6 +3,7 @@ package br.ufpa.labes.spm.web.rest;
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.config.audit.AuditEventConverter;
 import br.ufpa.labes.spm.domain.PersistentAuditEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.PersistenceAuditEventRepository;
 
 import br.ufpa.labes.spm.service.AuditEventService;

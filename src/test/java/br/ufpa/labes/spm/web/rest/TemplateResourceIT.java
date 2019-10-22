@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Template;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TemplateRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class TemplateResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(template.getId().intValue())))
             .andExpect(jsonPath("$.[*].templateState").value(hasItem(DEFAULT_TEMPLATE_STATE.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getTemplate() throws Exception {

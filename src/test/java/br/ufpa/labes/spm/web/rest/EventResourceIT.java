@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Event;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EventRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -169,7 +170,7 @@ public class EventResourceIT {
             .andExpect(jsonPath("$.[*].when").value(hasItem(DEFAULT_WHEN.toString())))
             .andExpect(jsonPath("$.[*].isCreatedByApsee").value(hasItem(DEFAULT_IS_CREATED_BY_APSEE.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getEvent() throws Exception {

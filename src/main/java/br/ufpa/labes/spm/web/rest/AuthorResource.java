@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Author;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AuthorRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -33,9 +34,9 @@ public class AuthorResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AuthorRepository authorRepository;
+    private final GenericRepository<Author, Long> authorRepository;
 
-    public AuthorResource(AuthorRepository authorRepository) {
+    public AuthorResource(GenericRepository<Author, Long> authorRepository) {
         this.authorRepository = authorRepository;
     }
 

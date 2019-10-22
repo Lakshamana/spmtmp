@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ClassMethodCall;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ClassMethodCallRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ClassMethodCallResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ClassMethodCallRepository classMethodCallRepository;
+    private final GenericRepository<ClassMethodCall, Long> classMethodCallRepository;
 
-    public ClassMethodCallResource(ClassMethodCallRepository classMethodCallRepository) {
+    public ClassMethodCallResource(GenericRepository<ClassMethodCall, Long> classMethodCallRepository) {
         this.classMethodCallRepository = classMethodCallRepository;
     }
 

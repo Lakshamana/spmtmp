@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Description;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DescriptionRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class DescriptionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DescriptionRepository descriptionRepository;
+    private final GenericRepository<Description, Long> descriptionRepository;
 
-    public DescriptionResource(DescriptionRepository descriptionRepository) {
+    public DescriptionResource(GenericRepository<Description, Long> descriptionRepository) {
         this.descriptionRepository = descriptionRepository;
     }
 

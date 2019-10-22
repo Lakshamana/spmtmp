@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ResourcePossibleUse;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourcePossibleUseRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ResourcePossibleUseResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ResourcePossibleUseRepository resourcePossibleUseRepository;
+    private final GenericRepository<ResourcePossibleUse, Long> resourcePossibleUseRepository;
 
-    public ResourcePossibleUseResource(ResourcePossibleUseRepository resourcePossibleUseRepository) {
+    public ResourcePossibleUseResource(GenericRepository<ResourcePossibleUse, Long> resourcePossibleUseRepository) {
         this.resourcePossibleUseRepository = resourcePossibleUseRepository;
     }
 

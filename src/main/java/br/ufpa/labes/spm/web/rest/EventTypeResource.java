@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.EventType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EventTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class EventTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EventTypeRepository eventTypeRepository;
+    private final GenericRepository<EventType, Long> eventTypeRepository;
 
-    public EventTypeResource(EventTypeRepository eventTypeRepository) {
+    public EventTypeResource(GenericRepository<EventType, Long> eventTypeRepository) {
         this.eventTypeRepository = eventTypeRepository;
     }
 

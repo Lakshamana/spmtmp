@@ -16,6 +16,7 @@ import br.ufpa.labes.spm.repository.AgentRepository;
 import br.ufpa.labes.spm.repository.TypeRepository;
 import br.ufpa.labes.spm.repository.WorkGroupRepository;
 import br.ufpa.labes.spm.repository.WorkGroupTypeRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.interfaces.agent.AgentRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.agent.WorkGroupRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.types.WorkGroupTypeRepositoryQuery;
@@ -39,16 +40,16 @@ public class GroupServicesImpl implements WorkGroupServices {
 	private static final String GROUP_CLASS_NAME = WorkGroup.class.getSimpleName();
 
   @Autowired
-	private WorkGroupRepository groupRepository;
+	GenericRepository<WorkGroup, Long> groupRepository;
 
   @Autowired
-	private WorkGroupTypeRepository groupTypeRepository;
+	GenericRepository<WorkGroupType, Long> groupTypeRepository;
 
   @Autowired
-	private TypeRepository typeRepository;
+	GenericRepository<Type, Long> typeRepository;
 
   @Autowired
-	private AgentRepository agenteRepository;
+	GenericRepository<Agent, Long> agenteRepository;
 
 	Converter converter = new ConverterImpl();
 

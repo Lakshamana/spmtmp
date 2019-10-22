@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.AgentAffinityAgent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentAffinityAgentRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class AgentAffinityAgentResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(agentAffinityAgent.getId().intValue())))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)));
     }
-    
+
     @Test
     @Transactional
     public void getAgentAffinityAgent() throws Exception {

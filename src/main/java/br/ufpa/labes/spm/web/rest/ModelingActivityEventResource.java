@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ModelingActivityEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ModelingActivityEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ModelingActivityEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ModelingActivityEventRepository modelingActivityEventRepository;
+    private final GenericRepository<ModelingActivityEvent, Long> modelingActivityEventRepository;
 
-    public ModelingActivityEventResource(ModelingActivityEventRepository modelingActivityEventRepository) {
+    public ModelingActivityEventResource(GenericRepository<ModelingActivityEvent, Long> modelingActivityEventRepository) {
         this.modelingActivityEventRepository = modelingActivityEventRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.BranchCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.BranchConRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class BranchConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final BranchConRepository branchConRepository;
+    private final GenericRepository<BranchCon, Long> branchConRepository;
 
-    public BranchConResource(BranchConRepository branchConRepository) {
+    public BranchConResource(GenericRepository<BranchCon, Long> branchConRepository) {
         this.branchConRepository = branchConRepository;
     }
 

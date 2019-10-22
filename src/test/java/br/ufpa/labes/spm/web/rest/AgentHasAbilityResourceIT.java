@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.AgentHasAbility;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentHasAbilityRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class AgentHasAbilityResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(agentHasAbility.getId().intValue())))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)));
     }
-    
+
     @Test
     @Transactional
     public void getAgentHasAbility() throws Exception {

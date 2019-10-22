@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.RequiredResource;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RequiredResourceRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class RequiredResourceResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(requiredResource.getId().intValue())))
             .andExpect(jsonPath("$.[*].amountNeeded").value(hasItem(DEFAULT_AMOUNT_NEEDED.doubleValue())));
     }
-    
+
     @Test
     @Transactional
     public void getRequiredResource() throws Exception {

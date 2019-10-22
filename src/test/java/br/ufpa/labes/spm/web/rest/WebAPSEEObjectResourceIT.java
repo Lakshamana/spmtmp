@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.WebAPSEEObject;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -195,7 +196,7 @@ public class WebAPSEEObjectResourceIT {
             .andExpect(jsonPath("$.[*].theReferredOid").value(hasItem(DEFAULT_THE_REFERRED_OID.intValue())))
             .andExpect(jsonPath("$.[*].className").value(hasItem(DEFAULT_CLASS_NAME.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getWebAPSEEObject() throws Exception {

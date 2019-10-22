@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ProcessMetric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ProcessMetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ProcessMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessMetricRepository processMetricRepository;
+    private final GenericRepository<ProcessMetric, Long> processMetricRepository;
 
-    public ProcessMetricResource(ProcessMetricRepository processMetricRepository) {
+    public ProcessMetricResource(GenericRepository<ProcessMetric, Long> processMetricRepository) {
         this.processMetricRepository = processMetricRepository;
     }
 

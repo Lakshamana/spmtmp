@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Plugin;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.PluginRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -35,9 +36,9 @@ public class PluginResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final PluginRepository pluginRepository;
+    private final GenericRepository<Plugin, Long> pluginRepository;
 
-    public PluginResource(PluginRepository pluginRepository) {
+    public PluginResource(GenericRepository<Plugin, Long> pluginRepository) {
         this.pluginRepository = pluginRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Person;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.PersonRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class PersonResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final PersonRepository personRepository;
+    private final GenericRepository<Person, Long> personRepository;
 
-    public PersonResource(PersonRepository personRepository) {
+    public PersonResource(GenericRepository<Person, Long> personRepository) {
         this.personRepository = personRepository;
     }
 

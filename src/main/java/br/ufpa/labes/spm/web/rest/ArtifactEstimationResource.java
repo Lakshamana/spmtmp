@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ArtifactEstimation;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ArtifactEstimationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ArtifactEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactEstimationRepository artifactEstimationRepository;
+    private final GenericRepository<ArtifactEstimation, Long> artifactEstimationRepository;
 
-    public ArtifactEstimationResource(ArtifactEstimationRepository artifactEstimationRepository) {
+    public ArtifactEstimationResource(GenericRepository<ArtifactEstimation, Long> artifactEstimationRepository) {
         this.artifactEstimationRepository = artifactEstimationRepository;
     }
 

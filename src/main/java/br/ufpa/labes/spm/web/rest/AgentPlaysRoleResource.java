@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgentPlaysRole;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgentPlaysRoleResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentPlaysRoleRepository agentPlaysRoleRepository;
+    private final GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository;
 
-    public AgentPlaysRoleResource(AgentPlaysRoleRepository agentPlaysRoleRepository) {
+    public AgentPlaysRoleResource(GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository) {
         this.agentPlaysRoleRepository = agentPlaysRoleRepository;
     }
 

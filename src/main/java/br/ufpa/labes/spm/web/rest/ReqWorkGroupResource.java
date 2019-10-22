@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ReqWorkGroupRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ReqWorkGroupResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ReqWorkGroupRepository reqWorkGroupRepository;
+    private final GenericRepository<ReqWorkGroup, Long> reqWorkGroupRepository;
 
-    public ReqWorkGroupResource(ReqWorkGroupRepository reqWorkGroupRepository) {
+    public ReqWorkGroupResource(GenericRepository<ReqWorkGroup, Long> reqWorkGroupRepository) {
         this.reqWorkGroupRepository = reqWorkGroupRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Process;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ProcessRepository;
 import br.ufpa.labes.spm.service.dto.ActivitysDTO;
 import br.ufpa.labes.spm.service.dto.ProcessDTO;
@@ -40,12 +41,12 @@ public class ProcessResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessRepository processRepository;
+    private final GenericRepository<Process, Long> processRepository;
 
     @Autowired
     private ProcessServices processServices;
 
-    public ProcessResource(ProcessRepository processRepository) {
+    public ProcessResource(GenericRepository<Process, Long> processRepository) {
         this.processRepository = processRepository;
     }
 

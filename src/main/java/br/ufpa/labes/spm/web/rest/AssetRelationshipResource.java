@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AssetRelationship;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AssetRelationshipRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AssetRelationshipResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AssetRelationshipRepository assetRelationshipRepository;
+    private final GenericRepository<AssetRelationship, Long> assetRelationshipRepository;
 
-    public AssetRelationshipResource(AssetRelationshipRepository assetRelationshipRepository) {
+    public AssetRelationshipResource(GenericRepository<AssetRelationship, Long> assetRelationshipRepository) {
         this.assetRelationshipRepository = assetRelationshipRepository;
     }
 

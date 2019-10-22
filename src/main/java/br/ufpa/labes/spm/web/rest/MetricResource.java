@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Metric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class MetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final MetricRepository metricRepository;
+    private final GenericRepository<Metric, Long> metricRepository;
 
-    public MetricResource(MetricRepository metricRepository) {
+    public MetricResource(GenericRepository<Metric, Long> metricRepository) {
         this.metricRepository = metricRepository;
     }
 

@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Connection;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ConnectionRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class ConnectionResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(connection.getId().intValue())))
             .andExpect(jsonPath("$.[*].ident").value(hasItem(DEFAULT_IDENT.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getConnection() throws Exception {

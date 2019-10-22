@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Dependency;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DependencyRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class DependencyResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(dependency.getId().intValue())))
             .andExpect(jsonPath("$.[*].kindDep").value(hasItem(DEFAULT_KIND_DEP.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getDependency() throws Exception {

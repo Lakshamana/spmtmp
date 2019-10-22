@@ -34,10 +34,10 @@ public class ResourceServicesImpl implements ResourceServices{
 	private static final String RESOURCE_CLASS_NAME = Resource.class.getSimpleName();
 
   @Autowired
-	private ResourceRepository resourceRepository;
+	GenericRepository<Resource, Long> resourceRepository;
 
   @Autowired
-	private ResourceTypeRepository resourceTypeRepository;
+	GenericRepository<ResourceType, Long> resourceTypeRepository;
 
 	Converter converter = new ConverterImpl();
 

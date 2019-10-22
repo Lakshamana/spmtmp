@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.JoinCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.JoinConRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -159,7 +160,7 @@ public class JoinConResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(joinCon.getId().intValue())))
             .andExpect(jsonPath("$.[*].kindJoin").value(hasItem(DEFAULT_KIND_JOIN.toString())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllJoinConsWithEagerRelationshipsIsEnabled() throws Exception {
         JoinConResource joinConResource = new JoinConResource(joinConRepositoryMock);

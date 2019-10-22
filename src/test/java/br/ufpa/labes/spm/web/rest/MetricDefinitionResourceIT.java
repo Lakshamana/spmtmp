@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.MetricDefinition;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MetricDefinitionRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -189,7 +190,7 @@ public class MetricDefinitionResourceIT {
             .andExpect(jsonPath("$.[*].rangeTo").value(hasItem(DEFAULT_RANGE_TO.doubleValue())))
             .andExpect(jsonPath("$.[*].howToMeasure").value(hasItem(DEFAULT_HOW_TO_MEASURE.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getMetricDefinition() throws Exception {

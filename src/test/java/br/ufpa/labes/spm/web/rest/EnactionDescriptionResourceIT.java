@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.EnactionDescription;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EnactionDescriptionRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -169,7 +170,7 @@ public class EnactionDescriptionResourceIT {
             .andExpect(jsonPath("$.[*].actualEnd").value(hasItem(DEFAULT_ACTUAL_END.toString())))
             .andExpect(jsonPath("$.[*].state").value(hasItem(DEFAULT_STATE.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getEnactionDescription() throws Exception {

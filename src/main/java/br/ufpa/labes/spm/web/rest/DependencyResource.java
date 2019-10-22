@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Dependency;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DependencyRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class DependencyResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DependencyRepository dependencyRepository;
+    private final GenericRepository<Dependency, Long> dependencyRepository;
 
-    public DependencyResource(DependencyRepository dependencyRepository) {
+    public DependencyResource(GenericRepository<Dependency, Long> dependencyRepository) {
         this.dependencyRepository = dependencyRepository;
     }
 

@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Company;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.CompanyRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -228,7 +229,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].url").value(hasItem(DEFAULT_URL.toString())))
             .andExpect(jsonPath("$.[*].automaticInstantiation").value(hasItem(DEFAULT_AUTOMATIC_INSTANTIATION.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getCompany() throws Exception {

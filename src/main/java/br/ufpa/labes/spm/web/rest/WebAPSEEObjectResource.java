@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.WebAPSEEObject;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -33,9 +34,9 @@ public class WebAPSEEObjectResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final WebAPSEEObjectRepository webAPSEEObjectRepository;
+    private final GenericRepository<WebAPSEEObject, Long> webAPSEEObjectRepository;
 
-    public WebAPSEEObjectResource(WebAPSEEObjectRepository webAPSEEObjectRepository) {
+    public WebAPSEEObjectResource(GenericRepository<WebAPSEEObject, Long> webAPSEEObjectRepository) {
         this.webAPSEEObjectRepository = webAPSEEObjectRepository;
     }
 

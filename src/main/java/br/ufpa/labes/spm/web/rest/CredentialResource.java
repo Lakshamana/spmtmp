@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Credential;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.CredentialRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class CredentialResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final CredentialRepository credentialRepository;
+    private final GenericRepository<Credential, Long> credentialRepository;
 
-    public CredentialResource(CredentialRepository credentialRepository) {
+    public CredentialResource(GenericRepository<Credential, Long> credentialRepository) {
         this.credentialRepository = credentialRepository;
     }
 

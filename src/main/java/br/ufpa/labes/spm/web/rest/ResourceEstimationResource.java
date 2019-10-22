@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ResourceEstimation;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourceEstimationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ResourceEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ResourceEstimationRepository resourceEstimationRepository;
+    private final GenericRepository<ResourceEstimation, Long> resourceEstimationRepository;
 
-    public ResourceEstimationResource(ResourceEstimationRepository resourceEstimationRepository) {
+    public ResourceEstimationResource(GenericRepository<ResourceEstimation, Long> resourceEstimationRepository) {
         this.resourceEstimationRepository = resourceEstimationRepository;
     }
 

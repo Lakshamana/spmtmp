@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Normal;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.NormalRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class NormalResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final NormalRepository normalRepository;
+    private final GenericRepository<Normal, Long> normalRepository;
 
-    public NormalResource(NormalRepository normalRepository) {
+    public NormalResource(GenericRepository<Normal, Long> normalRepository) {
         this.normalRepository = normalRepository;
     }
 

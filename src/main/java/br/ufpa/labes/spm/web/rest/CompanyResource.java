@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Company;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.CompanyRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class CompanyResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final CompanyRepository companyRepository;
+    private final GenericRepository<Company, Long> companyRepository;
 
-    public CompanyResource(CompanyRepository companyRepository) {
+    public CompanyResource(GenericRepository<Company, Long> companyRepository) {
         this.companyRepository = companyRepository;
     }
 

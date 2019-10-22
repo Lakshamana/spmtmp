@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Tag;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TagRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class TagResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final TagRepository tagRepository;
+    private final GenericRepository<Tag, Long> tagRepository;
 
-    public TagResource(TagRepository tagRepository) {
+    public TagResource(GenericRepository<Tag, Long> tagRepository) {
         this.tagRepository = tagRepository;
     }
 

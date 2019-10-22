@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.MultipleCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MultipleConRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class MultipleConResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(multipleCon.getId().intValue())))
             .andExpect(jsonPath("$.[*].fired").value(hasItem(DEFAULT_FIRED.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getMultipleCon() throws Exception {

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AbilityType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AbilityTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AbilityTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AbilityTypeRepository abilityTypeRepository;
+    private final GenericRepository<AbilityType, Long> abilityTypeRepository;
 
-    public AbilityTypeResource(AbilityTypeRepository abilityTypeRepository) {
+    public AbilityTypeResource(GenericRepository<AbilityType, Long> abilityTypeRepository) {
         this.abilityTypeRepository = abilityTypeRepository;
     }
 

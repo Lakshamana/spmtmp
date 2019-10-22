@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.DevelopingSystem;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DevelopingSystemRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class DevelopingSystemResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DevelopingSystemRepository developingSystemRepository;
+    private final GenericRepository<DevelopingSystem, Long> developingSystemRepository;
 
-    public DevelopingSystemResource(DevelopingSystemRepository developingSystemRepository) {
+    public DevelopingSystemResource(GenericRepository<DevelopingSystem, Long> developingSystemRepository) {
         this.developingSystemRepository = developingSystemRepository;
     }
 

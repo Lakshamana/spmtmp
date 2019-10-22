@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ConnectionType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ConnectionTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ConnectionTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ConnectionTypeRepository connectionTypeRepository;
+    private final GenericRepository<ConnectionType, Long> connectionTypeRepository;
 
-    public ConnectionTypeResource(ConnectionTypeRepository connectionTypeRepository) {
+    public ConnectionTypeResource(GenericRepository<ConnectionType, Long> connectionTypeRepository) {
         this.connectionTypeRepository = connectionTypeRepository;
     }
 

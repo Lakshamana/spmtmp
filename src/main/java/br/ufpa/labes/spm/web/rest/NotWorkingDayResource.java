@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.NotWorkingDay;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.NotWorkingDayRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -33,9 +34,9 @@ public class NotWorkingDayResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final NotWorkingDayRepository notWorkingDayRepository;
+    private final GenericRepository<NotWorkingDay, Long> notWorkingDayRepository;
 
-    public NotWorkingDayResource(NotWorkingDayRepository notWorkingDayRepository) {
+    public NotWorkingDayResource(GenericRepository<NotWorkingDay, Long> notWorkingDayRepository) {
         this.notWorkingDayRepository = notWorkingDayRepository;
     }
 

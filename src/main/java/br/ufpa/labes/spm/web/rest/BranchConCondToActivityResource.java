@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.BranchConCondToActivity;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.BranchConCondToActivityRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class BranchConCondToActivityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final BranchConCondToActivityRepository branchConCondToActivityRepository;
+    private final GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
 
-    public BranchConCondToActivityResource(BranchConCondToActivityRepository branchConCondToActivityRepository) {
+    public BranchConCondToActivityResource(GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository) {
         this.branchConCondToActivityRepository = branchConCondToActivityRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.RequiredPeople;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RequiredPeopleRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class RequiredPeopleResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final RequiredPeopleRepository requiredPeopleRepository;
+    private final GenericRepository<RequiredPeople, Long> requiredPeopleRepository;
 
-    public RequiredPeopleResource(RequiredPeopleRepository requiredPeopleRepository) {
+    public RequiredPeopleResource(GenericRepository<RequiredPeople, Long> requiredPeopleRepository) {
         this.requiredPeopleRepository = requiredPeopleRepository;
     }
 

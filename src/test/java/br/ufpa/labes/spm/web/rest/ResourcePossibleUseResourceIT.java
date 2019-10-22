@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ResourcePossibleUse;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourcePossibleUseRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -170,7 +171,7 @@ public class ResourcePossibleUseResourceIT {
             .andExpect(jsonPath("$.[*].end").value(hasItem(DEFAULT_END.toString())))
             .andExpect(jsonPath("$.[*].amountNeeded").value(hasItem(DEFAULT_AMOUNT_NEEDED.doubleValue())));
     }
-    
+
     @Test
     @Transactional
     public void getResourcePossibleUse() throws Exception {

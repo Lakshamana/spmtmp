@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.CatalogEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.CatalogEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class CatalogEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final CatalogEventRepository catalogEventRepository;
+    private final GenericRepository<CatalogEvent, Long> catalogEventRepository;
 
-    public CatalogEventResource(CatalogEventRepository catalogEventRepository) {
+    public CatalogEventResource(GenericRepository<CatalogEvent, Long> catalogEventRepository) {
         this.catalogEventRepository = catalogEventRepository;
     }
 

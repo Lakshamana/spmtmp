@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgentEstimation;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentEstimationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgentEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentEstimationRepository agentEstimationRepository;
+    private final GenericRepository<AgentEstimation, Long> agentEstimationRepository;
 
-    public AgentEstimationResource(AgentEstimationRepository agentEstimationRepository) {
+    public AgentEstimationResource(GenericRepository<AgentEstimation, Long> agentEstimationRepository) {
         this.agentEstimationRepository = agentEstimationRepository;
     }
 

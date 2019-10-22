@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.SpmConfiguration;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -193,7 +194,7 @@ public class SpmConfigurationResourceIT {
             .andExpect(jsonPath("$.[*].graficoDeTarefas").value(hasItem(DEFAULT_GRAFICO_DE_TAREFAS.booleanValue())))
             .andExpect(jsonPath("$.[*].senhaEmRecuperacao").value(hasItem(DEFAULT_SENHA_EM_RECUPERACAO.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getSpmConfiguration() throws Exception {

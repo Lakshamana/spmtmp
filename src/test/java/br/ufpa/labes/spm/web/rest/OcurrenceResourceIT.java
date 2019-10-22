@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Ocurrence;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.OcurrenceRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -171,7 +172,7 @@ public class OcurrenceResourceIT {
             .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
             .andExpect(jsonPath("$.[*].event").value(hasItem(DEFAULT_EVENT.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getOcurrence() throws Exception {

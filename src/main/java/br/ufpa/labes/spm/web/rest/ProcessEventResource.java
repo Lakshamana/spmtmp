@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ProcessEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ProcessEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ProcessEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessEventRepository processEventRepository;
+    private final GenericRepository<ProcessEvent, Long> processEventRepository;
 
-    public ProcessEventResource(ProcessEventRepository processEventRepository) {
+    public ProcessEventResource(GenericRepository<ProcessEvent, Long> processEventRepository) {
         this.processEventRepository = processEventRepository;
     }
 

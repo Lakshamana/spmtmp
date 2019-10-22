@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Driver;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DriverRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class DriverResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DriverRepository driverRepository;
+    private final GenericRepository<Driver, Long> driverRepository;
 
-    public DriverResource(DriverRepository driverRepository) {
+    public DriverResource(GenericRepository<Driver, Long> driverRepository) {
         this.driverRepository = driverRepository;
     }
 

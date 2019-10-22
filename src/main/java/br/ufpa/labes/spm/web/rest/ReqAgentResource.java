@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ReqAgent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ReqAgentRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ReqAgentResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ReqAgentRepository reqAgentRepository;
+    private final GenericRepository<ReqAgent, Long> reqAgentRepository;
 
-    public ReqAgentResource(ReqAgentRepository reqAgentRepository) {
+    public ReqAgentResource(GenericRepository<ReqAgent, Long> reqAgentRepository) {
         this.reqAgentRepository = reqAgentRepository;
     }
 

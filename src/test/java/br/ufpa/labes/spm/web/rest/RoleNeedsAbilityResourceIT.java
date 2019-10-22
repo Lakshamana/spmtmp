@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.RoleNeedsAbility;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RoleNeedsAbilityRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class RoleNeedsAbilityResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(roleNeedsAbility.getId().intValue())))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)));
     }
-    
+
     @Test
     @Transactional
     public void getRoleNeedsAbility() throws Exception {

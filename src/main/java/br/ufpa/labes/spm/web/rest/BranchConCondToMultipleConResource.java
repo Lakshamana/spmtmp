@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.BranchConCondToMultipleCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.BranchConCondToMultipleConRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class BranchConCondToMultipleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final BranchConCondToMultipleConRepository branchConCondToMultipleConRepository;
+    private final GenericRepository<BranchConCondToMultipleCon, Long> branchConCondToMultipleConRepository;
 
-    public BranchConCondToMultipleConResource(BranchConCondToMultipleConRepository branchConCondToMultipleConRepository) {
+    public BranchConCondToMultipleConResource(GenericRepository<BranchConCondToMultipleCon, Long> branchConCondToMultipleConRepository) {
         this.branchConCondToMultipleConRepository = branchConCondToMultipleConRepository;
     }
 

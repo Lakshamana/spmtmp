@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ResourceType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourceTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ResourceTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ResourceTypeRepository resourceTypeRepository;
+    private final GenericRepository<ResourceType, Long> resourceTypeRepository;
 
-    public ResourceTypeResource(ResourceTypeRepository resourceTypeRepository) {
+    public ResourceTypeResource(GenericRepository<ResourceType, Long> resourceTypeRepository) {
         this.resourceTypeRepository = resourceTypeRepository;
     }
 

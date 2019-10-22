@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Shareable;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ShareableRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ShareableResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ShareableRepository shareableRepository;
+    private final GenericRepository<Shareable, Long> shareableRepository;
 
-    public ShareableResource(ShareableRepository shareableRepository) {
+    public ShareableResource(GenericRepository<Shareable, Long> shareableRepository) {
         this.shareableRepository = shareableRepository;
     }
 

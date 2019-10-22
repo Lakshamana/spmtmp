@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Reservation;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ReservationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ReservationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ReservationRepository reservationRepository;
+    private final GenericRepository<Reservation, Long> reservationRepository;
 
-    public ReservationResource(ReservationRepository reservationRepository) {
+    public ReservationResource(GenericRepository<Reservation, Long> reservationRepository) {
         this.reservationRepository = reservationRepository;
     }
 

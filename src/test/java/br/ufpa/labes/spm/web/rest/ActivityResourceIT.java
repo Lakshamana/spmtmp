@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Activity;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ActivityRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -173,7 +174,7 @@ public class ActivityResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].isVersion").value(hasItem(DEFAULT_IS_VERSION.booleanValue())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllActivitiesWithEagerRelationshipsIsEnabled() throws Exception {
         ActivityResource activityResource = new ActivityResource(activityRepositoryMock);

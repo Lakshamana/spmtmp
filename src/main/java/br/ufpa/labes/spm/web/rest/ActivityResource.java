@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Activity;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ActivityRepository;
 import br.ufpa.labes.spm.service.dto.ActivitysDTO;
 import br.ufpa.labes.spm.service.interfaces.ProcessServices;
@@ -38,9 +39,9 @@ public class ActivityResource {
     @Autowired
     private ProcessServices processServices;
 
-    private final ActivityRepository activityRepository;
+    private final GenericRepository<Activity, Long> activityRepository;
 
-    public ActivityResource(ActivityRepository activityRepository) {
+    public ActivityResource(GenericRepository<Activity, Long> activityRepository) {
         this.activityRepository = activityRepository;
     }
 

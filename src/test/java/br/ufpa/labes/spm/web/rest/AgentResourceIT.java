@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Agent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -238,7 +239,7 @@ public class AgentResourceIT {
             .andExpect(jsonPath("$.[*].upload").value(hasItem(DEFAULT_UPLOAD.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllAgentsWithEagerRelationshipsIsEnabled() throws Exception {
         AgentResource agentResource = new AgentResource(agentRepositoryMock);

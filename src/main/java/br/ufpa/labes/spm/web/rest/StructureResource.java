@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Structure;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.StructureRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class StructureResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final StructureRepository structureRepository;
+    private final GenericRepository<Structure, Long> structureRepository;
 
-    public StructureResource(StructureRepository structureRepository) {
+    public StructureResource(GenericRepository<Structure, Long> structureRepository) {
         this.structureRepository = structureRepository;
     }
 

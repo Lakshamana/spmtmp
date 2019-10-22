@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ToolDefinition;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ToolDefinitionRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -174,7 +175,7 @@ public class ToolDefinitionResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllToolDefinitionsWithEagerRelationshipsIsEnabled() throws Exception {
         ToolDefinitionResource toolDefinitionResource = new ToolDefinitionResource(toolDefinitionRepositoryMock);

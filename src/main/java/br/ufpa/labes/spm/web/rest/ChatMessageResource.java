@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ChatMessage;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ChatMessageRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -33,9 +34,9 @@ public class ChatMessageResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ChatMessageRepository chatMessageRepository;
+    private final GenericRepository<ChatMessage, Long> chatMessageRepository;
 
-    public ChatMessageResource(ChatMessageRepository chatMessageRepository) {
+    public ChatMessageResource(GenericRepository<ChatMessage, Long> chatMessageRepository) {
         this.chatMessageRepository = chatMessageRepository;
     }
 

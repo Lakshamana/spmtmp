@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.GraphicCoordinateRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -174,7 +175,7 @@ public class GraphicCoordinateResourceIT {
             .andExpect(jsonPath("$.[*].visible").value(hasItem(DEFAULT_VISIBLE.booleanValue())))
             .andExpect(jsonPath("$.[*].theProcess").value(hasItem(DEFAULT_THE_PROCESS.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getGraphicCoordinate() throws Exception {

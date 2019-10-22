@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.BranchConCond;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.BranchConCondRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class BranchConCondResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(branchConCond.getId().intValue())))
             .andExpect(jsonPath("$.[*].kindBranch").value(hasItem(DEFAULT_KIND_BRANCH.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getBranchConCond() throws Exception {

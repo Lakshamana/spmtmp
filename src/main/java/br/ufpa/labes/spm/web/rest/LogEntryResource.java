@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.LogEntry;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.LogEntryRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class LogEntryResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final LogEntryRepository logEntryRepository;
+    private final GenericRepository<LogEntry, Long> logEntryRepository;
 
-    public LogEntryResource(LogEntryRepository logEntryRepository) {
+    public LogEntryResource(GenericRepository<LogEntry, Long> logEntryRepository) {
         this.logEntryRepository = logEntryRepository;
     }
 

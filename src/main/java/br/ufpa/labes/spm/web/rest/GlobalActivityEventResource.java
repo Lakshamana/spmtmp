@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.GlobalActivityEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.GlobalActivityEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class GlobalActivityEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GlobalActivityEventRepository globalActivityEventRepository;
+    private final GenericRepository<GlobalActivityEvent, Long> globalActivityEventRepository;
 
-    public GlobalActivityEventResource(GlobalActivityEventRepository globalActivityEventRepository) {
+    public GlobalActivityEventResource(GenericRepository<GlobalActivityEvent, Long> globalActivityEventRepository) {
         this.globalActivityEventRepository = globalActivityEventRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.SpmConfiguration;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.SpmConfigurationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class SpmConfigurationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final SpmConfigurationRepository spmConfigurationRepository;
+    private final GenericRepository<SpmConfiguration, Long> spmConfigurationRepository;
 
-    public SpmConfigurationResource(SpmConfigurationRepository spmConfigurationRepository) {
+    public SpmConfigurationResource(GenericRepository<SpmConfiguration, Long> spmConfigurationRepository) {
         this.spmConfigurationRepository = spmConfigurationRepository;
     }
 

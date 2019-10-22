@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Automatic;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AutomaticRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AutomaticResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AutomaticRepository automaticRepository;
+    private final GenericRepository<Automatic, Long> automaticRepository;
 
-    public AutomaticResource(AutomaticRepository automaticRepository) {
+    public AutomaticResource(GenericRepository<Automatic, Long> automaticRepository) {
         this.automaticRepository = automaticRepository;
     }
 

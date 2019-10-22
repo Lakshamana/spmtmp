@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ArtifactType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ArtifactTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ArtifactTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactTypeRepository artifactTypeRepository;
+    private final GenericRepository<ArtifactType, Long> artifactTypeRepository;
 
-    public ArtifactTypeResource(ArtifactTypeRepository artifactTypeRepository) {
+    public ArtifactTypeResource(GenericRepository<ArtifactType, Long> artifactTypeRepository) {
         this.artifactTypeRepository = artifactTypeRepository;
     }
 

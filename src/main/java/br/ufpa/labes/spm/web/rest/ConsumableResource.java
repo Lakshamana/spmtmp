@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Consumable;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ConsumableRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ConsumableResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ConsumableRepository consumableRepository;
+    private final GenericRepository<Consumable, Long> consumableRepository;
 
-    public ConsumableResource(ConsumableRepository consumableRepository) {
+    public ConsumableResource(GenericRepository<Consumable, Long> consumableRepository) {
         this.consumableRepository = consumableRepository;
     }
 

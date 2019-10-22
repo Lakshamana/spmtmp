@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.MetricDefinitionUnit;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MetricDefinitionUnitRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -151,7 +152,7 @@ public class MetricDefinitionUnitResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(metricDefinitionUnit.getId().intValue())))
             .andExpect(jsonPath("$.[*].unit").value(hasItem(DEFAULT_UNIT.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getMetricDefinitionUnit() throws Exception {

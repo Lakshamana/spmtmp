@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Metric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -177,7 +178,7 @@ public class MetricResourceIT {
             .andExpect(jsonPath("$.[*].periodBegin").value(hasItem(DEFAULT_PERIOD_BEGIN.toString())))
             .andExpect(jsonPath("$.[*].periodEnd").value(hasItem(DEFAULT_PERIOD_END.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getMetric() throws Exception {

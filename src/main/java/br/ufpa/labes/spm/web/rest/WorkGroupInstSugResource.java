@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.WorkGroupInstSug;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.WorkGroupInstSugRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class WorkGroupInstSugResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final WorkGroupInstSugRepository workGroupInstSugRepository;
+    private final GenericRepository<WorkGroupInstSug, Long> workGroupInstSugRepository;
 
-    public WorkGroupInstSugResource(WorkGroupInstSugRepository workGroupInstSugRepository) {
+    public WorkGroupInstSugResource(GenericRepository<WorkGroupInstSug, Long> workGroupInstSugRepository) {
         this.workGroupInstSugRepository = workGroupInstSugRepository;
     }
 

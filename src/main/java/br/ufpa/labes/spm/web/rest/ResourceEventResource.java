@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ResourceEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ResourceEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ResourceEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ResourceEventRepository resourceEventRepository;
+    private final GenericRepository<ResourceEvent, Long> resourceEventRepository;
 
-    public ResourceEventResource(ResourceEventRepository resourceEventRepository) {
+    public ResourceEventResource(GenericRepository<ResourceEvent, Long> resourceEventRepository) {
         this.resourceEventRepository = resourceEventRepository;
     }
 

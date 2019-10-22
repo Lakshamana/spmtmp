@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgendaEvent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgendaEventRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgendaEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgendaEventRepository agendaEventRepository;
+    private final GenericRepository<AgendaEvent, Long> agendaEventRepository;
 
-    public AgendaEventResource(AgendaEventRepository agendaEventRepository) {
+    public AgendaEventResource(GenericRepository<AgendaEvent, Long> agendaEventRepository) {
         this.agendaEventRepository = agendaEventRepository;
     }
 

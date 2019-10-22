@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.RoleType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.RoleTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class RoleTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final RoleTypeRepository roleTypeRepository;
+    private final GenericRepository<RoleType, Long> roleTypeRepository;
 
-    public RoleTypeResource(RoleTypeRepository roleTypeRepository) {
+    public RoleTypeResource(GenericRepository<RoleType, Long> roleTypeRepository) {
         this.roleTypeRepository = roleTypeRepository;
     }
 

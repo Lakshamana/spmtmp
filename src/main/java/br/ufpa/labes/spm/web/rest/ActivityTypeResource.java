@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ActivityType;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ActivityTypeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ActivityTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ActivityTypeRepository activityTypeRepository;
+    private final GenericRepository<ActivityType, Long> activityTypeRepository;
 
-    public ActivityTypeResource(ActivityTypeRepository activityTypeRepository) {
+    public ActivityTypeResource(GenericRepository<ActivityType, Long> activityTypeRepository) {
         this.activityTypeRepository = activityTypeRepository;
     }
 

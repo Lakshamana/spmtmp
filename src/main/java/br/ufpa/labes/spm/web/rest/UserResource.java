@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.config.Constants;
 import br.ufpa.labes.spm.domain.User;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.UserRepository;
 import br.ufpa.labes.spm.security.AuthoritiesConstants;
 import br.ufpa.labes.spm.service.MailService;
@@ -67,7 +68,7 @@ public class UserResource {
 
     private final UserService userService;
 
-    private final UserRepository userRepository;
+    private final GenericRepository<User, Long> userRepository;
 
     private final MailService mailService;
 

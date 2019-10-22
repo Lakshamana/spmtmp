@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Task;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -193,7 +194,7 @@ public class TaskResourceIT {
             .andExpect(jsonPath("$.[*].dateDelegatedTo").value(hasItem(DEFAULT_DATE_DELEGATED_TO.toString())))
             .andExpect(jsonPath("$.[*].dateDelegatedFrom").value(hasItem(DEFAULT_DATE_DELEGATED_FROM.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getTask() throws Exception {

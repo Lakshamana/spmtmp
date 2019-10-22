@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Exclusive;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ExclusiveRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ExclusiveResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ExclusiveRepository exclusiveRepository;
+    private final GenericRepository<Exclusive, Long> exclusiveRepository;
 
-    public ExclusiveResource(ExclusiveRepository exclusiveRepository) {
+    public ExclusiveResource(GenericRepository<Exclusive, Long> exclusiveRepository) {
         this.exclusiveRepository = exclusiveRepository;
     }
 

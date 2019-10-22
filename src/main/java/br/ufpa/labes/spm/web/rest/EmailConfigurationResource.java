@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.EmailConfiguration;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EmailConfigurationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class EmailConfigurationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EmailConfigurationRepository emailConfigurationRepository;
+    private final GenericRepository<EmailConfiguration, Long> emailConfigurationRepository;
 
-    public EmailConfigurationResource(EmailConfigurationRepository emailConfigurationRepository) {
+    public EmailConfigurationResource(GenericRepository<EmailConfiguration, Long> emailConfigurationRepository) {
         this.emailConfigurationRepository = emailConfigurationRepository;
     }
 

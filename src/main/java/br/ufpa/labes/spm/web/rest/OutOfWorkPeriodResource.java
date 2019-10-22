@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.OutOfWorkPeriod;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.OutOfWorkPeriodRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class OutOfWorkPeriodResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final OutOfWorkPeriodRepository outOfWorkPeriodRepository;
+    private final GenericRepository<OutOfWorkPeriod, Long> outOfWorkPeriodRepository;
 
-    public OutOfWorkPeriodResource(OutOfWorkPeriodRepository outOfWorkPeriodRepository) {
+    public OutOfWorkPeriodResource(GenericRepository<OutOfWorkPeriod, Long> outOfWorkPeriodRepository) {
         this.outOfWorkPeriodRepository = outOfWorkPeriodRepository;
     }
 

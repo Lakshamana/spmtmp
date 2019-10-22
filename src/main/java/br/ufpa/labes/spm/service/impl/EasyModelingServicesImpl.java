@@ -141,63 +141,63 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   // DynamicModeling dynamicModeling;
 
   @Autowired
-  private GenericRepository<Process, Long> procRepository;
+  GenericRepository<Process, Long> procRepository;
 
 	// NotificationServices remote;
 
   @Autowired
-  private GenericRepository<Decomposed, Long> decRepository;
+  GenericRepository<Decomposed, Long> decRepository;
 
   @Autowired
-	private GenericRepository<Activity, Long> activityRepository;
+	GenericRepository<Activity, Long> activityRepository;
 
   @Autowired
-	private GenericRepository<Normal, Long> normRepository;
+	GenericRepository<Normal, Long> normRepository;
 
   @Autowired
-	private GenericRepository<Automatic, Long> autoRepository;
+	GenericRepository<Automatic, Long> autoRepository;
 
   @Autowired
-	private GenericRepository<Artifact, Long> artRepository;
+	GenericRepository<Artifact, Long> artRepository;
 
   @Autowired
-	private GenericRepository<InvolvedArtifact, Long> involvedRepository;
+	GenericRepository<InvolvedArtifact, Long> involvedRepository;
 
   @Autowired
-	private GenericRepository<GraphicCoordinate, Long> coordRepository;
+	GenericRepository<GraphicCoordinate, Long> coordRepository;
 
   @Autowired
-	private GenericRepository<ProcessModel, Long> pmodelRepository;
+	GenericRepository<ProcessModel, Long> pmodelRepository;
 
   @Autowired
-	private GenericRepository<Subroutine, Long> subRepository;
+	GenericRepository<Subroutine, Long> subRepository;
 
   @Autowired
-	private GenericRepository<Parameter, Long> paramRepository;
+	GenericRepository<Parameter, Long> paramRepository;
 
   @Autowired
-	private GenericRepository<ArtifactCon, Long> artConRepository;
+	GenericRepository<ArtifactCon, Long> artConRepository;
 
   @Autowired
-  private GenericRepository<ArtifactType, Long> artTypeRepository;
+  GenericRepository<ArtifactType, Long> artTypeRepository;
 
   @Autowired
-	private GenericRepository<MultipleCon, Long> multiRepository;
+	GenericRepository<MultipleCon, Long> multiRepository;
 
   @Autowired
-  private GenericRepository<Connection, Long> conRepository;
+  GenericRepository<Connection, Long> conRepository;
 
   @Autowired
-	private GenericRepository<BranchConCondToMultipleCon, Long> bctmcRepository;
+	GenericRepository<BranchConCondToMultipleCon, Long> bctmcRepository;
 
   @Autowired
-  private GenericRepository<JoinCon, Long> joinConRepository;
+  GenericRepository<JoinCon, Long> joinConRepository;
 
   @Autowired
-	private GenericRepository<BranchCon, Long> branchConRepository;
+	GenericRepository<BranchCon, Long> branchConRepository;
 
   @Autowired
-  private GenericRepository<WorkGroupType, Long> workGroupTypeRepository;
+  GenericRepository<WorkGroupType, Long> workGroupTypeRepository;
 
   @Autowired
 	GenericRepository<Role, Long> roleRepository;
@@ -221,25 +221,25 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   GenericRepository<ResourceType, Long> resTypeRepository;
 
   @Autowired
-  private GenericRepository<RequiredResource, Long> reqResRepository;
+  GenericRepository<RequiredResource, Long> reqResRepository;
 
   @Autowired
-  private GenericRepository<Resource, Long> resRepository;
+  GenericRepository<Resource, Long> resRepository;
 
   @Autowired
-	private GenericRepository<Consumable, Long> consumableRepository;
+	GenericRepository<Consumable, Long> consumableRepository;
 
   @Autowired
-	private GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
+	GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
 
   @Autowired
-	private GenericRepository<SimpleCon, Long> simpleConRepository;
+	GenericRepository<SimpleCon, Long> simpleConRepository;
 
   @Autowired
-	private GenericRepository<ProcessAgenda, Long> pAgendaRepository;
+	GenericRepository<ProcessAgenda, Long> pAgendaRepository;
 
   @Autowired
-	private GenericRepository<WebAPSEEObject, Long> webAPSEEObjRepository;
+	GenericRepository<WebAPSEEObject, Long> webAPSEEObjRepository;
 
 	private Date newBeginDate;
 

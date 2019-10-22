@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.VCSRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.VCSRepositoryRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class VCSRepositoryResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final VCSRepositoryRepository vCSRepositoryRepository;
+    private final GenericRepository<VCSRepository, Long> vCSRepositoryRepository;
 
-    public VCSRepositoryResource(VCSRepositoryRepository vCSRepositoryRepository) {
+    public VCSRepositoryResource(GenericRepository<VCSRepository, Long> vCSRepositoryRepository) {
         this.vCSRepositoryRepository = vCSRepositoryRepository;
     }
 

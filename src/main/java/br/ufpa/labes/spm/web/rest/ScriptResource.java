@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Script;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ScriptRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ScriptResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ScriptRepository scriptRepository;
+    private final GenericRepository<Script, Long> scriptRepository;
 
-    public ScriptResource(ScriptRepository scriptRepository) {
+    public ScriptResource(GenericRepository<Script, Long> scriptRepository) {
         this.scriptRepository = scriptRepository;
     }
 

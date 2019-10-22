@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Normal;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.NormalRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -199,7 +200,7 @@ public class NormalResourceIT {
             .andExpect(jsonPath("$.[*].delegable").value(hasItem(DEFAULT_DELEGABLE.booleanValue())))
             .andExpect(jsonPath("$.[*].autoAllocable").value(hasItem(DEFAULT_AUTO_ALLOCABLE.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getNormal() throws Exception {

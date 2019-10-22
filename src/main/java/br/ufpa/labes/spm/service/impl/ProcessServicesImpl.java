@@ -42,10 +42,10 @@ public class ProcessServicesImpl implements ProcessServices {
   private static final String PROCESS_CLASSNAME = Process.class.getSimpleName();
 
   @Autowired
-	private ProcessRepository processRepository;
+	GenericRepository<Process, Long> processRepository;
 
   @Autowired
-	private AgentRepository agentRepository;
+	GenericRepository<Agent, Long> agentRepository;
 
   private Query query;
 

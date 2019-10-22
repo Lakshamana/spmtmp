@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgentInstSuggestionToAgent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentInstSuggestionToAgentRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgentInstSuggestionToAgentResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentInstSuggestionToAgentRepository agentInstSuggestionToAgentRepository;
+    private final GenericRepository<AgentInstSuggestionToAgent, Long> agentInstSuggestionToAgentRepository;
 
-    public AgentInstSuggestionToAgentResource(AgentInstSuggestionToAgentRepository agentInstSuggestionToAgentRepository) {
+    public AgentInstSuggestionToAgentResource(GenericRepository<AgentInstSuggestionToAgent, Long> agentInstSuggestionToAgentRepository) {
         this.agentInstSuggestionToAgentRepository = agentInstSuggestionToAgentRepository;
     }
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.TaskAgenda;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TaskAgendaRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class TaskAgendaResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final TaskAgendaRepository taskAgendaRepository;
+    private final GenericRepository<TaskAgenda, Long> taskAgendaRepository;
 
-    public TaskAgendaResource(TaskAgendaRepository taskAgendaRepository) {
+    public TaskAgendaResource(GenericRepository<TaskAgenda, Long> taskAgendaRepository) {
         this.taskAgendaRepository = taskAgendaRepository;
     }
 

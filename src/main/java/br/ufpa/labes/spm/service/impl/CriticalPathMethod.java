@@ -34,7 +34,7 @@ import br.ufpa.labes.spm.domain.Connection;
 public class CriticalPathMethod {
 
   @Autowired
-	private ProcessRepository processRepository;
+	GenericRepository<Process, Long> processRepository;
 
 	private String processIdent;
 

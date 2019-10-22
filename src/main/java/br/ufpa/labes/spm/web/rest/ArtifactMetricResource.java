@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ArtifactMetric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ArtifactMetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ArtifactMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactMetricRepository artifactMetricRepository;
+    private final GenericRepository<ArtifactMetric, Long> artifactMetricRepository;
 
-    public ArtifactMetricResource(ArtifactMetricRepository artifactMetricRepository) {
+    public ArtifactMetricResource(GenericRepository<ArtifactMetric, Long> artifactMetricRepository) {
         this.artifactMetricRepository = artifactMetricRepository;
     }
 

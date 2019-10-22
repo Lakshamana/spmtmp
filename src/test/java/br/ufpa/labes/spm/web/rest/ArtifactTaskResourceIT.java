@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.ArtifactTask;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ArtifactTaskRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -158,7 +159,7 @@ public class ArtifactTaskResourceIT {
             .andExpect(jsonPath("$.[*].inWorkspaceVersion").value(hasItem(DEFAULT_IN_WORKSPACE_VERSION.toString())))
             .andExpect(jsonPath("$.[*].outWorkspaceVersion").value(hasItem(DEFAULT_OUT_WORKSPACE_VERSION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getArtifactTask() throws Exception {

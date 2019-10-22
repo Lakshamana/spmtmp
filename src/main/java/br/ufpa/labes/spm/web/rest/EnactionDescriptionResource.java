@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.EnactionDescription;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EnactionDescriptionRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class EnactionDescriptionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EnactionDescriptionRepository enactionDescriptionRepository;
+    private final GenericRepository<EnactionDescription, Long> enactionDescriptionRepository;
 
-    public EnactionDescriptionResource(EnactionDescriptionRepository enactionDescriptionRepository) {
+    public EnactionDescriptionResource(GenericRepository<EnactionDescription, Long> enactionDescriptionRepository) {
         this.enactionDescriptionRepository = enactionDescriptionRepository;
     }
 

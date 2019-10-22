@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.AgentInstSuggestionToAgent;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentInstSuggestionToAgentRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class AgentInstSuggestionToAgentResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(agentInstSuggestionToAgent.getId().intValue())))
             .andExpect(jsonPath("$.[*].orderCriteriaResult").value(hasItem(DEFAULT_ORDER_CRITERIA_RESULT.doubleValue())));
     }
-    
+
     @Test
     @Transactional
     public void getAgentInstSuggestionToAgent() throws Exception {

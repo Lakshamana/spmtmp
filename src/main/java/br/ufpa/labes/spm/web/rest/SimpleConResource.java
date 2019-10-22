@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.SimpleCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.SimpleConRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class SimpleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final SimpleConRepository simpleConRepository;
+    private final GenericRepository<SimpleCon, Long> simpleConRepository;
 
-    public SimpleConResource(SimpleConRepository simpleConRepository) {
+    public SimpleConResource(GenericRepository<SimpleCon, Long> simpleConRepository) {
         this.simpleConRepository = simpleConRepository;
     }
 

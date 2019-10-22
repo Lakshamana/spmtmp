@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Email;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.EmailRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -193,7 +194,7 @@ public class EmailResourceIT {
             .andExpect(jsonPath("$.[*].servicoSsl").value(hasItem(DEFAULT_SERVICO_SSL.booleanValue())))
             .andExpect(jsonPath("$.[*].teste").value(hasItem(DEFAULT_TESTE.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getEmail() throws Exception {

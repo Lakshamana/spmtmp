@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ChatLog;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ChatLogRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ChatLogResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ChatLogRepository chatLogRepository;
+    private final GenericRepository<ChatLog, Long> chatLogRepository;
 
-    public ChatLogResource(ChatLogRepository chatLogRepository) {
+    public ChatLogResource(GenericRepository<ChatLog, Long> chatLogRepository) {
         this.chatLogRepository = chatLogRepository;
     }
 

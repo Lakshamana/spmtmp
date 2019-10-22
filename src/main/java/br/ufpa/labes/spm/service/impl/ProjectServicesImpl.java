@@ -55,6 +55,7 @@ import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.SpmLogRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.log.SpmLogRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.GraphicCoordinateRepositoryQuery;
@@ -192,37 +193,37 @@ public class ProjectServicesImpl implements ProjectServices {
 	private static final String TASK_CLASSNAME = Task.class.getName();
 
   @Autowired
-	private ProjectRepository projectRepository;
+	GenericRepository<Project, Long> projectRepository;
 
   @Autowired
-	ArtifactRepository artifactRepository;
+	GenericRepository<Artifact, Long> artifactRepository;
 
   @Autowired
-	AgentRepository agentRepository;
+	GenericRepository<Agent, Long> agentRepository;
 
   @Autowired
-	ProcessRepository processRepository;
+	GenericRepository<Process, Long> processRepository;
 
   @Autowired
-	SpmLogRepository logRepository;
+	GenericRepository<SpmLog, Long> logRepository;
 
   @Autowired
-	ProcessModelRepository processModelRepository;
+	GenericRepository<ProcessModel, Long> processModelRepository;
 
   @Autowired
-	WebAPSEEObjectRepository webAPSEEObjRepository;
+	GenericRepository<WebAPSEEObject, Long> webAPSEEObjRepository;
 
   @Autowired
-	GraphicCoordinateRepository graphicCoordRepository;
+	GenericRepository<GraphicCoordinate, Long> graphicCoordRepository;
 
   @Autowired
-	DecomposedRepository decomposedRepository;
+	GenericRepository<Decomposed, Long> decomposedRepository;
 
   @Autowired
-	ProcessEstimationRepository processEstimationRepository;
+	GenericRepository<ProcessEstimation, Long> processEstimationRepository;
 
   @Autowired
-	TaskRepository taskRepository;
+	GenericRepository<Task, Long> taskRepository;
 
   // @Autowired
 	// ReportRepositoryQuery reportRepositoryQuery;

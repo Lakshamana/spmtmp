@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.AgentPlaysRole;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentPlaysRoleRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -154,7 +155,7 @@ public class AgentPlaysRoleResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(agentPlaysRole.getId().intValue())))
             .andExpect(jsonPath("$.[*].sinceDate").value(hasItem(DEFAULT_SINCE_DATE.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getAgentPlaysRole() throws Exception {

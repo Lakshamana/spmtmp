@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Node;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.NodeRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -35,9 +36,9 @@ public class NodeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final NodeRepository nodeRepository;
+    private final GenericRepository<Node, Long> nodeRepository;
 
-    public NodeResource(NodeRepository nodeRepository) {
+    public NodeResource(GenericRepository<Node, Long> nodeRepository) {
         this.nodeRepository = nodeRepository;
     }
 

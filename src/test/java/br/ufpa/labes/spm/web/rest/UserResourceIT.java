@@ -2,7 +2,9 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Authority;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.domain.User;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.UserRepository;
 import br.ufpa.labes.spm.security.AuthoritiesConstants;
 import br.ufpa.labes.spm.service.MailService;

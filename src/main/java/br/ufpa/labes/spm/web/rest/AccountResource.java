@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 
 import br.ufpa.labes.spm.domain.User;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.UserRepository;
 import br.ufpa.labes.spm.security.SecurityUtils;
 import br.ufpa.labes.spm.service.MailService;
@@ -37,7 +38,7 @@ public class AccountResource {
 
     private final Logger log = LoggerFactory.getLogger(AccountResource.class);
 
-    private final UserRepository userRepository;
+    private final GenericRepository<User, Long> userRepository;
 
     private final UserService userService;
 

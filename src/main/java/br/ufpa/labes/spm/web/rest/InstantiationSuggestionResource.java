@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.InstantiationSuggestion;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.InstantiationSuggestionRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class InstantiationSuggestionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final InstantiationSuggestionRepository instantiationSuggestionRepository;
+    private final GenericRepository<InstantiationSuggestion, Long> instantiationSuggestionRepository;
 
-    public InstantiationSuggestionResource(InstantiationSuggestionRepository instantiationSuggestionRepository) {
+    public InstantiationSuggestionResource(GenericRepository<InstantiationSuggestion, Long> instantiationSuggestionRepository) {
         this.instantiationSuggestionRepository = instantiationSuggestionRepository;
     }
 

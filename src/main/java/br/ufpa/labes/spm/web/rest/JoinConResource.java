@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.JoinCon;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.JoinConRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class JoinConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final JoinConRepository joinConRepository;
+    private final GenericRepository<JoinCon, Long> joinConRepository;
 
-    public JoinConResource(JoinConRepository joinConRepository) {
+    public JoinConResource(GenericRepository<JoinCon, Long> joinConRepository) {
         this.joinConRepository = joinConRepository;
     }
 

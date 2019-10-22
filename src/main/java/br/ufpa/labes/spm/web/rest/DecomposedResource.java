@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Decomposed;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.DecomposedRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class DecomposedResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DecomposedRepository decomposedRepository;
+    private final GenericRepository<Decomposed, Long> decomposedRepository;
 
-    public DecomposedResource(DecomposedRepository decomposedRepository) {
+    public DecomposedResource(GenericRepository<Decomposed, Long> decomposedRepository) {
         this.decomposedRepository = decomposedRepository;
     }
 

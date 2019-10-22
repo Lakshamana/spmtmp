@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Plugin;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.PluginRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -201,7 +202,7 @@ public class PluginResourceIT {
             .andExpect(jsonPath("$.[*].developerName").value(hasItem(DEFAULT_DEVELOPER_NAME.toString())))
             .andExpect(jsonPath("$.[*].configFilePath").value(hasItem(DEFAULT_CONFIG_FILE_PATH.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getPlugin() throws Exception {

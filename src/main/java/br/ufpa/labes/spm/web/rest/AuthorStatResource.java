@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AuthorStat;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AuthorStatRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AuthorStatResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AuthorStatRepository authorStatRepository;
+    private final GenericRepository<AuthorStat, Long> authorStatRepository;
 
-    public AuthorStatResource(AuthorStatRepository authorStatRepository) {
+    public AuthorStatResource(GenericRepository<AuthorStat, Long> authorStatRepository) {
         this.authorStatRepository = authorStatRepository;
     }
 

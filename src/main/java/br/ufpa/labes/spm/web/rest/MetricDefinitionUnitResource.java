@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.MetricDefinitionUnit;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.MetricDefinitionUnitRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class MetricDefinitionUnitResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final MetricDefinitionUnitRepository metricDefinitionUnitRepository;
+    private final GenericRepository<MetricDefinitionUnit, Long> metricDefinitionUnitRepository;
 
-    public MetricDefinitionUnitResource(MetricDefinitionUnitRepository metricDefinitionUnitRepository) {
+    public MetricDefinitionUnitResource(GenericRepository<MetricDefinitionUnit, Long> metricDefinitionUnitRepository) {
         this.metricDefinitionUnitRepository = metricDefinitionUnitRepository;
     }
 

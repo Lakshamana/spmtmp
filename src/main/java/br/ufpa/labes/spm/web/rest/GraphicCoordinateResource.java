@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.GraphicCoordinateRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -34,9 +35,9 @@ public class GraphicCoordinateResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GraphicCoordinateRepository graphicCoordinateRepository;
+    private final GenericRepository<GraphicCoordinate, Long> graphicCoordinateRepository;
 
-    public GraphicCoordinateResource(GraphicCoordinateRepository graphicCoordinateRepository) {
+    public GraphicCoordinateResource(GenericRepository<GraphicCoordinate, Long> graphicCoordinateRepository) {
         this.graphicCoordinateRepository = graphicCoordinateRepository;
     }
 

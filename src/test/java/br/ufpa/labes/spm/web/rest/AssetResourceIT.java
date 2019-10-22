@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.Asset;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AssetRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -226,7 +227,7 @@ public class AssetResourceIT {
             .andExpect(jsonPath("$.[*].latestVersion").value(hasItem(DEFAULT_LATEST_VERSION.toString())))
             .andExpect(jsonPath("$.[*].readOnly").value(hasItem(DEFAULT_READ_ONLY.booleanValue())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllAssetsWithEagerRelationshipsIsEnabled() throws Exception {
         AssetResource assetResource = new AssetResource(assetRepositoryMock);

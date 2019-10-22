@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Template;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.TemplateRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class TemplateResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final TemplateRepository templateRepository;
+    private final GenericRepository<Template, Long> templateRepository;
 
-    public TemplateResource(TemplateRepository templateRepository) {
+    public TemplateResource(GenericRepository<Template, Long> templateRepository) {
         this.templateRepository = templateRepository;
     }
 

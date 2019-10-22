@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.VCSRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.VCSRepositoryRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -207,7 +208,7 @@ public class VCSRepositoryResourceIT {
             .andExpect(jsonPath("$.[*].password").value(hasItem(DEFAULT_PASSWORD.toString())))
             .andExpect(jsonPath("$.[*].defaultUser").value(hasItem(DEFAULT_DEFAULT_USER.booleanValue())));
     }
-    
+
     @Test
     @Transactional
     public void getVCSRepository() throws Exception {

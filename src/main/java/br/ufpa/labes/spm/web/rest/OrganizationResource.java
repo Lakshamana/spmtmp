@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Organization;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.OrganizationRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class OrganizationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final OrganizationRepository organizationRepository;
+    private final GenericRepository<Organization, Long> organizationRepository;
 
-    public OrganizationResource(OrganizationRepository organizationRepository) {
+    public OrganizationResource(GenericRepository<Organization, Long> organizationRepository) {
         this.organizationRepository = organizationRepository;
     }
 

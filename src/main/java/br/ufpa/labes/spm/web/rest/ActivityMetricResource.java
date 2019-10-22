@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.ActivityMetric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ActivityMetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ActivityMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ActivityMetricRepository activityMetricRepository;
+    private final GenericRepository<ActivityMetric, Long> activityMetricRepository;
 
-    public ActivityMetricResource(ActivityMetricRepository activityMetricRepository) {
+    public ActivityMetricResource(GenericRepository<ActivityMetric, Long> activityMetricRepository) {
         this.activityMetricRepository = activityMetricRepository;
     }
 

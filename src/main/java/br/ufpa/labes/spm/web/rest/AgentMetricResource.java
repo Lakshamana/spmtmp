@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.AgentMetric;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.AgentMetricRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class AgentMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentMetricRepository agentMetricRepository;
+    private final GenericRepository<AgentMetric, Long> agentMetricRepository;
 
-    public AgentMetricResource(AgentMetricRepository agentMetricRepository) {
+    public AgentMetricResource(GenericRepository<AgentMetric, Long> agentMetricRepository) {
         this.agentMetricRepository = agentMetricRepository;
     }
 

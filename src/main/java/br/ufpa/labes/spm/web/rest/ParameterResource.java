@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.Parameter;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.ParameterRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class ParameterResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ParameterRepository parameterRepository;
+    private final GenericRepository<Parameter, Long> parameterRepository;
 
-    public ParameterResource(ParameterRepository parameterRepository) {
+    public ParameterResource(GenericRepository<Parameter, Long> parameterRepository) {
         this.parameterRepository = parameterRepository;
     }
 

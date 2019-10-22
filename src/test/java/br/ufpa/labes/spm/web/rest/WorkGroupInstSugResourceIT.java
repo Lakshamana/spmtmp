@@ -2,6 +2,7 @@ package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.SpmApp;
 import br.ufpa.labes.spm.domain.WorkGroupInstSug;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.WorkGroupInstSugRepository;
 import br.ufpa.labes.spm.web.rest.errors.ExceptionTranslator;
 
@@ -152,7 +153,7 @@ public class WorkGroupInstSugResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(workGroupInstSug.getId().intValue())));
     }
-    
+
     @SuppressWarnings({"unchecked"})
     public void getAllWorkGroupInstSugsWithEagerRelationshipsIsEnabled() throws Exception {
         WorkGroupInstSugResource workGroupInstSugResource = new WorkGroupInstSugResource(workGroupInstSugRepositoryMock);

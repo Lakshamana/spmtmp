@@ -20,6 +20,7 @@ import br.ufpa.labes.spm.repository.ArtifactRepository;
 import br.ufpa.labes.spm.repository.ArtifactTypeRepository;
 import br.ufpa.labes.spm.repository.ProjectRepository;
 import br.ufpa.labes.spm.repository.TypeRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.types.ArtifactTypeRepositoryQuery;
 import br.ufpa.labes.spm.repository.interfaces.types.TypeRepositoryQuery;
@@ -47,13 +48,13 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	private static final String ARTIFACT_CLASS_NAME = Artifact.class.getSimpleName();
 
   @Autowired
-	ArtifactRepository artifactRepository;
+	GenericRepository<Artifact, Long> artifactRepository;
 
   @Autowired
-	ProjectRepository projectRepository;
+	GenericRepository<Project, Long> projectRepository;
 
   @Autowired
-	ArtifactTypeRepository artifactTypeRepository;
+	GenericRepository<ArtifactType, Long> artifactTypeRepository;
 
 	Converter converter = new ConverterImpl();
 

@@ -1,6 +1,7 @@
 package br.ufpa.labes.spm.web.rest;
 
 import br.ufpa.labes.spm.domain.InstantiationPolicyLog;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.repository.InstantiationPolicyLogRepository;
 import br.ufpa.labes.spm.web.rest.errors.BadRequestAlertException;
 
@@ -32,9 +33,9 @@ public class InstantiationPolicyLogResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final InstantiationPolicyLogRepository instantiationPolicyLogRepository;
+    private final GenericRepository<InstantiationPolicyLog, Long> instantiationPolicyLogRepository;
 
-    public InstantiationPolicyLogResource(InstantiationPolicyLogRepository instantiationPolicyLogRepository) {
+    public InstantiationPolicyLogResource(GenericRepository<InstantiationPolicyLog, Long> instantiationPolicyLogRepository) {
         this.instantiationPolicyLogRepository = instantiationPolicyLogRepository;
     }
 
