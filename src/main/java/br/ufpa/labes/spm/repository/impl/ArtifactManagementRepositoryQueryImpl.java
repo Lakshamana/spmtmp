@@ -14,7 +14,7 @@ import br.ufpa.labes.spm.domain.Task;
 
 public class ArtifactManagementRepositoryQueryImpl implements ArtifactManagementRepositoryQuery{
 
-  @PersistenceContext(unitName = "SPMPU")
+  @PersistenceContext
   private EntityManager em;
 
   @Override

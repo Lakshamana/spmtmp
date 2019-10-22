@@ -27,7 +27,7 @@ import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
 public class BaseRepositoryQueryImpl<T, PK> implements BaseRepositoryQuery<T, PK> {
 
-  @PersistenceContext(unitName = "SPMPU")
+  @PersistenceContext
   private EntityManager em;
 
   private Class<T> businessClass;
