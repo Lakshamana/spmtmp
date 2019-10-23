@@ -120,13 +120,13 @@ public class AgentServicesImpl implements AgentServices {
 	GenericRepository<ProcessAgenda, Long> processAgendaRepository;
 
   @Autowired
-  GenericRepository<Task, Long> taskRepository;
+  TaskRepository taskRepository;
 
   @Autowired
 	GenericRepository<TaskAgenda, Long> taskAgendaRepository;
 
   @Autowired
-	GenericRepository<ActivityEstimation, Long> activityEstimationRepository;
+	ActivityEstimationRepository activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
 

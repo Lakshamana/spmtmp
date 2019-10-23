@@ -48,7 +48,7 @@ public class ArtifactServicesImpl implements ArtifactServices {
 	private static final String ARTIFACT_CLASS_NAME = Artifact.class.getSimpleName();
 
   @Autowired
-	GenericRepository<Artifact, Long> artifactRepository;
+	ArtifactRepository artifactRepository;
 
   @Autowired
 	GenericRepository<Project, Long> projectRepository;

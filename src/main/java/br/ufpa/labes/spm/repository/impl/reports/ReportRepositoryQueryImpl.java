@@ -22,44 +22,41 @@ import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.ufpa.labes.spm.repository.ProcessRepository;
-import br.ufpa.labes.spm.repository.ProjectRepository;
-import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.ProjectRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
-import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.Activity;
+import br.ufpa.labes.spm.domain.ActivityEstimation;
+import br.ufpa.labes.spm.domain.AgendaEvent;
+import br.ufpa.labes.spm.domain.Agent;
+import br.ufpa.labes.spm.domain.AgentMetric;
+import br.ufpa.labes.spm.domain.AgentPlaysRole;
+import br.ufpa.labes.spm.domain.Artifact;
+import br.ufpa.labes.spm.domain.ArtifactMetric;
+import br.ufpa.labes.spm.domain.Company;
+import br.ufpa.labes.spm.domain.Consumable;
 import br.ufpa.labes.spm.domain.Decomposed;
 import br.ufpa.labes.spm.domain.DevelopingSystem;
-import br.ufpa.labes.spm.domain.Plain;
-import br.ufpa.labes.spm.domain.Process;
-import br.ufpa.labes.spm.domain.Agent;
-import br.ufpa.labes.spm.domain.AgentPlaysRole;
-import br.ufpa.labes.spm.domain.WorkGroup;
-import br.ufpa.labes.spm.domain.Role;
-import br.ufpa.labes.spm.domain.Artifact;
-import br.ufpa.labes.spm.domain.AgendaEvent;
-import br.ufpa.labes.spm.domain.Company;
-import br.ufpa.labes.spm.domain.Project;
+import br.ufpa.labes.spm.domain.Exclusive;
 import br.ufpa.labes.spm.domain.InvolvedArtifact;
 import br.ufpa.labes.spm.domain.Normal;
+import br.ufpa.labes.spm.domain.Plain;
+import br.ufpa.labes.spm.domain.Process;
+import br.ufpa.labes.spm.domain.ProcessAgenda;
+import br.ufpa.labes.spm.domain.ProcessModel;
+import br.ufpa.labes.spm.domain.Project;
 import br.ufpa.labes.spm.domain.ReqAgent;
 import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
-import br.ufpa.labes.spm.domain.ActivityEstimation;
-import br.ufpa.labes.spm.domain.AgentMetric;
-import br.ufpa.labes.spm.domain.ArtifactMetric;
-import br.ufpa.labes.spm.domain.ResourceMetric;
-import br.ufpa.labes.spm.domain.ProcessModel;
-import br.ufpa.labes.spm.domain.Consumable;
-import br.ufpa.labes.spm.domain.Exclusive;
 import br.ufpa.labes.spm.domain.Resource;
+import br.ufpa.labes.spm.domain.ResourceMetric;
+import br.ufpa.labes.spm.domain.Role;
 import br.ufpa.labes.spm.domain.Shareable;
-import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
+import br.ufpa.labes.spm.domain.WorkGroup;
+import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
+import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.ProjectRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
+import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
 import br.ufpa.labes.spm.service.impl.CriticalPathMethod;
 
 public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
@@ -70,10 +67,10 @@ public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
   private EntityManager em;
 
   @Autowired
-  private ProjectRepository projectRepository;
+  private GenericRepository<ProjectRepository, Long> projectRepository;
 
   @Autowired
-  private ProcessRepository processRepository;
+  private GenericRepository<ProcessRepository, Long> processRepository;
 
   @Override
   public List<Object[]> getAgentsReportData(LocalDate atDate) {
