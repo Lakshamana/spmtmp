@@ -56,11 +56,6 @@ import br.ufpa.labes.spm.repository.SpmLogRepository;
 import br.ufpa.labes.spm.repository.TaskRepository;
 import br.ufpa.labes.spm.repository.WebAPSEEObjectRepository;
 import br.ufpa.labes.spm.repository.interfaces.ReportRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.log.SpmLogRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.GraphicCoordinateRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModelGraphic.WebAPSEEObjectRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.processModels.ProcessModelRepositoryQuery;
-import br.ufpa.labes.spm.repository.interfaces.taskagenda.TaskRepositoryQuery;
 import br.ufpa.labes.spm.service.dto.dashboard.ProjectCost;
 import br.ufpa.labes.spm.service.dto.dashboard.ProjectStatistic;
 import br.ufpa.labes.spm.service.dto.dashboard.Time;
@@ -203,8 +198,8 @@ public class ProjectServicesImpl implements ProjectServices {
   @Autowired
 	ProcessRepository processRepository;
 
-  @Autowired
-	SpmLogRepository logRepository;
+  // @Autowired
+	// SpmLogRepository logRepository;
 
   @Autowired
 	ProcessModelRepository processModelRepository;
@@ -218,18 +213,18 @@ public class ProjectServicesImpl implements ProjectServices {
   @Autowired
 	DecomposedRepository decomposedRepository;
 
-  @Autowired
-	ProcessEstimationRepository processEstimationRepository;
+  // @Autowired
+	// ProcessEstimationRepository processEstimationRepository;
 
-  @Autowired
-	TaskRepository taskRepository;
+  // @Autowired
+	// TaskRepository taskRepository;
 
   // @Autowired
 	// ReportRepositoryQuery reportRepositoryQuery;
 
 	// ReportServices reportServices;
 
-	EnactmentEngineLocal enactmentEngineLocal;
+	// EnactmentEngineLocal enactmentEngineLocal;
 
 	@PersistenceContext
 	private EntityManager dao;
@@ -808,7 +803,7 @@ public class ProjectServicesImpl implements ProjectServices {
 //		projectRepository.save(project);
 
 		Process process = project.getProcessRefered();
-		enactmentEngineLocal.executeProcess(process.getIdent());
+		// enactmentEngineLocal.executeProcess(process.getIdent());
 		ProjectDTO projectDTO = this.convertProjectToProjectDTO(project);
 
 		return projectDTO;
@@ -998,7 +993,7 @@ public class ProjectServicesImpl implements ProjectServices {
 		int totalHours = 0;
 		int totalMinutes = 0;
 
-		float estimatedHours = processEstimationRepository.getHoursEstimationForProject(project.getIdent());
+		float estimatedHours = 0; //processEstimationRepository.getHoursEstimationForProject(project.getIdent());
 		Time estimatedTime = new Time((int) estimatedHours, (int) ((estimatedHours * 60) % 60));
 
 		for (Task task : tasks) {
@@ -1006,7 +1001,7 @@ public class ProjectServicesImpl implements ProjectServices {
 			if(isTaskFinished(task)) finishedTasks += 1;
 
 			String agentIdent = task.getTheProcessAgenda().getTheTaskAgenda().getTheAgent().getIdent();
-			Time taskRealEffort = taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
+			Time taskRealEffort = new Time();//taskRepository.getWorkingHoursForTask2(task.getTheNormal().getIdent(), agentIdent);
 			if(taskRealEffort.getHour() > 0) totalHours += taskRealEffort.getHour();
 			if(taskRealEffort.getMinutes() > 0) totalMinutes += taskRealEffort.getMinutes();
 
@@ -1208,7 +1203,7 @@ public class ProjectServicesImpl implements ProjectServices {
 				projectDTO.setProcessRefered(project.getProcessRefered().getIdent());
 				projectDTO.setpState(project.getProcessRefered().getpState());
 
-				float time = processEstimationRepository.getHoursEstimationForProject(project.getIdent());
+				float time = 0; // processEstimationRepository.getHoursEstimationForProject(project.getIdent());
 //				int hours = (int) time;
 				int hours   = (int) ((time / (1000*60*60)) % 24);
 	            int minutes = (int) (60 * (time - hours));
