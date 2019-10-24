@@ -23,7 +23,7 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
-public class JoinConRepositoryQueryImpl extends BaseRepositoryQueryImpl<JoinCon, Long> implements JoinConRepositoryQuery{
+public class JoinConRepositoryQueryImpl implements JoinConRepositoryQuery{
   @PersistenceContext
   private EntityManager em;
 

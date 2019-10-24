@@ -4,5 +4,5 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.plainActivities.ParameterRepositoryQuery;
 import br.ufpa.labes.spm.domain.Parameter;
 
-public class ParameterRepositoryQueryImpl extends BaseRepositoryQueryImpl<Parameter, Long> implements ParameterRepositoryQuery{
+public class ParameterRepositoryQueryImpl implements ParameterRepositoryQuery{
 }

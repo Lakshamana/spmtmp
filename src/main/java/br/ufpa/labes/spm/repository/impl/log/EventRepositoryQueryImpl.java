@@ -4,5 +4,5 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.log.EventRepositoryQuery;
 import br.ufpa.labes.spm.domain.Event;
 
-public class EventRepositoryQueryImpl extends BaseRepositoryQueryImpl<Event, Long> implements EventRepositoryQuery{
+public class EventRepositoryQueryImpl implements EventRepositoryQuery{
 }

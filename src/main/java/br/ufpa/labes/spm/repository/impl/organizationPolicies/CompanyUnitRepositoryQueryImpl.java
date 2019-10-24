@@ -4,5 +4,5 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.CompanyUnitRepositoryQuery;
 import br.ufpa.labes.spm.domain.CompanyUnit;
 
-public class CompanyUnitRepositoryQueryImpl extends BaseRepositoryQueryImpl<CompanyUnit, Long> implements CompanyUnitRepositoryQuery{
+public class CompanyUnitRepositoryQueryImpl implements CompanyUnitRepositoryQuery{
 }

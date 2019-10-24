@@ -4,5 +4,5 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.artifacts.ArtifactTaskRepositoryQuery;
 import br.ufpa.labes.spm.domain.ArtifactTask;
 
-public class ArtifactTaskRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactTask, Long> implements ArtifactTaskRepositoryQuery{
+public class ArtifactTaskRepositoryQueryImpl implements ArtifactTaskRepositoryQuery{
 }

@@ -18,7 +18,7 @@ import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class NormalRepositoryQueryImpl extends BaseRepositoryQueryImpl<Normal, Long> implements NormalRepositoryQuery{
+public class NormalRepositoryQueryImpl implements NormalRepositoryQuery{
 
   public String[] getInvolvedAgentsForNormal(String normalIdent) {
 

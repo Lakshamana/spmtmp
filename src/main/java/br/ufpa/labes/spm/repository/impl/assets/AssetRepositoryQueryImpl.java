@@ -10,7 +10,7 @@ import br.ufpa.labes.spm.domain.Asset;
 import br.ufpa.labes.spm.domain.AssetRelationship;
 // import org.qrconsult.spm.vo.AssetCatalog;
 
-public class AssetRepositoryQueryImpl extends BaseRepositoryQueryImpl<Asset, Long> implements AssetRepositoryQuery{
+public class AssetRepositoryQueryImpl implements AssetRepositoryQuery{
 
   @SuppressWarnings("unchecked")
   @Override

@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.calendar.CalendarRepositoryQuery;
 import br.ufpa.labes.spm.domain.Calendar;
 
-public class CalendarRepositoryQueryImpl extends BaseRepositoryQueryImpl<Calendar, Long> implements CalendarRepositoryQuery{
+public class CalendarRepositoryQueryImpl implements CalendarRepositoryQuery{
 
   @Override
   public String validNameProject(String name, Integer project_Oid) {

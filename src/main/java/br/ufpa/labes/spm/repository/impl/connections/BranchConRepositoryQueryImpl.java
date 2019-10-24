@@ -23,7 +23,7 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
-public class BranchConRepositoryQueryImpl extends BaseRepositoryQueryImpl<BranchCon, Long> implements BranchConRepositoryQuery{
+public class BranchConRepositoryQueryImpl implements BranchConRepositoryQuery{
   @PersistenceContext
   private EntityManager em;
 

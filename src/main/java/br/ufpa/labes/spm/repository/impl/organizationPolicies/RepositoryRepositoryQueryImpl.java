@@ -7,7 +7,7 @@ import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.RepositoryRe
 import br.ufpa.labes.spm.domain.VCSRepository;
 import br.ufpa.labes.spm.domain.Structure;
 
-public class RepositoryRepositoryQueryImpl extends BaseRepositoryQueryImpl<VCSRepository, Long> implements RepositoryRepositoryQuery{
+public class RepositoryRepositoryQueryImpl implements VCSRepositoryRepositoryQuery{
 
   @Override
   public Structure getTheStructure(String ident) {

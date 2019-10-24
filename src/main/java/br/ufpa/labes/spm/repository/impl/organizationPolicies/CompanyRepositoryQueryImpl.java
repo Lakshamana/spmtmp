@@ -6,7 +6,7 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.CompanyRepositoryQuery;
 import br.ufpa.labes.spm.domain.Company;
 
-public class CompanyRepositoryQueryImpl extends BaseRepositoryQueryImpl<Company, Long> implements CompanyRepositoryQuery{
+public class CompanyRepositoryQueryImpl implements CompanyRepositoryQuery{
 
   @Override
   public boolean alreadyExistCNPJ(String cnpj, String ident) {

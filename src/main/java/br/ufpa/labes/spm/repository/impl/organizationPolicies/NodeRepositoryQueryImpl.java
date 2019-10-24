@@ -4,5 +4,5 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.organizationPolicies.NodeRepositoryQuery;
 import br.ufpa.labes.spm.domain.Node;
 
-public class NodeRepositoryQueryImpl extends BaseRepositoryQueryImpl<Node, Long> implements NodeRepositoryQuery{
+public class NodeRepositoryQueryImpl implements NodeRepositoryQuery{
 }
