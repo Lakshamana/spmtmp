@@ -51,7 +51,7 @@ public class ChatLogResourceIT {
     private static final LocalDate SMALLER_DATE = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private ChatLogRepository chatLogRepository;
+    private GenericRepository<ChatLog, Long> chatLogRepository;
 
     @Mock
     private ChatLogRepository chatLogRepositoryMock;

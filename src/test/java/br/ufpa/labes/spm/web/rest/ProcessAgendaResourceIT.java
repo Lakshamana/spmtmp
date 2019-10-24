@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ProcessAgendaResourceIT {
 
     @Autowired
-    private ProcessAgendaRepository processAgendaRepository;
+    private GenericRepository<ProcessAgenda, Long> processAgendaRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

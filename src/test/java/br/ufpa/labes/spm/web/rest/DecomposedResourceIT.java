@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class DecomposedResourceIT {
 
     @Autowired
-    private DecomposedRepository decomposedRepository;
+    private GenericRepository<Decomposed, Long> decomposedRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

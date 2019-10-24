@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SimpleConResourceIT {
 
     @Autowired
-    private SimpleConRepository simpleConRepository;
+    private GenericRepository<SimpleCon, Long> simpleConRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

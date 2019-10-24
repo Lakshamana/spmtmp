@@ -52,7 +52,7 @@ public class ToolDefinitionResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private ToolDefinitionRepository toolDefinitionRepository;
+    private GenericRepository<ToolDefinition, Long> toolDefinitionRepository;
 
     @Mock
     private ToolDefinitionRepository toolDefinitionRepositoryMock;

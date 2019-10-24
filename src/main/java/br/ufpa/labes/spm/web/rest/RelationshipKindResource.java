@@ -33,9 +33,9 @@ public class RelationshipKindResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final RelationshipKindRepository relationshipKindRepository;
+    private final GenericRepository<RelationshipKind, Long> relationshipKindRepository;
 
-    public RelationshipKindResource(RelationshipKindRepository relationshipKindRepository) {
+    public RelationshipKindResource(GenericRepository<RelationshipKind, Long> relationshipKindRepository) {
         this.relationshipKindRepository = relationshipKindRepository;
     }
 

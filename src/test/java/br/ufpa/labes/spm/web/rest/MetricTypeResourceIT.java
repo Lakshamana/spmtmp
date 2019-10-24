@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class MetricTypeResourceIT {
 
     @Autowired
-    private MetricTypeRepository metricTypeRepository;
+    private GenericRepository<MetricType, Long> metricTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

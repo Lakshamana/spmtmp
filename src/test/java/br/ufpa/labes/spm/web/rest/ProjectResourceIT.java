@@ -60,7 +60,7 @@ public class ProjectResourceIT {
     private static final Boolean UPDATED_ACTIVE = true;
 
     @Autowired
-    private ProjectRepository projectRepository;
+    private GenericRepository<Project, Long> projectRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

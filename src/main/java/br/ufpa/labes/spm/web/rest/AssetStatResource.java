@@ -35,9 +35,9 @@ public class AssetStatResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AssetStatRepository assetStatRepository;
+    private final GenericRepository<AssetStat, Long> assetStatRepository;
 
-    public AssetStatResource(AssetStatRepository assetStatRepository) {
+    public AssetStatResource(GenericRepository<AssetStat, Long> assetStatRepository) {
         this.assetStatRepository = assetStatRepository;
     }
 

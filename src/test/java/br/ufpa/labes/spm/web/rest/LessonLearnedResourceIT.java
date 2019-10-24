@@ -50,7 +50,7 @@ public class LessonLearnedResourceIT {
     private static final LocalDate SMALLER_CREATION_DATE = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private LessonLearnedRepository lessonLearnedRepository;
+    private GenericRepository<LessonLearned, Long> lessonLearnedRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

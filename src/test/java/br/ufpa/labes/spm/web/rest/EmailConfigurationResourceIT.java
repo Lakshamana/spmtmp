@@ -55,7 +55,7 @@ public class EmailConfigurationResourceIT {
     private static final Boolean UPDATED_DECISION_BRANCH_COND = true;
 
     @Autowired
-    private EmailConfigurationRepository emailConfigurationRepository;
+    private GenericRepository<EmailConfiguration, Long> emailConfigurationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

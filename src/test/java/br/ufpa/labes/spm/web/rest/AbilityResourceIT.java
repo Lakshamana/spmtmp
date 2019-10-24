@@ -47,7 +47,7 @@ public class AbilityResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private AbilityRepository abilityRepository;
+    private GenericRepository<Ability, Long> abilityRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

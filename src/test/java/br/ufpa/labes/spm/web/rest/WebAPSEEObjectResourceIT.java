@@ -44,7 +44,7 @@ public class WebAPSEEObjectResourceIT {
     private static final String UPDATED_CLASS_NAME = "BBBBBBBBBB";
 
     @Autowired
-    private WebAPSEEObjectRepository webAPSEEObjectRepository;
+    private GenericRepository<WebAPSEEObject, Long> webAPSEEObjectRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

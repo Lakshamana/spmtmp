@@ -33,9 +33,9 @@ public class EventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EventRepository eventRepository;
+    private final GenericRepository<Event, Long> eventRepository;
 
-    public EventResource(EventRepository eventRepository) {
+    public EventResource(GenericRepository<Event, Long> eventRepository) {
         this.eventRepository = eventRepository;
     }
 

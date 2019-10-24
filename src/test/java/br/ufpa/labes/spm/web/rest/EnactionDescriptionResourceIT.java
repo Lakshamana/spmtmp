@@ -50,7 +50,7 @@ public class EnactionDescriptionResourceIT {
     private static final String UPDATED_STATE = "BBBBBBBBBB";
 
     @Autowired
-    private EnactionDescriptionRepository enactionDescriptionRepository;
+    private GenericRepository<EnactionDescription, Long> enactionDescriptionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

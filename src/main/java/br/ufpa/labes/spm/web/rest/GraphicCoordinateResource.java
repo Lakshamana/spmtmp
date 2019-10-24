@@ -35,9 +35,9 @@ public class GraphicCoordinateResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final GraphicCoordinateRepository graphicCoordinateRepository;
+    private final GenericRepository<GraphicCoordinate, Long> graphicCoordinateRepository;
 
-    public GraphicCoordinateResource(GraphicCoordinateRepository graphicCoordinateRepository) {
+    public GraphicCoordinateResource(GenericRepository<GraphicCoordinate, Long> graphicCoordinateRepository) {
         this.graphicCoordinateRepository = graphicCoordinateRepository;
     }
 

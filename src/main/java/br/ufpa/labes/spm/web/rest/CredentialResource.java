@@ -33,9 +33,9 @@ public class CredentialResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final CredentialRepository credentialRepository;
+    private final GenericRepository<Credential, Long> credentialRepository;
 
-    public CredentialResource(CredentialRepository credentialRepository) {
+    public CredentialResource(GenericRepository<Credential, Long> credentialRepository) {
         this.credentialRepository = credentialRepository;
     }
 

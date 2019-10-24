@@ -40,7 +40,7 @@ public class BranchConCondResourceIT {
     private static final String UPDATED_KIND_BRANCH = "BBBBBBBBBB";
 
     @Autowired
-    private BranchConCondRepository branchConCondRepository;
+    private GenericRepository<BranchConCond, Long> branchConCondRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

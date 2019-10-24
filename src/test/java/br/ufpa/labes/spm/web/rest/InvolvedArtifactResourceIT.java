@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class InvolvedArtifactResourceIT {
 
     @Autowired
-    private InvolvedArtifactRepository involvedArtifactRepository;
+    private GenericRepository<InvolvedArtifact, Long> involvedArtifactRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

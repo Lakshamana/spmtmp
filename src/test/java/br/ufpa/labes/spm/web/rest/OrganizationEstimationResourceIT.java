@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class OrganizationEstimationResourceIT {
 
     @Autowired
-    private OrganizationEstimationRepository organizationEstimationRepository;
+    private GenericRepository<OrganizationEstimation, Long> organizationEstimationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

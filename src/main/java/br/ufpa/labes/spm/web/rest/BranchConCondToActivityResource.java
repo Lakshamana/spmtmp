@@ -33,9 +33,9 @@ public class BranchConCondToActivityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final BranchConCondToActivityRepository branchConCondToActivityRepository;
+    private final GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
 
-    public BranchConCondToActivityResource(BranchConCondToActivityRepository branchConCondToActivityRepository) {
+    public BranchConCondToActivityResource(GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository) {
         this.branchConCondToActivityRepository = branchConCondToActivityRepository;
     }
 

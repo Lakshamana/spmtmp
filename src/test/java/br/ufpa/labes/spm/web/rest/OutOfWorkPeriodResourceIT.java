@@ -47,7 +47,7 @@ public class OutOfWorkPeriodResourceIT {
     private static final String UPDATED_TO_DATE = "BBBBBBBBBB";
 
     @Autowired
-    private OutOfWorkPeriodRepository outOfWorkPeriodRepository;
+    private GenericRepository<OutOfWorkPeriod, Long> outOfWorkPeriodRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

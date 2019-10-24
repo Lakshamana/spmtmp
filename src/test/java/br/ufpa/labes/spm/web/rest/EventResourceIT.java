@@ -50,7 +50,7 @@ public class EventResourceIT {
     private static final Boolean UPDATED_IS_CREATED_BY_APSEE = true;
 
     @Autowired
-    private EventRepository eventRepository;
+    private GenericRepository<Event, Long> eventRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

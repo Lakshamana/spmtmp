@@ -35,9 +35,9 @@ public class NormalResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final NormalRepository normalRepository;
+    private final GenericRepository<Normal, Long> normalRepository;
 
-    public NormalResource(NormalRepository normalRepository) {
+    public NormalResource(GenericRepository<Normal, Long> normalRepository) {
         this.normalRepository = normalRepository;
     }
 

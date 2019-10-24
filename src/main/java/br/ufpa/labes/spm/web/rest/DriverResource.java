@@ -33,9 +33,9 @@ public class DriverResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DriverRepository driverRepository;
+    private final GenericRepository<Driver, Long> driverRepository;
 
-    public DriverResource(DriverRepository driverRepository) {
+    public DriverResource(GenericRepository<Driver, Long> driverRepository) {
         this.driverRepository = driverRepository;
     }
 

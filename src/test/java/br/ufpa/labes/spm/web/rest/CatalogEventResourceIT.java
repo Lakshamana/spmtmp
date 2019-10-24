@@ -41,7 +41,7 @@ public class CatalogEventResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private CatalogEventRepository catalogEventRepository;
+    private GenericRepository<CatalogEvent, Long> catalogEventRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

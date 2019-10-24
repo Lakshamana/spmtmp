@@ -43,7 +43,7 @@ public class ExclusiveResourceIT {
     private static final String UPDATED_UNIT_OF_COST = "BBBBBBBBBB";
 
     @Autowired
-    private ExclusiveRepository exclusiveRepository;
+    private GenericRepository<Exclusive, Long> exclusiveRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

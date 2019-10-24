@@ -51,7 +51,7 @@ public class ActivityResourceIT {
     private static final Boolean UPDATED_IS_VERSION = true;
 
     @Autowired
-    private ActivityRepository activityRepository;
+    private GenericRepository<Activity, Long> activityRepository;
 
     @Mock
     private ActivityRepository activityRepositoryMock;

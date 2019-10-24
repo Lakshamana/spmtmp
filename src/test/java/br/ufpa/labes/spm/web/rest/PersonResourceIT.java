@@ -40,7 +40,7 @@ public class PersonResourceIT {
     private static final String UPDATED_GENDER = "BBBBBBBBBB";
 
     @Autowired
-    private PersonRepository personRepository;
+    private GenericRepository<Person, Long> personRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

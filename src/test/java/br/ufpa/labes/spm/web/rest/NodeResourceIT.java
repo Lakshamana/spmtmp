@@ -46,7 +46,7 @@ public class NodeResourceIT {
     private static final String UPDATED_SERVICE_FILE_ID = "BBBBBBBBBB";
 
     @Autowired
-    private NodeRepository nodeRepository;
+    private GenericRepository<Node, Long> nodeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

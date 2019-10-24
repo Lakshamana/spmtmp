@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SubroutineResourceIT {
 
     @Autowired
-    private SubroutineRepository subroutineRepository;
+    private GenericRepository<Subroutine, Long> subroutineRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

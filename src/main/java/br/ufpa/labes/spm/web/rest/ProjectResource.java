@@ -38,9 +38,9 @@ public class ProjectResource {
     @Autowired
     private ProjectServices projectServices;
 
-    private final ProjectRepository projectRepository;
+    private final GenericRepository<Project, Long> projectRepository;
 
-    public ProjectResource(ProjectRepository projectRepository) {
+    public ProjectResource(GenericRepository<Project, Long> projectRepository) {
         this.projectRepository = projectRepository;
     }
 

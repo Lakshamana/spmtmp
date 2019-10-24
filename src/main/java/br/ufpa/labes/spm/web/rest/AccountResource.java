@@ -38,7 +38,7 @@ public class AccountResource {
 
     private final Logger log = LoggerFactory.getLogger(AccountResource.class);
 
-    private final UserRepository userRepository;
+    private final GenericRepository<User, Long> userRepository;
 
     private final UserService userService;
 

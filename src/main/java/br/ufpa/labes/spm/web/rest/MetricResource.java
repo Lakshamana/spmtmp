@@ -33,9 +33,9 @@ public class MetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final MetricRepository metricRepository;
+    private final GenericRepository<Metric, Long> metricRepository;
 
-    public MetricResource(MetricRepository metricRepository) {
+    public MetricResource(GenericRepository<Metric, Long> metricRepository) {
         this.metricRepository = metricRepository;
     }
 

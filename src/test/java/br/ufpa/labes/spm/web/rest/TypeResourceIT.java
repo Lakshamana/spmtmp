@@ -47,7 +47,7 @@ public class TypeResourceIT {
     private static final Boolean UPDATED_USER_DEFINED = true;
 
     @Autowired
-    private TypeRepository typeRepository;
+    private GenericRepository<Type, Long> typeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

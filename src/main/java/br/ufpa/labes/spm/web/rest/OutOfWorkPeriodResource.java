@@ -33,9 +33,9 @@ public class OutOfWorkPeriodResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final OutOfWorkPeriodRepository outOfWorkPeriodRepository;
+    private final GenericRepository<OutOfWorkPeriod, Long> outOfWorkPeriodRepository;
 
-    public OutOfWorkPeriodResource(OutOfWorkPeriodRepository outOfWorkPeriodRepository) {
+    public OutOfWorkPeriodResource(GenericRepository<OutOfWorkPeriod, Long> outOfWorkPeriodRepository) {
         this.outOfWorkPeriodRepository = outOfWorkPeriodRepository;
     }
 

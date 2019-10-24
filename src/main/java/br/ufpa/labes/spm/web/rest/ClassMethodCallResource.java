@@ -33,9 +33,9 @@ public class ClassMethodCallResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ClassMethodCallRepository classMethodCallRepository;
+    private final GenericRepository<ClassMethodCall, Long> classMethodCallRepository;
 
-    public ClassMethodCallResource(ClassMethodCallRepository classMethodCallRepository) {
+    public ClassMethodCallResource(GenericRepository<ClassMethodCall, Long> classMethodCallRepository) {
         this.classMethodCallRepository = classMethodCallRepository;
     }
 

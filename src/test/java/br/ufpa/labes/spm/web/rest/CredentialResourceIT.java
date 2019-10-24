@@ -43,7 +43,7 @@ public class CredentialResourceIT {
     private static final String UPDATED_UID = "BBBBBBBBBB";
 
     @Autowired
-    private CredentialRepository credentialRepository;
+    private GenericRepository<Credential, Long> credentialRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -73,7 +73,7 @@ public class CompanyResourceIT {
     private static final Boolean UPDATED_AUTOMATIC_INSTANTIATION = true;
 
     @Autowired
-    private CompanyRepository companyRepository;
+    private GenericRepository<Company, Long> companyRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

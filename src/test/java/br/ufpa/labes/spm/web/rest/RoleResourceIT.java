@@ -47,7 +47,7 @@ public class RoleResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private RoleRepository roleRepository;
+    private GenericRepository<Role, Long> roleRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

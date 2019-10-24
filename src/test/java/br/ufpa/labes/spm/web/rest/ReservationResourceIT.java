@@ -47,7 +47,7 @@ public class ReservationResourceIT {
     private static final LocalDate SMALLER_TO_DATE = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private ReservationRepository reservationRepository;
+    private GenericRepository<Reservation, Long> reservationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

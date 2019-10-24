@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BranchConResourceIT {
 
     @Autowired
-    private BranchConRepository branchConRepository;
+    private GenericRepository<BranchCon, Long> branchConRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

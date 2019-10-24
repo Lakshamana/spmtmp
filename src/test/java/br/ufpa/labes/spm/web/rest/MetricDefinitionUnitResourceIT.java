@@ -40,7 +40,7 @@ public class MetricDefinitionUnitResourceIT {
     private static final String UPDATED_UNIT = "BBBBBBBBBB";
 
     @Autowired
-    private MetricDefinitionUnitRepository metricDefinitionUnitRepository;
+    private GenericRepository<MetricDefinitionUnit, Long> metricDefinitionUnitRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

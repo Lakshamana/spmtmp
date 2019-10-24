@@ -33,9 +33,9 @@ public class ParameterResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ParameterRepository parameterRepository;
+    private final GenericRepository<Parameter, Long> parameterRepository;
 
-    public ParameterResource(ParameterRepository parameterRepository) {
+    public ParameterResource(GenericRepository<Parameter, Long> parameterRepository) {
         this.parameterRepository = parameterRepository;
     }
 

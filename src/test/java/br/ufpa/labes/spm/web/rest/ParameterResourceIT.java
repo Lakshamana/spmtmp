@@ -41,7 +41,7 @@ public class ParameterResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private ParameterRepository parameterRepository;
+    private GenericRepository<Parameter, Long> parameterRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

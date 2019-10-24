@@ -40,7 +40,7 @@ public class NotWorkingDayResourceIT {
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
     @Autowired
-    private NotWorkingDayRepository notWorkingDayRepository;
+    private GenericRepository<NotWorkingDay, Long> notWorkingDayRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

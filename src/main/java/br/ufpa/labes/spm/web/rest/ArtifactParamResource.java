@@ -33,9 +33,9 @@ public class ArtifactParamResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactParamRepository artifactParamRepository;
+    private final GenericRepository<ArtifactParam, Long> artifactParamRepository;
 
-    public ArtifactParamResource(ArtifactParamRepository artifactParamRepository) {
+    public ArtifactParamResource(GenericRepository<ArtifactParam, Long> artifactParamRepository) {
         this.artifactParamRepository = artifactParamRepository;
     }
 

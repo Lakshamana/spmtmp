@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ConnectionTypeResourceIT {
 
     @Autowired
-    private ConnectionTypeRepository connectionTypeRepository;
+    private GenericRepository<ConnectionType, Long> connectionTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

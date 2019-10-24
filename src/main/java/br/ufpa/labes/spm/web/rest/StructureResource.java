@@ -33,9 +33,9 @@ public class StructureResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final StructureRepository structureRepository;
+    private final GenericRepository<Structure, Long> structureRepository;
 
-    public StructureResource(StructureRepository structureRepository) {
+    public StructureResource(GenericRepository<Structure, Long> structureRepository) {
         this.structureRepository = structureRepository;
     }
 

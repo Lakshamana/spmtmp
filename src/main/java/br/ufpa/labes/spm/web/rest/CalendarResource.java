@@ -33,9 +33,9 @@ public class CalendarResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final CalendarRepository calendarRepository;
+    private final GenericRepository<Calendar, Long> calendarRepository;
 
-    public CalendarResource(CalendarRepository calendarRepository) {
+    public CalendarResource(GenericRepository<Calendar, Long> calendarRepository) {
         this.calendarRepository = calendarRepository;
     }
 

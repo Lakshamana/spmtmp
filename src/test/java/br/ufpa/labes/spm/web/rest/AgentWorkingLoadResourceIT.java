@@ -47,7 +47,7 @@ public class AgentWorkingLoadResourceIT {
     private static final LocalDate SMALLER_END = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private AgentWorkingLoadRepository agentWorkingLoadRepository;
+    private GenericRepository<AgentWorkingLoad, Long> agentWorkingLoadRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

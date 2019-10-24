@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class InstantiationSuggestionResourceIT {
 
     @Autowired
-    private InstantiationSuggestionRepository instantiationSuggestionRepository;
+    private GenericRepository<InstantiationSuggestion, Long> instantiationSuggestionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

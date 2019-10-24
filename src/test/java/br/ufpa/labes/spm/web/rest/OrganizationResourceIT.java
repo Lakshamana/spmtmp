@@ -40,7 +40,7 @@ public class OrganizationResourceIT {
     private static final String UPDATED_DOMAIN = "BBBBBBBBBB";
 
     @Autowired
-    private OrganizationRepository organizationRepository;
+    private GenericRepository<Organization, Long> organizationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

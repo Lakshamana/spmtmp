@@ -33,9 +33,9 @@ public class ProcessModelEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessModelEventRepository processModelEventRepository;
+    private final GenericRepository<ProcessModelEvent, Long> processModelEventRepository;
 
-    public ProcessModelEventResource(ProcessModelEventRepository processModelEventRepository) {
+    public ProcessModelEventResource(GenericRepository<ProcessModelEvent, Long> processModelEventRepository) {
         this.processModelEventRepository = processModelEventRepository;
     }
 

@@ -33,9 +33,9 @@ public class ReservationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ReservationRepository reservationRepository;
+    private final GenericRepository<Reservation, Long> reservationRepository;
 
-    public ReservationResource(ReservationRepository reservationRepository) {
+    public ReservationResource(GenericRepository<Reservation, Long> reservationRepository) {
         this.reservationRepository = reservationRepository;
     }
 

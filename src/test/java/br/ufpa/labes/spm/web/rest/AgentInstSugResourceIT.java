@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AgentInstSugResourceIT {
 
     @Autowired
-    private AgentInstSugRepository agentInstSugRepository;
+    private GenericRepository<AgentInstSug, Long> agentInstSugRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

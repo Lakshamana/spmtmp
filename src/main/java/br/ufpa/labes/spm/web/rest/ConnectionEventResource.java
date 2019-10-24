@@ -33,9 +33,9 @@ public class ConnectionEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ConnectionEventRepository connectionEventRepository;
+    private final GenericRepository<ConnectionEvent, Long> connectionEventRepository;
 
-    public ConnectionEventResource(ConnectionEventRepository connectionEventRepository) {
+    public ConnectionEventResource(GenericRepository<ConnectionEvent, Long> connectionEventRepository) {
         this.connectionEventRepository = connectionEventRepository;
     }
 

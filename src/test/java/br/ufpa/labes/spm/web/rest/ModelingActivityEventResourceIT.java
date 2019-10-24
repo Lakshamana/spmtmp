@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ModelingActivityEventResourceIT {
 
     @Autowired
-    private ModelingActivityEventRepository modelingActivityEventRepository;
+    private GenericRepository<ModelingActivityEvent, Long> modelingActivityEventRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

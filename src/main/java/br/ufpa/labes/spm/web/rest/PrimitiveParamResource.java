@@ -33,9 +33,9 @@ public class PrimitiveParamResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final PrimitiveParamRepository primitiveParamRepository;
+    private final GenericRepository<PrimitiveParam, Long> primitiveParamRepository;
 
-    public PrimitiveParamResource(PrimitiveParamRepository primitiveParamRepository) {
+    public PrimitiveParamResource(GenericRepository<PrimitiveParam, Long> primitiveParamRepository) {
         this.primitiveParamRepository = primitiveParamRepository;
     }
 

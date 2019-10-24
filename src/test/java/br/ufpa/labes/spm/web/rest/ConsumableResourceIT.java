@@ -51,7 +51,7 @@ public class ConsumableResourceIT {
     private static final Float SMALLER_AMOUNT_USED = 1F - 1F;
 
     @Autowired
-    private ConsumableRepository consumableRepository;
+    private GenericRepository<Consumable, Long> consumableRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

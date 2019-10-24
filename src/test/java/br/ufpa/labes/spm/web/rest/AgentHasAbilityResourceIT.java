@@ -41,7 +41,7 @@ public class AgentHasAbilityResourceIT {
     private static final Integer SMALLER_DEGREE = 1 - 1;
 
     @Autowired
-    private AgentHasAbilityRepository agentHasAbilityRepository;
+    private GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

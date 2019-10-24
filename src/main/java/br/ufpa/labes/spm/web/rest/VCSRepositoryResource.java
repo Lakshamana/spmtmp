@@ -33,9 +33,9 @@ public class VCSRepositoryResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final VCSRepositoryRepository vCSRepositoryRepository;
+    private final GenericRepository<VCSRepository, Long> vCSRepositoryRepository;
 
-    public VCSRepositoryResource(VCSRepositoryRepository vCSRepositoryRepository) {
+    public VCSRepositoryResource(GenericRepository<VCSRepository, Long> vCSRepositoryRepository) {
         this.vCSRepositoryRepository = vCSRepositoryRepository;
     }
 

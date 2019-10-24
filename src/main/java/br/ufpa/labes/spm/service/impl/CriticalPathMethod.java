@@ -15,6 +15,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.ufpa.labes.spm.repository.ProcessRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.Activity;
 import br.ufpa.labes.spm.domain.Decomposed;
@@ -86,7 +87,7 @@ public class CriticalPathMethod {
 	}
 
 	// m�todo criado pois o processDao estava null e pra n�o mexer no m�todo acima
-	public List<String> getCriticalPath(String procIdent, ProcessRepository processRepository) throws RepositoryQueryException{
+	public List<String> getCriticalPath(String procIdent, GenericRepository<Process, Long> processRepository) throws RepositoryQueryException{
 		List<String> ret = new LinkedList<String>();
 
 		this.processIdent = procIdent;

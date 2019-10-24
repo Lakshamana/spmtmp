@@ -58,7 +58,7 @@ public class SpmConfigurationResourceIT {
     private static final Boolean UPDATED_SENHA_EM_RECUPERACAO = true;
 
     @Autowired
-    private SpmConfigurationRepository spmConfigurationRepository;
+    private GenericRepository<SpmConfiguration, Long> spmConfigurationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

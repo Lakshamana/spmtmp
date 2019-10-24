@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class WorkGroupTypeResourceIT {
 
     @Autowired
-    private WorkGroupTypeRepository workGroupTypeRepository;
+    private GenericRepository<WorkGroupType, Long> workGroupTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

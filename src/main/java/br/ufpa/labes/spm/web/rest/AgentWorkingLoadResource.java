@@ -33,9 +33,9 @@ public class AgentWorkingLoadResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentWorkingLoadRepository agentWorkingLoadRepository;
+    private final GenericRepository<AgentWorkingLoad, Long> agentWorkingLoadRepository;
 
-    public AgentWorkingLoadResource(AgentWorkingLoadRepository agentWorkingLoadRepository) {
+    public AgentWorkingLoadResource(GenericRepository<AgentWorkingLoad, Long> agentWorkingLoadRepository) {
         this.agentWorkingLoadRepository = agentWorkingLoadRepository;
     }
 

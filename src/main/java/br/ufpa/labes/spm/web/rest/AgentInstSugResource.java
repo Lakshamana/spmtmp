@@ -33,9 +33,9 @@ public class AgentInstSugResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentInstSugRepository agentInstSugRepository;
+    private final GenericRepository<AgentInstSug, Long> agentInstSugRepository;
 
-    public AgentInstSugResource(AgentInstSugRepository agentInstSugRepository) {
+    public AgentInstSugResource(GenericRepository<AgentInstSug, Long> agentInstSugRepository) {
         this.agentInstSugRepository = agentInstSugRepository;
     }
 

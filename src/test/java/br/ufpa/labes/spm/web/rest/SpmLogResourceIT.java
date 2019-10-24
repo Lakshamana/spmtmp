@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SpmLogResourceIT {
 
     @Autowired
-    private SpmLogRepository spmLogRepository;
+    private GenericRepository<SpmLog, Long> spmLogRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

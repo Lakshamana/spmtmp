@@ -44,7 +44,7 @@ public class EstimationResourceIT {
     private static final String UPDATED_UNIT = "BBBBBBBBBB";
 
     @Autowired
-    private EstimationRepository estimationRepository;
+    private GenericRepository<Estimation, Long> estimationRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

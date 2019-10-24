@@ -40,7 +40,7 @@ public class UserJWTControllerIT {
     private AuthenticationManagerBuilder authenticationManager;
 
     @Autowired
-    private UserRepository userRepository;
+    private GenericRepository<User, Long> userRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;

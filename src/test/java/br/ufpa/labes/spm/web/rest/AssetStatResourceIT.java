@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AssetStatResourceIT {
 
     @Autowired
-    private AssetStatRepository assetStatRepository;
+    private GenericRepository<AssetStat, Long> assetStatRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

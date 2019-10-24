@@ -33,9 +33,9 @@ public class PrimitiveTypeResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final PrimitiveTypeRepository primitiveTypeRepository;
+    private final GenericRepository<PrimitiveType, Long> primitiveTypeRepository;
 
-    public PrimitiveTypeResource(PrimitiveTypeRepository primitiveTypeRepository) {
+    public PrimitiveTypeResource(GenericRepository<PrimitiveType, Long> primitiveTypeRepository) {
         this.primitiveTypeRepository = primitiveTypeRepository;
     }
 

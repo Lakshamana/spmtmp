@@ -55,7 +55,7 @@ public class DriverResourceIT {
     private static final String UPDATED_REQUEST_URL = "BBBBBBBBBB";
 
     @Autowired
-    private DriverRepository driverRepository;
+    private GenericRepository<Driver, Long> driverRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

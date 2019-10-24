@@ -33,9 +33,9 @@ public class OrganizationMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final OrganizationMetricRepository organizationMetricRepository;
+    private final GenericRepository<OrganizationMetric, Long> organizationMetricRepository;
 
-    public OrganizationMetricResource(OrganizationMetricRepository organizationMetricRepository) {
+    public OrganizationMetricResource(GenericRepository<OrganizationMetric, Long> organizationMetricRepository) {
         this.organizationMetricRepository = organizationMetricRepository;
     }
 

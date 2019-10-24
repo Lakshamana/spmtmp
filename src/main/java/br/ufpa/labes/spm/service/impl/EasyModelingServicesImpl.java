@@ -239,7 +239,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	GenericRepository<ProcessAgenda, Long> pAgendaRepository;
 
   @Autowired
-	WebAPSEEObjectRepository webAPSEEObjRepository;
+	GenericRepository<WebAPSEEObject, Long> webAPSEEObjRepository;
 
 	private Date newBeginDate;
 

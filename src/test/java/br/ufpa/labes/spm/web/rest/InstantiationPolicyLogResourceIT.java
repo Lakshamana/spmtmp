@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class InstantiationPolicyLogResourceIT {
 
     @Autowired
-    private InstantiationPolicyLogRepository instantiationPolicyLogRepository;
+    private GenericRepository<InstantiationPolicyLog, Long> instantiationPolicyLogRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

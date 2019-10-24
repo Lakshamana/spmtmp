@@ -41,7 +41,7 @@ public class PlainResourceIT {
     private static final String UPDATED_REQUIREMENTS = "BBBBBBBBBB";
 
     @Autowired
-    private PlainRepository plainRepository;
+    private GenericRepository<Plain, Long> plainRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

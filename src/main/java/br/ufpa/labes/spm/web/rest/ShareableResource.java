@@ -33,9 +33,9 @@ public class ShareableResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ShareableRepository shareableRepository;
+    private final GenericRepository<Shareable, Long> shareableRepository;
 
-    public ShareableResource(ShareableRepository shareableRepository) {
+    public ShareableResource(GenericRepository<Shareable, Long> shareableRepository) {
         this.shareableRepository = shareableRepository;
     }
 

@@ -42,7 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ResourceInstSugResourceIT {
 
     @Autowired
-    private ResourceInstSugRepository resourceInstSugRepository;
+    private GenericRepository<ResourceInstSug, Long> resourceInstSugRepository;
 
     @Mock
     private ResourceInstSugRepository resourceInstSugRepositoryMock;

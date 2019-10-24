@@ -47,7 +47,7 @@ public class ScriptResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private ScriptRepository scriptRepository;
+    private GenericRepository<Script, Long> scriptRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

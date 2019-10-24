@@ -33,9 +33,9 @@ public class AgentInstSuggestionToAgentResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentInstSuggestionToAgentRepository agentInstSuggestionToAgentRepository;
+    private final GenericRepository<AgentInstSuggestionToAgent, Long> agentInstSuggestionToAgentRepository;
 
-    public AgentInstSuggestionToAgentResource(AgentInstSuggestionToAgentRepository agentInstSuggestionToAgentRepository) {
+    public AgentInstSuggestionToAgentResource(GenericRepository<AgentInstSuggestionToAgent, Long> agentInstSuggestionToAgentRepository) {
         this.agentInstSuggestionToAgentRepository = agentInstSuggestionToAgentRepository;
     }
 

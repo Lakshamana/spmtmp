@@ -67,10 +67,10 @@ public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
   private EntityManager em;
 
   @Autowired
-  private GenericRepository<ProjectRepository, Long> projectRepository;
+  private GenericRepository<Project, Long> projectRepository;
 
   @Autowired
-  private GenericRepository<ProcessRepository, Long> processRepository;
+  private GenericRepository<Process, Long> processRepository;
 
   @Override
   public List<Object[]> getAgentsReportData(LocalDate atDate) {

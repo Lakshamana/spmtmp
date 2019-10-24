@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class StructureResourceIT {
 
     @Autowired
-    private StructureRepository structureRepository;
+    private GenericRepository<Structure, Long> structureRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

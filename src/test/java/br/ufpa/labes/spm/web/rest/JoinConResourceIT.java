@@ -45,7 +45,7 @@ public class JoinConResourceIT {
     private static final String UPDATED_KIND_JOIN = "BBBBBBBBBB";
 
     @Autowired
-    private JoinConRepository joinConRepository;
+    private GenericRepository<JoinCon, Long> joinConRepository;
 
     @Mock
     private JoinConRepository joinConRepositoryMock;

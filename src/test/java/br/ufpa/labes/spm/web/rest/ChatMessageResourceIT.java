@@ -50,7 +50,7 @@ public class ChatMessageResourceIT {
     private static final Instant SMALLER_TIMESTAMP = Instant.ofEpochMilli(-1L);
 
     @Autowired
-    private ChatMessageRepository chatMessageRepository;
+    private GenericRepository<ChatMessage, Long> chatMessageRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

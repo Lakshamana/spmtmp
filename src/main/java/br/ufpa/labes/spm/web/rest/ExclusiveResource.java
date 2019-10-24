@@ -33,9 +33,9 @@ public class ExclusiveResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ExclusiveRepository exclusiveRepository;
+    private final GenericRepository<Exclusive, Long> exclusiveRepository;
 
-    public ExclusiveResource(ExclusiveRepository exclusiveRepository) {
+    public ExclusiveResource(GenericRepository<Exclusive, Long> exclusiveRepository) {
         this.exclusiveRepository = exclusiveRepository;
     }
 

@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class FeedbackResourceIT {
 
     @Autowired
-    private FeedbackRepository feedbackRepository;
+    private GenericRepository<Feedback, Long> feedbackRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -33,9 +33,9 @@ public class ActivityMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ActivityMetricRepository activityMetricRepository;
+    private final GenericRepository<ActivityMetric, Long> activityMetricRepository;
 
-    public ActivityMetricResource(ActivityMetricRepository activityMetricRepository) {
+    public ActivityMetricResource(GenericRepository<ActivityMetric, Long> activityMetricRepository) {
         this.activityMetricRepository = activityMetricRepository;
     }
 

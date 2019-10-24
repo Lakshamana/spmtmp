@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SequenceResourceIT {
 
     @Autowired
-    private SequenceRepository sequenceRepository;
+    private GenericRepository<Sequence, Long> sequenceRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

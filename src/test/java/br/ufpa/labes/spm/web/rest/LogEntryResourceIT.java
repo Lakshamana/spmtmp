@@ -52,7 +52,7 @@ public class LogEntryResourceIT {
     private static final String UPDATED_UID = "BBBBBBBBBB";
 
     @Autowired
-    private LogEntryRepository logEntryRepository;
+    private GenericRepository<LogEntry, Long> logEntryRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

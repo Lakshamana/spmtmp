@@ -33,9 +33,9 @@ public class ConsumableResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ConsumableRepository consumableRepository;
+    private final GenericRepository<Consumable, Long> consumableRepository;
 
-    public ConsumableResource(ConsumableRepository consumableRepository) {
+    public ConsumableResource(GenericRepository<Consumable, Long> consumableRepository) {
         this.consumableRepository = consumableRepository;
     }
 

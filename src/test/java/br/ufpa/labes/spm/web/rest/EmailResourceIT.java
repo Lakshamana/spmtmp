@@ -58,7 +58,7 @@ public class EmailResourceIT {
     private static final Boolean UPDATED_TESTE = true;
 
     @Autowired
-    private EmailRepository emailRepository;
+    private GenericRepository<Email, Long> emailRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

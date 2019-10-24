@@ -33,9 +33,9 @@ public class ConnectionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ConnectionRepository connectionRepository;
+    private final GenericRepository<Connection, Long> connectionRepository;
 
-    public ConnectionResource(ConnectionRepository connectionRepository) {
+    public ConnectionResource(GenericRepository<Connection, Long> connectionRepository) {
         this.connectionRepository = connectionRepository;
     }
 

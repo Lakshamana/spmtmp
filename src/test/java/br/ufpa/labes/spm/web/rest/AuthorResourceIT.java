@@ -70,7 +70,7 @@ public class AuthorResourceIT {
     private static final String UPDATED_PHOTO_CONTENT_TYPE = "image/png";
 
     @Autowired
-    private AuthorRepository authorRepository;
+    private GenericRepository<Author, Long> authorRepository;
 
     @Mock
     private AuthorRepository authorRepositoryMock;

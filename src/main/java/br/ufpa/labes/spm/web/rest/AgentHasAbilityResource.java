@@ -33,9 +33,9 @@ public class AgentHasAbilityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentHasAbilityRepository agentHasAbilityRepository;
+    private final GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository;
 
-    public AgentHasAbilityResource(AgentHasAbilityRepository agentHasAbilityRepository) {
+    public AgentHasAbilityResource(GenericRepository<AgentHasAbility, Long> agentHasAbilityRepository) {
         this.agentHasAbilityRepository = agentHasAbilityRepository;
     }
 

@@ -18,6 +18,7 @@ import br.ufpa.labes.spm.converter.ConverterImpl;
 import br.ufpa.labes.spm.exceptions.ImplementationException;
 import br.ufpa.labes.spm.repository.ResourceRepository;
 import br.ufpa.labes.spm.repository.ResourceTypeRepository;
+import br.ufpa.labes.spm.repository.interfaces.GenericRepository;
 import br.ufpa.labes.spm.service.dto.ResourceDTO;
 import br.ufpa.labes.spm.service.dto.ResourcesDTO;
 import br.ufpa.labes.spm.service.dto.TypesDTO;

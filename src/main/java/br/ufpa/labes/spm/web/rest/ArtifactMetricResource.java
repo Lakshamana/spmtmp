@@ -33,9 +33,9 @@ public class ArtifactMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactMetricRepository artifactMetricRepository;
+    private final GenericRepository<ArtifactMetric, Long> artifactMetricRepository;
 
-    public ArtifactMetricResource(ArtifactMetricRepository artifactMetricRepository) {
+    public ArtifactMetricResource(GenericRepository<ArtifactMetric, Long> artifactMetricRepository) {
         this.artifactMetricRepository = artifactMetricRepository;
     }
 

@@ -43,7 +43,7 @@ public class ProcessModelResourceIT {
     private static final String UPDATED_PM_STATE = "BBBBBBBBBB";
 
     @Autowired
-    private ProcessModelRepository processModelRepository;
+    private GenericRepository<ProcessModel, Long> processModelRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

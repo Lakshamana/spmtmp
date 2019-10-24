@@ -52,7 +52,7 @@ public class OcurrenceResourceIT {
     private static final String UPDATED_EVENT = "BBBBBBBBBB";
 
     @Autowired
-    private OcurrenceRepository ocurrenceRepository;
+    private GenericRepository<Ocurrence, Long> ocurrenceRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

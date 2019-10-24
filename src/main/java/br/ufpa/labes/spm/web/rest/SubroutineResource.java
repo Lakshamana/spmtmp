@@ -35,9 +35,9 @@ public class SubroutineResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final SubroutineRepository subroutineRepository;
+    private final GenericRepository<Subroutine, Long> subroutineRepository;
 
-    public SubroutineResource(SubroutineRepository subroutineRepository) {
+    public SubroutineResource(GenericRepository<Subroutine, Long> subroutineRepository) {
         this.subroutineRepository = subroutineRepository;
     }
 

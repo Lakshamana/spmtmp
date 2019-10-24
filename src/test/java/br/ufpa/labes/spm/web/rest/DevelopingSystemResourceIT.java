@@ -47,7 +47,7 @@ public class DevelopingSystemResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private DevelopingSystemRepository developingSystemRepository;
+    private GenericRepository<DevelopingSystem, Long> developingSystemRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

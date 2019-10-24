@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class EventTypeResourceIT {
 
     @Autowired
-    private EventTypeRepository eventTypeRepository;
+    private GenericRepository<EventType, Long> eventTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

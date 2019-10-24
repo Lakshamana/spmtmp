@@ -40,7 +40,7 @@ public class ConnectionResourceIT {
     private static final String UPDATED_IDENT = "BBBBBBBBBB";
 
     @Autowired
-    private ConnectionRepository connectionRepository;
+    private GenericRepository<Connection, Long> connectionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

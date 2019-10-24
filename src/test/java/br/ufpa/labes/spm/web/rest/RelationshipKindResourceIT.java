@@ -43,7 +43,7 @@ public class RelationshipKindResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private RelationshipKindRepository relationshipKindRepository;
+    private GenericRepository<RelationshipKind, Long> relationshipKindRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

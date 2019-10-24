@@ -43,7 +43,7 @@ public class ArtifactTaskResourceIT {
     private static final String UPDATED_OUT_WORKSPACE_VERSION = "BBBBBBBBBB";
 
     @Autowired
-    private ArtifactTaskRepository artifactTaskRepository;
+    private GenericRepository<ArtifactTask, Long> artifactTaskRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class OrganizationMetricResourceIT {
 
     @Autowired
-    private OrganizationMetricRepository organizationMetricRepository;
+    private GenericRepository<OrganizationMetric, Long> organizationMetricRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

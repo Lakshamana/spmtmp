@@ -47,7 +47,7 @@ public class DescriptionResourceIT {
     private static final String UPDATED_WHY = "BBBBBBBBBB";
 
     @Autowired
-    private DescriptionRepository descriptionRepository;
+    private GenericRepository<Description, Long> descriptionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

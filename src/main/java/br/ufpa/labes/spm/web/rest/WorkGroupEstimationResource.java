@@ -33,9 +33,9 @@ public class WorkGroupEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final WorkGroupEstimationRepository workGroupEstimationRepository;
+    private final GenericRepository<WorkGroupEstimation, Long> workGroupEstimationRepository;
 
-    public WorkGroupEstimationResource(WorkGroupEstimationRepository workGroupEstimationRepository) {
+    public WorkGroupEstimationResource(GenericRepository<WorkGroupEstimation, Long> workGroupEstimationRepository) {
         this.workGroupEstimationRepository = workGroupEstimationRepository;
     }
 

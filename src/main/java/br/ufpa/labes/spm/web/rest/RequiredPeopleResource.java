@@ -33,9 +33,9 @@ public class RequiredPeopleResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final RequiredPeopleRepository requiredPeopleRepository;
+    private final GenericRepository<RequiredPeople, Long> requiredPeopleRepository;
 
-    public RequiredPeopleResource(RequiredPeopleRepository requiredPeopleRepository) {
+    public RequiredPeopleResource(GenericRepository<RequiredPeople, Long> requiredPeopleRepository) {
         this.requiredPeopleRepository = requiredPeopleRepository;
     }
 

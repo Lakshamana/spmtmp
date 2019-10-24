@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BranchConCondToActivityResourceIT {
 
     @Autowired
-    private BranchConCondToActivityRepository branchConCondToActivityRepository;
+    private GenericRepository<BranchConCondToActivity, Long> branchConCondToActivityRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -42,7 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ArtifactConResourceIT {
 
     @Autowired
-    private ArtifactConRepository artifactConRepository;
+    private GenericRepository<ArtifactCon, Long> artifactConRepository;
 
     @Mock
     private ArtifactConRepository artifactConRepositoryMock;

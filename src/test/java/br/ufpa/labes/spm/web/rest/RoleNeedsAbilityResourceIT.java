@@ -41,7 +41,7 @@ public class RoleNeedsAbilityResourceIT {
     private static final Integer SMALLER_DEGREE = 1 - 1;
 
     @Autowired
-    private RoleNeedsAbilityRepository roleNeedsAbilityRepository;
+    private GenericRepository<RoleNeedsAbility, Long> roleNeedsAbilityRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

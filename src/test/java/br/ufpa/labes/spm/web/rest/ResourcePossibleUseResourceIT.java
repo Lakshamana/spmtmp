@@ -51,7 +51,7 @@ public class ResourcePossibleUseResourceIT {
     private static final Float SMALLER_AMOUNT_NEEDED = 1F - 1F;
 
     @Autowired
-    private ResourcePossibleUseRepository resourcePossibleUseRepository;
+    private GenericRepository<ResourcePossibleUse, Long> resourcePossibleUseRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

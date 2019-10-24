@@ -64,7 +64,7 @@ public class NormalResourceIT {
     private static final Boolean UPDATED_AUTO_ALLOCABLE = true;
 
     @Autowired
-    private NormalRepository normalRepository;
+    private GenericRepository<Normal, Long> normalRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

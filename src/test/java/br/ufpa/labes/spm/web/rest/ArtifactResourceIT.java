@@ -62,7 +62,7 @@ public class ArtifactResourceIT {
     private static final Boolean UPDATED_IS_ACTIVE = true;
 
     @Autowired
-    private ArtifactRepository artifactRepository;
+    private GenericRepository<Artifact, Long> artifactRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -58,7 +58,7 @@ public class MetricDefinitionResourceIT {
     private static final String UPDATED_HOW_TO_MEASURE = "BBBBBBBBBB";
 
     @Autowired
-    private MetricDefinitionRepository metricDefinitionRepository;
+    private GenericRepository<MetricDefinition, Long> metricDefinitionRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

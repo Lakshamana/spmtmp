@@ -41,7 +41,7 @@ public class AgentInstSuggestionToAgentResourceIT {
     private static final Float SMALLER_ORDER_CRITERIA_RESULT = 1F - 1F;
 
     @Autowired
-    private AgentInstSuggestionToAgentRepository agentInstSuggestionToAgentRepository;
+    private GenericRepository<AgentInstSuggestionToAgent, Long> agentInstSuggestionToAgentRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

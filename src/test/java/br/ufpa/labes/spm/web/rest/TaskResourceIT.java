@@ -62,7 +62,7 @@ public class TaskResourceIT {
     private static final LocalDate SMALLER_DATE_DELEGATED_FROM = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private TaskRepository taskRepository;
+    private GenericRepository<Task, Long> taskRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

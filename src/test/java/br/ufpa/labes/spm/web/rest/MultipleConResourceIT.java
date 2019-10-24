@@ -40,7 +40,7 @@ public class MultipleConResourceIT {
     private static final Boolean UPDATED_FIRED = true;
 
     @Autowired
-    private MultipleConRepository multipleConRepository;
+    private GenericRepository<MultipleCon, Long> multipleConRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

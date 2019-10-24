@@ -46,7 +46,7 @@ public class PluginResourceIT {
     private static final String UPDATED_CONFIG_FILE_PATH = "BBBBBBBBBB";
 
     @Autowired
-    private PluginRepository pluginRepository;
+    private GenericRepository<Plugin, Long> pluginRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

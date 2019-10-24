@@ -43,7 +43,7 @@ public class AgentPlaysRoleResourceIT {
     private static final LocalDate SMALLER_SINCE_DATE = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private AgentPlaysRoleRepository agentPlaysRoleRepository;
+    private GenericRepository<AgentPlaysRole, Long> agentPlaysRoleRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

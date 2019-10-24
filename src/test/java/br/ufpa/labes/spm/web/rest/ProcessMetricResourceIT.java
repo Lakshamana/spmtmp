@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ProcessMetricResourceIT {
 
     @Autowired
-    private ProcessMetricRepository processMetricRepository;
+    private GenericRepository<ProcessMetric, Long> processMetricRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

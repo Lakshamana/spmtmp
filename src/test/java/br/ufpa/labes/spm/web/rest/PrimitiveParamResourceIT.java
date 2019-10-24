@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PrimitiveParamResourceIT {
 
     @Autowired
-    private PrimitiveParamRepository primitiveParamRepository;
+    private GenericRepository<PrimitiveParam, Long> primitiveParamRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

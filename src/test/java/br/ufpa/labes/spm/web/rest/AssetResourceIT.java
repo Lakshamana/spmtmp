@@ -76,7 +76,7 @@ public class AssetResourceIT {
     private static final Boolean UPDATED_READ_ONLY = true;
 
     @Autowired
-    private AssetRepository assetRepository;
+    private GenericRepository<Asset, Long> assetRepository;
 
     @Mock
     private AssetRepository assetRepositoryMock;

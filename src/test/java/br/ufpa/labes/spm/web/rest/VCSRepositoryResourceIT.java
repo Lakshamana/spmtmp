@@ -64,7 +64,7 @@ public class VCSRepositoryResourceIT {
     private static final Boolean UPDATED_DEFAULT_USER = true;
 
     @Autowired
-    private VCSRepositoryRepository vCSRepositoryRepository;
+    private GenericRepository<VCSRepository, Long> vCSRepositoryRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -83,7 +83,7 @@ public class VCSRepositoryResourceIT {
 
     private MockMvc restVCSRepositoryMockMvc;
 
-    private VCSRepository vCSRepository;
+    private GenericRepository<VCS, Long> vCSRepository;
 
     @BeforeEach
     public void setup() {

@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BranchConCondToMultipleConResourceIT {
 
     @Autowired
-    private BranchConCondToMultipleConRepository branchConCondToMultipleConRepository;
+    private GenericRepository<BranchConCondToMultipleCon, Long> branchConCondToMultipleConRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ActivityInstantiatedResourceIT {
 
     @Autowired
-    private ActivityInstantiatedRepository activityInstantiatedRepository;
+    private GenericRepository<ActivityInstantiated, Long> activityInstantiatedRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

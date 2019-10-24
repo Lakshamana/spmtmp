@@ -33,9 +33,9 @@ public class BranchConCondToMultipleConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final BranchConCondToMultipleConRepository branchConCondToMultipleConRepository;
+    private final GenericRepository<BranchConCondToMultipleCon, Long> branchConCondToMultipleConRepository;
 
-    public BranchConCondToMultipleConResource(BranchConCondToMultipleConRepository branchConCondToMultipleConRepository) {
+    public BranchConCondToMultipleConResource(GenericRepository<BranchConCondToMultipleCon, Long> branchConCondToMultipleConRepository) {
         this.branchConCondToMultipleConRepository = branchConCondToMultipleConRepository;
     }
 

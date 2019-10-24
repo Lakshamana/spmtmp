@@ -43,7 +43,7 @@ public class ShareableResourceIT {
     private static final String UPDATED_UNIT_OF_COST = "BBBBBBBBBB";
 
     @Autowired
-    private ShareableRepository shareableRepository;
+    private GenericRepository<Shareable, Long> shareableRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

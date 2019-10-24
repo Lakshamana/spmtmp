@@ -33,9 +33,9 @@ public class AssetRelationshipResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AssetRelationshipRepository assetRelationshipRepository;
+    private final GenericRepository<AssetRelationship, Long> assetRelationshipRepository;
 
-    public AssetRelationshipResource(AssetRelationshipRepository assetRelationshipRepository) {
+    public AssetRelationshipResource(GenericRepository<AssetRelationship, Long> assetRelationshipRepository) {
         this.assetRelationshipRepository = assetRelationshipRepository;
     }
 

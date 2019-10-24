@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PeopleInstSugResourceIT {
 
     @Autowired
-    private PeopleInstSugRepository peopleInstSugRepository;
+    private GenericRepository<PeopleInstSug, Long> peopleInstSugRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

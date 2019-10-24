@@ -33,9 +33,9 @@ public class JoinConResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final JoinConRepository joinConRepository;
+    private final GenericRepository<JoinCon, Long> joinConRepository;
 
-    public JoinConResource(JoinConRepository joinConRepository) {
+    public JoinConResource(GenericRepository<JoinCon, Long> joinConRepository) {
         this.joinConRepository = joinConRepository;
     }
 

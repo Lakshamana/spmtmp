@@ -40,7 +40,7 @@ public class DependencyResourceIT {
     private static final String UPDATED_KIND_DEP = "BBBBBBBBBB";
 
     @Autowired
-    private DependencyRepository dependencyRepository;
+    private GenericRepository<Dependency, Long> dependencyRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

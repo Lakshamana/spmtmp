@@ -33,9 +33,9 @@ public class ResourceEventResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ResourceEventRepository resourceEventRepository;
+    private final GenericRepository<ResourceEvent, Long> resourceEventRepository;
 
-    public ResourceEventResource(ResourceEventRepository resourceEventRepository) {
+    public ResourceEventResource(GenericRepository<ResourceEvent, Long> resourceEventRepository) {
         this.resourceEventRepository = resourceEventRepository;
     }
 

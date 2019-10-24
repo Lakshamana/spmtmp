@@ -33,9 +33,9 @@ public class EmailConfigurationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final EmailConfigurationRepository emailConfigurationRepository;
+    private final GenericRepository<EmailConfiguration, Long> emailConfigurationRepository;
 
-    public EmailConfigurationResource(EmailConfigurationRepository emailConfigurationRepository) {
+    public EmailConfigurationResource(GenericRepository<EmailConfiguration, Long> emailConfigurationRepository) {
         this.emailConfigurationRepository = emailConfigurationRepository;
     }
 

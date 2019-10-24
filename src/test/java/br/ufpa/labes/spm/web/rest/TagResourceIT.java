@@ -40,7 +40,7 @@ public class TagResourceIT {
     private static final String UPDATED_IDENT = "BBBBBBBBBB";
 
     @Autowired
-    private TagRepository tagRepository;
+    private GenericRepository<Tag, Long> tagRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

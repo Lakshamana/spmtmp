@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AgendaEventResourceIT {
 
     @Autowired
-    private AgendaEventRepository agendaEventRepository;
+    private GenericRepository<AgendaEvent, Long> agendaEventRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

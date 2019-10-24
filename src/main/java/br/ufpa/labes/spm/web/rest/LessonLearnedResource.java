@@ -33,9 +33,9 @@ public class LessonLearnedResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final LessonLearnedRepository lessonLearnedRepository;
+    private final GenericRepository<LessonLearned, Long> lessonLearnedRepository;
 
-    public LessonLearnedResource(LessonLearnedRepository lessonLearnedRepository) {
+    public LessonLearnedResource(GenericRepository<LessonLearned, Long> lessonLearnedRepository) {
         this.lessonLearnedRepository = lessonLearnedRepository;
     }
 

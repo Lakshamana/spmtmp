@@ -47,7 +47,7 @@ public class CompanyUnitResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private CompanyUnitRepository companyUnitRepository;
+    private GenericRepository<CompanyUnit, Long> companyUnitRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

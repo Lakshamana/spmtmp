@@ -34,9 +34,9 @@ public class ChatMessageResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ChatMessageRepository chatMessageRepository;
+    private final GenericRepository<ChatMessage, Long> chatMessageRepository;
 
-    public ChatMessageResource(ChatMessageRepository chatMessageRepository) {
+    public ChatMessageResource(GenericRepository<ChatMessage, Long> chatMessageRepository) {
         this.chatMessageRepository = chatMessageRepository;
     }
 

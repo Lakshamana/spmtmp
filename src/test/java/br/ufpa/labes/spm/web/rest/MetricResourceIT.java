@@ -54,7 +54,7 @@ public class MetricResourceIT {
     private static final LocalDate SMALLER_PERIOD_END = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private MetricRepository metricRepository;
+    private GenericRepository<Metric, Long> metricRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

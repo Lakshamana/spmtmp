@@ -40,7 +40,7 @@ public class AssetRelationshipResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private AssetRelationshipRepository assetRelationshipRepository;
+    private GenericRepository<AssetRelationship, Long> assetRelationshipRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

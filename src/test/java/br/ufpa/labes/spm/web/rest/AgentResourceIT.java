@@ -80,7 +80,7 @@ public class AgentResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private AgentRepository agentRepository;
+    private GenericRepository<Agent, Long> agentRepository;
 
     @Mock
     private AgentRepository agentRepositoryMock;

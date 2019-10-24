@@ -47,7 +47,7 @@ public class MessageResourceIT {
     private static final LocalDate SMALLER_TIME = LocalDate.ofEpochDay(-1L);
 
     @Autowired
-    private MessageRepository messageRepository;
+    private GenericRepository<Message, Long> messageRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

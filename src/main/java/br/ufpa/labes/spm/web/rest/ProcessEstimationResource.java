@@ -33,9 +33,9 @@ public class ProcessEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ProcessEstimationRepository processEstimationRepository;
+    private final GenericRepository<ProcessEstimation, Long> processEstimationRepository;
 
-    public ProcessEstimationResource(ProcessEstimationRepository processEstimationRepository) {
+    public ProcessEstimationResource(GenericRepository<ProcessEstimation, Long> processEstimationRepository) {
         this.processEstimationRepository = processEstimationRepository;
     }
 

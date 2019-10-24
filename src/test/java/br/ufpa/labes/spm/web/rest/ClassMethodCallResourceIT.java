@@ -50,7 +50,7 @@ public class ClassMethodCallResourceIT {
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Autowired
-    private ClassMethodCallRepository classMethodCallRepository;
+    private GenericRepository<ClassMethodCall, Long> classMethodCallRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -41,7 +41,7 @@ public class RequiredResourceResourceIT {
     private static final Float SMALLER_AMOUNT_NEEDED = 1F - 1F;
 
     @Autowired
-    private RequiredResourceRepository requiredResourceRepository;
+    private GenericRepository<RequiredResource, Long> requiredResourceRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

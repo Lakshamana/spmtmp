@@ -39,9 +39,9 @@ public class ActivityResource {
     @Autowired
     private ProcessServices processServices;
 
-    private final ActivityRepository activityRepository;
+    private final GenericRepository<Activity, Long> activityRepository;
 
-    public ActivityResource(ActivityRepository activityRepository) {
+    public ActivityResource(GenericRepository<Activity, Long> activityRepository) {
         this.activityRepository = activityRepository;
     }
 

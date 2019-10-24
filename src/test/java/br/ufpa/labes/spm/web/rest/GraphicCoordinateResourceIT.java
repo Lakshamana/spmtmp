@@ -51,7 +51,7 @@ public class GraphicCoordinateResourceIT {
     private static final String UPDATED_THE_PROCESS = "BBBBBBBBBB";
 
     @Autowired
-    private GraphicCoordinateRepository graphicCoordinateRepository;
+    private GenericRepository<GraphicCoordinate, Long> graphicCoordinateRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

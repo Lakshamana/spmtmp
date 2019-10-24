@@ -35,9 +35,9 @@ public class TaskAgendaResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final TaskAgendaRepository taskAgendaRepository;
+    private final GenericRepository<TaskAgenda, Long> taskAgendaRepository;
 
-    public TaskAgendaResource(TaskAgendaRepository taskAgendaRepository) {
+    public TaskAgendaResource(GenericRepository<TaskAgenda, Long> taskAgendaRepository) {
         this.taskAgendaRepository = taskAgendaRepository;
     }
 

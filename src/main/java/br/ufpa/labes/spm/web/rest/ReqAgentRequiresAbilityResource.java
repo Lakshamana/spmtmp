@@ -33,9 +33,9 @@ public class ReqAgentRequiresAbilityResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ReqAgentRequiresAbilityRepository reqAgentRequiresAbilityRepository;
+    private final GenericRepository<ReqAgentRequiresAbility, Long> reqAgentRequiresAbilityRepository;
 
-    public ReqAgentRequiresAbilityResource(ReqAgentRequiresAbilityRepository reqAgentRequiresAbilityRepository) {
+    public ReqAgentRequiresAbilityResource(GenericRepository<ReqAgentRequiresAbility, Long> reqAgentRequiresAbilityRepository) {
         this.reqAgentRequiresAbilityRepository = reqAgentRequiresAbilityRepository;
     }
 

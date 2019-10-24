@@ -33,9 +33,9 @@ public class ArtifactEstimationResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactEstimationRepository artifactEstimationRepository;
+    private final GenericRepository<ArtifactEstimation, Long> artifactEstimationRepository;
 
-    public ArtifactEstimationResource(ArtifactEstimationRepository artifactEstimationRepository) {
+    public ArtifactEstimationResource(GenericRepository<ArtifactEstimation, Long> artifactEstimationRepository) {
         this.artifactEstimationRepository = artifactEstimationRepository;
     }
 

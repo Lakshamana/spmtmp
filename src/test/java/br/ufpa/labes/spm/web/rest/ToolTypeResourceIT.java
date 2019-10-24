@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ToolTypeResourceIT {
 
     @Autowired
-    private ToolTypeRepository toolTypeRepository;
+    private GenericRepository<ToolType, Long> toolTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

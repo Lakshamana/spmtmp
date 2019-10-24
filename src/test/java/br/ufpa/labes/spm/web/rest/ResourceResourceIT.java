@@ -69,7 +69,7 @@ public class ResourceResourceIT {
     private static final Boolean UPDATED_IS_ACTIVE = true;
 
     @Autowired
-    private ResourceRepository resourceRepository;
+    private GenericRepository<Resource, Long> resourceRepository;
 
     @Mock
     private ResourceRepository resourceRepositoryMock;

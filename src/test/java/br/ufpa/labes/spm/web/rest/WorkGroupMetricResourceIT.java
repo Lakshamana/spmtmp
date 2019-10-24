@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class WorkGroupMetricResourceIT {
 
     @Autowired
-    private WorkGroupMetricRepository workGroupMetricRepository;
+    private GenericRepository<WorkGroupMetric, Long> workGroupMetricRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

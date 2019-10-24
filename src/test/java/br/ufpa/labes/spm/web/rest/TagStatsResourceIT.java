@@ -41,7 +41,7 @@ public class TagStatsResourceIT {
     private static final Long SMALLER_COUNT = 1L - 1L;
 
     @Autowired
-    private TagStatsRepository tagStatsRepository;
+    private GenericRepository<TagStats, Long> tagStatsRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

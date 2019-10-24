@@ -40,7 +40,7 @@ public class PrimitiveTypeResourceIT {
     private static final String UPDATED_IDENT = "BBBBBBBBBB";
 
     @Autowired
-    private PrimitiveTypeRepository primitiveTypeRepository;
+    private GenericRepository<PrimitiveType, Long> primitiveTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

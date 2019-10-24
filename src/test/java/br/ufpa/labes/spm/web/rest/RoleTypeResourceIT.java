@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class RoleTypeResourceIT {
 
     @Autowired
-    private RoleTypeRepository roleTypeRepository;
+    private GenericRepository<RoleType, Long> roleTypeRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

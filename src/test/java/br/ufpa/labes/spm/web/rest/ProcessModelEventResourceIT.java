@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class ProcessModelEventResourceIT {
 
     @Autowired
-    private ProcessModelEventRepository processModelEventRepository;
+    private GenericRepository<ProcessModelEvent, Long> processModelEventRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

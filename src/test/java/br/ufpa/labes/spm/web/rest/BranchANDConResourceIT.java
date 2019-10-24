@@ -42,7 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class BranchANDConResourceIT {
 
     @Autowired
-    private BranchANDConRepository branchANDConRepository;
+    private GenericRepository<BranchANDCon, Long> branchANDConRepository;
 
     @Mock
     private BranchANDConRepository branchANDConRepositoryMock;

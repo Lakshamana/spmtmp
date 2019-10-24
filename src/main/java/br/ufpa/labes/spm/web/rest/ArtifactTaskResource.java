@@ -33,9 +33,9 @@ public class ArtifactTaskResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final ArtifactTaskRepository artifactTaskRepository;
+    private final GenericRepository<ArtifactTask, Long> artifactTaskRepository;
 
-    public ArtifactTaskResource(ArtifactTaskRepository artifactTaskRepository) {
+    public ArtifactTaskResource(GenericRepository<ArtifactTask, Long> artifactTaskRepository) {
         this.artifactTaskRepository = artifactTaskRepository;
     }
 

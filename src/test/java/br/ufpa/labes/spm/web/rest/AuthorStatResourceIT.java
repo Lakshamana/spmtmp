@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AuthorStatResourceIT {
 
     @Autowired
-    private AuthorStatRepository authorStatRepository;
+    private GenericRepository<AuthorStat, Long> authorStatRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

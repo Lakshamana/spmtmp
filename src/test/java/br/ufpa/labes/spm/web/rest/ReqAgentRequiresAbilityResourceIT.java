@@ -41,7 +41,7 @@ public class ReqAgentRequiresAbilityResourceIT {
     private static final Integer SMALLER_DEGREE = 1 - 1;
 
     @Autowired
-    private ReqAgentRequiresAbilityRepository reqAgentRequiresAbilityRepository;
+    private GenericRepository<ReqAgentRequiresAbility, Long> reqAgentRequiresAbilityRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

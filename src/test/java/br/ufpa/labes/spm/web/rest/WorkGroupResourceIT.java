@@ -50,7 +50,7 @@ public class WorkGroupResourceIT {
     private static final Boolean UPDATED_IS_ACTIVE = true;
 
     @Autowired
-    private WorkGroupRepository workGroupRepository;
+    private GenericRepository<WorkGroup, Long> workGroupRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

@@ -40,7 +40,7 @@ public class CalendarResourceIT {
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
     @Autowired
-    private CalendarRepository calendarRepository;
+    private GenericRepository<Calendar, Long> calendarRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

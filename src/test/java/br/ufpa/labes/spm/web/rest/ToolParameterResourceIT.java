@@ -43,7 +43,7 @@ public class ToolParameterResourceIT {
     private static final String UPDATED_SEPARATOR_SYMBOL = "BBBBBBBBBB";
 
     @Autowired
-    private ToolParameterRepository toolParameterRepository;
+    private GenericRepository<ToolParameter, Long> toolParameterRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

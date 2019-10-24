@@ -33,9 +33,9 @@ public class AgentMetricResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final AgentMetricRepository agentMetricRepository;
+    private final GenericRepository<AgentMetric, Long> agentMetricRepository;
 
-    public AgentMetricResource(AgentMetricRepository agentMetricRepository) {
+    public AgentMetricResource(GenericRepository<AgentMetric, Long> agentMetricRepository) {
         this.agentMetricRepository = agentMetricRepository;
     }
 

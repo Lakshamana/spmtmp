@@ -33,9 +33,9 @@ public class DescriptionResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final DescriptionRepository descriptionRepository;
+    private final GenericRepository<Description, Long> descriptionRepository;
 
-    public DescriptionResource(DescriptionRepository descriptionRepository) {
+    public DescriptionResource(GenericRepository<Description, Long> descriptionRepository) {
         this.descriptionRepository = descriptionRepository;
     }
 

@@ -40,7 +40,7 @@ public class TemplateResourceIT {
     private static final String UPDATED_TEMPLATE_STATE = "BBBBBBBBBB";
 
     @Autowired
-    private TemplateRepository templateRepository;
+    private GenericRepository<Template, Long> templateRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;

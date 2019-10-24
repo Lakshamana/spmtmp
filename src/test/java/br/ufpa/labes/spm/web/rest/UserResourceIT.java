@@ -68,7 +68,7 @@ public class UserResourceIT {
     private static final String UPDATED_LANGKEY = "fr";
 
     @Autowired
-    private UserRepository userRepository;
+    private GenericRepository<User, Long> userRepository;
 
     @Autowired
     private MailService mailService;

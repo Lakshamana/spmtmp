@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class TaskAgendaResourceIT {
 
     @Autowired
-    private TaskAgendaRepository taskAgendaRepository;
+    private GenericRepository<TaskAgenda, Long> taskAgendaRepository;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
