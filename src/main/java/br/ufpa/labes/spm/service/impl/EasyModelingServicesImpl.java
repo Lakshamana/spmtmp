@@ -125,8 +125,8 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 
 	// EnactmentEngineLocal enactmentLocal;
 
-  @Autowired
-  CalendarRepository calendarRepository;
+  // @Autowired
+  // CalendarRepository calendarRepository;
 
   // DynamicModeling dynamicModeling;
 
@@ -150,8 +150,8 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   @Autowired
 	private ArtifactRepository artRepository;
 
-  @Autowired
-	private InvolvedArtifactRepository involvedRepository;
+  // @Autowired
+	// private InvolvedArtifactRepository involvedRepository;
 
   @Autowired
 	private GraphicCoordinateRepository coordRepository;
@@ -159,17 +159,17 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   @Autowired
 	private ProcessModelRepository pmodelRepository;
 
-  @Autowired
-	private SubroutineRepository subRepository;
+  // @Autowired
+	// private SubroutineRepository subRepository;
 
-  @Autowired
-	private ParameterRepository paramRepository;
+  // @Autowired
+	// private ParameterRepository paramRepository;
 
   @Autowired
 	private ArtifactConRepository artConRepository;
 
-  @Autowired
-  private ArtifactTypeRepository artTypeRepository;
+  // @Autowired
+  // private ArtifactTypeRepository artTypeRepository;
 
   @Autowired
 	private MultipleConRepository multiRepository;
@@ -186,11 +186,11 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   @Autowired
 	private BranchConRepository branchConRepository;
 
-  @Autowired
-  private WorkGroupTypeRepository WorkGroupTypeRepository;
+  // @Autowired
+  // private WorkGroupTypeRepository WorkGroupTypeRepository;
 
-  @Autowired
-	RoleRepository roleRepository;
+  // @Autowired
+	// RoleRepository roleRepository;
 
   @Autowired
 	ReqAgentRepository reqAgentRepository;
@@ -198,35 +198,35 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
   @Autowired
 	AgentRepository agentRepository;
 
-  @Autowired
-	TaskRepository taskRepository;
+  // @Autowired
+	// TaskRepository taskRepository;
 
-  @Autowired
-	WorkGroupRepository WorkGroupRepository;
+  // @Autowired
+	// WorkGroupRepository WorkGroupRepository;
 
   @Autowired
 	ReqWorkGroupRepository reqWorkGroupRepository;
 
-  @Autowired
-  ResourceTypeRepository resTypeRepository;
+  // @Autowired
+  // ResourceTypeRepository resTypeRepository;
 
-  @Autowired
-  private RequiredResourceRepository reqResRepository;
+  // @Autowired
+  // private RequiredResourceRepository reqResRepository;
 
-  @Autowired
-  private ResourceRepository resRepository;
+  // @Autowired
+  // private ResourceRepository resRepository;
 
-  @Autowired
-	private ConsumableRepository consumableRepository;
+  // @Autowired
+	// private ConsumableRepository consumableRepository;
 
   @Autowired
 	private BranchConCondToActivityRepository branchConCondToActivityRepository;
 
-  @Autowired
-	private SimpleConRepository simpleConRepository;
+  // @Autowired
+	// private SimpleConRepository simpleConRepository;
 
-  @Autowired
-	private ProcessAgendaRepository pAgendaRepository;
+  // @Autowired
+	// private ProcessAgendaRepository pAgendaRepository;
 
   @Autowired
 	private WebAPSEEObjectRepository webAPSEEObjRepository;
@@ -367,35 +367,35 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 						}
 					}
 				}else if(webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.REQGROUPNODE){
-					Collection<String> theReferredObjs = webAPSEENodePosition.getTheReferredObjects();
-					if(theReferredObjs.size()==1){
-						String[] normals = new String[1];
-						theReferredObjs.toArray(normals);
-						String normal = normals[0];
+					// Collection<String> theReferredObjs = webAPSEENodePosition.getTheReferredObjects();
+					// if(theReferredObjs.size()==1){
+					// 	String[] normals = new String[1];
+					// 	theReferredObjs.toArray(normals);
+					// 	String normal = normals[0];
 
-						ReqWorkGroup reqWorkGroup = (ReqWorkGroup) reqWorkGroupRepository.findReqWorkGroupFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
-						if(reqWorkGroup!=null){
-							theReferredOid = reqWorkGroup.getId();
-							className = reqWorkGroup.getClass().getSimpleName();
-							ok = true;
-							webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
-						}
-					}
+					// 	ReqWorkGroup reqWorkGroup = (ReqWorkGroup) reqWorkGroupRepository.findReqWorkGroupFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
+					// 	if(reqWorkGroup!=null){
+					// 		theReferredOid = reqWorkGroup.getId();
+					// 		className = reqWorkGroup.getClass().getSimpleName();
+					// 		ok = true;
+					// 		webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
+						// }
+					// }
 				}else if(webAPSEENodePosition.getNodeType() == WebAPSEENodePosition.REQRESOURCENODE){
-					Collection<String> theReferredObjs = webAPSEENodePosition.getTheReferredObjects();
-					if(theReferredObjs.size()==1){
-						String[] normals = new String[1];
-						theReferredObjs.toArray(normals);
-						String normal = normals[0];
+					// Collection<String> theReferredObjs = webAPSEENodePosition.getTheReferredObjects();
+					// if(theReferredObjs.size()==1){
+					// 	String[] normals = new String[1];
+					// 	theReferredObjs.toArray(normals);
+					// 	String normal = normals[0];
 
-						RequiredResource reqRes = (RequiredResource) reqResRepository.findRequiredResourceFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
-						if(reqRes!=null){
-							theReferredOid = reqRes.getId();
-							className = reqRes.getClass().getSimpleName();
-							ok = true;
-							webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
-						}
-					}
+					// 	RequiredResource reqRes = (RequiredResource) reqResRepository.findRequiredResourceFromProcessModel(webAPSEENodePosition.getInstanceID(), webAPSEENodePosition.getTypeID(), normal);
+					// 	if(reqRes!=null){
+					// 		theReferredOid = reqRes.getId();
+					// 		className = reqRes.getClass().getSimpleName();
+					// 		ok = true;
+					// 		webAPSEEObj = webAPSEEObjRepository.retrieveWebAPSEEObject(theReferredOid, className);
+					// 	}
+					// }
 				}
 				if(ok){
 					if(webAPSEEObj==null){
