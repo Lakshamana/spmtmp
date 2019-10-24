@@ -85,44 +85,44 @@ public class AgentServicesImpl implements AgentServices {
   @Autowired
   private AgentRepository agentRepository;
 
-  @Autowired
-	AbilityRepository abilityRepository;
+  // @Autowired
+	// AbilityRepository abilityRepository;
 
-  @Autowired
-	RoleRepository roleRepository;
+  // @Autowired
+	// RoleRepository roleRepository;
 
-  @Autowired
-	RoleTypeRepository roleTypeRepository;
+  // @Autowired
+	// RoleTypeRepository roleTypeRepository;
 
-  @Autowired
-  RoleNeedsAbilityRepository roleNeedsRepository;
+  // @Autowired
+  // RoleNeedsAbilityRepository roleNeedsRepository;
 
-  @Autowired
-	AgentPlaysRoleRepository agentPlaysRoleRepository;
+  // @Autowired
+	// AgentPlaysRoleRepository agentPlaysRoleRepository;
 
-  @Autowired
-	AgentHasAbilityRepository agentHasAbilityRepository;
+  // @Autowired
+	// AgentHasAbilityRepository agentHasAbilityRepository;
 
 //   @Autowired
    //	agentAffinityAgentRepository agentAffinityAgentRepository;
 
-  @Autowired
-  WorkGroupRepository workGroupRepository;
+  // @Autowired
+  // WorkGroupRepository workGroupRepository;
 
-  @Autowired
-	SpmConfigurationRepository confiRepository;
+  // @Autowired
+	// SpmConfigurationRepository confiRepository;
 
-  @Autowired
-	ProcessAgendaRepository processAgendaRepository;
+  // @Autowired
+	// ProcessAgendaRepository processAgendaRepository;
 
-  @Autowired
-  TaskRepository taskRepository;
+  // @Autowired
+  // TaskRepository taskRepository;
 
-  @Autowired
-	TaskAgendaRepository taskAgendaRepository;
+  // @Autowired
+	// TaskAgendaRepository taskAgendaRepository;
 
-  @Autowired
-	ActivityEstimationRepository activityEstimationRepository;
+  // @Autowired
+	// ActivityEstimationRepository activityEstimationRepository;
 
 	Converter converter = new ConverterImpl();
 
@@ -207,7 +207,7 @@ public class AgentServicesImpl implements AgentServices {
 			TaskAgenda theTaskAgenda = new TaskAgenda();
 			agent.setTheTaskAgenda(theTaskAgenda);
 			theTaskAgenda.setTheAgent(agent);
-			taskAgendaRepository.save(theTaskAgenda);
+			// taskAgendaRepository.save(theTaskAgenda);
 
 			String newIdent = agentRepository.generateIdent(agent.getName(), agent);
 			agent.setIdent(newIdent);
@@ -221,7 +221,7 @@ public class AgentServicesImpl implements AgentServices {
 			spmconfiguration.setIdioma(config.getIdioma());
 			spmconfiguration.setSenhaEmRecuperacao(false);
 
-			confiRepository.save(spmconfiguration);
+			// confiRepository.save(spmconfiguration);
 		}
 
 
@@ -598,70 +598,72 @@ public class AgentServicesImpl implements AgentServices {
 	@SuppressWarnings("unchecked")
 	public AgentHasAbilityDTO saveAbilityToAgent(
 			AgentHasAbilityDTO agentHasAbilityDTO) {
-		agent = this.getAgentForName(agentHasAbilityDTO.getTheAgent());
-		if (agent == null) {
-			return null;
-		}
+		// agent = this.getAgentForName(agentHasAbilityDTO.getTheAgent());
+		// if (agent == null) {
+		// 	return null;
+		// }
 
-		String hql = "SELECT aha FROM "
-				+ AGENT_HAS_ABILLITY_CLASSNAME
-				+ " as aha WHERE aha.theAgent.name = :theAgent AND aha.theAbility.name = :theAbility";
-		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("theAgent", agentHasAbilityDTO.getTheAgent());
-		query.setParameter("theAbility", agentHasAbilityDTO.getTheAbility());
+		// String hql = "SELECT aha FROM "
+		// 		+ AGENT_HAS_ABILLITY_CLASSNAME
+		// 		+ " as aha WHERE aha.theAgent.name = :theAgent AND aha.theAbility.name = :theAbility";
+		// query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("theAgent", agentHasAbilityDTO.getTheAgent());
+		// query.setParameter("theAbility", agentHasAbilityDTO.getTheAbility());
 
-		List<AgentHasAbility> result = query.getResultList();
+		// List<AgentHasAbility> result = query.getResultList();
 
-		if (!result.isEmpty()) {
-			AgentHasAbility old = result.get(0);
-			boolean newDegreeDifferentFromOld = !old.getDegree().equals(
-					agentHasAbilityDTO.getDegree());
+		// if (!result.isEmpty()) {
+		// 	AgentHasAbility old = result.get(0);
+		// 	boolean newDegreeDifferentFromOld = !old.getDegree().equals(
+		// 			agentHasAbilityDTO.getDegree());
 
-			if (newDegreeDifferentFromOld) {
-				old.setDegree(agentHasAbilityDTO.getDegree());
-				agentHasAbilityRepository.update(old);
-			}
-		} else {
-			Ability ability = this.getAbilityFromName(agentHasAbilityDTO
-					.getTheAbility());
-			new AgentHasAbility(agentHasAbilityDTO.getDegree(), agent, ability);
+		// 	if (newDegreeDifferentFromOld) {
+		// 		old.setDegree(agentHasAbilityDTO.getDegree());
+		// 		agentHasAbilityRepository.update(old);
+		// 	}
+		// } else {
+		// 	Ability ability = this.getAbilityFromName(agentHasAbilityDTO
+		// 			.getTheAbility());
+		// 	new AgentHasAbility(agentHasAbilityDTO.getDegree(), agent, ability);
 
-			agentRepository.update(agent);
-		}
+		// 	agentRepository.update(agent);
+		// }
 
-		agent = null;
+		// agent = null;
 
-		return agentHasAbilityDTO;
+    // return agentHasAbilityDTO;
+    return null;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public AgentHasAbilityDTO getAbilityToAgent(String abilityName) {
-		String hql = "SELECT aha FROM " + AGENT_HAS_ABILLITY_CLASSNAME + " AS aha WHERE aha.theAbility.name = :abilityName";
+		// String hql = "SELECT aha FROM " + AGENT_HAS_ABILLITY_CLASSNAME + " AS aha WHERE aha.theAbility.name = :abilityName";
 
-		query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("abilityName", abilityName);
+		// query = agentHasAbilityRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("abilityName", abilityName);
 
-		List<AgentHasAbility> result = query.getResultList();
+		// List<AgentHasAbility> result = query.getResultList();
 
-		System.out.println("isEmpty? " + result.isEmpty());
-		AgentHasAbilityDTO dto = null;
+		// System.out.println("isEmpty? " + result.isEmpty());
+		// AgentHasAbilityDTO dto = null;
 
-		if (!result.isEmpty()) {
-			AgentHasAbility aha = result.get(0);
+		// if (!result.isEmpty()) {
+		// 	AgentHasAbility aha = result.get(0);
 
-			dto = new AgentHasAbilityDTO(aha.getDegree(), aha.getTheAgent()
-					.getName(), aha.getTheAbility().getName());
-			dto.setDescriptionTheAbility(aha.getTheAbility().getDescription());
+		// 	dto = new AgentHasAbilityDTO(aha.getDegree(), aha.getTheAgent()
+		// 			.getName(), aha.getTheAbility().getName());
+		// 	dto.setDescriptionTheAbility(aha.getTheAbility().getDescription());
 
-			return dto;
-		} else {
-			Ability ability = this.getAbilityFromName(abilityName);
-			dto = new AgentHasAbilityDTO(0, null, ability.getName());
-			dto.setDescriptionTheAbility(ability.getDescription());
+		// 	return dto;
+		// } else {
+		// 	Ability ability = this.getAbilityFromName(abilityName);
+		// 	dto = new AgentHasAbilityDTO(0, null, ability.getName());
+		// 	dto.setDescriptionTheAbility(ability.getDescription());
 
-			return dto;
-		}
+		// 	return dto;
+    // }
+    return null;
 	}
 
 	@Override
@@ -737,28 +739,29 @@ public class AgentServicesImpl implements AgentServices {
 
 	@Override
 	public AgentDTO saveWorkGroupToAgent(AgentDTO agentDTO) {
-		agent = this.getAgentForName(agentDTO.getName());
+		// agent = this.getAgentForName(agentDTO.getName());
 
-		if (!agentDTO.getGroupToAgent().isEmpty()) {
-			for (String WorkGroupName : agentDTO.getGroupToAgent()) {
-				WorkGroup WorkGroup = this.getWorkGroupFromName(WorkGroupName);
-				if (WorkGroup != null) {
+		// if (!agentDTO.getGroupToAgent().isEmpty()) {
+		// 	for (String WorkGroupName : agentDTO.getGroupToAgent()) {
+		// 		WorkGroup WorkGroup = this.getWorkGroupFromName(WorkGroupName);
+		// 		if (WorkGroup != null) {
 
-					if (!agent.getTheWorkGroups().contains(WorkGroup)
-							&& !WorkGroup.getTheAgents().contains(agent)) {
-						agent.getTheWorkGroups().add(WorkGroup);
-						WorkGroup.getTheAgents().add(agent);
-						workGroupRepository.update(WorkGroup);
-						agentRepository.update(agent);
-					}
-				}
-			}
-		}
+		// 			if (!agent.getTheWorkGroups().contains(WorkGroup)
+		// 					&& !WorkGroup.getTheAgents().contains(agent)) {
+		// 				agent.getTheWorkGroups().add(WorkGroup);
+		// 				WorkGroup.getTheAgents().add(agent);
+		// 				workGroupRepository.update(WorkGroup);
+		// 				agentRepository.update(agent);
+		// 			}
+		// 		}
+		// 	}
+		// }
 
-		agentRepository.update(agent);
-		agent = null;
+		// agentRepository.update(agent);
+		// agent = null;
 
-		return agentDTO;
+    // return agentDTO;
+    return null;
 	}
 
 	@Override
@@ -809,83 +812,83 @@ public class AgentServicesImpl implements AgentServices {
 	@SuppressWarnings("unchecked")
 	public AgentsDTO getAgents(String agentName, String roleName,
 			Boolean isActive) {
-		String activeFilter = (isActive == null) ? ""
-				: " and agent.isActive is :isActive";
+		// String activeFilter = (isActive == null) ? ""
+		// 		: " and agent.isActive is :isActive";
 
-		String hql = "SELECT agent FROM " + AGENT_CLASSNAME + " AS agent "
-				+ "WHERE agent.name like :name" + activeFilter;
-		query = agentRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("name", "%" + agentName + "%");
-		if (isActive != null) {
-			query.setParameter("isActive", isActive);
-		}
-		List<Agent> result = query.getResultList();
+		// String hql = "SELECT agent FROM " + AGENT_CLASSNAME + " AS agent "
+		// 		+ "WHERE agent.name like :name" + activeFilter;
+		// query = agentRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("name", "%" + agentName + "%");
+		// if (isActive != null) {
+		// 	query.setParameter("isActive", isActive);
+		// }
+		// List<Agent> result = query.getResultList();
 
-		if (!result.isEmpty()) {
+		// if (!result.isEmpty()) {
 
-			hql = "SELECT agentPlaysRole FROM "
-					+ AGENT_PLAY_ROLE_CLASSNAME
-					+ " AS agentPlaysRole "
-					+ "WHERE agentPlaysRole.theRole.name = :roleName";
-			query = agentPlaysRoleRepository.getPersistenceContext().createQuery(hql);
-			query.setParameter("roleName", roleName);
+		// 	hql = "SELECT agentPlaysRole FROM "
+		// 			+ AGENT_PLAY_ROLE_CLASSNAME
+		// 			+ " AS agentPlaysRole "
+		// 			+ "WHERE agentPlaysRole.theRole.name = :roleName";
+		// 	query = agentPlaysRoleRepository.getPersistenceContext().createQuery(hql);
+		// 	query.setParameter("roleName", roleName);
 
-			List<AgentPlaysRole> agents = query.getResultList();
+		// 	List<AgentPlaysRole> agents = query.getResultList();
 
-			if (!agents.isEmpty()) {
+		// 	if (!agents.isEmpty()) {
 
-				List<String> agentNames = new ArrayList<String>();
-				for (AgentPlaysRole agentPlaysRole : agents) {
-					if (result.contains(agentPlaysRole.getTheAgent())) {
-						agentNames.add(agentPlaysRole.getTheAgent().getName());
-					}
-				}
+		// 		List<String> agentNames = new ArrayList<String>();
+		// 		for (AgentPlaysRole agentPlaysRole : agents) {
+		// 			if (result.contains(agentPlaysRole.getTheAgent())) {
+		// 				agentNames.add(agentPlaysRole.getTheAgent().getName());
+		// 			}
+		// 		}
 
-				String[] agentsArray = new String[agentNames.size()];
-				agentNames.toArray(agentsArray);
+		// 		String[] agentsArray = new String[agentNames.size()];
+		// 		agentNames.toArray(agentsArray);
 
-				AgentsDTO agentsDTO = new AgentsDTO();
-				agentsDTO.setNameAgents(agentsArray);
-				agentsDTO.setCargoAgents(new String[] {});
+		// 		AgentsDTO agentsDTO = new AgentsDTO();
+		// 		agentsDTO.setNameAgents(agentsArray);
+		// 		agentsDTO.setCargoAgents(new String[] {});
 
-				for (Agent agent : result) {
-					agentsDTO.add(convertAgentToAgentDTO(agent, true));
-				}
+		// 		for (Agent agent : result) {
+		// 			agentsDTO.add(convertAgentToAgentDTO(agent, true));
+		// 		}
 
-				return agentsDTO;
-			}
-		}
+		// 		return agentsDTO;
+		// 	}
+		// }
 
 		return null;
 	}
 
 	@Override
 	public Boolean removeAbilityAgent(AgentDTO agentDTO, String abilityName) {
-		Ability ability = this.getAbilityFromName(abilityName);
-		Agent agent = this.getAgentForName(agentDTO.getName());
-		List<AgentHasAbility> agentHasAbilitiesToRemove = new ArrayList<AgentHasAbility>();
+		// Ability ability = this.getAbilityFromName(abilityName);
+		// Agent agent = this.getAgentForName(agentDTO.getName());
+		// List<AgentHasAbility> agentHasAbilitiesToRemove = new ArrayList<AgentHasAbility>();
 
-		for (AgentHasAbility agentHasAbility : agent.getTheAgentHasAbilities()) {
-			boolean equalAgents = agentHasAbility.getTheAgent().equals(agent);
-			boolean equalAbilities = agentHasAbility.getTheAbility().getName()
-					.equals(ability.getName());
+		// for (AgentHasAbility agentHasAbility : agent.getTheAgentHasAbilities()) {
+		// 	boolean equalAgents = agentHasAbility.getTheAgent().equals(agent);
+		// 	boolean equalAbilities = agentHasAbility.getTheAbility().getName()
+		// 			.equals(ability.getName());
 
-			if (equalAgents && equalAbilities) {
-				agentHasAbilitiesToRemove.add(agentHasAbility);
-				// agentHasAbility.setTheAbility(null);
-				// agentHasAbility.setTheAgent(null);
-				agentHasAbilityRepository.delete(agentHasAbility);
-			}
-		}
+		// 	if (equalAgents && equalAbilities) {
+		// 		agentHasAbilitiesToRemove.add(agentHasAbility);
+		// 		// agentHasAbility.setTheAbility(null);
+		// 		// agentHasAbility.setTheAgent(null);
+		// 		agentHasAbilityRepository.delete(agentHasAbility);
+		// 	}
+		// }
 
-		if (!agentHasAbilitiesToRemove.isEmpty()) {
-			agent.getTheAgentHasAbilities().removeAll(agentHasAbilitiesToRemove);
-			agentRepository.update(agent);
+		// if (!agentHasAbilitiesToRemove.isEmpty()) {
+		// 	agent.getTheAgentHasAbilities().removeAll(agentHasAbilitiesToRemove);
+		// 	agentRepository.update(agent);
 
-			ability.getTheAgentHasAbilities()
-					.removeAll(agentHasAbilitiesToRemove);
-			abilityRepository.update(ability);
-		}
+		// 	ability.getTheAgentHasAbilities()
+		// 			.removeAll(agentHasAbilitiesToRemove);
+		// 	abilityRepository.update(ability);
+		// }
 
 		return false;
 	}
@@ -898,29 +901,29 @@ public class AgentServicesImpl implements AgentServices {
 
 	@Override
 	public Boolean removeRoleAgent(AgentDTO agentDTO, String roleName) {
-		Role role = this.getRoleFromName(roleName);
-		Agent agent = this.getAgentForName(agentDTO.getName());
-		List<AgentPlaysRole> agentPlaysRolesToRemove = new ArrayList<AgentPlaysRole>();
+		// Role role = this.getRoleFromName(roleName);
+		// Agent agent = this.getAgentForName(agentDTO.getName());
+		// List<AgentPlaysRole> agentPlaysRolesToRemove = new ArrayList<AgentPlaysRole>();
 
-		for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
+		// for (AgentPlaysRole agentPlaysRole : agent.getTheAgentPlaysRoles()) {
 
-			boolean equalAgents = agentPlaysRole.getTheAgent().equals(agent);
-			boolean equalRoles = agentPlaysRole.getTheRole().equals(role);
-			if (equalAgents && equalRoles) {
-				agentPlaysRolesToRemove.add(agentPlaysRole);
-				agentPlaysRole.setTheAgent(null);
-				agentPlaysRole.setTheRole(null);
-				agentPlaysRoleRepository.delete(agentPlaysRole);
-			}
+		// 	boolean equalAgents = agentPlaysRole.getTheAgent().equals(agent);
+		// 	boolean equalRoles = agentPlaysRole.getTheRole().equals(role);
+		// 	if (equalAgents && equalRoles) {
+		// 		agentPlaysRolesToRemove.add(agentPlaysRole);
+		// 		agentPlaysRole.setTheAgent(null);
+		// 		agentPlaysRole.setTheRole(null);
+		// 		agentPlaysRoleRepository.delete(agentPlaysRole);
+		// 	}
 
-		}
+		// }
 
-		if (!agent.getTheAgentPlaysRoles().isEmpty()) {
-			agent.getTheAgentPlaysRoles().removeAll(agentPlaysRolesToRemove);
-			agentRepository.update(agent);
+		// if (!agent.getTheAgentPlaysRoles().isEmpty()) {
+		// 	agent.getTheAgentPlaysRoles().removeAll(agentPlaysRolesToRemove);
+		// 	agentRepository.update(agent);
 
-			return true;
-		}
+		// 	return true;
+		// }
 
 		return false;
 	}
@@ -962,17 +965,17 @@ public class AgentServicesImpl implements AgentServices {
 	@SuppressWarnings("unchecked")
 	private Role getRoleFromName(String nome) {
 
-		String hql = "SELECT role FROM " + ROLE_CLASSNAME
-				+ " AS role WHERE role.name = :rolename";
-		query = roleRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("rolename", nome);
+		// String hql = "SELECT role FROM " + ROLE_CLASSNAME
+		// 		+ " AS role WHERE role.name = :rolename";
+		// query = roleRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("rolename", nome);
 
-		List<Role> result = query.getResultList();
+		// List<Role> result = query.getResultList();
 
-		if (!result.isEmpty()) {
-			Role role = result.get(0);
-			return role;
-		}
+		// if (!result.isEmpty()) {
+		// 	Role role = result.get(0);
+		// 	return role;
+		// }
 
 		return null;
 	}
@@ -995,36 +998,37 @@ public class AgentServicesImpl implements AgentServices {
 
 	@SuppressWarnings("unchecked")
 	private List<Agent> getAgentsForProject(Integer theProjectOid) {
-		String hql_project = "SELECT DISTINCT agent FROM " + AGENT_CLASSNAME + " as agent, " +
-						" "+ TASKAGENDA_CLASSNAME +" as taskagenda," + PROCESS_AGENDA_CLASSNAME + " as processagenda, "
-						+ PROJECT_CLASSNAME + " as project, " + Process.class.getSimpleName() + " as process " +
-		                     " WHERE taskagenda.oid = processagenda.theTaskAgenda.oid " +
-		                     "AND processagenda.theProcess.oid = process.oid " +
-		                     "AND process.oid = project.processRefered.oid " +
-		                     "AND taskagenda.theAgent.oid = agent.oid " +
-		                     "AND project.oid = :theProject";
+// 		String hql_project = "SELECT DISTINCT agent FROM " + AGENT_CLASSNAME + " as agent, " +
+// 						" "+ TASKAGENDA_CLASSNAME +" as taskagenda," + PROCESS_AGENDA_CLASSNAME + " as processagenda, "
+// 						+ PROJECT_CLASSNAME + " as project, " + Process.class.getSimpleName() + " as process " +
+// 		                     " WHERE taskagenda.oid = processagenda.theTaskAgenda.oid " +
+// 		                     "AND processagenda.theProcess.oid = process.oid " +
+// 		                     "AND process.oid = project.processRefered.oid " +
+// 		                     "AND taskagenda.theAgent.oid = agent.oid " +
+// 		                     "AND project.oid = :theProject";
 
-		query = agentRepository.getPersistenceContext().createQuery(hql_project);
-		query.setParameter("theProject", theProjectOid);
-		List<Agent> agentList = new ArrayList<Agent>();
-		agentList.addAll(query.getResultList());
-		return agentList;
-	}
+// 		query = agentRepository.getPersistenceContext().createQuery(hql_project);
+// 		query.setParameter("theProject", theProjectOid);
+// 		List<Agent> agentList = new ArrayList<Agent>();
+// 		agentList.addAll(query.getResultList());
+// 		return agentList;
+// 	}
 
-	@Override
-	public List<TaskDTO> getAgentTasks(String agentIdent, String processIdent) {
-		List<TaskDTO> tasksDTO = new ArrayList<TaskDTO>();
-		String hql = "SELECT agenda.theTask FROM " + PROCESS_AGENDA_CLASSNAME + " AS agenda WHERE (agenda.theTaskAgenda.theAgent.ident = :agentID) AND (agenda.theProcess.ident = :processID)";
+// 	@Override
+// 	public List<TaskDTO> getAgentTasks(String agentIdent, String processIdent) {
+// 		List<TaskDTO> tasksDTO = new ArrayList<TaskDTO>();
+// 		String hql = "SELECT agenda.theTask FROM " + PROCESS_AGENDA_CLASSNAME + " AS agenda WHERE (agenda.theTaskAgenda.theAgent.ident = :agentID) AND (agenda.theProcess.ident = :processID)";
 
-//		String hql = "SELECT task FROM " + TASK_CLASSNAME + " task WHERE task.theProcessAgenda.theProcess.ident = :processID";
+// //		String hql = "SELECT task FROM " + TASK_CLASSNAME + " task WHERE task.theProcessAgenda.theProcess.ident = :processID";
 
-		query = processAgendaRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter( "agentID", agentIdent );
-		query.setParameter( "processID", processIdent );
+// 		query = processAgendaRepository.getPersistenceContext().createQuery(hql);
+// 		query.setParameter( "agentID", agentIdent );
+// 		query.setParameter( "processID", processIdent );
 
-		tasksDTO = convertTasksToTasksDTO(agentIdent, query.getResultList());
+// 		tasksDTO = convertTasksToTasksDTO(agentIdent, query.getResultList());
 
-		return tasksDTO;
+// 		return tasksDTO;
+    return null;
 	}
 
 	private List<TaskDTO> convertTasksToTasksDTO(String agentIdent, Collection<Task> tasks) {
@@ -1067,32 +1071,33 @@ public class AgentServicesImpl implements AgentServices {
 	}
 
 	private WorkGroup getWorkGroupFromName(String WorkGroupName) {
-		String hql = "SELECT WorkGroup FROM " + WorkGroup_CLASSNAME
-				+ " as WorkGroup where WorkGroup.name = :name";
-		query = workGroupRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("name", WorkGroupName);
+		// String hql = "SELECT WorkGroup FROM " + WorkGroup_CLASSNAME
+		// 		+ " as WorkGroup where WorkGroup.name = :name";
+		// query = workGroupRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("name", WorkGroupName);
 
-		WorkGroup result = null;
-		if (!query.getResultList().isEmpty()) {
-			result = (WorkGroup) query.getResultList().get(0);
-		}
+		// WorkGroup result = null;
+		// if (!query.getResultList().isEmpty()) {
+		// 	result = (WorkGroup) query.getResultList().get(0);
+		// }
 
-		return result;
+    // return result;
+    return null;
 	}
 
 	@SuppressWarnings("unchecked")
 	public Ability getAbilityFromName(String name) {
-		String hql = "select ability from " + ABILITY_CLASSNAME
-				+ " as ability where ability.name = :abiname";
-		query = abilityRepository.getPersistenceContext().createQuery(hql);
-		query.setParameter("abiname", name);
+		// String hql = "select ability from " + ABILITY_CLASSNAME
+		// 		+ " as ability where ability.name = :abiname";
+		// query = abilityRepository.getPersistenceContext().createQuery(hql);
+		// query.setParameter("abiname", name);
 
-		List<Ability> result = query.getResultList();
+		// List<Ability> result = query.getResultList();
 
-		if (!result.isEmpty()) {
-			Ability ability = result.get(0);
-			return ability;
-		}
+		// if (!result.isEmpty()) {
+		// 	Ability ability = result.get(0);
+		// 	return ability;
+		// }
 
 		return null;
 	}

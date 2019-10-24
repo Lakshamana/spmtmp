@@ -60,7 +60,7 @@ import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 import br.ufpa.labes.spm.service.impl.CriticalPathMethod;
 
-public class ReportRepositoryQueryImpl extends BaseRepositoryQueryImpl<Report, Long> implements ReportRepositoryQuery{
+public class ReportRepositoryQueryImpl implements ReportRepositoryQuery{
 
   private static final String ACTIVITY_METRIC_DEFINITION_NAME = "Activity Effort";
 

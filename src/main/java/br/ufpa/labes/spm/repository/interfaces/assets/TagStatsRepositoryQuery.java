@@ -13,19 +13,15 @@ public interface TagStatsRepositoryQuery {
 
   public List<TagStats> retrieveMostVotedTagsForAsset(String assetUid, int numResults);
 
-  @Override
   @Deprecated
   public TagStats retrieve(String key);
 
-  @Override
   @Deprecated
   public List<TagStats> retrieveByCriteria(TagStats searchCriteria);
 
-  @Override
   @Deprecated
   public List<TagStats> retrieveByCriteria(TagStats searchCriteria, SortCriteria sortCriteria);
 
-  @Override
   @Deprecated
   public List<TagStats> retrieveByCriteria(
       TagStats searchCriteria, SortCriteria sortCriteria, PagingContext paging);
