@@ -36,6 +36,7 @@ import br.ufpa.labes.spm.repository.AutomaticRepository;
 import br.ufpa.labes.spm.repository.BranchConCondToActivityRepository;
 import br.ufpa.labes.spm.repository.BranchConCondToMultipleConRepository;
 import br.ufpa.labes.spm.repository.BranchConRepository;
+import br.ufpa.labes.spm.repository.CalendarRepository;
 import br.ufpa.labes.spm.repository.ConnectionRepository;
 import br.ufpa.labes.spm.repository.ConsumableRepository;
 import br.ufpa.labes.spm.repository.DecomposedRepository;
@@ -125,7 +126,7 @@ public class EasyModelingServicesImpl implements EasyModelingServices {
 	// EnactmentEngineLocal enactmentLocal;
 
   @Autowired
-  CalendarRepositoryQuery calendarRepositoryQuery;
+  CalendarRepository calendarRepository;
 
   // DynamicModeling dynamicModeling;
 

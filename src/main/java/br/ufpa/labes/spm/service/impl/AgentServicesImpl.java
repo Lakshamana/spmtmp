@@ -83,7 +83,7 @@ public class AgentServicesImpl implements AgentServices {
 	private static final String AGENT_CLASSNAME = Agent.class.getSimpleName();
 
   @Autowired
-	AgentRepository agentRepository;
+  private AgentRepository agentRepository;
 
   @Autowired
 	AbilityRepository abilityRepository;
