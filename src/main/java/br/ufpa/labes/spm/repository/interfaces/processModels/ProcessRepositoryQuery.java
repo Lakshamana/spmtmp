@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Process;
 import br.ufpa.labes.spm.service.util.SimpleActivityQueryResult;
 
-public interface ProcessRepositoryQuery extends BaseRepositoryQuery<Process, Long> {
+public interface ProcessRepositoryQuery {
 
   public SimpleActivityQueryResult[] getAllNormalActivitiesFromProcess(String processIdent);
 

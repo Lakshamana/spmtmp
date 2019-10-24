@@ -9,7 +9,7 @@ import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.util.PagingContext;
 import br.ufpa.labes.spm.util.SortCriteria;
 
-public interface BranchANDConRepositoryQuery extends BaseRepositoryQuery<BranchANDCon, Long> {
+public interface BranchANDConRepositoryQuery {
   public BranchANDCon update(BranchANDCon object);
 
   public BranchANDCon retrieve(String key);

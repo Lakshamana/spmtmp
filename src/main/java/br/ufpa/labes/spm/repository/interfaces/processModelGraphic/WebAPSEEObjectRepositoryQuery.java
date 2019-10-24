@@ -7,7 +7,7 @@ import br.ufpa.labes.spm.exceptions.RepositoryQueryException;
 import br.ufpa.labes.spm.domain.GraphicCoordinate;
 import br.ufpa.labes.spm.domain.WebAPSEEObject;
 
-public interface WebAPSEEObjectRepositoryQuery extends BaseRepositoryQuery<WebAPSEEObject, Long> {
+public interface WebAPSEEObjectRepositoryQuery {
 
   public WebAPSEEObject retrieveWebAPSEEObject(Long theReferredOid, String className)
       throws RepositoryQueryException;
