@@ -3,4 +3,4 @@ package br.ufpa.labes.spm.repository.interfaces.taskagenda;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.TaskAgenda;
 
-public interface TaskAgendaRepositoryQuery extends BaseRepositoryQuery<TaskAgenda, Long> {}
+public interface TaskAgendaRepositoryQuery {}

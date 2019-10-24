@@ -5,7 +5,7 @@ import br.ufpa.labes.spm.domain.Normal;
 import br.ufpa.labes.spm.domain.ProcessAgenda;
 import br.ufpa.labes.spm.domain.Task;
 
-public interface ProcessAgendaRepositoryQuery extends BaseRepositoryQuery<ProcessAgenda, Long> {
+public interface ProcessAgendaRepositoryQuery {
 
   public Task addTask(ProcessAgenda pAgenda, Normal actNorm);
 }

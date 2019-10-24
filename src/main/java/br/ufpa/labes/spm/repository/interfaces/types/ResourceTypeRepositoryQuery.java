@@ -3,4 +3,4 @@ package br.ufpa.labes.spm.repository.interfaces.types;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.ResourceType;
 
-public interface ResourceTypeRepositoryQuery extends BaseRepositoryQuery<ResourceType, Long> {}
+public interface ResourceTypeRepositoryQuery {}

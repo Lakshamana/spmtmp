@@ -3,4 +3,4 @@ package br.ufpa.labes.spm.repository.interfaces.resources;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.Shareable;
 
-public interface ShareableRepositoryQuery extends BaseRepositoryQuery<Shareable, Long> {}
+public interface ShareableRepositoryQuery {}

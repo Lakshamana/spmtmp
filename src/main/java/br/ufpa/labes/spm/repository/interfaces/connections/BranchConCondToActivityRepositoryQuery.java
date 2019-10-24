@@ -3,4 +3,4 @@ package br.ufpa.labes.spm.repository.interfaces.connections;
 import br.ufpa.labes.spm.repository.interfaces.BaseRepositoryQuery;
 import br.ufpa.labes.spm.domain.BranchConCondToActivity;
 
-public interface BranchConCondToActivityRepositoryQuery extends BaseRepositoryQuery<BranchConCondToActivity, Long> {}
+public interface BranchConCondToActivityRepositoryQuery {}

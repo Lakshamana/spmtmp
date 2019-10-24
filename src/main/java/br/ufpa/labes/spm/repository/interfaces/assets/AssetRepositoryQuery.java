@@ -7,7 +7,7 @@ import br.ufpa.labes.spm.domain.Asset;
 import br.ufpa.labes.spm.domain.AssetRelationship;
 // import org.qrconsult.spm.vo.AssetCatalog;
 
-public interface AssetRepositoryQuery extends BaseRepositoryQuery<Asset, Long> {
+public interface AssetRepositoryQuery {
 
   public List<AssetRelationship> retrieveRelatedAssetsTo(String assetUid);
 
