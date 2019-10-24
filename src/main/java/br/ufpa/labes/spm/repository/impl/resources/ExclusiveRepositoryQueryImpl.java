@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.resources.ExclusiveRepositoryQuery;
 import br.ufpa.labes.spm.domain.Exclusive;
 
-public class ExclusiveRepositoryQueryImpl extends BaseRepositoryQueryImpl<Exclusive, Long> implements ExclusiveRepositoryQuery{
+public class ExclusiveRepositoryQueryImpl implements ExclusiveRepositoryQuery{
 
   protected ExclusiveRepositoryQueryImpl(Class<Exclusive> businessClass) {
     super(businessClass);

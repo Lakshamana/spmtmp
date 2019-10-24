@@ -26,7 +26,7 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
-public class ArtifactRepositoryQueryImpl extends BaseRepositoryQueryImpl<Artifact, Long> implements ArtifactRepositoryQuery{
+public class ArtifactRepositoryQueryImpl implements ArtifactRepositoryQuery{
 
   protected ArtifactRepositoryQueryImpl(Class<Artifact> businessClass) {
     super(businessClass);
