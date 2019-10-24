@@ -49,8 +49,4 @@ public class AgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<Agent, Lon
       return null;
     }
   }
-
-  public Class<Agent> getBusinessClass() {
-    return this.businessClass;
-  }
 }

@@ -18,7 +18,7 @@ import br.ufpa.labes.spm.domain.ReqWorkGroup;
 import br.ufpa.labes.spm.domain.RequiredPeople;
 import br.ufpa.labes.spm.domain.RequiredResource;
 
-public class NormalRepositoryQueryImpl implements NormalRepositoryQuery{
+public class NormalRepositoryQueryImpl extends BaseRepositoryQueryImpl<Normal, Long> implements NormalRepositoryQuery{
 
   protected NormalRepositoryQueryImpl(Class<Normal> businessClass) {
     super(businessClass);

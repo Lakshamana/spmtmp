@@ -4,7 +4,7 @@ import br.ufpa.labes.spm.repository.impl.BaseRepositoryQueryImpl;
 import br.ufpa.labes.spm.repository.interfaces.connections.ArtifactConRepositoryQuery;
 import br.ufpa.labes.spm.domain.ArtifactCon;
 
-public class ArtifactConRepositoryQueryImpl implements ArtifactConRepositoryQuery{
+public class ArtifactConRepositoryQueryImpl extends BaseRepositoryQueryImpl<ArtifactCon, Long> implements ArtifactConRepositoryQuery{
 
   protected ArtifactConRepositoryQueryImpl(Class<ArtifactCon> businessClass) {
     super(businessClass);

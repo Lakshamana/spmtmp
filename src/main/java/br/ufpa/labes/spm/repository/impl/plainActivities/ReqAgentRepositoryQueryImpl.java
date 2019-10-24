@@ -23,7 +23,7 @@ import br.ufpa.labes.spm.util.ident.ConversorDeIdent;
 import br.ufpa.labes.spm.util.ident.SemCaracteresEspeciais;
 import br.ufpa.labes.spm.util.ident.TrocaEspacoPorPonto;
 
-public class ReqAgentRepositoryQueryImpl implements ReqAgentRepositoryQuery{
+public class ReqAgentRepositoryQueryImpl extends BaseRepositoryQueryImpl<ReqAgent, Long> implements ReqAgentRepositoryQuery{
 
   @PersistenceContext
   private EntityManager em;
